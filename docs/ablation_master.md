@@ -11,7 +11,7 @@ before any "component is necessary" sentence enters the paper.
 
 | # | Component ablated | Setting | Evidence | evidence_level | Conclusion (as measured) |
 |---|---|---|---|---|---|
-| 1 | Authenticity-as-gate vs as-ranking | gate on/off | method chapter + CIFAR-10/100 flip | **DER** (needs direct run) | Ranking by authenticity contracts the distribution and hurts coverage (DemandClean over-repair analog). Pending a dedicated gate-vs-rank 3-seed run before causal wording. |
+| 1 | Authenticity-as-gate vs as-ranking | gate on/off | method chapter + CIFAR-10/100 flip | **DER** (needs direct run) | Ranking by authenticity contracts the distribution and hurts coverage. Pending a dedicated gate-vs-rank 3-seed run before causal wording. |
 | 2 | Switch margin tau | tau in {0, 0.015, 0.03} | ablation_suite.log | **DCA** | Picks and results bit-for-bit unchanged on vision+TEP; the single hyperparameter is insensitive, so the gate is not a tuned knob. Safe. |
 | 3 | Validation size n_v | n_v in {200,400,800,1600} | ablation_suite.log | **DCA** | Controller 0.423->0.434 monotone, seed std 0.007->0.001; below pure auth at tiny n_v, clearly above at large n_v. Confirms Thm 4's n_v prediction. |
 | 4 | V1/V2 construction/adjudication split | on/off | split_protocol_3seed.log | **DCA** | Without the split the winner's-curse inflates image 0.432->real 0.428; the split restores Thm 4's independence premise. |
