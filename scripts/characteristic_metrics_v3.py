@@ -1,4 +1,4 @@
-"""Characteristic metrics v3 (statistics corrected per CODEX_AUDIT_20260716_1315 item 2).
+"""Characteristic metrics v3 (statistics-corrected revision).
 
 DISCLOSURE (unchanged): SECONDARY / EXPLORATORY, proposed post-hoc; primary metrics remain
 the standard task metrics. v2 JSON is kept as a diagnostic; this file is the paper source.

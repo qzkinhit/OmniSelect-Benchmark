@@ -6,7 +6,7 @@
 # Usage:  run_scripts/reproduce_cached.sh
 set -euo pipefail
 cd "$(dirname "$0")/.."
-PY="${PYTHON:-python}"
+PY="${PYTHON:-python3}"
 
 echo "== 1. install (core, CPU only) =="
 if ! $PY -m pip install -q -e . 2>&1 | tail -1; then

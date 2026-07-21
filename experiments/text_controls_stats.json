@@ -704,9 +704,9 @@
   "measure": "five-domain-gmean heldout ppl (same measure as controls rows)",
   "quadmix_pub": {
    "gmean_ppl": [
-    10.848,
-    10.892,
-    10.868
+    10.855456130426566,
+    10.894469856612659,
+    10.857994167203278
    ],
    "mean": 10.869,
    "std": 0.022,

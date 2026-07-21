@@ -1,0 +1,318 @@
+{
+  "results": [
+    {
+      "method": "noselect",
+      "n_sel": 25000,
+      "tok_sel": 5254325,
+      "steps": 1282,
+      "high_frac": 0.6,
+      "set_redundancy": 0.6963,
+      "ppl": {
+        "code": 5.315,
+        "general": 16.454,
+        "image": 23.181,
+        "math": 6.445,
+        "table": 12.195
+      },
+      "ppl_ctrl": {
+        "code": 5.631,
+        "general": 17.266,
+        "image": 27.202,
+        "math": 6.182,
+        "table": 12.271
+      },
+      "lmeval": {
+        "arc_easy": 0.585,
+        "arc_challenge": 0.2927,
+        "hellaswag": 0.4324,
+        "openbookqa": 0.32
+      },
+      "secs": 334.0
+    },
+    {
+      "method": "random",
+      "n_sel": 12517,
+      "tok_sel": 2627985,
+      "steps": 641,
+      "high_frac": 0.596,
+      "set_redundancy": 0.6559,
+      "ppl": {
+        "code": 5.342,
+        "general": 16.429,
+        "image": 23.634,
+        "math": 6.465,
+        "table": 12.823
+      },
+      "ppl_ctrl": {
+        "code": 5.669,
+        "general": 17.264,
+        "image": 27.613,
+        "math": 6.204,
+        "table": 12.916
+      },
+      "lmeval": {
+        "arc_easy": 0.5854,
+        "arc_challenge": 0.2978,
+        "hellaswag": 0.431,
+        "openbookqa": 0.324
+      },
+      "secs": 207.7
+    },
+    {
+      "method": "dsir",
+      "n_sel": 14419,
+      "tok_sel": 2627487,
+      "steps": 641,
+      "high_frac": 0.594,
+      "set_redundancy": 0.6663,
+      "ppl": {
+        "code": 5.339,
+        "general": 16.45,
+        "image": 23.562,
+        "math": 6.472,
+        "table": 12.347
+      },
+      "ppl_ctrl": {
+        "code": 5.667,
+        "general": 17.27,
+        "image": 27.477,
+        "math": 6.215,
+        "table": 12.458
+      },
+      "lmeval": {
+        "arc_easy": 0.5867,
+        "arc_challenge": 0.2986,
+        "hellaswag": 0.4315,
+        "openbookqa": 0.328
+      },
+      "secs": 223.9
+    },
+    {
+      "method": "if_mates",
+      "n_sel": 10638,
+      "tok_sel": 2628203,
+      "steps": 641,
+      "high_frac": 0.661,
+      "set_redundancy": 0.711,
+      "ppl": {
+        "code": 5.337,
+        "general": 16.451,
+        "image": 24.032,
+        "math": 6.462,
+        "table": 12.851
+      },
+      "ppl_ctrl": {
+        "code": 5.667,
+        "general": 17.277,
+        "image": 28.067,
+        "math": 6.199,
+        "table": 12.963
+      },
+      "lmeval": {
+        "arc_easy": 0.5854,
+        "arc_challenge": 0.2927,
+        "hellaswag": 0.4314,
+        "openbookqa": 0.324
+      },
+      "secs": 199.0
+    },
+    {
+      "method": "quality_ppl",
+      "n_sel": 10638,
+      "tok_sel": 2628203,
+      "steps": 641,
+      "high_frac": 0.661,
+      "set_redundancy": 0.711,
+      "ppl": {
+        "code": 5.342,
+        "general": 16.444,
+        "image": 24.055,
+        "math": 6.459,
+        "table": 12.862
+      },
+      "ppl_ctrl": {
+        "code": 5.671,
+        "general": 17.274,
+        "image": 28.09,
+        "math": 6.196,
+        "table": 12.982
+      },
+      "lmeval": {
+        "arc_easy": 0.5867,
+        "arc_challenge": 0.2978,
+        "hellaswag": 0.4311,
+        "openbookqa": 0.322
+      },
+      "secs": 211.4
+    },
+    {
+      "method": "dmf",
+      "n_sel": 14542,
+      "tok_sel": 2628050,
+      "steps": 641,
+      "high_frac": 0.524,
+      "set_redundancy": 0.6937,
+      "ppl": {
+        "code": 5.345,
+        "general": 16.462,
+        "image": 24.051,
+        "math": 6.464,
+        "table": 13.129
+      },
+      "ppl_ctrl": {
+        "code": 5.669,
+        "general": 17.288,
+        "image": 28.056,
+        "math": 6.203,
+        "table": 13.241
+      },
+      "lmeval": {
+        "arc_easy": 0.5863,
+        "arc_challenge": 0.2961,
+        "hellaswag": 0.4322,
+        "openbookqa": 0.328
+      },
+      "secs": 221.6
+    },
+    {
+      "method": "balance",
+      "n_sel": 14783,
+      "tok_sel": 2627707,
+      "steps": 641,
+      "high_frac": 0.596,
+      "set_redundancy": 0.6622,
+      "ppl": {
+        "code": 5.343,
+        "general": 16.464,
+        "image": 23.718,
+        "math": 6.469,
+        "table": 13.3
+      },
+      "ppl_ctrl": {
+        "code": 5.672,
+        "general": 17.285,
+        "image": 27.637,
+        "math": 6.203,
+        "table": 13.423
+      },
+      "lmeval": {
+        "arc_easy": 0.585,
+        "arc_challenge": 0.2952,
+        "hellaswag": 0.4319,
+        "openbookqa": 0.324
+      },
+      "secs": 241.3
+    },
+    {
+      "method": "mmdataselect",
+      "n_sel": 11614,
+      "tok_sel": 2627712,
+      "steps": 641,
+      "high_frac": 0.882,
+      "set_redundancy": 0.6685,
+      "ppl": {
+        "code": 5.33,
+        "general": 16.462,
+        "image": 23.506,
+        "math": 6.47,
+        "table": 13.157
+      },
+      "ppl_ctrl": {
+        "code": 5.657,
+        "general": 17.286,
+        "image": 27.468,
+        "math": 6.21,
+        "table": 13.251
+      },
+      "lmeval": {
+        "arc_easy": 0.5846,
+        "arc_challenge": 0.2952,
+        "hellaswag": 0.4308,
+        "openbookqa": 0.324
+      },
+      "secs": 265.4
+    },
+    {
+      "method": "perpcorr",
+      "n_sel": 10638,
+      "tok_sel": 2628203,
+      "steps": 641,
+      "high_frac": 0.661,
+      "set_redundancy": 0.711,
+      "ppl": {
+        "code": 5.341,
+        "general": 16.441,
+        "image": 24.086,
+        "math": 6.46,
+        "table": 12.847
+      },
+      "ppl_ctrl": {
+        "code": 5.667,
+        "general": 17.28,
+        "image": 28.061,
+        "math": 6.198,
+        "table": 12.965
+      },
+      "lmeval": {
+        "arc_easy": 0.5846,
+        "arc_challenge": 0.3003,
+        "hellaswag": 0.4319,
+        "openbookqa": 0.322
+      },
+      "secs": 246.6
+    },
+    {
+      "method": "mmds_adapt",
+      "n_sel": 14419,
+      "tok_sel": 2627487,
+      "steps": 641,
+      "high_frac": 0.594,
+      "set_redundancy": 0.6663,
+      "ppl": {
+        "code": 5.339,
+        "general": 16.45,
+        "image": 23.562,
+        "math": 6.472,
+        "table": 12.347
+      },
+      "ppl_ctrl": {
+        "code": 5.667,
+        "general": 17.27,
+        "image": 27.477,
+        "math": 6.215,
+        "table": 12.458
+      },
+      "lmeval": {
+        "arc_easy": 0.5867,
+        "arc_challenge": 0.2986,
+        "hellaswag": 0.4315,
+        "openbookqa": 0.328
+      },
+      "secs": 0.0,
+      "picked": "dsir",
+      "kappa_hat_logppl": 0.0079
+    }
+  ],
+  "config": {
+    "budget_frac": 0.5,
+    "passes": 2.0,
+    "hid": 320,
+    "layers": 6,
+    "ctx": 512,
+    "seed": 0,
+    "n": 25000,
+    "adopted_from_legacy_path": "/root/autodl-tmp/OmniSelect/outputs/experiment/results_seed0.json",
+    "runtime_code_git": "9e3a38f",
+    "runtime_code_sha256": "ec6e2cfb096e3da2dbbda31255928f3b5e77fa704d54aa0077332dd44d765d57",
+    "pool_sha256": "84e174dbb097288c6b4473af2af8d6cb46a0b00a000b6534545725e53f9939c5",
+    "log_sha256": "248b957d1d303ac0f2deb5e69c9dafd76a2c496487256c8d0e831ddc3959bec3",
+    "protocol": {
+      "stratify": "1",
+      "infl_kind": "pplq",
+      "train_mode": "finetune",
+      "lm_eval": "1",
+      "passes": 2,
+      "lmeval_tasks": "arc_easy,arc_challenge,hellaswag,openbookqa"
+    }
+  }
+}

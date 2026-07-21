@@ -1,4 +1,4 @@
-"""MMDataSelect — a unified, modality-agnostic data selection system.
+"""OmniSelect — a unified, modality-agnostic data selection system.
 
 Public surface (kept small and stable; runners and baselines depend on it):
 

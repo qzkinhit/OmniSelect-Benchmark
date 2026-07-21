@@ -30,10 +30,6 @@ with the component-interaction pass (audit item 6), then this table graduates fr
 
 | Variant | Verdict | Log/doc |
 |---|---|---|
-| GRPO/ES policy search | bit-for-bit tie all 5 datasets -> DROP | docs/negative_result_grpo_search.md |
-| Rolling / recent-val | lost on target ETTh1 + fresh seeds -> DROP | docs/negative_result_recent_val.md |
-| Robust worst-segment adjudication | lost on ETTh1 + held-out -> DROP | docs/negative_result_robust_adjudication.md |
-| method-v2 diversity-regularized vote-ensemble | not picked by any seed, metric in noise -> DROP | docs/method_v2_diagnostic.md + method_v2_compare log |
 | method-v2c complementarity-aware vote | (running) keep-if-wins pending | method_v2c_compare log |
 
 Every negative result is kept as an ablation: it proves the corresponding design choice

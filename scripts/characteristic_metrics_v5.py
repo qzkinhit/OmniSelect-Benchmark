@@ -1,4 +1,4 @@
-"""Characteristic metrics v5 (CODEX_CANONICAL_PARITY_GATE item 5).
+"""Characteristic metrics v5 (canonical-parity revision).
 
 DISCLOSURE: SECONDARY / EXPLORATORY, post-hoc. Supersedes v4's dominance inference
 (whose percentile-bootstrap p-values over only 8 clusters are approximate; v4's 10/10

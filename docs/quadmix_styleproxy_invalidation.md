@@ -32,7 +32,7 @@
 作废范围与依据的区分:
 
 1. **replay-verified**(直接证据):pubcore-paired 批 4 臂的上述 11 个 quadmix 格 + timeseries seed2 控制器格。
-2. **same-code-path**(机制推断,逐格标注):重复是确定性代码缺陷——`src/mmdataselect/selectors/external_baselines.py::quadmix` 中 (a) 分位桶用双侧闭区间判成员,边界样本同时落入相邻两桶;(b) 桶内 farthest-first 的 argmax 不掩蔽已选局部索引,特征距离全零时反复选同一样本。四个模态 runner(`scripts/run_vision_experiment.py`、`run_timeseries_experiment.py`、`run_tep_experiment.py`、`run_tabular_experiment.py`)与文本 runner(`scripts/run_experiment.py` method "quadmix")调用同一函数,故 legacy 07-04 批、tep_calibrated2、CIFAR-100N、ETTh2/ETTm1/DaISy/Chronos 各家族及文本 lane(codex-text-quadmix-20260716T1550,selected_ids 未存档,NOT-CAPTURED)的旧 quadmix 数值同判作废,即使未逐一重放。
+2. **same-code-path**(机制推断,逐格标注):重复是确定性代码缺陷——`src/mmdataselect/selectors/external_baselines.py::quadmix` 中 (a) 分位桶用双侧闭区间判成员,边界样本同时落入相邻两桶;(b) 桶内 farthest-first 的 argmax 不掩蔽已选局部索引,特征距离全零时反复选同一样本。四个模态 runner(`scripts/run_vision_experiment.py`、`run_timeseries_experiment.py`、`run_tep_experiment.py`、`run_tabular_experiment.py`)与文本 runner(`scripts/run_experiment.py` method "quadmix")调用同一函数,故 legacy 07-04 批、tep_calibrated2、CIFAR-100N、ETTh2/ETTm1/DaISy/Chronos 各家族及文本 lane(legacy-text-quadmix-20260716T1550,selected_ids 未存档,NOT-CAPTURED)的旧 quadmix 数值同判作废,即使未逐一重放。
 3. **不受影响**:`quadmix_pub`(published-core transfer,Gumbel top-k 无放回)重放通过;DMF 两行、其余全部基线重放通过(verified_cells=195)。timeseries seed0 的 quadmix 虽个体无重复,但同属作废行(方法级作废,不做逐格豁免)。
 
 ## 3. 决定(audit 偏好)

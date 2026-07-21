@@ -1,0 +1,103 @@
+{
+  "arm": "text",
+  "seed": 0,
+  "tag": "run_id=text-controls-20260717T0026-stratify=1-infl=pplq-train=finetune-lmeval=1",
+  "config": {
+    "budget_frac": 0.5,
+    "passes": 3.0,
+    "hid": 320,
+    "layers": 6,
+    "ctx": 512,
+    "n": 25000,
+    "methods": [
+      "base",
+      "random",
+      "noselect"
+    ],
+    "stratify": "1",
+    "infl_kind": "pplq",
+    "train_mode": "finetune",
+    "lmeval_tasks": "",
+    "run_id": "text-controls-20260717T0026",
+    "pool_sha256_12": "84e174dbb097",
+    "code_sha256_12": "2ce72a0809d4"
+  },
+  "results": [
+    {
+      "method": "base",
+      "n_sel": 0,
+      "tok_sel": 0,
+      "steps": 0,
+      "high_frac": 0.0,
+      "set_redundancy": 0.0,
+      "ppl": {
+        "code": 5.44,
+        "general": 16.568,
+        "image": 25.552,
+        "math": 6.567,
+        "table": 17.638
+      },
+      "secs": 9.4
+    },
+    {
+      "method": "random",
+      "n_sel": 12517,
+      "tok_sel": 2627985,
+      "steps": 962,
+      "high_frac": 0.596,
+      "set_redundancy": 0.6559,
+      "ppl": {
+        "code": 5.319,
+        "general": 16.428,
+        "image": 23.124,
+        "math": 6.446,
+        "table": 11.561
+      },
+      "ppl_ctrl": {
+        "code": 5.646,
+        "general": 17.251,
+        "image": 27.106,
+        "math": 6.184,
+        "table": 11.628
+      },
+      "lmeval": {
+        "arc_easy": 0.5842,
+        "arc_challenge": 0.2927,
+        "hellaswag": 0.4317,
+        "openbookqa": 0.326
+      },
+      "secs": 232.8,
+      "sel_sha256_12": "05af1bc9343f"
+    },
+    {
+      "method": "noselect",
+      "n_sel": 25000,
+      "tok_sel": 5254325,
+      "steps": 1924,
+      "high_frac": 0.6,
+      "set_redundancy": 0.6963,
+      "ppl": {
+        "code": 5.299,
+        "general": 16.45,
+        "image": 22.784,
+        "math": 6.43,
+        "table": 11.111
+      },
+      "ppl_ctrl": {
+        "code": 5.617,
+        "general": 17.274,
+        "image": 26.826,
+        "math": 6.169,
+        "table": 11.164
+      },
+      "lmeval": {
+        "arc_easy": 0.5863,
+        "arc_challenge": 0.2918,
+        "hellaswag": 0.4341,
+        "openbookqa": 0.322
+      },
+      "secs": 337.0,
+      "sel_sha256_12": "cbd06b3ed0ac"
+    }
+  ]
+}

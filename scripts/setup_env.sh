@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Create a local virtualenv and install MMDataSelect (editable) with all extras.
+# Create a local virtualenv and install OmniSelect (editable) with all extras.
 #
 #   bash scripts/setup_env.sh            # venv at .venv, full [train,eval,dev] stack
 #   VENV=.venv311 PYTHON=python3.11 bash scripts/setup_env.sh

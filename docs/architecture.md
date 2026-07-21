@@ -1,6 +1,6 @@
 # Architecture
 
-MMDataSelect is a **unified, modality-agnostic data selection system** for
+OmniSelect is a **unified, modality-agnostic data selection system** for
 downstream foundation models. This document describes the system's structure, its
 data flow, and the single contract (`manifest`) that couples a selection method to
 the train/eval stack. It is written to mirror the layout already in `README.md`.
@@ -154,29 +154,11 @@ can reuse our train/eval by pointing `--output-dir` at its own output directory.
 | `configs/experiments/` | per-experiment YAML (`demo_select`, `text_smollm135m_demo`) |
 | `outputs/<exp_id>/` | single output root: `manifests/`, `models/`, `eval/`, logs |
 
-## 5. Relation to DemandClean-Benchmark
+## 5. Cross-modal selection contract
 
-DemandClean-Benchmark frames data preparation as **demand-driven cleaning under a
-budget**: instead of cleaning a dataset to some absolute notion of "clean", it asks
-*which* operations on *which* records actually pay off for a downstream demand
-(model / task), and evaluates the whole pipeline end-to-end against that demand.
-
-MMDataSelect adopts the same discipline, projected onto **selection** rather than
-cleaning:
-
-| DemandClean-Benchmark | MMDataSelect |
-|---|---|
-| demand-driven (value is relative to a downstream model/task) | influence signal = downstream base model's own per-sample loss |
-| budget-constrained operation allocation | `Budget` -> `k`; selection = budget-constrained importance x diversity |
-| per-record cleaning decisions (fix / drop / keep) | per-record selection decisions (keep / repeat / down-weight / drop) |
-| end-to-end evaluation against the demand | `run_train` -> `run_eval` -> downstream `{task: metric}` |
-| standardized records + a shared result contract | `UnifiedRecord` + the `manifest` contract |
-| method-agnostic harness comparing strategies on one bench | baselines (random / full_data / dsir) emit the same manifest, share the same eval |
-
-The contrast: DemandClean targets *which cleaning operations* maximize downstream
-demand satisfaction; MMDataSelect targets *which records (and how many)* to keep
-under a token budget, and generalizes the decision across image-text + math + code
-via the modality-agnostic `UnifiedRecord`. Both reject an absolute, model-free notion
-of data quality in favor of value measured *relative to the downstream model*, and
-both isolate the method behind a single artifact contract (a result manifest) so that
-heterogeneous strategies can be benchmarked uniformly end-to-end.
+OmniSelect measures data value relative to the downstream model and task rather
+than assuming a universal, model-free quality score. A common budget and manifest
+contract lets heterogeneous strategies select records from the same frozen pool,
+after which the same training and evaluation stack measures downstream utility.
+This separation keeps the selection logic modality-agnostic while allowing each
+runner to preserve its task-specific model, metric, split, and preprocessing.

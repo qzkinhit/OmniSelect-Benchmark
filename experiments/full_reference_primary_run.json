@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "purpose": "Fixed-primary-run comparison between OmniSelect and the full-data/no-selection reference.",
+  "disclosure": {
+    "full_is_reference_not_equal_budget_baseline": true,
+    "primary_metrics_only": true,
+    "timing_scope": "Per-method end-to-end time recorded by the corresponding runner for the fixed primary run. Text OmniSelect time is the complete candidate-evidence batch required for the controller decision.",
+    "relative_gain_definition": "For higher-is-better metrics: (OmniSelect-Full)/abs(Full). For lower-is-better metrics: (Full-OmniSelect)/abs(Full). Positive values favor OmniSelect.",
+    "macro_average_is_descriptive": true,
+    "not_a_wall_clock_speedup_claim": true
+  },
+  "rows": [
+    {"task":"CIFAR-100","modality":"image","metric":"top-1 accuracy","higher_is_better":true,"full":0.536,"omniselect":0.432,"omniselect_budget_fraction":0.5,"full_time_s":3.2,"omniselect_time_s":636.5,"source":"pubcore-paired-20260716T1754"},
+    {"task":"CIFAR-100N","modality":"image","metric":"top-1 accuracy","higher_is_better":true,"full":0.447,"omniselect":0.388,"omniselect_budget_fraction":0.5,"full_time_s":7.3,"omniselect_time_s":1435.3,"source":"backfill-cifar100n-full-20260720"},
+    {"task":"CIFAR-10","modality":"image","metric":"top-1 accuracy","higher_is_better":true,"full":0.914,"omniselect":0.912,"omniselect_budget_fraction":0.5,"full_time_s":15.0,"omniselect_time_s":1294.4,"source":"backfill-cifar10-clip-full-20260720"},
+    {"task":"ETTh1","modality":"time series","metric":"MASE","higher_is_better":false,"full":1.0034,"omniselect":0.9675,"omniselect_budget_fraction":0.3,"full_time_s":1.1,"omniselect_time_s":80.9,"source":"pubcore-paired-20260716T1754"},
+    {"task":"ETTm1","modality":"time series","metric":"MASE","higher_is_better":false,"full":1.1008,"omniselect":1.0366,"omniselect_budget_fraction":0.3,"full_time_s":0.4,"omniselect_time_s":19.9,"source":"ettm1-dlinear-paired-20260716T1532"},
+    {"task":"ETTh2","modality":"time series","metric":"MASE","higher_is_better":false,"full":0.6522,"omniselect":0.6193,"omniselect_budget_fraction":0.3,"full_time_s":1.0,"omniselect_time_s":68.2,"source":"backfill-ETTh2-dlinear-full-20260720"},
+    {"task":"TEP21","modality":"process","metric":"macro-F1","higher_is_better":true,"full":0.4141,"omniselect":0.4072,"omniselect_budget_fraction":0.3,"full_time_s":8.9,"omniselect_time_s":489.0,"source":"pubcore-paired-20260716T1754"},
+    {"task":"Electricity","modality":"tabular","metric":"ROC AUC","higher_is_better":true,"full":0.8818,"omniselect":0.8757,"omniselect_budget_fraction":0.5,"full_time_s":2.8,"omniselect_time_s":305.4,"source":"pubcore-paired-20260716T1754"},
+    {"task":"DaISy-CSTR","modality":"industrial time series","metric":"MASE","higher_is_better":false,"full":1.1057,"omniselect":1.0232,"omniselect_budget_fraction":0.3,"full_time_s":0.9,"omniselect_time_s":68.8,"source":"backfill-daisy_cstr-dlinear-full-20260720"},
+    {"task":"DaISy-steamgen","modality":"industrial time series","metric":"MASE","higher_is_better":false,"full":0.9817,"omniselect":0.8226,"omniselect_budget_fraction":0.3,"full_time_s":1.0,"omniselect_time_s":67.4,"source":"backfill-daisy_steamgen-dlinear-full-20260720"},
+    {"task":"Five-domain text","modality":"text","metric":"geometric-mean PPL","higher_is_better":false,"full":10.976460806962052,"omniselect":11.058280103387363,"omniselect_budget_fraction":0.5,"full_time_s":334.0,"omniselect_time_s":2150.9,"source":"stratify=1-infl=pplq-train=finetune-lmeval=1"}
+  ]
+}

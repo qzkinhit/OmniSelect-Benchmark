@@ -1,5 +1,5 @@
 """Fail-closed selection-manifest replay validator, v2
-(CODEX_AUDIT_20260717_0110_SELECTION_FAILCLOSED_AND_SCOPE).
+(fail-closed selection-manifest scope gate).
 
 Scope: the pubcore MAIN-TABLE four arms only (CIFAR-100 / ETTh1 / TEP21 / electricity,
 3 seeds). The success marker is therefore PUBCORE_4ARM_SELECTION_MANIFESTS_VERIFIED_OK -

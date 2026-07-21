@@ -2,7 +2,7 @@
 set -Eeuo pipefail
 
 REPO="${REPO:-/root/autodl-tmp/OmniSelect}"
-RUN_ID="${RUN_ID:-codex-text-quadmix-v1}"
+RUN_ID="${RUN_ID:-text-quadmix-v1}"
 LOG="${LOG:-/root/text_quadmix_${RUN_ID}.log}"
 MARKER="${MARKER:-/root/TEXT_QUADMIX_TRANSFER_OK}"
 PYTHON="${PYTHON:-${REPO}/.venv/bin/python}"

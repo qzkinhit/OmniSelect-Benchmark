@@ -1,4 +1,4 @@
-"""Characteristic metrics v2 (rebuilt per CODEX_AUDIT_20260716_1230 item 4).
+"""Characteristic metrics v2 (first corrected rebuild).
 
 DISCLOSURE: these are SECONDARY / EXPLORATORY metrics, proposed post-hoc after initial
 results were seen. They never replace the primary standard task metrics (top-1 / MASE /

@@ -1,4 +1,4 @@
-# Dataset provenance ledger (2026-07-16, rev2 per CODEX_AUDIT_20260716_1230 item 8)
+# Dataset provenance ledger
 
 Corrected claim discipline. The accurate statement is three-part:
 1. The ORIGINAL downloaded artifacts are kept immutable and their SHA256 recorded below.

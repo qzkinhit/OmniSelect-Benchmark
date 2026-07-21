@@ -1,5 +1,5 @@
 """Mechanical strict regrade of master_coverage.json PASS cells
-(CODEX_CANONICAL_PARITY_GATE item 3). Run ON THE SERVER where logs/outputs live.
+(canonical parity gate). Run on the machine where logs/outputs live.
 
 STRICT_PASS requires ALL of:
   1. every evidence log (brace patterns expanded) exists, contains a terminal marker

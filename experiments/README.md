@@ -10,7 +10,6 @@
 ```
 experiments/
   README.md                 ← 本文件，总规划 + 状态 + how-to-run
-  README_story.md           ← 跨模态故事与观点性结论（docs/cross_modal_story.md 副本）
   README_defensibility.md   ← 31 篇论文数据集防质疑调研
   README_grounding.md       ← 每模态 grounding（公认数据集/M2模型/评测）
   text/                     ← 文本臂（语言/数学/代码）

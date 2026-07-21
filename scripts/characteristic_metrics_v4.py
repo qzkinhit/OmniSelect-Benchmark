@@ -1,4 +1,4 @@
-"""Characteristic metrics v4 (CODEX_AUDIT_FINAL_GATE_2 item 3).
+"""Characteristic metrics v4 (frozen metric gate).
 
 DISCLOSURE: SECONDARY / EXPLORATORY, post-hoc; primary metrics remain the standard task
 metrics. Supersedes v3 (kept as diagnostic).

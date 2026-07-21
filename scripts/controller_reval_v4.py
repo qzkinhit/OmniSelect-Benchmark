@@ -1,4 +1,4 @@
-"""AdaptiveController re-validation v4 (CODEX_HEARTBEAT_2020).
+"""AdaptiveController re-validation v4.
 
 IMPACT LEDGER: every paper-facing controller row produced under the pre-fix code is
 either in PLAN (replayed) or in EXCLUDED (with a construction-level justification).

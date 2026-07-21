@@ -1,4 +1,4 @@
-"""Post-P0 verifier (Codex 0145 items 3+4). Recovers CIFAR seed1/2 JSON from logs and
+"""Post-P0 result verifier. Recovers CIFAR seed1/2 JSON from logs and
 strictly verifies CIFAR s0/1/2 and globalmix s0/1/2. Writes no marker itself; prints a
 verdict the gate script consumes."""
 import glob

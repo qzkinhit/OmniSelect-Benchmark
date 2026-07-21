@@ -1,4 +1,4 @@
-"""Strict validator for the TEP calibrated 3-seed lane (CODEX_AUDIT_FINAL_GATE_2 item 4).
+"""Strict validator for the TEP calibrated 3-seed lane.
 
 Checks (all must pass, exit nonzero otherwise; marker is written only by the lane wrapper
 after this validator exits 0):

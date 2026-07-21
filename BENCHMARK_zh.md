@@ -32,7 +32,7 @@ baseline 忠实度对照,不计入这九个。
 同一数据集与种子下,被比较的每个方法都从**同一个池**里选**同样的预算** `k`,用**同一个
 下游模型**与**同一个训练测试划分**,这样指标的差异只能归因于选了哪些样本,而不是选了
 多少样本或训练条件不同。预算与池/测试集规模按数据集与模态固定
-(见 `scripts/run_*_experiment.py` 与 `docs/per_modality_experiment_plan.md`),不按方法
+(见 `scripts/run_*_experiment.py` 与 `docs/architecture.md`),不按方法
 调整。
 
 ## 候选集/参考集/留出集隔离

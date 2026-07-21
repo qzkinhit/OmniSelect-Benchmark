@@ -41,7 +41,7 @@ Every method compared for a given dataset/seed selects the **same budget** `k` f
 **same pool**, using the **same downstream model** and the **same train/eval split**, so
 differences in the reported metric are attributable to *which* records were kept, not to how
 many or under what training conditions. Budgets and pool/test sizes are fixed per
-dataset/modality (see `scripts/run_*_experiment.py` and `docs/per_modality_experiment_plan.md`)
+dataset/modality (see `scripts/run_*_experiment.py` and `docs/architecture.md`)
 and never tuned per method.
 
 ## Candidate / reference / holdout isolation

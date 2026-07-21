@@ -1,4 +1,4 @@
-"""DEPRECATED DRAFT - DO NOT USE FOR PAPER NUMBERS (CODEX_AUDIT_20260716_1230 item 4).
+"""DEPRECATED DRAFT - DO NOT USE FOR PAPER NUMBERS.
 
 Retracted defects of this v1 draft:
   1. Inputs are hand-copied rounded paper means, not per-seed canonical JSONs.
@@ -16,7 +16,7 @@ preregistered). Standard task metrics stay primary.
 
 Original draft below, kept for the record. Running it now hard-fails.
 """
-raise SystemExit("DEPRECATED: retracted by CODEX_AUDIT_20260716_1230; use characteristic_metrics_v2 when built")
+raise SystemExit("DEPRECATED: use characteristic_metrics_v2 or a later verified version")
 
 _DOC_V1 = """Characteristic metrics for OmniSelect (analogous to UniClean's REDR / DemandClean's
 model-tolerance): principled, method-property metrics the voting-based controller is

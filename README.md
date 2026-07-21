@@ -38,16 +38,19 @@ baseline.
 ## Quick start (CPU, no GPU, no downloads)
 
 ```bash
-git clone <this-repo> && cd Paper2_OmniSelect
+git clone https://github.com/qzkinhit/OmniSelect-Benchmark.git
+cd OmniSelect-Benchmark
 python -m venv .venv && source .venv/bin/activate
 pip install -e .                      # core, pure CPU
 pytest -q                             # CPU-only test suite
 run_scripts/reproduce_cached.sh       # rebuild the paper's canonical tables from committed results
 ```
 
-`reproduce_cached.sh` rebuilds the 9-dataset headline table
+`reproduce_cached.sh` rebuilds the fixed-primary-run headline table
 (`experiments/canonical_tables_seed0.json`) from the committed `results_canonical/`
 files. Every number is read straight out of a `results.json` row, no GPU, seconds to run.
+The complete 12-task artifact inventory (including text) is indexed in
+[`results_canonical/README.md`](results_canonical/README.md).
 
 ## Run baselines and OmniSelect yourself
 
@@ -62,6 +65,7 @@ python scripts/fetch_data.py                      # fetch + SHA-verify the datas
 run_scripts/run_single_arm.sh vision      uoft-cs/cifar100    0
 run_scripts/run_single_arm.sh timeseries  ETTh1       0   random,auth_only,mmds_adapt
 run_scripts/run_single_arm.sh tabular     electricity 0
+run_scripts/run_single_arm.sh text        five_domain 0
 ```
 
 Every run writes `outputs/<arm>/<dataset>/<tags>/seed_N/results.json` with one row per
@@ -72,11 +76,13 @@ does internally); a plain `run_single_arm.sh` call as shown above omits it. The 
 `METHODS` list runs the baselines and OmniSelect under **one equal-budget protocol**, so the
 comparison is apples-to-apples by construction.
 
-Commands for all 9 headline datasets (the exact table in [Results](#results)):
+Commands for the complete 12-task benchmark inventory:
 
 ```bash
 run_scripts/run_single_arm.sh vision      uoft-cs/cifar100    0   # CIFAR-100
 VIS_NOISE=real run_scripts/run_single_arm.sh vision uoft-cs/cifar100 0   # CIFAR-100N (same images, real human labels)
+run_scripts/run_single_arm.sh vision      uoft-cs/cifar10     0   # CIFAR-10, CLIP protocol
+DATASET=imagenet100 SEED=0 python baselines/deepcore_original/run_original_protocol.py
 run_scripts/run_single_arm.sh timeseries  ETTh1       0
 run_scripts/run_single_arm.sh timeseries  ETTm1       0
 run_scripts/run_single_arm.sh timeseries  ETTh2       0
@@ -84,6 +90,7 @@ run_scripts/run_single_arm.sh timeseries  daisy_cstr  0   # DaISy CSTR
 run_scripts/run_single_arm.sh timeseries  daisy_steamgen 0   # DaISy steam generator
 run_scripts/run_single_arm.sh tep         21          0   # TEP21
 run_scripts/run_single_arm.sh tabular     electricity 0
+run_scripts/run_single_arm.sh text        five_domain 0
 ```
 
 CIFAR-10 (`run_scripts/run_single_arm.sh vision uoft-cs/cifar10 0`) is a separate
@@ -94,10 +101,12 @@ Set `SPLIT_EXPORT_DIR=<dir>` on any of the commands above to additionally dump t
 validation/test index split (`pool_ids`/`val_ids`/`test_ids` + the seeding recipe) shared by
 every method in that run; without it, `results.json` only carries the `sel_sha12` fingerprint.
 
-Full reproduction (all four arms, seed 0 → rebuild tables; matches the headline table):
+Full reproduction (all 12 tasks; the default is the fixed primary run, and `SEEDS`
+can be set explicitly for robustness runs):
 
 ```bash
-run_scripts/reproduce_full.sh                     # or: SEEDS="0 1 2" run_scripts/reproduce_full.sh for the legacy 3-seed check
+run_scripts/reproduce_full.sh
+SEEDS="0 1 2" run_scripts/reproduce_full.sh
 ```
 
 ## Add your own dataset / modality
@@ -128,6 +137,11 @@ environment/           pinned locks (CPU and CUDA 12.8 / torch 2.8.0)
 tests/                 CPU-only pytest suite (system + baseline fidelity gates)
 ```
 
+Start with [`data/README.md`](data/README.md) for the 12-task download matrix and
+[`results_canonical/README.md`](results_canonical/README.md) for the modality/dataset/
+baseline/result map. [`docs/README.md`](docs/README.md) lists the intentionally small
+set of public technical documents.
+
 ## Results
 
 OmniSelect ranks first against 11 standard baselines (random, coreset, herding,
@@ -143,6 +157,16 @@ herding but participates as one of the controller's own candidates rather than a
 comparison row; likewise SemDeDup's near-duplicate rule is realized as one of the controller's
 own coverage-family candidates, not a separate external row (results kept in full, only the
 baseline-count bookkeeping moved); see [`docs/baseline_fidelity_ledger.md`](docs/baseline_fidelity_ledger.md).
+
+The 9 rows above are the fixed-primary-run headline performance table. The public artifact inventory
+contains 12 tasks in total: it additionally includes CIFAR-10, ImageNet-100, and the
+five-domain text language-modeling lane. These extra protocols and their run coverage are
+listed explicitly in [`results_canonical/README.md`](results_canonical/README.md); they are
+not silently folded into the 9-row ranking claim.
+
+The Full/NoSelect reference is available for 11 tasks. OmniSelect uses 30% of the data on
+the five forecasting tasks and exceeds Full on all five; see
+[`results_canonical/FULL_REFERENCE_COMPARISON.md`](results_canonical/FULL_REFERENCE_COMPARISON.md).
 
 - **Baselines**: official implementations where available, otherwise faithful reimplementations
   of the published selection rules, fidelity-tiered per baseline in

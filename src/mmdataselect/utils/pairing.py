@@ -1,5 +1,5 @@
 """Pairing instrumentation for the unified same-code-state batch
-(CODEX_CANONICAL_PARITY_GATE item 1, option B).
+(canonical parity contract).
 
 Three primitives shared by all four runners:
   sel_sha12(sel)      content fingerprint of a selection (sorted ids), recorded per method

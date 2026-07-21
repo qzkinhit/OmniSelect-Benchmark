@@ -69,5 +69,5 @@ and protocol gap must be reported before any expansion). Unchanged paper claim.
 
 All numbers refreshed from CURRENT-code canonical artifacts (controller_current_canonical_v5.json
 + isolated results.json). The 19 historical-vs-current controller deltas documented in
-controller_reval_v5_changed19_classification.md; ETTh1 stays second-place temporal-drift.
+The frozen controller outcomes are recorded in the canonical result artifacts; ETTh1 stays second-place under the temporal-drift analysis.
 No test-set dominance claims (validation-selection + generalization-gap + multi-seed only).

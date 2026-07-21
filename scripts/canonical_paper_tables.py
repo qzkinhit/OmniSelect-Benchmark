@@ -8,7 +8,7 @@ headline source is scripts/build_canonical_seed0.py -> experiments/canonical_tab
 --- original docstring below, describes the legacy pipeline ---
 
 Single machine-readable canonical source for BOTH paper manuscripts
-(CODEX_AUDIT_FINAL_GATE_2 item 7 / FINAL_GATE item 9).
+(frozen canonical-table gate).
 
 Reads experiments/results_matrix.json (verification-grade ledger, per-seed values from
 real logs) and emits experiments/canonical_tables.json holding mean+-std for every

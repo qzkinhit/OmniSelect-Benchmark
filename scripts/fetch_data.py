@@ -10,6 +10,7 @@ offline-safe, and we verify the small committed raw sets (TEP, DaISy) that ship 
 Usage:
   python scripts/fetch_data.py                 # fetch/verify everything the main arms need
   python scripts/fetch_data.py --only ett tep  # a subset
+  python scripts/fetch_data.py --only text     # build the five-domain text pool
   python scripts/fetch_data.py --verify-only    # only re-hash what is already on disk
 """
 import argparse
@@ -17,6 +18,7 @@ import gzip
 import hashlib
 import os
 import shutil
+import subprocess
 import sys
 import urllib.request
 
@@ -89,10 +91,10 @@ def prewarm_hf_openml():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", nargs="*", default=None,
-                    help="subset: ett tep daisy hf")
+                    help="subset: ett tep daisy hf text")
     ap.add_argument("--verify-only", action="store_true")
     args = ap.parse_args()
-    want = set(args.only) if args.only else {"ett", "daisy", "tep", "hf"}
+    want = set(args.only) if args.only else {"ett", "daisy", "tep", "hf", "text"}
     ok = True
 
     print("== committed raw sets (verify against provenance SHA256) ==")
@@ -119,6 +121,25 @@ def main():
     if not args.verify_only and "hf" in want:
         print("== HF / OpenML pinned pre-warm ==")
         prewarm_hf_openml()
+
+    if "text" in want:
+        manifest = os.path.join(PROC, "pool_manifest.json")
+        train = os.path.join(PROC, "qpool_train.jsonl")
+        heldout = os.path.join(PROC, "qpool_heldout.jsonl")
+        if args.verify_only:
+            missing = [p for p in (manifest, train, heldout) if not os.path.exists(p)]
+            if missing:
+                for p in missing:
+                    print(f"  [missing text pool] {os.path.relpath(p, ROOT)}")
+                ok = False
+            else:
+                print(f"  [text pool present] train={sha256(train)}")
+                print(f"  [text pool present] heldout={sha256(heldout)}")
+        else:
+            print("== five-domain text pool (fail-closed builder) ==")
+            rc = subprocess.call([sys.executable,
+                                  os.path.join(ROOT, "scripts", "build_pool_failclosed.py")])
+            ok &= rc == 0
 
     print("\n" + ("all requested data present and verified" if ok
                   else "some artifacts missing/mismatched — see docs/dataset_provenance.md"))

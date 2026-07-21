@@ -1,5 +1,5 @@
 """ZIP cache path must be INDEX-EXACT vs the original implementation
-(CODEX ZIP_REUSE audit items 2-4): same full greedy ordering, element by element, on
+(ZIP cache equivalence contract): same full greedy ordering, element by element, on
 multiple small pools; the warm cache load must equal both. Any float/compression/tie
 difference is a failure - no approximate ZIP."""
 import json

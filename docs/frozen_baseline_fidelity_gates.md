@@ -1,6 +1,6 @@
 # Frozen body-comparison baseline list + fidelity gates (2026-07-16)
 
-Rule (Codex): freeze the baselines that receive a NUMERICAL comparison in the paper body,
+Release rule: freeze the baselines that receive a NUMERICAL comparison in the paper body,
 then fidelity-gate ONLY those on their original-paper data + official protocol. Do not
 optimize baselines, do not change datasets. Everything else is cited-only / compute-extension.
 

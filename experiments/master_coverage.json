@@ -86,7 +86,7 @@
     "1",
     "2"
    ],
-   "note": "quadmix cell filled by the QuaDMix text-transfer lane (run_id codex-text-quadmix-20260716T1550, /root/TEXT_QUADMIX_TRANSFER_OK); zip + quadmix_pub cells owned by the LIVE QZ4 lane (run_id text-qz4-20260717T0933, COMPLETED; historical launch PIDs 805023/805182) -- graded only after completion, never pre-PASS. QZ3 attempt (text-qz3-20260716T2051) ended NOT_COMPLETED_BLOWUP, evidence /root/qz3_blowup_evidence",
+   "note": "quadmix cell filled by the QuaDMix text-transfer lane (run_id legacy-text-quadmix-20260716T1550, /root/TEXT_QUADMIX_TRANSFER_OK); zip + quadmix_pub cells owned by the LIVE QZ4 lane (run_id text-qz4-20260717T0933, COMPLETED; historical launch PIDs 805023/805182) -- graded only after completion, never pre-PASS. QZ3 attempt (text-qz3-20260716T2051) ended NOT_COMPLETED_BLOWUP, evidence /root/qz3_blowup_evidence",
    "protocol_tier": "main-quantitative (unified-budget testbed)"
   },
   "text_globalmix_proxy": {
@@ -214,14 +214,14 @@
    "protocol_tier": "main-quantitative (unified-budget testbed)",
    "run_ids": [
     "ettm1-dlinear (paired_rng=0)",
-    "codex-ettm1-dlinear-paired-20260716T1532 (paired_rng=1)"
+    "ettm1-dlinear-paired-20260716T1532 (paired_rng=1)"
    ],
    "evidence_logs": [
     "experiments/ettm1_dlinear_3seed.log"
    ],
    "json_paths": [
     "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=0-pool=3000/seed_{0,1,2}/results.json (15 method rows each, parse verified)",
-    "outputs/timeseries/ETTm1/run_id=codex-ettm1-dlinear-paired-20260716T1532-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000/seed_{0,1,2}/results.json (13 method rows each, parse verified)"
+    "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-paired-20260716T1532-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000/seed_{0,1,2}/results.json (13 method rows each, parse verified)"
    ],
    "exit_evidence": "ETTM1DL SEED={0,1,2} python_exit=0 (log lines 38/76/114) + /root/lane_ettm1_dlinear.done (ETTM1DL_DONE) + /root/ETTM1_DLINEAR_PAIRED_OK (status PASS; runner_sha256 0a728846..., pairing_sha256 b0cba7c8..., data_sha256 093cc4ef..., log_sha256 a5ebfae1..., per-seed json_sha256 recorded)",
    "seeds": [
@@ -482,13 +482,13 @@
    "description": "Current-code paired batch: controller (ours row) re-run under paired_rng=1 across all four arms (vision CIFAR-100 / TEP / tabular electricity / timeseries ETTh1) x 3 seeds, current formal implementation.",
    "protocol_tier": "paired-batch controller adjudication (quantitative)",
    "run_ids": [
-    "codex-current-paired-20260716T1614"
+    "current-code-paired-20260716T1614"
    ],
    "evidence_logs": [
-    "experiments/current_code_paired_codex-current-paired-20260716T1614.json (report)"
+    "experiments/current_code_paired_current-code-paired-20260716T1614.json (report)"
    ],
    "json_paths": [
-    "outputs/{vision/uoft-cs_cifar100,tep/tep21,tabular/electricity,timeseries/ETTh1}/run_id=codex-current-paired-20260716T1614-*/seed_{0,1,2}/results.json (per-row code_sha256_12 + fit_seed recorded in report)"
+    "outputs/{vision/uoft-cs_cifar100,tep/tep21,tabular/electricity,timeseries/ETTh1}/run_id=current-code-paired-20260716T1614-*/seed_{0,1,2}/results.json (per-row code_sha256_12 + fit_seed recorded in report)"
    ],
    "exit_evidence": "/root/CURRENT_CODE_PAIRED_MAIN_OK (status PASS); report arms verified: 4 arms x seeds {0,1,2}",
    "seeds": [
@@ -685,15 +685,15 @@
      "2"
     ],
     "run_ids": [
-     "codex-text-quadmix-20260716T1550"
+     "legacy-text-quadmix-20260716T1550"
     ],
-    "evidence_log": "/root/text_quadmix_codex-text-quadmix-20260716T1550.log (python_exit=0 x3, validator_exit=0)",
+    "evidence_log": "/root/text_quadmix_legacy-text-quadmix-20260716T1550.log (python_exit=0 x3, validator_exit=0)",
     "exit_evidence": "/root/TEXT_QUADMIX_TRANSFER_OK (status PASS; runner_sha256 06eb3433..., pool_sha256 84e174db..., heldout_sha256 1e4a45c9..., log_sha256 de1aa2de..., per-seed json_sha256 + sel_sha256_12 recorded)",
-    "json_path": "outputs/experiment/run_id=codex-text-quadmix-20260716T1550-stratify=1-infl=pplq-train=finetune-lmeval=1/seed_{0,1,2}/results.json (parse verified, lmeval present)",
+    "json_path": "outputs/experiment/run_id=legacy-text-quadmix-20260716T1550-stratify=1-infl=pplq-train=finetune-lmeval=1/seed_{0,1,2}/results.json (parse verified, lmeval present)",
     "note": "claim_limit from marker: local QuaDMix-style implementation under the paper's fixed stratified token budget -- NOT the original 570B-token QuaDMix reproduction; cite as 'QuaDMix text transfer'",
     "grade": "PROTOCOL_INVALID_DUPLICATE_IDS",
     "grade_reason": [
-     "SAME-CODE-PATH (2026-07-17): this family was not independently replayed, but it ran the identical pre-9116339 quadmix() selector whose duplicate emission is a deterministic code defect; duplicates were replay-verified on the pubcore main-table arms (vision ~40%, tep 26-28%, tabular ~33%, ts seed1/2) (text lane selected_ids not archived in results.json: NOT-CAPTURED; invalidation is by shared code path, run codex-text-quadmix-20260716T1550 used the pre-9116339 selector via scripts/run_experiment.py method \"quadmix\")",
+     "SAME-CODE-PATH (2026-07-17): this family was not independently replayed, but it ran the identical pre-9116339 quadmix() selector whose duplicate emission is a deterministic code defect; duplicates were replay-verified on the pubcore main-table arms (vision ~40%, tep 26-28%, tabular ~33%, ts seed1/2) (text lane selected_ids not archived in results.json: NOT-CAPTURED; invalidation is by shared code path, run legacy-text-quadmix-20260716T1550 used the pre-9116339 selector via scripts/run_experiment.py method \"quadmix\")",
      "all old style-proxy quadmix numbers are PROTOCOL_INVALID_DUPLICATE_IDS (fewer unique samples than budget -- not a fair equal-budget row)",
      "decision: style proxy removed from main/external tables and from the controller portfolio; quadmix_pub is the sole QuaDMix representative",
      "local fix commit 9116339 NOT deployed until the live text lane ends and the commit is reviewed (QZ3 ended NOT_COMPLETED_BLOWUP 2026-07-17; QZ4 re-run text-qz4-20260717T0933 COMPLETED, 3 seeds exit0)"
@@ -2494,11 +2494,11 @@
     ],
     "run_ids": [
      "ettm1-dlinear",
-     "codex-ettm1-dlinear-paired-20260716T1532"
+     "ettm1-dlinear-paired-20260716T1532"
     ],
     "evidence_log": "experiments/ettm1_dlinear_3seed.log",
     "exit_evidence": "ETTM1DL SEED={0,1,2} python_exit=0 + /root/lane_ettm1_dlinear.done + /root/ETTM1_DLINEAR_PAIRED_OK (hashes recorded)",
-    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=codex-ettm1-dlinear-paired-20260716T1532)",
+    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=ettm1-dlinear-paired-20260716T1532)",
     "grade": "STRICT_PASS"
    },
    "kcenter": {
@@ -2510,11 +2510,11 @@
     ],
     "run_ids": [
      "ettm1-dlinear",
-     "codex-ettm1-dlinear-paired-20260716T1532"
+     "ettm1-dlinear-paired-20260716T1532"
     ],
     "evidence_log": "experiments/ettm1_dlinear_3seed.log",
     "exit_evidence": "ETTM1DL SEED={0,1,2} python_exit=0 + /root/lane_ettm1_dlinear.done + /root/ETTM1_DLINEAR_PAIRED_OK (hashes recorded)",
-    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=codex-ettm1-dlinear-paired-20260716T1532)",
+    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=ettm1-dlinear-paired-20260716T1532)",
     "grade": "STRICT_PASS"
    },
    "el2n": {
@@ -2538,11 +2538,11 @@
     ],
     "run_ids": [
      "ettm1-dlinear",
-     "codex-ettm1-dlinear-paired-20260716T1532"
+     "ettm1-dlinear-paired-20260716T1532"
     ],
     "evidence_log": "experiments/ettm1_dlinear_3seed.log",
     "exit_evidence": "ETTM1DL SEED={0,1,2} python_exit=0 + /root/lane_ettm1_dlinear.done + /root/ETTM1_DLINEAR_PAIRED_OK (hashes recorded)",
-    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=codex-ettm1-dlinear-paired-20260716T1532)",
+    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=ettm1-dlinear-paired-20260716T1532)",
     "grade": "STRICT_PASS"
    },
    "density": {
@@ -2554,11 +2554,11 @@
     ],
     "run_ids": [
      "ettm1-dlinear",
-     "codex-ettm1-dlinear-paired-20260716T1532"
+     "ettm1-dlinear-paired-20260716T1532"
     ],
     "evidence_log": "experiments/ettm1_dlinear_3seed.log",
     "exit_evidence": "ETTM1DL SEED={0,1,2} python_exit=0 + /root/lane_ettm1_dlinear.done + /root/ETTM1_DLINEAR_PAIRED_OK (hashes recorded)",
-    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=codex-ettm1-dlinear-paired-20260716T1532)",
+    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=ettm1-dlinear-paired-20260716T1532)",
     "grade": "STRICT_PASS"
    },
    "quadmix": {
@@ -2570,11 +2570,11 @@
     ],
     "run_ids": [
      "ettm1-dlinear",
-     "codex-ettm1-dlinear-paired-20260716T1532"
+     "ettm1-dlinear-paired-20260716T1532"
     ],
     "evidence_log": "experiments/ettm1_dlinear_3seed.log",
     "exit_evidence": "ETTM1DL SEED={0,1,2} python_exit=0 + /root/lane_ettm1_dlinear.done + /root/ETTM1_DLINEAR_PAIRED_OK (hashes recorded)",
-    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=codex-ettm1-dlinear-paired-20260716T1532)",
+    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=ettm1-dlinear-paired-20260716T1532)",
     "grade": "PROTOCOL_INVALID_DUPLICATE_IDS",
     "grade_reason": [
      "SAME-CODE-PATH (2026-07-17): this family was not independently replayed, but it ran the identical pre-9116339 quadmix() selector whose duplicate emission is a deterministic code defect; duplicates were replay-verified on the pubcore main-table arms (vision ~40%, tep 26-28%, tabular ~33%, ts seed1/2)",
@@ -2594,11 +2594,11 @@
     ],
     "run_ids": [
      "ettm1-dlinear",
-     "codex-ettm1-dlinear-paired-20260716T1532"
+     "ettm1-dlinear-paired-20260716T1532"
     ],
     "evidence_log": "experiments/ettm1_dlinear_3seed.log",
     "exit_evidence": "ETTM1DL SEED={0,1,2} python_exit=0 + /root/lane_ettm1_dlinear.done + /root/ETTM1_DLINEAR_PAIRED_OK (hashes recorded)",
-    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=codex-ettm1-dlinear-paired-20260716T1532)",
+    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=ettm1-dlinear-paired-20260716T1532)",
     "grade": "STRICT_PASS"
    },
    "dsir": {
@@ -2614,11 +2614,11 @@
     ],
     "run_ids": [
      "ettm1-dlinear",
-     "codex-ettm1-dlinear-paired-20260716T1532"
+     "ettm1-dlinear-paired-20260716T1532"
     ],
     "evidence_log": "experiments/ettm1_dlinear_3seed.log",
     "exit_evidence": "ETTM1DL SEED={0,1,2} python_exit=0 + /root/lane_ettm1_dlinear.done + /root/ETTM1_DLINEAR_PAIRED_OK (hashes recorded)",
-    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=codex-ettm1-dlinear-paired-20260716T1532)",
+    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=ettm1-dlinear-paired-20260716T1532)",
     "grade": "STRICT_PASS"
    },
    "coreset": {
@@ -2630,11 +2630,11 @@
     ],
     "run_ids": [
      "ettm1-dlinear",
-     "codex-ettm1-dlinear-paired-20260716T1532"
+     "ettm1-dlinear-paired-20260716T1532"
     ],
     "evidence_log": "experiments/ettm1_dlinear_3seed.log",
     "exit_evidence": "ETTM1DL SEED={0,1,2} python_exit=0 + /root/lane_ettm1_dlinear.done + /root/ETTM1_DLINEAR_PAIRED_OK (hashes recorded)",
-    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=codex-ettm1-dlinear-paired-20260716T1532)",
+    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=ettm1-dlinear-paired-20260716T1532)",
     "grade": "STRICT_PASS"
    },
    "auth_only": {
@@ -2646,11 +2646,11 @@
     ],
     "run_ids": [
      "ettm1-dlinear",
-     "codex-ettm1-dlinear-paired-20260716T1532"
+     "ettm1-dlinear-paired-20260716T1532"
     ],
     "evidence_log": "experiments/ettm1_dlinear_3seed.log",
     "exit_evidence": "ETTM1DL SEED={0,1,2} python_exit=0 + /root/lane_ettm1_dlinear.done + /root/ETTM1_DLINEAR_PAIRED_OK (hashes recorded)",
-    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=codex-ettm1-dlinear-paired-20260716T1532)",
+    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=ettm1-dlinear-paired-20260716T1532)",
     "grade": "STRICT_PASS"
    },
    "influence_only": {
@@ -2662,11 +2662,11 @@
     ],
     "run_ids": [
      "ettm1-dlinear",
-     "codex-ettm1-dlinear-paired-20260716T1532"
+     "ettm1-dlinear-paired-20260716T1532"
     ],
     "evidence_log": "experiments/ettm1_dlinear_3seed.log",
     "exit_evidence": "ETTM1DL SEED={0,1,2} python_exit=0 + /root/lane_ettm1_dlinear.done + /root/ETTM1_DLINEAR_PAIRED_OK (hashes recorded)",
-    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=codex-ettm1-dlinear-paired-20260716T1532)",
+    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=ettm1-dlinear-paired-20260716T1532)",
     "grade": "STRICT_PASS"
    },
    "mmdataselect": {
@@ -2678,11 +2678,11 @@
     ],
     "run_ids": [
      "ettm1-dlinear",
-     "codex-ettm1-dlinear-paired-20260716T1532"
+     "ettm1-dlinear-paired-20260716T1532"
     ],
     "evidence_log": "experiments/ettm1_dlinear_3seed.log",
     "exit_evidence": "ETTM1DL SEED={0,1,2} python_exit=0 + /root/lane_ettm1_dlinear.done + /root/ETTM1_DLINEAR_PAIRED_OK (hashes recorded)",
-    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=codex-ettm1-dlinear-paired-20260716T1532)",
+    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=ettm1-dlinear-paired-20260716T1532)",
     "grade": "STRICT_PASS"
    },
    "mmds_adapt": {
@@ -2694,11 +2694,11 @@
     ],
     "run_ids": [
      "ettm1-dlinear",
-     "codex-ettm1-dlinear-paired-20260716T1532"
+     "ettm1-dlinear-paired-20260716T1532"
     ],
     "evidence_log": "experiments/ettm1_dlinear_3seed.log",
     "exit_evidence": "ETTM1DL SEED={0,1,2} python_exit=0 + /root/lane_ettm1_dlinear.done + /root/ETTM1_DLINEAR_PAIRED_OK (hashes recorded)",
-    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=codex-ettm1-dlinear-paired-20260716T1532)",
+    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=ettm1-dlinear-paired-20260716T1532)",
     "grade": "STRICT_PASS"
    },
    "zip": {
@@ -2746,11 +2746,11 @@
     ],
     "run_ids": [
      "ettm1-dlinear",
-     "codex-ettm1-dlinear-paired-20260716T1532"
+     "ettm1-dlinear-paired-20260716T1532"
     ],
     "evidence_log": "experiments/ettm1_dlinear_3seed.log",
     "exit_evidence": "ETTM1DL SEED={0,1,2} python_exit=0 + /root/lane_ettm1_dlinear.done + /root/ETTM1_DLINEAR_PAIRED_OK (hashes recorded)",
-    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=codex-ettm1-dlinear-paired-20260716T1532)",
+    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=ettm1-dlinear-paired-20260716T1532)",
     "grade": "STRICT_PASS",
     "note": "pub-core variant row in the same lane (quadmix_pub MASE 1.2172/... per seed)"
    },
@@ -2763,11 +2763,11 @@
     ],
     "run_ids": [
      "ettm1-dlinear",
-     "codex-ettm1-dlinear-paired-20260716T1532"
+     "ettm1-dlinear-paired-20260716T1532"
     ],
     "evidence_log": "experiments/ettm1_dlinear_3seed.log",
     "exit_evidence": "ETTM1DL SEED={0,1,2} python_exit=0 + /root/lane_ettm1_dlinear.done + /root/ETTM1_DLINEAR_PAIRED_OK (hashes recorded)",
-    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=codex-ettm1-dlinear-paired-20260716T1532)",
+    "json_path": "outputs/timeseries/ETTm1/run_id=ettm1-dlinear-*/seed_{0,1,2}/results.json (+ paired run_id=ettm1-dlinear-paired-20260716T1532)",
     "grade": "STRICT_PASS",
     "note": "pub-core variant row in the same lane; also the controller pick at seed0 (dmf_pub MASE 1.0256)"
    }
@@ -5591,11 +5591,11 @@
      "2"
     ],
     "run_ids": [
-     "codex-current-paired-20260716T1614"
+     "current-code-paired-20260716T1614"
     ],
-    "evidence_log": "experiments/current_code_paired_codex-current-paired-20260716T1614.json (report; arms verified 4 x seeds {0,1,2})",
+    "evidence_log": "experiments/current_code_paired_current-code-paired-20260716T1614.json (report; arms verified 4 x seeds {0,1,2})",
     "exit_evidence": "/root/CURRENT_CODE_PAIRED_MAIN_OK (status PASS)",
-    "json_path": "outputs/{vision,tep,tabular,timeseries-ETTh1}/run_id=codex-current-paired-20260716T1614-*/seed_{0,1,2}/results.json (per-row code_sha256_12 + fit_seed in report)",
+    "json_path": "outputs/{vision,tep,tabular,timeseries-ETTh1}/run_id=current-code-paired-20260716T1614-*/seed_{0,1,2}/results.json (per-row code_sha256_12 + fit_seed in report)",
     "grade": "STRICT_PASS"
    },
    "__other_methods__": {

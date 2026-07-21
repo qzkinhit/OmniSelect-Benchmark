@@ -4,7 +4,7 @@ Builds a tiny standardized pool (general/math/code with planted near-duplicates)
 runs the full system path (signals -> Multi-Actor fusion -> budget selection), and
 contrasts four strategies the way the paper's Instance 1 does:
 
-    All  vs  Random  vs  Influence-only(Top-K)  vs  MMDataSelect
+    All  vs  Random  vs  Influence-only(Top-K)  vs  OmniSelect
 
 Prints a diagnostics table and writes a manifest, then asserts basic invariants.
 """
@@ -54,7 +54,7 @@ def main() -> int:
         _row("Influence-only (Top-K)", records, TopKSelector().select(records, influence, k), influence),
     ]
     res = select_pool(records, Budget("fraction", 0.5), lam=0.5, method="greedy", seed=0)
-    rows.append(_row("MMDataSelect", records, res.selected_idx, influence))
+    rows.append(_row("OmniSelect", records, res.selected_idx, influence))
 
     print(f"\nPool: {n} records | budget k={k} | actor weights={res.weights}\n")
     print(f"{'strategy':<26}{'n':>4}{'set_redundancy↓':>18}{'mean_influence↑':>18}")
@@ -78,7 +78,7 @@ def main() -> int:
     mm = rows[-1]["set_redundancy"]
     infl_only = rows[2]["set_redundancy"]
     print(
-        f"\nSANITY OK | MMDataSelect set_redundancy={mm} vs Influence-only={infl_only} "
+        f"\nSANITY OK | OmniSelect set_redundancy={mm} vs Influence-only={infl_only} "
         f"(diversity term {'reduces' if mm <= infl_only else 'does not reduce'} redundancy)"
     )
     return 0

@@ -58,7 +58,7 @@ adjudication, both PASS).
 
 ## Rebuild corrections (verified on server, vs first-pass matrix)
 
-1. **ETTm1 x DLinear is COMPLETE, not MISSING**: two run_ids (`ettm1-dlinear`, `codex-ettm1-dlinear-paired-20260716T1532`),
+1. **ETTm1 x DLinear is COMPLETE, not MISSING**: two run_ids (`ettm1-dlinear`, `ettm1-dlinear-paired-20260716T1532`),
    `experiments/ettm1_dlinear_3seed.log` with `ETTM1DL SEED={0,1,2} python_exit=0`, per-seed results.json parse-verified,
    markers `/root/lane_ettm1_dlinear.done` + `/root/ETTM1_DLINEAR_PAIRED_OK` (runner/pairing/data/log sha256).
 2. **CIFAR-10 full has all six rows (random/el2n/grand/ccs/auth/ctrl) at s0/1/2**: el2n rows exist at line 7 of every
@@ -78,7 +78,7 @@ adjudication, both PASS).
 7. **Tab-AICL standalone 3x3 PASS as 'Tab-AICL transfer', supplementary transparency table ONLY** (protocol mismatch:
    iterative active learning vs one-shot budgeted selection, BASELINE_FIDELITY_AUDIT.md line 24). Seed1 parity vs the
    earlier in-lane rows: coreset 0.8623 vs 0.8626, hybrid 0.8568 vs 0.8565, margin 0.8155 vs 0.8287 (drift disclosed).
-8. **QuaDMix text transfer PASS** (`codex-text-quadmix-20260716T1550`, `/root/TEXT_QUADMIX_TRANSFER_OK` with full hash
+8. **QuaDMix text transfer PASS** (`legacy-text-quadmix-20260716T1550`, `/root/TEXT_QUADMIX_TRANSFER_OK` with full hash
    chain; claim_limit: local QuaDMix-style under the fixed stratified token budget, not the 570B original).
 9. **QZ3 lane (quadmix_pub + zip x text) = RUNNING** (`text-qz3-20260716T2051`, PIDs 372096/372241 live, no done/failed
    marker) -- never pre-PASS; two earlier attempts (TEXTQZ2, scratch-proxy abort) superseded.
@@ -96,7 +96,7 @@ adjudication, both PASS).
 - logs: `experiments/text_scaleup_seed0.log`; `experiments/text_scaleup_seed1.log`; `experiments/text_scaleup_seed2.log`
 - json: `outputs/experiment/stratify=1-infl=pplq-train=finetune-lmeval=1/seed_0/results.json`; `outputs/experiment/stratify=1-infl=pplq-train=finetune-lmeval=1/seed_1/results.json`; `outputs/experiment/stratify=1-infl=pplq-train=finetune-lmeval=1/seed_2/results.json`
 - exit evidence: SEED=<s> python_exit=0 in each log
-- note: quadmix cell filled by the QuaDMix text-transfer lane (run_id codex-text-quadmix-20260716T1550, /root/TEXT_QUADMIX_TRANSFER_OK); zip + quadmix_pub cells owned by the LIVE QZ3 lane (run_id text-qz3-20260716T2051) -- RUNNING, never pre-PASS
+- note: quadmix cell filled by the QuaDMix text-transfer lane (run_id legacy-text-quadmix-20260716T1550, /root/TEXT_QUADMIX_TRANSFER_OK); zip + quadmix_pub cells owned by the LIVE QZ3 lane (run_id text-qz3-20260716T2051) -- RUNNING, never pre-PASS
 
 ### text_globalmix_proxy
 - Global-mix RegMix proxy lane (STRATIFY=0, infl=pplq, finetune, lm-eval). PROXY only, never enters STRATIFY main table (frozen gate Tier 4)
@@ -157,10 +157,10 @@ adjudication, both PASS).
 ### time_ettm1_dlinear
 - Time series ETTm1, DLinear from scratch, unified-budget testbed (L=96 H=24 budget=0.3 noise=0.4 pool=3000). REBUILD CORRECTION: lane now EXISTS -- two run_ids on server
 - protocol tier: **main-quantitative (unified-budget testbed)**
-- run_ids: `ettm1-dlinear (paired_rng=0)`; `codex-ettm1-dlinear-paired-20260716T1532 (paired_rng=1)`
+- run_ids: `ettm1-dlinear (paired_rng=0)`; `ettm1-dlinear-paired-20260716T1532 (paired_rng=1)`
 - seeds: 0,1,2
 - logs: `experiments/ettm1_dlinear_3seed.log`
-- json: `outputs/timeseries/ETTm1/run_id=ettm1-dlinear-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=0-pool=3000/seed_{0,1,2}/results.json (15 method rows each, parse verified)`; `outputs/timeseries/ETTm1/run_id=codex-ettm1-dlinear-paired-20260716T1532-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000/seed_{0,1,2}/results.json (13 method rows each, parse verified)`
+- json: `outputs/timeseries/ETTm1/run_id=ettm1-dlinear-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=0-pool=3000/seed_{0,1,2}/results.json (15 method rows each, parse verified)`; `outputs/timeseries/ETTm1/run_id=ettm1-dlinear-paired-20260716T1532-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000/seed_{0,1,2}/results.json (13 method rows each, parse verified)`
 - exit evidence: ETTM1DL SEED={0,1,2} python_exit=0 (log lines 38/76/114) + /root/lane_ettm1_dlinear.done (ETTM1DL_DONE) + /root/ETTM1_DLINEAR_PAIRED_OK (status PASS; runner_sha256 0a728846..., pairing_sha256 b0cba7c8..., data_sha256 093cc4ef..., log_sha256 a5ebfae1..., per-seed json_sha256 recorded)
 - note: closes the former MISSING family; docs/full_paper_coverage_ledger.md line 26 (ETTm1 chronos + DLinear) is now artifact-supported. Marker claim_limit: unified-budget coverage only, not original-paper fidelity evidence per named baseline.
 
@@ -281,10 +281,10 @@ adjudication, both PASS).
 ### current_code_paired_batch
 - Current-code paired batch: controller (ours row) re-run under paired_rng=1 across all four arms (vision CIFAR-100 / TEP / tabular electricity / timeseries ETTh1) x 3 seeds, current formal implementation.
 - protocol tier: **paired-batch controller adjudication (quantitative)**
-- run_ids: `codex-current-paired-20260716T1614`
+- run_ids: `current-code-paired-20260716T1614`
 - seeds: 0,1,2
-- logs: `experiments/current_code_paired_codex-current-paired-20260716T1614.json (report)`
-- json: `outputs/{vision/uoft-cs_cifar100,tep/tep21,tabular/electricity,timeseries/ETTh1}/run_id=codex-current-paired-20260716T1614-*/seed_{0,1,2}/results.json (per-row code_sha256_12 + fit_seed recorded in report)`
+- logs: `experiments/current_code_paired_current-code-paired-20260716T1614.json (report)`
+- json: `outputs/{vision/uoft-cs_cifar100,tep/tep21,tabular/electricity,timeseries/ETTh1}/run_id=current-code-paired-20260716T1614-*/seed_{0,1,2}/results.json (per-row code_sha256_12 + fit_seed recorded in report)`
 - exit evidence: /root/CURRENT_CODE_PAIRED_MAIN_OK (status PASS); report arms verified: 4 arms x seeds {0,1,2}
 
 ### published_core_paired_batch
@@ -303,7 +303,7 @@ adjudication, both PASS).
 - **experiments/text_controller_2seed.log per-method PPL numbers (dsir 1914 vs random 2131, 2 seeds)** -> 3-seed text_scaleup lane results.json (pending paper backfill, ledger section 4.3); the controller-pick evidence itself ('both seeds picked dsir') remains 2-seed - legitimately-2-seed FLAG
 - **experiments/deepcore_original_protocol.log (early CIFAR-10 n=6000 original-protocol run)** -> experiments/fidelity_curve_cifar10_keep*.log + cifar10_full_original_repro_seed{0,1,2}.log
 - **experiments/imagenet100_protocol.log (early single run)** -> experiments/imagenet100_protocol_seed{0,1,2}.log
-- **experiments/etth1_recentval_3seed.log** -> not a matrix cell: documented negative result (docs/negative_result_recent_val.md), recent-val split rejected
+- **experiments/etth1_recentval_3seed.log** -> not a matrix cell: rejected exploratory recent-validation split
 - **experiments/text_quadmix_zip_3seed_SCRATCH_PROXY_ABORTED_20260716T1927.log (scratch-proxy attempt, aborted by design)** -> QZ3 lane experiments/text_qz3_cacheaware_3seed.log (run_id text-qz3-20260716T2051, RUNNING)
 - **experiments/text_quadmixpub_zip_3seed.log (TEXTQZ2 run_id text-qz2-20260716T1945; no python_exit lines, incomplete)** -> QZ3 lane experiments/text_qz3_cacheaware_3seed.log (run_id text-qz3-20260716T2051, RUNNING)
 

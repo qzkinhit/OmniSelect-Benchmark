@@ -2,7 +2,7 @@
 set -Eeuo pipefail
 
 REPO="${REPO:-/root/autodl-tmp/OmniSelect}"
-RUN_ID="${RUN_ID:-codex-ettm1-dlinear-paired-v1}"
+RUN_ID="${RUN_ID:-ettm1-dlinear-paired-v1}"
 LOG="${LOG:-/root/ettm1_dlinear_paired_${RUN_ID}.log}"
 MARKER="${MARKER:-/root/ETTM1_DLINEAR_PAIRED_OK}"
 PYTHON="${PYTHON:-${REPO}/.venv/bin/python}"
