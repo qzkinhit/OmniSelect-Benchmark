@@ -1,0 +1,126 @@
+##### CHRONOS ds=ETTm1 SEED=0 #####
+Loading weights:   0%|          | 0/101 [00:00<?, ?it/s]Loading weights:  24%|██▍       | 24/101 [00:00<00:00, 238.57it/s]Loading weights:  66%|██████▋   | 67/101 [00:00<00:00, 233.89it/s]Loading weights: 100%|██████████| 101/101 [00:00<00:00, 336.72it/s]
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTm1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=cuda seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=0.8880 (17.4s)
+  random           n=  900 clean%=0.63 MASE=0.9623 (7.4s)
+  coreset          n=  900 clean%=0.49 MASE=6.5070 (18.8s)
+  auth_only        n=  900 clean%=0.88 MASE=0.9250 (8.3s)
+  auth2_only       n=  900 clean%=0.82 MASE=0.8937 (6.7s)
+  influence_only   n=  900 clean%=0.75 MASE=0.8880 (6.8s)
+  herding          n=  900 clean%=0.51 MASE=1.0025 (13.5s)
+  kcenter          n=  900 clean%=0.48 MASE=0.9107 (8.7s)
+  semdedup         n=  900 clean%=0.52 MASE=0.8978 (6.9s)
+  density          n=  900 clean%=0.56 MASE=0.9279 (7.5s)
+  quadmix          n=  900 clean%=0.75 MASE=0.9030 (8.7s)
+  dmf              n=  900 clean%=0.79 MASE=0.8975 (190.5s)
+  d4               n=  900 clean%=0.50 MASE=0.8857 (18.0s)
+  dsdm             n=  900 clean%=0.61 MASE=0.9579 (248.6s)
+  mmdataselect     n=  900 clean%=0.83 MASE=0.9250 (17.3s)
+    [adapt] picked 'dmf' (val_negMASE=-0.992)
+  mmds_adapt       n=  900 clean%=0.79 MASE=0.8975 (1689.6s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  d4               MASE=0.8857 clean%=0.50 n=900
+  full             MASE=0.8880 clean%=0.60 n=3000
+  influence_only   MASE=0.8880 clean%=0.75 n=900
+  auth2_only       MASE=0.8937 clean%=0.82 n=900
+  dmf              MASE=0.8975 clean%=0.79 n=900
+  mmds_adapt       MASE=0.8975 clean%=0.79 n=900
+  semdedup         MASE=0.8978 clean%=0.52 n=900
+  quadmix          MASE=0.9030 clean%=0.75 n=900
+  kcenter          MASE=0.9107 clean%=0.48 n=900
+  auth_only        MASE=0.9250 clean%=0.88 n=900
+  mmdataselect     MASE=0.9250 clean%=0.83 n=900
+  density          MASE=0.9279 clean%=0.56 n=900
+  dsdm             MASE=0.9579 clean%=0.61 n=900
+  random           MASE=0.9623 clean%=0.63 n=900
+  herding          MASE=1.0025 clean%=0.51 n=900
+  coreset          MASE=6.5070 clean%=0.49 n=900
+##### CHRONOS ds=ETTm1 SEED=1 #####
+Loading weights:   0%|          | 0/101 [00:00<?, ?it/s]Loading weights: 100%|██████████| 101/101 [00:00<00:00, 8351.40it/s]
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTm1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=cuda seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=0.9010 (3.8s)
+  random           n=  900 clean%=0.61 MASE=0.9068 (1.3s)
+  coreset          n=  900 clean%=0.49 MASE=0.9250 (2.1s)
+  auth_only        n=  900 clean%=0.84 MASE=0.8951 (1.2s)
+  auth2_only       n=  900 clean%=0.77 MASE=0.8916 (1.2s)
+  influence_only   n=  900 clean%=0.76 MASE=0.9147 (1.2s)
+  herding          n=  900 clean%=0.54 MASE=0.9081 (2.3s)
+  kcenter          n=  900 clean%=0.51 MASE=0.9201 (1.7s)
+  semdedup         n=  900 clean%=0.53 MASE=0.8967 (1.3s)
+  density          n=  900 clean%=0.56 MASE=0.9096 (1.3s)
+  quadmix          n=  900 clean%=0.78 MASE=0.8897 (1.2s)
+  dmf              n=  900 clean%=0.87 MASE=0.8780 (18.2s)
+  d4               n=  900 clean%=0.51 MASE=0.9199 (1.0s)
+  dsdm             n=  900 clean%=0.63 MASE=0.8781 (19.0s)
+  mmdataselect     n=  900 clean%=0.84 MASE=0.9091 (1.2s)
+    [adapt] picked 'quadmix' (val_negMASE=-0.980)
+  mmds_adapt       n=  900 clean%=0.78 MASE=0.8897 (1222.2s)
+
+==== TIMESERIES (ETTm1, model=chronos, MASE lower=better) ====
+  dmf              MASE=0.8780 clean%=0.87 n=900
+  dsdm             MASE=0.8781 clean%=0.63 n=900
+  quadmix          MASE=0.8897 clean%=0.78 n=900
+  mmds_adapt       MASE=0.8897 clean%=0.78 n=900
+  auth2_only       MASE=0.8916 clean%=0.77 n=900
+  auth_only        MASE=0.8951 clean%=0.84 n=900
+  semdedup         MASE=0.8967 clean%=0.53 n=900
+  full             MASE=0.9010 clean%=0.60 n=3000
+  random           MASE=0.9068 clean%=0.61 n=900
+  herding          MASE=0.9081 clean%=0.54 n=900
+  mmdataselect     MASE=0.9091 clean%=0.84 n=900
+  density          MASE=0.9096 clean%=0.56 n=900
+  influence_only   MASE=0.9147 clean%=0.76 n=900
+  d4               MASE=0.9199 clean%=0.51 n=900
+  kcenter          MASE=0.9201 clean%=0.51 n=900
+  coreset          MASE=0.9250 clean%=0.49 n=900
+saved -> /root/autodl-tmp/OmniSelect/outputs/timeseries/ETTm1/H=24-L=96-budget=0.3-model=chronos-noise=0.4-pool=3000/seed_1/results.json
+##### CHRONOS ds=ETTm1 SEED=2 #####
+Loading weights:   0%|          | 0/101 [00:00<?, ?it/s]Loading weights: 100%|██████████| 101/101 [00:00<00:00, 9011.95it/s]
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTm1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=cuda seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=0.8582 (3.7s)
+  random           n=  900 clean%=0.59 MASE=0.8885 (1.4s)
+  coreset          n=  900 clean%=0.48 MASE=0.8764 (1.8s)
+  auth_only        n=  900 clean%=0.88 MASE=0.8815 (1.2s)
+  auth2_only       n=  900 clean%=0.87 MASE=0.8879 (1.1s)
+  influence_only   n=  900 clean%=0.75 MASE=0.8932 (1.1s)
+  herding          n=  900 clean%=0.49 MASE=0.8524 (2.0s)
+  kcenter          n=  900 clean%=0.47 MASE=0.8750 (1.6s)
+  semdedup         n=  900 clean%=0.52 MASE=0.8756 (1.3s)
+  density          n=  900 clean%=0.56 MASE=0.8950 (1.2s)
+  quadmix          n=  900 clean%=0.77 MASE=0.8486 (1.2s)
+  dmf              n=  900 clean%=0.87 MASE=0.8963 (60.1s)
+  d4               n=  900 clean%=0.51 MASE=0.8633 (13.8s)
+  dsdm             n=  900 clean%=0.57 MASE=0.8761 (75.8s)
+  mmdataselect     n=  900 clean%=0.83 MASE=0.8544 (1.3s)
+    [adapt] picked 'quadmix' (val_negMASE=-0.959)
+  mmds_adapt       n=  900 clean%=0.77 MASE=0.8486 (468.5s)
+
+==== TIMESERIES (ETTm1, model=chronos, MASE lower=better) ====
+  quadmix          MASE=0.8486 clean%=0.77 n=900
+  mmds_adapt       MASE=0.8486 clean%=0.77 n=900
+  herding          MASE=0.8524 clean%=0.49 n=900
+  mmdataselect     MASE=0.8544 clean%=0.83 n=900
+  full             MASE=0.8582 clean%=0.60 n=3000
+  d4               MASE=0.8633 clean%=0.51 n=900
+  kcenter          MASE=0.8750 clean%=0.47 n=900
+  semdedup         MASE=0.8756 clean%=0.52 n=900
+  dsdm             MASE=0.8761 clean%=0.57 n=900
+  coreset          MASE=0.8764 clean%=0.48 n=900
+  auth_only        MASE=0.8815 clean%=0.88 n=900
+  auth2_only       MASE=0.8879 clean%=0.87 n=900
+  random           MASE=0.8885 clean%=0.59 n=900
+  influence_only   MASE=0.8932 clean%=0.75 n=900
+  density          MASE=0.8950 clean%=0.56 n=900
+  dmf              MASE=0.8963 clean%=0.87 n=900
+saved -> /root/autodl-tmp/OmniSelect/outputs/timeseries/ETTm1/H=24-L=96-budget=0.3-model=chronos-noise=0.4-pool=3000/seed_2/results.json
+CHRONOS_ETTM1_DONE

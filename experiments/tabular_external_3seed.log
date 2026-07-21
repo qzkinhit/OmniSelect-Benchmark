@@ -1,0 +1,58 @@
+#### TAB-tabpfn seed0 ####
+  random           n=  900 clean%=0.60 acc=0.7770 auc=0.8534 (15.0s)
+  coreset          n=  900 clean%=0.47 acc=0.7800 auc=0.8524 (14.3s)
+  auth_only        n=  900 clean%=0.80 acc=0.7730 auc=0.8421 (14.5s)
+  influence_only   n=  900 clean%=0.65 acc=0.7510 auc=0.8135 (14.9s)
+  herding          n=  900 clean%=0.50 acc=0.7770 auc=0.8411 (24.8s)
+  kcenter          n=  900 clean%=0.47 acc=0.7855 auc=0.8383 (50.1s)
+  el2n             n=  900 clean%=0.41 acc=0.2440 auc=0.2112 (28.0s)
+  grand            n=  900 clean%=0.41 acc=0.2440 auc=0.2112 (31.9s)
+  mmds_adapt       n=  900 clean%=0.54 acc=0.7965 auc=0.8568 (531.5s)
+  random           auc=0.8534 acc=0.7770 clean%=0.60 n=900
+  coreset          auc=0.8524 acc=0.7800 clean%=0.47 n=900
+  auth_only        auc=0.8421 acc=0.7730 clean%=0.80 n=900
+  influence_only   auc=0.8135 acc=0.7510 clean%=0.65 n=900
+  herding          auc=0.8411 acc=0.7770 clean%=0.50 n=900
+  kcenter          auc=0.8383 acc=0.7855 clean%=0.47 n=900
+  el2n             auc=0.2112 acc=0.2440 clean%=0.41 n=900
+  grand            auc=0.2112 acc=0.2440 clean%=0.41 n=900
+  mmds_adapt       auc=0.8568 acc=0.7965 clean%=0.54 n=900
+#### TAB-tabpfn seed1 ####
+  random           n=  900 clean%=0.60 acc=0.7700 auc=0.8422 (20.8s)
+  coreset          n=  900 clean%=0.46 acc=0.7630 auc=0.8337 (16.6s)
+  auth_only        n=  900 clean%=0.76 acc=0.7735 auc=0.8398 (17.4s)
+  influence_only   n=  900 clean%=0.63 acc=0.7595 auc=0.8186 (24.9s)
+  herding          n=  900 clean%=0.48 acc=0.7620 auc=0.8093 (19.8s)
+  kcenter          n=  900 clean%=0.46 acc=0.7605 auc=0.8267 (19.2s)
+  el2n             n=  900 clean%=0.44 acc=0.2490 auc=0.2188 (17.7s)
+  grand            n=  900 clean%=0.44 acc=0.2490 auc=0.2188 (16.2s)
+  mmds_adapt       n=  900 clean%=0.58 acc=0.7845 auc=0.8514 (338.4s)
+  random           auc=0.8422 acc=0.7700 clean%=0.60 n=900
+  coreset          auc=0.8337 acc=0.7630 clean%=0.46 n=900
+  auth_only        auc=0.8398 acc=0.7735 clean%=0.76 n=900
+  influence_only   auc=0.8186 acc=0.7595 clean%=0.63 n=900
+  herding          auc=0.8093 acc=0.7620 clean%=0.48 n=900
+  kcenter          auc=0.8267 acc=0.7605 clean%=0.46 n=900
+  el2n             auc=0.2188 acc=0.2490 clean%=0.44 n=900
+  grand            auc=0.2188 acc=0.2490 clean%=0.44 n=900
+  mmds_adapt       auc=0.8514 acc=0.7845 clean%=0.58 n=900
+#### TAB-tabpfn seed2 ####
+  random           n=  900 clean%=0.60 acc=0.7880 auc=0.8671 (17.0s)
+  coreset          n=  900 clean%=0.46 acc=0.8050 auc=0.8747 (15.6s)
+  auth_only        n=  900 clean%=0.73 acc=0.7645 auc=0.8488 (14.1s)
+  influence_only   n=  900 clean%=0.63 acc=0.7545 auc=0.8283 (17.1s)
+  herding          n=  900 clean%=0.51 acc=0.7990 auc=0.8698 (17.1s)
+  kcenter          n=  900 clean%=0.45 acc=0.8000 auc=0.8621 (15.4s)
+  el2n             n=  900 clean%=0.44 acc=0.2430 auc=0.2134 (14.5s)
+  grand            n=  900 clean%=0.44 acc=0.2430 auc=0.2134 (14.5s)
+  mmds_adapt       n=  900 clean%=0.51 acc=0.7990 auc=0.8698 (310.0s)
+  random           auc=0.8671 acc=0.7880 clean%=0.60 n=900
+  coreset          auc=0.8747 acc=0.8050 clean%=0.46 n=900
+  auth_only        auc=0.8488 acc=0.7645 clean%=0.73 n=900
+  influence_only   auc=0.8283 acc=0.7545 clean%=0.63 n=900
+  herding          auc=0.8698 acc=0.7990 clean%=0.51 n=900
+  kcenter          auc=0.8621 acc=0.8000 clean%=0.45 n=900
+  el2n             auc=0.2134 acc=0.2430 clean%=0.44 n=900
+  grand            auc=0.2134 acc=0.2430 clean%=0.44 n=900
+  mmds_adapt       auc=0.8698 acc=0.7990 clean%=0.51 n=900
+#### TAB DONE ####

@@ -1,0 +1,301 @@
+{
+  "arm": "vision",
+  "dataset": "uoft-cs/cifar10",
+  "seed": 0,
+  "config": {
+    "noise_frac": 0.4,
+    "vis_noise": "inject",
+    "drop": "",
+    "pool": 4000,
+    "budget": 0.5,
+    "val_n": 800,
+    "paired_rng": 1
+  },
+  "code_sha256_12": "64a6e0038db7",
+  "baseline_impl_sha256": "745ab94cc348af18c5f80197e5b1a789a3223814e13ab55089c4c56e9aea4a58",
+  "fidelity_mode": "unified-protocol",
+  "published_core_protocol": null,
+  "results": [
+    {
+      "method": "full",
+      "n": 4000,
+      "clean%": 0.6,
+      "acc": 0.914,
+      "sel_sha12": "c5ca0ea26872",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "c5ca0ea26872"
+    },
+    {
+      "method": "random",
+      "n": 2000,
+      "clean%": 0.609,
+      "acc": 0.912,
+      "sel_sha12": "61038fc62f59",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "61038fc62f59"
+    },
+    {
+      "method": "coreset",
+      "n": 2000,
+      "clean%": 0.651,
+      "acc": 0.92,
+      "sel_sha12": "bb54d6d2aba6",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "bb54d6d2aba6"
+    },
+    {
+      "method": "auth_only",
+      "n": 2000,
+      "clean%": 0.819,
+      "acc": 0.8875,
+      "sel_sha12": "e1bf87ece0b2",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "e1bf87ece0b2"
+    },
+    {
+      "method": "influence_only",
+      "n": 2000,
+      "clean%": 0.798,
+      "acc": 0.867,
+      "sel_sha12": "1b336d3c9268",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "1b336d3c9268"
+    },
+    {
+      "method": "mmdataselect",
+      "n": 2000,
+      "clean%": 0.785,
+      "acc": 0.9185,
+      "sel_sha12": "4b35cc2cf2b4",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "4b35cc2cf2b4"
+    },
+    {
+      "method": "herding",
+      "n": 2000,
+      "clean%": 0.603,
+      "acc": 0.9105,
+      "sel_sha12": "42e2878c1f60",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "42e2878c1f60"
+    },
+    {
+      "method": "kcenter",
+      "n": 2000,
+      "clean%": 0.662,
+      "acc": 0.917,
+      "sel_sha12": "a7a55b4d42b3",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "a7a55b4d42b3"
+    },
+    {
+      "method": "el2n",
+      "n": 2000,
+      "clean%": 0.4,
+      "acc": 0.706,
+      "sel_sha12": "ba0e2f522e14",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "ba0e2f522e14"
+    },
+    {
+      "method": "grand",
+      "n": 2000,
+      "clean%": 0.45,
+      "acc": 0.491,
+      "sel_sha12": "9c249c1eb14d",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "9c249c1eb14d"
+    },
+    {
+      "method": "ccs",
+      "n": 2000,
+      "clean%": 0.665,
+      "acc": 0.9055,
+      "sel_sha12": "53d25225712c",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "53d25225712c"
+    },
+    {
+      "method": "semdedup",
+      "n": 2000,
+      "clean%": 0.66,
+      "acc": 0.9085,
+      "sel_sha12": "66fdd3d0622f",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "66fdd3d0622f"
+    },
+    {
+      "method": "density",
+      "n": 2000,
+      "clean%": 0.623,
+      "acc": 0.909,
+      "sel_sha12": "4b78c3f6cb55",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "4b78c3f6cb55"
+    },
+    {
+      "method": "quadmix",
+      "n": 2000,
+      "clean%": 0.727,
+      "acc": 0.91,
+      "sel_sha12": "4ff347bcde3b",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "4ff347bcde3b"
+    },
+    {
+      "method": "quadmix_pub",
+      "n": 2000,
+      "clean%": 0.622,
+      "acc": 0.9085,
+      "sel_sha12": "35f25a991568",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "35f25a991568"
+    },
+    {
+      "method": "dmf",
+      "n": 2000,
+      "clean%": 0.812,
+      "acc": 0.906,
+      "sel_sha12": "54e8b72f60ae",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "54e8b72f60ae"
+    },
+    {
+      "method": "dmf_pub",
+      "n": 2000,
+      "clean%": 0.812,
+      "acc": 0.8985,
+      "sel_sha12": "297b9cda09d6",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "297b9cda09d6"
+    },
+    {
+      "method": "mmds_adapt",
+      "n": 2000,
+      "clean%": 0.609,
+      "acc": 0.912,
+      "sel_sha12": "61038fc62f59",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "61038fc62f59"
+    }
+  ],
+  "adapt_manifest": {
+    "leaderboard": [
+      [
+        "random",
+        0.9275
+      ],
+      [
+        "fuse w=(0, 0, 1) q=0.25 lam=0.0",
+        0.925
+      ],
+      [
+        "vote_ensemble(top3)",
+        0.925
+      ],
+      [
+        "fuse w=(0, 0.5, 0.5) q=0.0 lam=0.6",
+        0.9225
+      ],
+      [
+        "coreset",
+        0.9225
+      ],
+      [
+        "mmdataselect",
+        0.9225
+      ],
+      [
+        "kcenter",
+        0.9225
+      ],
+      [
+        "d4",
+        0.9225
+      ],
+      [
+        "dsdm",
+        0.9225
+      ],
+      [
+        "fuse learned w=(0.0, 0.5, 0.5) q=0.0 lam=0.6",
+        0.9225
+      ],
+      [
+        "dmf",
+        0.92
+      ],
+      [
+        "ccs",
+        0.9175
+      ],
+      [
+        "fuse w=(0, 0, 1) q=0.0 lam=0.0",
+        0.915
+      ],
+      [
+        "density",
+        0.915
+      ],
+      [
+        "quadmix_pub",
+        0.915
+      ],
+      [
+        "fuse w=(0, 0, 1) q=0.0 lam=0.6",
+        0.9125
+      ],
+      [
+        "semdedup",
+        0.9125
+      ],
+      [
+        "dmf_pub",
+        0.91
+      ],
+      [
+        "herding",
+        0.905
+      ],
+      [
+        "auth_bottom",
+        0.905
+      ],
+      [
+        "auth_only",
+        0.9
+      ],
+      [
+        "auth2_only",
+        0.895
+      ],
+      [
+        "influence_only",
+        0.8775
+      ],
+      [
+        "el2n",
+        0.6675
+      ],
+      [
+        "grand",
+        0.485
+      ]
+    ],
+    "chosen": {
+      "strategy": "random",
+      "val_gain": 0.9275,
+      "best_ref": "random",
+      "switched": false,
+      "kappa_hat": 0.0
+    },
+    "sel_sha12": "61038fc62f59"
+  },
+  "pairing_manifest": {
+    "pool_sha256": "4c2e686032c3478ab85d8ef841d09bf2b3b816f535a17dbc26889180f0e7a73c",
+    "validation_sha256": "cfc71298d2b1b9371c076631d72a7e0e11e8166a4183a0f00ffa4a6db3207250",
+    "test_sha256": "285a75fa5985997b2a510b956a2674415571b9e16e081965c0fc8037ce9a1df5",
+    "shared_initialization_rule": "stable_seed(paper_seed, final-fit)",
+    "training_input_order": "sorted selected integer ids"
+  }
+}

@@ -1,0 +1,82 @@
+#### VIS seed0 ####
+  random           n= 2000 clean%=0.60 test_acc=0.3500 (0.1s)
+  auth_only        n= 2000 clean%=0.80 test_acc=0.4285 (0.2s)
+  auth2_only       n= 2000 clean%=0.79 test_acc=0.4395 (2.4s)
+    [adapt] picked 'auth2_only' (val=0.447)
+  mmds_adapt       n= 2000 clean%=0.79 test_acc=0.4395 (83.4s)
+#### VIS seed1 ####
+  random           n= 2000 clean%=0.59 test_acc=0.3630 (0.1s)
+  auth_only        n= 2000 clean%=0.80 test_acc=0.4280 (0.2s)
+  auth2_only       n= 2000 clean%=0.80 test_acc=0.4345 (2.5s)
+    [adapt] picked 'auth2_only' (val=0.459)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4345 (135.5s)
+#### VIS seed2 ####
+  random           n= 2000 clean%=0.59 test_acc=0.3840 (0.2s)
+  auth_only        n= 2000 clean%=0.81 test_acc=0.4150 (0.5s)
+  auth2_only       n= 2000 clean%=0.80 test_acc=0.4275 (4.5s)
+    [adapt] picked 'auth2_only' (val=0.432)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4275 (172.0s)
+#### TEP seed0 ####
+  random           n=  900 clean%=0.60 macroF1=0.3467 acc=0.3405 (0.6s)
+  auth_only        n=  900 clean%=0.83 macroF1=0.3843 acc=0.3955 (0.6s)
+  auth2_only       n=  900 clean%=0.86 macroF1=0.3915 acc=0.3840 (1.8s)
+  auth3_only       n=  900 clean%=0.83 macroF1=0.3690 acc=0.3640 (2.0s)
+    [adapt] picked 'auth_only' (val_f1=0.393)
+  mmds_adapt       n=  900 clean%=0.83 macroF1=0.3843 acc=0.3955 (20.3s)
+#### TEP seed1 ####
+  random           n=  900 clean%=0.60 macroF1=0.3099 acc=0.3155 (0.6s)
+  auth_only        n=  900 clean%=0.84 macroF1=0.3663 acc=0.4060 (0.6s)
+  auth2_only       n=  900 clean%=0.87 macroF1=0.3526 acc=0.3660 (1.8s)
+  auth3_only       n=  900 clean%=0.85 macroF1=0.3605 acc=0.3580 (2.1s)
+    [adapt] picked 'fuse w=(0.34, 0.33, 0.33) q=0.0 lam=0.5' (val_f1=0.364)
+  mmds_adapt       n=  900 clean%=0.70 macroF1=0.3972 acc=0.3985 (20.2s)
+#### TEP seed2 ####
+  random           n=  900 clean%=0.60 macroF1=0.3009 acc=0.2955 (0.6s)
+  auth_only        n=  900 clean%=0.86 macroF1=0.3920 acc=0.3930 (0.6s)
+  auth2_only       n=  900 clean%=0.87 macroF1=0.3623 acc=0.3450 (1.7s)
+  auth3_only       n=  900 clean%=0.84 macroF1=0.3305 acc=0.3215 (2.0s)
+    [adapt] picked 'auth_only' (val_f1=0.399)
+  mmds_adapt       n=  900 clean%=0.86 macroF1=0.3920 acc=0.3930 (19.0s)
+#### TS seed0 ####
+  random           n=  900 clean%=0.63 MASE=1.0531 (0.4s)
+  auth_only        n=  900 clean%=0.91 MASE=0.9569 (0.3s)
+  auth2_only       n=  900 clean%=0.83 MASE=1.0558 (0.4s)
+  herding          n=  900 clean%=0.58 MASE=1.0728 (1.6s)
+  mmdataselect     n=  900 clean%=0.84 MASE=1.0364 (0.4s)
+    [adapt] picked 'fuse w=(0.5, 0, 0.5) q=0.25 lam=0.0' (val_negMASE=-1.006)
+  mmds_adapt       n=  900 clean%=0.89 MASE=0.9721 (16.2s)
+  auth_only        MASE=0.9569 clean%=0.91 n=900
+  mmds_adapt       MASE=0.9721 clean%=0.89 n=900
+  mmdataselect     MASE=1.0364 clean%=0.84 n=900
+  random           MASE=1.0531 clean%=0.63 n=900
+  auth2_only       MASE=1.0558 clean%=0.83 n=900
+  herding          MASE=1.0728 clean%=0.58 n=900
+#### TS seed1 ####
+  random           n=  900 clean%=0.60 MASE=1.0659 (0.4s)
+  auth_only        n=  900 clean%=0.88 MASE=0.9575 (0.3s)
+  auth2_only       n=  900 clean%=0.82 MASE=1.0239 (0.3s)
+  herding          n=  900 clean%=0.55 MASE=1.0316 (1.6s)
+  mmdataselect     n=  900 clean%=0.84 MASE=0.9836 (0.4s)
+    [adapt] picked 'mmdataselect' (val_negMASE=-1.024)
+  mmds_adapt       n=  900 clean%=0.84 MASE=0.9836 (15.1s)
+  auth_only        MASE=0.9575 clean%=0.88 n=900
+  mmdataselect     MASE=0.9836 clean%=0.84 n=900
+  mmds_adapt       MASE=0.9836 clean%=0.84 n=900
+  auth2_only       MASE=1.0239 clean%=0.82 n=900
+  herding          MASE=1.0316 clean%=0.55 n=900
+  random           MASE=1.0659 clean%=0.60 n=900
+#### TS seed2 ####
+  random           n=  900 clean%=0.61 MASE=1.0777 (0.5s)
+  auth_only        n=  900 clean%=0.88 MASE=0.9534 (0.6s)
+  auth2_only       n=  900 clean%=0.80 MASE=1.0472 (0.4s)
+  herding          n=  900 clean%=0.60 MASE=1.0402 (1.8s)
+  mmdataselect     n=  900 clean%=0.83 MASE=1.0340 (0.5s)
+    [adapt] picked 'mmdataselect' (val_negMASE=-1.027)
+  mmds_adapt       n=  900 clean%=0.83 MASE=1.0340 (16.4s)
+  auth_only        MASE=0.9534 clean%=0.88 n=900
+  mmdataselect     MASE=1.0340 clean%=0.83 n=900
+  mmds_adapt       MASE=1.0340 clean%=0.83 n=900
+  herding          MASE=1.0402 clean%=0.60 n=900
+  auth2_only       MASE=1.0472 clean%=0.80 n=900
+  random           MASE=1.0777 clean%=0.61 n=900
+#### FINAL DONE ####

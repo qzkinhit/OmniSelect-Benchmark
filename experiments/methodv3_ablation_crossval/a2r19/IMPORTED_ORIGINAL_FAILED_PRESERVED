@@ -1,0 +1,5 @@
+schema=v3-ablation-stage2-failed-v1
+batch_id=v3-ablation-stage2-20260719
+failed_at=2026-07-19T17:13:24+08:00
+current_trial=cifar100_xmodal-drop_signal_authenticity-seed0
+exit=1

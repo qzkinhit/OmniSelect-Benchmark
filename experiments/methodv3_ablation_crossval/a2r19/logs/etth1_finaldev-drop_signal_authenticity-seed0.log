@@ -1,0 +1,19 @@
+  [method-v3] clipped certificate protocol: gate=hoeffding C=0.25 fusion-K=3 reference-K=0 anchor=auth_only stability=all_blocks_positive
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=cuda seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+Traceback (most recent call last):
+  File "/root/autodl-tmp/OmniSelect_v3_next/scripts/run_timeseries_experiment.py", line 1120, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/autodl-tmp/OmniSelect_v3_next/scripts/run_timeseries_experiment.py", line 987, in main
+    sel = _paired_subset(select(m))
+                         ^^^^^^^^^
+  File "/root/autodl-tmp/OmniSelect_v3_next/scripts/run_timeseries_experiment.py", line 684, in select
+    sel = ctrl.select(recs, np.stack([auth, influence, redundancy], axis=0), budget,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/OmniSelect_v3_next/src/mmdataselect/fusion/adaptive.py", line 164, in select
+    v3_ablation = resolve_ablation_mode()
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/OmniSelect_v3_next/src/mmdataselect/fusion/methodv3_ablation.py", line 267, in resolve_ablation_mode
+    raise MethodV3AblationFailClosed(
+mmdataselect.fusion.methodv3_ablation.MethodV3AblationFailClosed: METHOD_V3_ABL_FAIL_CLOSED: the predeclared guard anchor 'auth_only' construction depends on the deleted signal 'authenticity' (class DROP); with the signal removed the anchor cannot be constructed and the run fails closed, producing no selection at all (stage-1 semantics)

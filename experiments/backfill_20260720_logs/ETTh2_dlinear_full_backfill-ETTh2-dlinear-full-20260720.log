@@ -1,0 +1,120 @@
+lane=ETTh2-DLinear-full run_id=backfill-ETTh2-dlinear-full-20260720 start=2026-07-20T06:41:43+08:00
+===== ETTh2 DLinear SEED=0 start=2026-07-20T06:41:43+08:00 =====
+scripts/run_ETTh2_dlinear_full.sh: line 22: /root/autodl-tmp/OmniSelect_v3_next/.venv/bin/python: No such file or directory
+SEED=0 python_exit=127
+lane=ETTh2-DLinear-full run_id=backfill-ETTh2-dlinear-full-20260720 start=2026-07-20T06:46:23+08:00
+===== ETTh2 DLinear SEED=0 start=2026-07-20T06:46:23+08:00 =====
+timeseries=ETTh2 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=cuda seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=0.6522 (1.0s)
+  random           n=  900 clean%=0.60 MASE=0.6836 (0.3s)
+  coreset          n=  900 clean%=0.46 MASE=0.7104 (2.6s)
+  auth_only        n=  900 clean%=0.91 MASE=0.6253 (0.2s)
+  influence_only   n=  900 clean%=0.80 MASE=0.7460 (0.3s)
+  mmdataselect     n=  900 clean%=0.82 MASE=0.6510 (0.6s)
+    [adapt] picked 'fuse learned w=(0.57, 0.0, 0.43) q=0.25 lam=0.0' (val_negMASE=-0.603)
+  mmds_adapt       n=  900 clean%=0.92 MASE=0.6193 (68.2s)
+  herding          n=  900 clean%=0.51 MASE=0.6971 (2.3s)
+  kcenter          n=  900 clean%=0.43 MASE=0.7143 (2.1s)
+  semdedup         n=  900 clean%=0.59 MASE=0.6997 (0.7s)
+  density          n=  900 clean%=0.58 MASE=0.6919 (0.3s)
+  quadmix          n=  900 clean%=0.78 MASE=0.6638 (0.4s)
+  quadmix_pub      n=  900 clean%=0.59 MASE=0.6585 (0.4s)
+  dmf              n=  900 clean%=0.92 MASE=0.6746 (4.7s)
+  dmf_pub          n=  900 clean%=0.92 MASE=0.6746 (8.5s)
+
+==== TIMESERIES (ETTh2, model=dlinear, MASE lower=better) ====
+  mmds_adapt       MASE=0.6193 clean%=0.92 n=900
+  auth_only        MASE=0.6253 clean%=0.91 n=900
+  mmdataselect     MASE=0.6510 clean%=0.82 n=900
+  full             MASE=0.6522 clean%=0.60 n=3000
+  quadmix_pub      MASE=0.6585 clean%=0.59 n=900
+  quadmix          MASE=0.6638 clean%=0.78 n=900
+  dmf              MASE=0.6746 clean%=0.92 n=900
+  dmf_pub          MASE=0.6746 clean%=0.92 n=900
+  random           MASE=0.6836 clean%=0.60 n=900
+  density          MASE=0.6919 clean%=0.58 n=900
+  herding          MASE=0.6971 clean%=0.51 n=900
+  semdedup         MASE=0.6997 clean%=0.59 n=900
+  coreset          MASE=0.7104 clean%=0.46 n=900
+  kcenter          MASE=0.7143 clean%=0.43 n=900
+  influence_only   MASE=0.7460 clean%=0.80 n=900
+saved -> /root/autodl-tmp/OmniSelect_v3_next/outputs/timeseries/ETTh2/run_id=backfill-ETTh2-dlinear-full-20260720-cfg=a56adda5b0f8b526/seed_0/results.json
+SEED=0 python_exit=0
+===== ETTh2 DLinear SEED=1 start=2026-07-20T06:48:02+08:00 =====
+timeseries=ETTh2 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=cuda seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=0.6715 (0.8s)
+  random           n=  900 clean%=0.60 MASE=0.7023 (0.2s)
+  coreset          n=  900 clean%=0.44 MASE=0.7311 (2.6s)
+  auth_only        n=  900 clean%=0.85 MASE=0.6297 (0.2s)
+  influence_only   n=  900 clean%=0.79 MASE=0.7594 (0.2s)
+  mmdataselect     n=  900 clean%=0.82 MASE=0.6828 (0.4s)
+    [adapt] picked 'fuse w=(0.5, 0, 0.5) q=0.25 lam=0.0' (val_negMASE=-0.642)
+  mmds_adapt       n=  900 clean%=0.91 MASE=0.6402 (66.8s)
+  herding          n=  900 clean%=0.53 MASE=0.7236 (2.4s)
+  kcenter          n=  900 clean%=0.44 MASE=0.7353 (2.0s)
+  semdedup         n=  900 clean%=0.57 MASE=0.7181 (0.3s)
+  density          n=  900 clean%=0.58 MASE=0.7186 (0.2s)
+  quadmix          n=  900 clean%=0.78 MASE=0.6798 (0.2s)
+  quadmix_pub      n=  900 clean%=0.64 MASE=0.6656 (0.2s)
+  dmf              n=  900 clean%=0.86 MASE=0.6928 (3.6s)
+  dmf_pub          n=  900 clean%=0.87 MASE=0.7031 (7.8s)
+
+==== TIMESERIES (ETTh2, model=dlinear, MASE lower=better) ====
+  auth_only        MASE=0.6297 clean%=0.85 n=900
+  mmds_adapt       MASE=0.6402 clean%=0.91 n=900
+  quadmix_pub      MASE=0.6656 clean%=0.64 n=900
+  full             MASE=0.6715 clean%=0.60 n=3000
+  quadmix          MASE=0.6798 clean%=0.78 n=900
+  mmdataselect     MASE=0.6828 clean%=0.82 n=900
+  dmf              MASE=0.6928 clean%=0.86 n=900
+  random           MASE=0.7023 clean%=0.60 n=900
+  dmf_pub          MASE=0.7031 clean%=0.87 n=900
+  semdedup         MASE=0.7181 clean%=0.57 n=900
+  density          MASE=0.7186 clean%=0.58 n=900
+  herding          MASE=0.7236 clean%=0.53 n=900
+  coreset          MASE=0.7311 clean%=0.44 n=900
+  kcenter          MASE=0.7353 clean%=0.44 n=900
+  influence_only   MASE=0.7594 clean%=0.79 n=900
+saved -> /root/autodl-tmp/OmniSelect_v3_next/outputs/timeseries/ETTh2/run_id=backfill-ETTh2-dlinear-full-20260720-cfg=a56adda5b0f8b526/seed_1/results.json
+SEED=1 python_exit=0
+===== ETTh2 DLinear SEED=2 start=2026-07-20T06:49:36+08:00 =====
+timeseries=ETTh2 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=cuda seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=0.6885 (0.7s)
+  random           n=  900 clean%=0.58 MASE=0.7092 (0.2s)
+  coreset          n=  900 clean%=0.46 MASE=0.7503 (2.3s)
+  auth_only        n=  900 clean%=0.86 MASE=0.6524 (0.3s)
+  influence_only   n=  900 clean%=0.80 MASE=0.8008 (0.3s)
+  mmdataselect     n=  900 clean%=0.82 MASE=0.6792 (0.3s)
+    [adapt] picked 'fuse learned w=(0.69, 0.1, 0.21) q=0.25 lam=0.6' (val_negMASE=-0.642)
+  mmds_adapt       n=  900 clean%=0.97 MASE=0.6361 (98.1s)
+  herding          n=  900 clean%=0.52 MASE=0.7250 (3.6s)
+  kcenter          n=  900 clean%=0.44 MASE=0.7490 (2.1s)
+  semdedup         n=  900 clean%=0.58 MASE=0.7239 (0.6s)
+  density          n=  900 clean%=0.62 MASE=0.7286 (0.4s)
+  quadmix          n=  900 clean%=0.78 MASE=0.6757 (0.5s)
+  quadmix_pub      n=  900 clean%=0.66 MASE=0.6876 (0.9s)
+  dmf              n=  900 clean%=0.93 MASE=0.6967 (5.3s)
+  dmf_pub          n=  900 clean%=0.93 MASE=0.6967 (19.3s)
+
+==== TIMESERIES (ETTh2, model=dlinear, MASE lower=better) ====
+  mmds_adapt       MASE=0.6361 clean%=0.97 n=900
+  auth_only        MASE=0.6524 clean%=0.86 n=900
+  quadmix          MASE=0.6757 clean%=0.78 n=900
+  mmdataselect     MASE=0.6792 clean%=0.82 n=900
+  quadmix_pub      MASE=0.6876 clean%=0.66 n=900
+  full             MASE=0.6885 clean%=0.60 n=3000
+  dmf              MASE=0.6967 clean%=0.93 n=900
+  dmf_pub          MASE=0.6967 clean%=0.93 n=900
+  random           MASE=0.7092 clean%=0.58 n=900
+  semdedup         MASE=0.7239 clean%=0.58 n=900
+  herding          MASE=0.7250 clean%=0.52 n=900
+  density          MASE=0.7286 clean%=0.62 n=900
+  kcenter          MASE=0.7490 clean%=0.44 n=900
+  coreset          MASE=0.7503 clean%=0.46 n=900
+  influence_only   MASE=0.8008 clean%=0.80 n=900
+saved -> /root/autodl-tmp/OmniSelect_v3_next/outputs/timeseries/ETTh2/run_id=backfill-ETTh2-dlinear-full-20260720-cfg=a56adda5b0f8b526/seed_2/results.json
+SEED=2 python_exit=0
+lane=ETTh2-DLinear-full end=2026-07-20T06:52:00+08:00

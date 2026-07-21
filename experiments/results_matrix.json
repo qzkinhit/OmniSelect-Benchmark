@@ -1,0 +1,2472 @@
+{
+ "__server_code_state__": {
+  "diff_sha256": "a0dc89007801fe71eef11996e220b37dc625c7818dcde03b17eb04d225d6331d",
+  "head": "0561b95286052577d33d634c7603553b3d322232"
+ },
+ "process_tep": {
+  "applicability_na": {},
+  "config_hash": "1303e97b1252a90e1195394cdd0e1ab61267fb214a26ef033ad21b2947ffecaa",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": "none-recorded",
+  "expected_seeds": 3,
+  "higher_is_better": true,
+  "log_sha256": "fa92522b8fc2d0f1a5bf13a1daf43b10119a70b855251c783bcced7f706f092d",
+  "methods": {
+   "auth_only": {
+    "0": 0.4021,
+    "1": 0.3874,
+    "2": 0.3935
+   },
+   "ccs": {
+    "0": 0.3639,
+    "1": 0.3728,
+    "2": 0.3409
+   },
+   "coreset": {
+    "0": 0.3016,
+    "1": 0.2952,
+    "2": 0.3125
+   },
+   "density": {
+    "0": 0.2924,
+    "1": 0.2695,
+    "2": 0.2698
+   },
+   "dmf": {
+    "0": 0.4138,
+    "1": 0.4007,
+    "2": 0.412
+   },
+   "el2n": {
+    "0": 0.0732,
+    "1": 0.0876,
+    "2": 0.0722
+   },
+   "grand": {
+    "0": 0.0689,
+    "1": 0.0741,
+    "2": 0.0623
+   },
+   "herding": {
+    "0": 0.35,
+    "1": 0.3634,
+    "2": 0.3514
+   },
+   "influence_only": {
+    "0": 0.3789,
+    "1": 0.3361,
+    "2": 0.3585
+   },
+   "kcenter": {
+    "0": 0.3481,
+    "1": 0.338,
+    "2": 0.3183
+   },
+   "mmds_adapt": {
+    "0": 0.4138,
+    "1": 0.4176,
+    "2": 0.412
+   },
+   "quadmix": {
+    "0": 0.3287,
+    "1": 0.2726,
+    "2": 0.3127
+   },
+   "random": {
+    "0": 0.3412,
+    "1": 0.3068,
+    "2": 0.3235
+   },
+   "semdedup": {
+    "0": 0.3658,
+    "1": 0.3562,
+    "2": 0.3391
+   }
+  },
+  "metric": "(?:macroF1|F1)=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "ccs": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "dmf": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "el2n": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "grand": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "quadmix": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "tep_full_3seed.log"
+ },
+ "process_tep__ext0630": {
+  "applicability_na": {},
+  "config_hash": "1b5774c53e51c6fdc624cf425e961f91252ec50c67969a47c71b48dac2a2a4d5",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": [
+   "#### EXT3 DONE ####"
+  ],
+  "expected_seeds": 3,
+  "higher_is_better": true,
+  "log_sha256": "15ef547f0e20240dd3ea92dd8a0559139b01c67fc307599e5abb40583783e1ff",
+  "methods": {
+   "auth_only": {
+    "0": 0.3843,
+    "1": 0.3663,
+    "2": 0.392
+   },
+   "coreset": {
+    "0": 0.3167,
+    "1": 0.2968,
+    "2": 0.3082
+   },
+   "el2n": {
+    "0": 0.0787,
+    "1": 0.0808,
+    "2": 0.0673
+   },
+   "grand": {
+    "0": 0.0787,
+    "1": 0.0808,
+    "2": 0.0673
+   },
+   "herding": {
+    "0": 0.3926,
+    "1": 0.323,
+    "2": 0.3381
+   },
+   "influence_only": {
+    "0": 0.3538,
+    "1": 0.3322,
+    "2": 0.3718
+   },
+   "kcenter": {
+    "0": 0.3163,
+    "1": 0.3156,
+    "2": 0.3418
+   },
+   "mmds_adapt": {
+    "0": 0.3843,
+    "1": 0.3972,
+    "2": 0.392
+   },
+   "random": {
+    "0": 0.3467,
+    "1": 0.3099,
+    "2": 0.3009
+   }
+  },
+  "metric": "(?:macroF1|F1)=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "el2n": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "grand": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "external_baselines_3seed.log"
+ },
+ "process_tep__semdedup_rerun": {
+  "applicability_na": {},
+  "config_hash": "50d74f17e660a48bc0e17df569c1a22898bc4964e6626a2b40d16e6fe55fe0dc",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": "none-recorded",
+  "expected_seeds": 3,
+  "higher_is_better": true,
+  "log_sha256": "30f526fb2b5e4671a61ee4315b81de1901da5319831eed3bf5f9c9e24854c817",
+  "methods": {
+   "density": {
+    "0": 0.3457,
+    "1": 0.3515,
+    "2": 0.3335
+   },
+   "mmds_adapt": {
+    "0": 0.4138,
+    "1": 0.4176,
+    "2": 0.412
+   },
+   "semdedup": {
+    "0": 0.366,
+    "1": 0.3642,
+    "2": 0.3389
+   }
+  },
+  "metric": "(?:macroF1|F1)=([0-9.]+)",
+  "parse_counts": {
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "semdedup_density_rerun_3seed.log"
+ },
+ "tabular_electricity": {
+  "applicability_na": {},
+  "config_hash": "638111e49897d5eca11daebf7176bb5ad521ad09fd6668d8ed5e59d3b6ad0c55",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": "none-recorded",
+  "expected_seeds": 3,
+  "higher_is_better": true,
+  "log_sha256": "f14dd5ba83ec35a0a9abc966bc15068c67ef0c889d0d4ffa8c74d3188c3d73ff",
+  "methods": {
+   "auth_only": {
+    "0": 0.8471,
+    "1": 0.8385,
+    "2": 0.8506
+   },
+   "ccs": {
+    "0": 0.8649,
+    "1": 0.8477,
+    "2": 0.8762
+   },
+   "coreset": {
+    "0": 0.8729,
+    "1": 0.8586,
+    "2": 0.8865
+   },
+   "density": {
+    "0": 0.8699,
+    "1": 0.8498,
+    "2": 0.856
+   },
+   "dmf": {
+    "0": 0.852,
+    "1": 0.8417,
+    "2": 0.8601
+   },
+   "el2n": {
+    "0": 0.2403,
+    "1": 0.23,
+    "2": 0.2327
+   },
+   "grand": {
+    "0": 0.266,
+    "1": 0.2724,
+    "2": 0.3276
+   },
+   "herding": {
+    "0": 0.8672,
+    "1": 0.8596,
+    "2": 0.8879
+   },
+   "influence_only": {
+    "0": 0.817,
+    "1": 0.8125,
+    "2": 0.8188
+   },
+   "kcenter": {
+    "0": 0.8757,
+    "1": 0.8626,
+    "2": 0.8877
+   },
+   "mmds_adapt": {
+    "0": 0.8757,
+    "1": 0.8626,
+    "2": 0.8851
+   },
+   "quadmix": {
+    "0": 0.8538,
+    "1": 0.8378,
+    "2": 0.8611
+   },
+   "random": {
+    "0": 0.8674,
+    "1": 0.8638,
+    "2": 0.8829
+   },
+   "semdedup": {
+    "0": 0.8729,
+    "1": 0.8549,
+    "2": 0.8826
+   }
+  },
+  "metric": "auc=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "ccs": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "dmf": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "el2n": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "grand": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "quadmix": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "tabular_full_3seed.log"
+ },
+ "tabular_electricity__ext0630": {
+  "applicability_na": {},
+  "config_hash": "711b5dcec10eb8e2fade556191f702e893671bb48acce07125526313afd03fd6",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": [
+   "#### TAB DONE ####"
+  ],
+  "expected_seeds": 3,
+  "higher_is_better": true,
+  "log_sha256": "2e9ae4cc541875451411d4fdb9e2cd3f743ffb1ab793e3a4220f03ca64653b82",
+  "methods": {
+   "auth_only": {
+    "0": 0.8421,
+    "1": 0.8398,
+    "2": 0.8488
+   },
+   "coreset": {
+    "0": 0.8524,
+    "1": 0.8337,
+    "2": 0.8747
+   },
+   "el2n": {
+    "0": 0.2112,
+    "1": 0.2188,
+    "2": 0.2134
+   },
+   "grand": {
+    "0": 0.2112,
+    "1": 0.2188,
+    "2": 0.2134
+   },
+   "herding": {
+    "0": 0.8411,
+    "1": 0.8093,
+    "2": 0.8698
+   },
+   "influence_only": {
+    "0": 0.8135,
+    "1": 0.8186,
+    "2": 0.8283
+   },
+   "kcenter": {
+    "0": 0.8383,
+    "1": 0.8267,
+    "2": 0.8621
+   },
+   "mmds_adapt": {
+    "0": 0.8568,
+    "1": 0.8514,
+    "2": 0.8698
+   },
+   "random": {
+    "0": 0.8534,
+    "1": 0.8422,
+    "2": 0.8671
+   }
+  },
+  "metric": "auc=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "el2n": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "grand": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "tabular_external_3seed.log"
+ },
+ "time_daisy_cstr": {
+  "applicability_na": {
+   "ccs": "same",
+   "el2n": "classification-error based, not applicable to regression",
+   "grand": "same"
+  },
+  "config_hash": "5ae849b9b72381e4d2cc4d160c953e16ac4ac4deb76cba81a3ba8e359f5d6e0e",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": "none-recorded",
+  "expected_seeds": 3,
+  "higher_is_better": false,
+  "log_sha256": "ce3fe6ead7381f26662ac17db6b433ebea6d695baed39bf3afb4a779177d2220",
+  "methods": {
+   "auth_only": {
+    "0": 1.0299,
+    "1": 1.0303,
+    "2": 1.0178
+   },
+   "coreset": {
+    "0": 1.1568,
+    "1": 1.1506,
+    "2": 1.192
+   },
+   "density": {
+    "0": 1.1888,
+    "1": 1.1511,
+    "2": 1.1989
+   },
+   "dmf": {
+    "0": 1.0269,
+    "1": 1.0292,
+    "2": 1.0445
+   },
+   "herding": {
+    "0": 1.1419,
+    "1": 1.1435,
+    "2": 1.1634
+   },
+   "influence_only": {
+    "0": 1.1303,
+    "1": 1.1917,
+    "2": 1.1606
+   },
+   "kcenter": {
+    "0": 1.1961,
+    "1": 1.181,
+    "2": 1.2263
+   },
+   "mmds_adapt": {
+    "0": 1.0041,
+    "1": 1.0292,
+    "2": 1.0053
+   },
+   "quadmix": {
+    "0": 1.0729,
+    "1": 1.0898,
+    "2": 1.134
+   },
+   "random": {
+    "0": 1.0942,
+    "1": 1.0883,
+    "2": 1.1356
+   },
+   "semdedup": {
+    "0": 1.1302,
+    "1": 1.1132,
+    "2": 1.159
+   }
+  },
+  "metric": "MASE=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "dmf": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "quadmix": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "daisy_cstr_3seed.log"
+ },
+ "time_daisy_cstr_chronos": {
+  "applicability_na": {
+   "ccs": "same",
+   "el2n": "classification-error based, not applicable to regression",
+   "grand": "same"
+  },
+  "config_hash": "b918d0c23dbab8d02747badd662c6cc45f97cd3a7e31ef9eefa5cd460e03c47c",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": [
+   "CHRONOS_LANE_DONE"
+  ],
+  "expected_seeds": 3,
+  "higher_is_better": false,
+  "log_sha256": "96f607ad42d189376421f3f41b10b7fc1a4d69b61b4f344388c612af51e5cb0b",
+  "methods": {
+   "auth_only": {
+    "0": 0.9085,
+    "1": 0.9093,
+    "2": 0.8895
+   },
+   "coreset": {
+    "0": 0.9349,
+    "1": 0.9182,
+    "2": 0.9467
+   },
+   "density": {
+    "0": 0.9066,
+    "1": 0.901,
+    "2": 0.9072
+   },
+   "dmf": {
+    "0": 0.929,
+    "1": 0.9198,
+    "2": 0.9221
+   },
+   "herding": {
+    "0": 0.9418,
+    "1": 0.9103,
+    "2": 0.9386
+   },
+   "influence_only": {
+    "0": 0.9545,
+    "1": 0.9689,
+    "2": 0.9141
+   },
+   "kcenter": {
+    "0": 0.9462,
+    "1": 1.0519,
+    "2": 0.9318
+   },
+   "mmds_adapt": {
+    "0": 0.9235,
+    "1": 0.898,
+    "2": 0.9489
+   },
+   "quadmix": {
+    "0": 0.9248,
+    "1": 0.8888,
+    "2": 0.9489
+   },
+   "random": {
+    "0": 0.8966,
+    "1": 0.8964,
+    "2": 0.9083
+   },
+   "semdedup": {
+    "0": 0.9488,
+    "1": 0.898,
+    "2": 0.9484
+   }
+  },
+  "metric": "MASE=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "dmf": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "quadmix": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "chronos_fm_3seed.log"
+ },
+ "time_daisy_steamgen": {
+  "applicability_na": {
+   "ccs": "same",
+   "el2n": "classification-error based, not applicable to regression",
+   "grand": "same"
+  },
+  "config_hash": "2720ce1cc7b7094d377de0b4ec3411ae240c1c4cac31ecf9820ec7da484ca88f",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": "none-recorded",
+  "expected_seeds": 3,
+  "higher_is_better": false,
+  "log_sha256": "5fe6170c1abf91916cb664036903889b0f4eab1f6c6ce765e20298e3213a8c56",
+  "methods": {
+   "auth_only": {
+    "0": 0.8588,
+    "1": 0.8964,
+    "2": 0.9321
+   },
+   "coreset": {
+    "0": 1.2817,
+    "1": 1.2845,
+    "2": 1.3389
+   },
+   "density": {
+    "0": 1.3508,
+    "1": 1.305,
+    "2": 1.3824
+   },
+   "dmf": {
+    "0": 1.0173,
+    "1": 1.0854,
+    "2": 1.052
+   },
+   "herding": {
+    "0": 1.2723,
+    "1": 1.3393,
+    "2": 1.3541
+   },
+   "influence_only": {
+    "0": 1.4364,
+    "1": 1.4062,
+    "2": 1.532
+   },
+   "kcenter": {
+    "0": 1.3646,
+    "1": 1.2845,
+    "2": 1.3436
+   },
+   "mmds_adapt": {
+    "0": 0.8348,
+    "1": 0.8618,
+    "2": 0.8773
+   },
+   "quadmix": {
+    "0": 1.0752,
+    "1": 1.101,
+    "2": 1.09
+   },
+   "random": {
+    "0": 1.0843,
+    "1": 1.1443,
+    "2": 1.2022
+   },
+   "semdedup": {
+    "0": 1.1901,
+    "1": 1.2413,
+    "2": 1.2313
+   }
+  },
+  "metric": "MASE=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "dmf": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "quadmix": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "daisy_steamgen_3seed.log"
+ },
+ "time_daisy_steamgen_chronos": {
+  "applicability_na": {
+   "ccs": "same",
+   "el2n": "classification-error based, not applicable to regression",
+   "grand": "same"
+  },
+  "config_hash": "ae3f4abfe63bbee11b26ff40b1d68ce718b699c1c8c41a95af9e9c9cff7b9f82",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": [
+   "CHRONOS_LANE_DONE"
+  ],
+  "expected_seeds": 3,
+  "higher_is_better": false,
+  "log_sha256": "96f607ad42d189376421f3f41b10b7fc1a4d69b61b4f344388c612af51e5cb0b",
+  "methods": {
+   "auth_only": {
+    "0": 0.7486,
+    "1": 0.815,
+    "2": 0.7245
+   },
+   "coreset": {
+    "0": 0.7757,
+    "1": 0.6492,
+    "2": 0.7203
+   },
+   "density": {
+    "0": 0.6882,
+    "1": 0.6582,
+    "2": 0.7437
+   },
+   "dmf": {
+    "0": 0.7028,
+    "1": 0.7064,
+    "2": 0.6881
+   },
+   "herding": {
+    "0": 0.7091,
+    "1": 0.6589,
+    "2": 0.742
+   },
+   "influence_only": {
+    "0": 0.7021,
+    "1": 0.6597,
+    "2": 0.7448
+   },
+   "kcenter": {
+    "0": 0.7355,
+    "1": 0.6919,
+    "2": 0.673
+   },
+   "mmds_adapt": {
+    "0": 0.7091,
+    "1": 0.7116,
+    "2": 0.6372
+   },
+   "quadmix": {
+    "0": 0.6419,
+    "1": 0.7254,
+    "2": 0.6423
+   },
+   "random": {
+    "0": 0.7324,
+    "1": 0.6671,
+    "2": 0.6923
+   },
+   "semdedup": {
+    "0": 0.6606,
+    "1": 0.7775,
+    "2": 0.7845
+   }
+  },
+  "metric": "MASE=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "dmf": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "quadmix": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "chronos_fm_3seed.log"
+ },
+ "time_etth1": {
+  "applicability_na": {
+   "ccs": "same",
+   "el2n": "classification-error based, not applicable to regression",
+   "grand": "same"
+  },
+  "config_hash": "985755b15ca9e38b28bc86aee997f170037d0bf8f24e0ff37470f3bad57f3719",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": "none-recorded",
+  "expected_seeds": 3,
+  "higher_is_better": false,
+  "log_sha256": "3dfd86e603cc2acc22e5bb467183e33a19cafb46ef0f72f17e0838f3859c40d3",
+  "methods": {
+   "auth_only": {
+    "0": 0.9569,
+    "1": 0.9575,
+    "2": 0.9534
+   },
+   "coreset": {
+    "0": 1.077,
+    "1": 1.0804,
+    "2": 1.089
+   },
+   "density": {
+    "0": 1.09,
+    "1": 1.0844,
+    "2": 1.0624
+   },
+   "dmf": {
+    "0": 1.0114,
+    "1": 0.9555,
+    "2": 1.0194
+   },
+   "herding": {
+    "0": 1.0728,
+    "1": 1.0316,
+    "2": 1.0402
+   },
+   "influence_only": {
+    "0": 1.2589,
+    "1": 1.2211,
+    "2": 1.2664
+   },
+   "kcenter": {
+    "0": 1.1,
+    "1": 1.0846,
+    "2": 1.1217
+   },
+   "mmds_adapt": {
+    "0": 0.9721,
+    "1": 0.9836,
+    "2": 1.0331
+   },
+   "quadmix": {
+    "0": 1.0714,
+    "1": 1.0182,
+    "2": 1.0331
+   },
+   "random": {
+    "0": 1.0531,
+    "1": 1.0659,
+    "2": 1.0777
+   },
+   "semdedup": {
+    "0": 1.0763,
+    "1": 1.0628,
+    "2": 1.0524
+   }
+  },
+  "metric": "MASE=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "dmf": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "quadmix": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "timeseries_full_3seed.log"
+ },
+ "time_etth1__ext0630": {
+  "applicability_na": {
+   "ccs": "same",
+   "el2n": "classification-error based, not applicable to regression",
+   "grand": "same"
+  },
+  "config_hash": "8e556ec7c7ef6990624566da4680cd47a515f7631ba784a11f3cf976c77a21e7",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": [
+   "#### EXT3 DONE ####"
+  ],
+  "expected_seeds": 3,
+  "higher_is_better": false,
+  "log_sha256": "15ef547f0e20240dd3ea92dd8a0559139b01c67fc307599e5abb40583783e1ff",
+  "methods": {
+   "auth_only": {
+    "0": 0.9763,
+    "1": 0.9776,
+    "2": 0.9916
+   },
+   "coreset": {
+    "0": 1.1076,
+    "1": 1.0871,
+    "2": 1.1267
+   },
+   "herding": {
+    "0": 1.0866,
+    "1": 1.0704,
+    "2": 1.0949
+   },
+   "influence_only": {
+    "0": 1.2986,
+    "1": 1.2029,
+    "2": 1.2706
+   },
+   "kcenter": {
+    "0": 1.1084,
+    "1": 1.1244,
+    "2": 1.1825
+   },
+   "mmds_adapt": {
+    "0": 0.9691,
+    "1": 0.9577,
+    "2": 0.9747
+   },
+   "random": {
+    "0": 1.0811,
+    "1": 1.0726,
+    "2": 1.1149
+   }
+  },
+  "metric": "MASE=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "external_baselines_3seed.log"
+ },
+ "time_etth1_chronos": {
+  "applicability_na": {
+   "ccs": "same",
+   "el2n": "classification-error based, not applicable to regression",
+   "grand": "same"
+  },
+  "config_hash": "6f30262a1674e1b71a57412c38887dbd28b492c169b7edb03a8c152934ad2992",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": [
+   "CHRONOS_LANE_DONE"
+  ],
+  "expected_seeds": 3,
+  "higher_is_better": false,
+  "log_sha256": "96f607ad42d189376421f3f41b10b7fc1a4d69b61b4f344388c612af51e5cb0b",
+  "methods": {
+   "auth_only": {
+    "0": 0.8857,
+    "1": 0.9004,
+    "2": 0.9277
+   },
+   "coreset": {
+    "0": 0.8903,
+    "1": 0.9337,
+    "2": 0.8803
+   },
+   "density": {
+    "0": 0.891,
+    "1": 0.8997,
+    "2": 0.8963
+   },
+   "dmf": {
+    "0": 0.8689,
+    "1": 0.8851,
+    "2": 0.8658
+   },
+   "herding": {
+    "0": 0.9149,
+    "1": 0.9056,
+    "2": 0.883
+   },
+   "influence_only": {
+    "0": 0.9005,
+    "1": 0.8806,
+    "2": 0.8748
+   },
+   "kcenter": {
+    "0": 0.9246,
+    "1": 0.9314,
+    "2": 0.9014
+   },
+   "mmds_adapt": {
+    "0": 0.8689,
+    "1": 0.8851,
+    "2": 0.8756
+   },
+   "quadmix": {
+    "0": 0.897,
+    "1": 0.9028,
+    "2": 0.9061
+   },
+   "random": {
+    "0": 0.888,
+    "1": 0.9007,
+    "2": 2.4471
+   },
+   "semdedup": {
+    "0": 0.9378,
+    "1": 0.8978,
+    "2": 0.8882
+   }
+  },
+  "metric": "MASE=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "dmf": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "quadmix": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "chronos_fm_3seed.log"
+ },
+ "time_etth2": {
+  "applicability_na": {
+   "ccs": "same",
+   "el2n": "classification-error based, not applicable to regression",
+   "grand": "same"
+  },
+  "config_hash": "1eccc53b13f96c41be8262a79a478db611d1d60fbb367358f402ff2a575abe18",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": "none-recorded",
+  "expected_seeds": 3,
+  "higher_is_better": false,
+  "log_sha256": "186c12fd208e429d681650c997bc2d6c8a1d5b7cbb6daf9782602021226e809e",
+  "methods": {
+   "auth_only": {
+    "0": 0.6292,
+    "1": 0.6359,
+    "2": 0.6542
+   },
+   "coreset": {
+    "0": 0.7115,
+    "1": 0.7335,
+    "2": 0.7498
+   },
+   "density": {
+    "0": 0.7049,
+    "1": 0.7494,
+    "2": 0.7432
+   },
+   "dmf": {
+    "0": 0.6778,
+    "1": 0.697,
+    "2": 0.6788
+   },
+   "herding": {
+    "0": 0.6986,
+    "1": 0.7298,
+    "2": 0.7325
+   },
+   "influence_only": {
+    "0": 0.754,
+    "1": 0.7911,
+    "2": 0.8132
+   },
+   "kcenter": {
+    "0": 0.7139,
+    "1": 0.7388,
+    "2": 0.7508
+   },
+   "mmds_adapt": {
+    "0": 0.623,
+    "1": 0.644,
+    "2": 0.6256
+   },
+   "quadmix": {
+    "0": 0.6588,
+    "1": 0.6837,
+    "2": 0.6789
+   },
+   "random": {
+    "0": 0.6848,
+    "1": 0.7152,
+    "2": 0.7205
+   },
+   "semdedup": {
+    "0": 0.6668,
+    "1": 0.6936,
+    "2": 0.6779
+   }
+  },
+  "metric": "MASE=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "dmf": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "quadmix": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "etth2_3seed.log"
+ },
+ "time_etth2_chronos": {
+  "applicability_na": {
+   "ccs": "same",
+   "el2n": "classification-error based, not applicable to regression",
+   "grand": "same"
+  },
+  "config_hash": "d4de9418a73a09ff2db9f67d5f5ec18251753d889e9f5c5f460778eada21ae32",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": [
+   "CHRONOS_LANE_DONE"
+  ],
+  "expected_seeds": 3,
+  "higher_is_better": false,
+  "log_sha256": "96f607ad42d189376421f3f41b10b7fc1a4d69b61b4f344388c612af51e5cb0b",
+  "methods": {
+   "auth_only": {
+    "0": 0.5788,
+    "1": 0.5885,
+    "2": 0.5831
+   },
+   "coreset": {
+    "0": 0.574,
+    "1": 0.5734,
+    "2": 0.5829
+   },
+   "density": {
+    "0": 0.5646,
+    "1": 0.5988,
+    "2": 0.573
+   },
+   "dmf": {
+    "0": 0.5821,
+    "1": 0.5649,
+    "2": 0.5636
+   },
+   "herding": {
+    "0": 0.603,
+    "1": 0.5936,
+    "2": 0.5983
+   },
+   "influence_only": {
+    "0": 0.5666,
+    "1": 0.5822,
+    "2": 0.5685
+   },
+   "kcenter": {
+    "0": 0.5643,
+    "1": 0.6428,
+    "2": 0.5864
+   },
+   "mmds_adapt": {
+    "0": 0.5821,
+    "1": 0.5649,
+    "2": 0.5688
+   },
+   "quadmix": {
+    "0": 0.5609,
+    "1": 0.6153,
+    "2": 0.5681
+   },
+   "random": {
+    "0": 0.5826,
+    "1": 0.5853,
+    "2": 0.5765
+   },
+   "semdedup": {
+    "0": 0.5769,
+    "1": 0.5909,
+    "2": 0.5887
+   }
+  },
+  "metric": "MASE=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "dmf": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "quadmix": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "chronos_fm_3seed.log"
+ },
+ "time_ettm1": {
+  "applicability_na": {
+   "ccs": "same",
+   "el2n": "classification-error based, not applicable to regression",
+   "grand": "same"
+  },
+  "config_hash": "e96d7a608c5031b80490a8addd6af23896f511f050175150ae9eeb7045a39f27",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": [
+   "ETTM1DL SEED=0 python_exit=0",
+   "ETTM1DL SEED=1 python_exit=0",
+   "ETTM1DL SEED=2 python_exit=0"
+  ],
+  "expected_seeds": 3,
+  "higher_is_better": false,
+  "log_sha256": "e4490a41bf7de5eaef90cdbe24c585d532ae231b77d4bcf2a27d58b0e6f544d5",
+  "methods": {
+   "auth_only": {
+    "0": 1.0594,
+    "1": 1.0295,
+    "2": 1.0836
+   },
+   "coreset": {
+    "0": 1.248,
+    "1": 1.2048,
+    "2": 1.2917
+   },
+   "density": {
+    "0": 1.2487,
+    "1": 1.1948,
+    "2": 1.2944
+   },
+   "dmf": {
+    "0": 1.1037,
+    "1": 1.0584,
+    "2": 1.1109
+   },
+   "herding": {
+    "0": 1.203,
+    "1": 1.1729,
+    "2": 1.2492
+   },
+   "influence_only": {
+    "0": 1.3662,
+    "1": 1.3481,
+    "2": 1.425
+   },
+   "kcenter": {
+    "0": 1.2393,
+    "1": 1.2051,
+    "2": 1.3247
+   },
+   "mmds_adapt": {
+    "0": 1.0163,
+    "1": 0.9986,
+    "2": 1.0256
+   },
+   "quadmix": {
+    "0": 1.0929,
+    "1": 1.1025,
+    "2": 1.1284
+   },
+   "random": {
+    "0": 1.2345,
+    "1": 1.2234,
+    "2": 1.2875
+   },
+   "semdedup": {
+    "0": 1.2369,
+    "1": 1.1837,
+    "2": 1.2512
+   }
+  },
+  "metric": "MASE=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "dmf": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "quadmix": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "ettm1_dlinear_3seed.log"
+ },
+ "time_ettm1_chronos": {
+  "applicability_na": {
+   "ccs": "same",
+   "el2n": "classification-error based, not applicable to regression",
+   "grand": "same"
+  },
+  "config_hash": "e9cd2b636e5249a1e87909e1db828832f6cc6256b144ad5639c559fcf15e6d54",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": [
+   "CHRONOS_ETTM1_DONE"
+  ],
+  "expected_seeds": 3,
+  "higher_is_better": false,
+  "log_sha256": "5659e30650cd7cfb10b7987bbd686e866ed23daabfdea272e7af36637f268837",
+  "methods": {
+   "auth_only": {
+    "0": 0.925,
+    "1": 0.8951,
+    "2": 0.8815
+   },
+   "coreset": {
+    "0": 6.507,
+    "1": 0.925,
+    "2": 0.8764
+   },
+   "density": {
+    "0": 0.9279,
+    "1": 0.9096,
+    "2": 0.895
+   },
+   "dmf": {
+    "0": 0.8975,
+    "1": 0.878,
+    "2": 0.8963
+   },
+   "herding": {
+    "0": 1.0025,
+    "1": 0.9081,
+    "2": 0.8524
+   },
+   "influence_only": {
+    "0": 0.888,
+    "1": 0.9147,
+    "2": 0.8932
+   },
+   "kcenter": {
+    "0": 0.9107,
+    "1": 0.9201,
+    "2": 0.875
+   },
+   "mmds_adapt": {
+    "0": 0.8975,
+    "1": 0.8897,
+    "2": 0.8486
+   },
+   "quadmix": {
+    "0": 0.903,
+    "1": 0.8897,
+    "2": 0.8486
+   },
+   "random": {
+    "0": 0.9623,
+    "1": 0.9068,
+    "2": 0.8885
+   },
+   "semdedup": {
+    "0": 0.8978,
+    "1": 0.8967,
+    "2": 0.8756
+   }
+  },
+  "metric": "MASE=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "dmf": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "quadmix": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "chronos_ettm1_3seed.log"
+ },
+ "vision_cifar100": {
+  "applicability_na": {},
+  "config_hash": "09a8d6e5babb79833dcafab57871286a5473942190b4b24d2e8efa053c009a55",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": "none-recorded",
+  "expected_seeds": 3,
+  "higher_is_better": true,
+  "log_sha256": "78a4dd87e4134f2514a9c1ed5783524fa0645a5abd20880f6ee06b3932335dae",
+  "methods": {
+   "auth_only": {
+    "0": 0.4285,
+    "1": 0.428,
+    "2": 0.415
+   },
+   "ccs": {
+    "0": 0.396,
+    "1": 0.366,
+    "2": 0.362
+   },
+   "coreset": {
+    "0": 0.353,
+    "1": 0.347,
+    "2": 0.396
+   },
+   "density": {
+    "0": 0.3615,
+    "1": 0.322,
+    "2": 0.3675
+   },
+   "dmf": {
+    "0": 0.433,
+    "1": 0.416,
+    "2": 0.4175
+   },
+   "el2n": {
+    "0": 0.2415,
+    "1": 0.2655,
+    "2": 0.261
+   },
+   "grand": {
+    "0": 0.3195,
+    "1": 0.3195,
+    "2": 0.334
+   },
+   "herding": {
+    "0": 0.3855,
+    "1": 0.3755,
+    "2": 0.4
+   },
+   "influence_only": {
+    "0": 0.368,
+    "1": 0.3475,
+    "2": 0.3575
+   },
+   "kcenter": {
+    "0": 0.3805,
+    "1": 0.349,
+    "2": 0.393
+   },
+   "mmds_adapt": {
+    "0": 0.433,
+    "1": 0.416,
+    "2": 0.422
+   },
+   "quadmix": {
+    "0": 0.2855,
+    "1": 0.316,
+    "2": 0.3165
+   },
+   "random": {
+    "0": 0.35,
+    "1": 0.363,
+    "2": 0.384
+   },
+   "semdedup": {
+    "0": 0.3765,
+    "1": 0.2975,
+    "2": 0.2895
+   }
+  },
+  "metric": "(?:test_acc|acc)=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "ccs": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "dmf": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "el2n": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "grand": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "quadmix": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "vision_full_3seed.log"
+ },
+ "vision_cifar100__ext0630": {
+  "applicability_na": {},
+  "config_hash": "315184e699db5ccfcce16bfbb48f2b55c7ec2b4a7f9282331ece44e58872f8cb",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": [
+   "#### EXT3 DONE ####"
+  ],
+  "expected_seeds": 3,
+  "higher_is_better": true,
+  "log_sha256": "15ef547f0e20240dd3ea92dd8a0559139b01c67fc307599e5abb40583783e1ff",
+  "methods": {
+   "auth_only": {
+    "0": 0.4285,
+    "1": 0.428,
+    "2": 0.415
+   },
+   "coreset": {
+    "0": 0.353,
+    "1": 0.347,
+    "2": 0.396
+   },
+   "el2n": {
+    "0": 0.2415,
+    "1": 0.2655,
+    "2": 0.261
+   },
+   "grand": {
+    "0": 0.2415,
+    "1": 0.2655,
+    "2": 0.261
+   },
+   "herding": {
+    "0": 0.3855,
+    "1": 0.3755,
+    "2": 0.4
+   },
+   "influence_only": {
+    "0": 0.368,
+    "1": 0.3475,
+    "2": 0.3575
+   },
+   "kcenter": {
+    "0": 0.3805,
+    "1": 0.349,
+    "2": 0.393
+   },
+   "mmds_adapt": {
+    "0": 0.4285,
+    "1": 0.428,
+    "2": 0.415
+   },
+   "random": {
+    "0": 0.35,
+    "1": 0.363,
+    "2": 0.384
+   }
+  },
+  "metric": "(?:test_acc|acc)=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "el2n": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "grand": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "external_baselines_3seed.log"
+ },
+ "vision_cifar100__semdedup_rerun": {
+  "applicability_na": {},
+  "config_hash": "4d9d68a35dd15d8f1394a7f8742ff86d8ef4b6a79bcbedf5811a7002900ad92d",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": "none-recorded",
+  "expected_seeds": 3,
+  "higher_is_better": true,
+  "log_sha256": "30f526fb2b5e4671a61ee4315b81de1901da5319831eed3bf5f9c9e24854c817",
+  "methods": {
+   "density": {
+    "0": 0.391,
+    "1": 0.44,
+    "2": 0.376
+   },
+   "mmds_adapt": {
+    "0": 0.433,
+    "1": 0.416,
+    "2": 0.4345
+   },
+   "semdedup": {
+    "0": 0.4015,
+    "1": 0.4035,
+    "2": 0.4345
+   }
+  },
+  "metric": "(?:test_acc|acc)=([0-9.]+)",
+  "parse_counts": {
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "semdedup_density_rerun_3seed.log"
+ },
+ "vision_cifar100n": {
+  "applicability_na": {},
+  "config_hash": "139feb6b37082b0988649e7a171e13ccb9aee33227b7e183f1058d7ab3ad3697",
+  "conflicts": [],
+  "duplicate_sections": [],
+  "exit_evidence": "none-recorded",
+  "expected_seeds": 3,
+  "higher_is_better": true,
+  "log_sha256": "5148f3ae9f5ddc5abaf8eecdcf52e00bb6775689694faad17c99de779aa31dad",
+  "methods": {
+   "auth_only": {
+    "0": 0.3775,
+    "1": 0.377,
+    "2": 0.367
+   },
+   "ccs": {
+    "0": 0.369,
+    "1": 0.36,
+    "2": 0.313
+   },
+   "coreset": {
+    "0": 0.2925,
+    "1": 0.312,
+    "2": 0.304
+   },
+   "density": {
+    "0": 0.344,
+    "1": 0.371,
+    "2": 0.333
+   },
+   "dmf": {
+    "0": 0.3755,
+    "1": 0.3855,
+    "2": 0.366
+   },
+   "el2n": {
+    "0": 0.2335,
+    "1": 0.193,
+    "2": 0.2245
+   },
+   "grand": {
+    "0": 0.2925,
+    "1": 0.2895,
+    "2": 0.323
+   },
+   "herding": {
+    "0": 0.3315,
+    "1": 0.358,
+    "2": 0.343
+   },
+   "influence_only": {
+    "0": 0.3115,
+    "1": 0.321,
+    "2": 0.2955
+   },
+   "kcenter": {
+    "0": 0.304,
+    "1": 0.306,
+    "2": 0.3195
+   },
+   "mmds_adapt": {
+    "0": 0.3885,
+    "1": 0.3855,
+    "2": 0.367
+   },
+   "quadmix": {
+    "0": 0.265,
+    "1": 0.2645,
+    "2": 0.2535
+   },
+   "random": {
+    "0": 0.3445,
+    "1": 0.341,
+    "2": 0.3005
+   },
+   "semdedup": {
+    "0": 0.355,
+    "1": 0.35,
+    "2": 0.324
+   }
+  },
+  "metric": "(?:test_acc|acc)=([0-9.]+)",
+  "parse_counts": {
+   "auth_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "ccs": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "coreset": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "density": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "dmf": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "el2n": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "grand": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "herding": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "influence_only": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "kcenter": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mmds_adapt": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "quadmix": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "random": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "semdedup": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   }
+  },
+  "protocol_type": "unified-budget transfer (shared testbed)",
+  "source_log": "real_noise_cifar100n_3seed.log"
+ }
+}

@@ -1,0 +1,9 @@
+SOURCE: https://raw.githubusercontent.com/zhouhaoyi/ETDataset/main/LICENSE
+FETCHED: 2026-07-16 (curl -L, local Mac)
+
+License header (first line of file, verbatim):
+  "Creative Commons Attribution-NoDerivatives 4.0 International"
+
+This is CC-BY-ND 4.0. Matches the note already in dataset_provenance.md
+("ETDataset: repo LICENSE (CC-BY-ND 4.0 per repo)"). Attribution required;
+no derivatives may be distributed. Data used as read-only forecasting input.

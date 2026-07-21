@@ -1,0 +1,902 @@
+{
+ "_meta": {
+  "audit": "2257-5 theorem-to-code-to-evidence ledger",
+  "generated_by": "scripts/build_theorem_code_evidence_ledger.py (read-only probe)",
+  "read_only": true,
+  "delta": 0.05,
+  "switch_margin_frac_assumed": 0.015,
+  "inputs": [
+   "results_canonical/**/results.json (16 files)",
+   "experiments/selection_manifest_verdicts.json",
+   "papers/mmdataselect/submissions/aaai2027/sections/method.tex (statements, read)",
+   "papers/mmdataselect/submissions/aaai2027/sections/appendix.tex (proofs, read)",
+   "src/mmdataselect/fusion/adaptive.py",
+   "scripts/run_{vision,tabular,tep,timeseries}_experiment.py"
+  ],
+  "honesty_notes": [
+   "VAL_N for tabular/tep/timeseries is the runner default; the canonical results.json configs do not record it (only vision records val_n=800). If a canonical run overrode VAL_N via env, n_v here is wrong; no artifact contradicts the defaults (vision leaderboard granularity 1/400 confirms its half).",
+   "switch_margin_frac assumed at its code default 0.015; the ADAPT_MARGIN env override is not recorded in artifacts. The empirical-rule replay matching the stored decision in all probed cells is the evidence the default was in force.",
+   "reference/non-reference classification of leaderboard entries is reconstructed from candidate-name prefixes exactly as adaptive.py assigns is_ref (fuse*/vote_ensemble*/grpo_policy* are non-reference).",
+   "Statuses cover only what the named artifacts exercise. Nothing here claims universal optimality, one-click reproduction, or clean-clone verification of SKIPped arms (TEP/text/vision per RC v7 scope)."
+  ]
+ },
+ "entries": [
+  {
+   "id": "Proposition 1",
+   "statement_summary": "Complete coverage and orthogonal identifiability of the three channels (authenticity/influence/coverage) over the five modalities: every record is characterized by at least one channel, extreme policies delimit a reachable region, and channel effect directions are modality-invariant.",
+   "assumptions": [
+    "channels consume only content/embedding/structural flags of the unified record, not the modality value",
+    "per-record decisions independent (keep/resample/downweight/drop)"
+   ],
+   "code_functions": [
+    "src/mmdataselect/signals/* (three channel scorers)",
+    "src/mmdataselect/datatypes.py:UnifiedRecord",
+    "src/mmdataselect/fusion/adaptive.py:AdaptiveController (modality passed only via the gain callback)"
+   ],
+   "config_fields": [],
+   "experiment_gates": [
+    "all four controller arms reuse one AdaptiveController with only the gain callback swapped (runners); channel-drop ablation experiments/channel_drop_ablation_3seed.log exercises per-channel contribution"
+   ],
+   "status": "THEORY_ONLY",
+   "notes": "Structural/design claim with a paper proof; orthogonal identifiability is not machine-checked by any artifact. The code does instantiate the claimed decoupling (one controller, five callbacks)."
+  },
+  {
+   "id": "Theorem 2",
+   "statement_summary": "Budget-constrained selection (decision form) is NP-complete via reduction from budgeted set-function maximization; motivates approximate solvers.",
+   "assumptions": [
+    "general non-monotone non-submodular set function",
+    "non-uniform token costs"
+   ],
+   "code_functions": [
+    "src/mmdataselect/selectors/budget_select.py:BudgetSelector (greedy / Gumbel-Top-K approximate solver)",
+    "src/mmdataselect/fusion/adaptive.py:AdaptiveController._fusion (budgeted Top-K / BudgetSelector calls)"
+   ],
+   "config_fields": [
+    "lam_grid (diversity strength)",
+    "budget fraction per runner"
+   ],
+   "experiment_gates": [
+    "no experiment can exercise NP-completeness; the (1-1/e) submodular-case guarantee is cited, not measured"
+   ],
+   "status": "THEORY_ONLY",
+   "notes": "Self-contained complexity proof (method.tex L94). Code implements the approximation the theorem motivates; nothing to verify empirically."
+  },
+  {
+   "id": "Theorem 3",
+   "statement_summary": "Identification lower bound: any score-only policy (never queries downstream response) suffers worst-case excess risk >= kappa/2 on a constructed environment pair with pointwise-identical observables; validation-driven selection escapes conditionally (under Thm 4 premises, excess <= best candidate + 2*eps).",
+   "assumptions": [
+    "response strength kappa in (0,1]",
+    "constructed environment pair, observables agree pointwise",
+    "escape clause needs the portfolio to contain the zero-excess policy (realizability) and kappa >= 4*eps"
+   ],
+   "code_functions": [
+    "src/mmdataselect/fusion/adaptive.py:AdaptiveController.select (queries held_out_gain = downstream response)",
+    "runners: extras include ('random', ...) and ('auth_bottom', reversed-authenticity Bottom-K)"
+   ],
+   "config_fields": [],
+   "experiment_gates": [
+    "flip instances in canonical artifacts stand in for the construction (CIFAR-100 vs CIFAR-10 best-channel flip, TabPFN vs XGBoost direction flip; experiments/results_matrix.json and canonical_tables.json cells)"
+   ],
+   "status": "THEORY_ONLY",
+   "notes": "The bound itself is a construction, not runnable. PREMISE-GROUNDING GAP (flag for text fix, tex not editable in this audit): method.tex L135 and appendix L63 say the portfolio contains a reversed candidate PER CHANNEL; the code implements only the authenticity-reversed candidate auth_bottom plus random (all four runners); no influence- or coverage-reversed candidates exist, and the fusion grid has no negative weights. Realizability is therefore grounded for the authenticity direction only."
+  },
+  {
+   "id": "Proposition 2",
+   "statement_summary": "Construction optimality: controller returns argmax of held-out gain over a portfolio containing every reference baseline, hence >= every baseline on validation; transfers to test up to generalization error; with no switch it returns the best reference's subset bit-for-bit.",
+   "assumptions": [
+    "portfolio contains every reference baseline (extras lists in runners)",
+    "i.i.d. validation/test with sufficient samples for the transfer clause"
+   ],
+   "code_functions": [
+    "src/mmdataselect/fusion/adaptive.py:AdaptiveController.select L327-346 (scored argmax, refs, best_ref, regularized fallback)",
+    "runners: extra_strategies lists passing each compared baseline into the portfolio"
+   ],
+   "config_fields": [
+    "switch_margin_frac / ADAPT_MARGIN (fallback margin)",
+    "n_val_repeats"
+   ],
+   "experiment_gates": [
+    "adapt_manifest leaderboard+chosen stored in 13/16 canonical cells",
+    "experiments/selection_manifest_verdicts.json: mmds_adapt REPLAY_VERIFIED on vision/tep/tabular seeds 0-2, timeseries seeds 0-1 REPLAY_VERIFIED_SELECTION_ONLY, timeseries seed 2 HASH_ONLY_NOT_REPLAYED (duplicates under no-replacement protocol)",
+    "this ledger's decision replay: empirical rule reproduces the stored chosen strategy and switched flag in every probed cell (see theorem4_probe.summary)"
+   ],
+   "status": "VERIFIED",
+   "notes": "argmax+regularized-fallback is directly and exactly implemented; validation-side (i) is mechanical. The test-side transfer (ii) is a statistical claim, checked only in the multi-seed 'never worst' sense reported in the experiments section, not per-cell. Timeseries seed 2 replay gap is inherited from the manifest gate and disclosed there."
+  },
+  {
+   "id": "Theorem 4",
+   "statement_summary": "Finite-sample guarantee and calibrated switch: with eps = sqrt(ln(2m/delta)/(2 n_v)), uniform convergence, selection guarantee G(chosen) >= max G - 2*eps, and a calibrated switch tau = 2*eps that is safe (never switches to truly worse) and sensitive (true advantage >= 4*eps always switches).",
+   "assumptions": [
+    "per-sample metric bounded in [0,1], mean form",
+    "validation i.i.d. with test",
+    "portfolio constructed independently of the adjudication validation half",
+    "statements conditional on the candidate pool"
+   ],
+   "code_functions": [
+    "src/mmdataselect/fusion/adaptive.py:AdaptiveController.__init__ L79 (switch_margin_frac, ADAPT_MARGIN env)",
+    "src/mmdataselect/fusion/adaptive.py:AdaptiveController.select L333-336 (margin = switch_margin_frac * |best_ref gain|; switch iff overall > best_ref + margin)",
+    "src/mmdataselect/fusion/adaptive.py:select L166-199 (V1/V2 protocol: construction on V1, adjudication on V2, candidate list frozen before V2 -- implements the independence premise)",
+    "runners: gain/gain1 (V2/V1 callbacks), _vperm half-split"
+   ],
+   "config_fields": [
+    "ADAPT_MARGIN (default 0.015)",
+    "VAL_N per runner (800/2500/2000/1000 defaults)",
+    "delta not a code parameter"
+   ],
+   "experiment_gates": [
+    "theorem4_probe in this ledger (13 probed cells, per-cell Hoeffding radius vs empirical margin)",
+    "V1/V2 protocol is code-enforced (self-improving candidates disabled without a V1 callback)"
+   ],
+   "status": "MISMATCH-DISCLOSED",
+   "notes": "The code does NOT implement tau = 2*eps: the deployed margin is a fixed fraction (0.015) of the best reference gain, e.g. vision ~0.007 vs theory tau ~0.19 at n_v=400, m=26. The papers already scope this: method.tex L166 ('the current fixed-fraction margin remains an empirical threshold and is not covered directly by the theorem'), L171 third scope remark, and the fig_voting caption. The independence premise (portfolio frozen before V2) IS implemented. Probe finding: the theory radius never adds a switch and cancels the empirical switches (see theorem4_probe.summary.changed_cells)."
+  },
+  {
+   "id": "Theorem 5",
+   "statement_summary": "Selection gain decomposition under Assumption A (first-order response model R(S)=R0+kappa*rho(S)+eta*d(S)): gain over random = kappa*(rho_bar-rho_sigma) - eta*(d_sigma-d_bar); corollaries scaling / flip threshold / oracle ceiling and conversion / comparative statics.",
+   "assumptions": [
+    "Assumption A: linear first-order response around zero-harm full-coverage (testable modeling assumption)",
+    "kappa,eta properties of learner+task, not data",
+    "comparative-statics corollary additionally needs monotone detector effectiveness"
+   ],
+   "code_functions": [
+    "src/mmdataselect/fusion/adaptive.py:select L337-345 (kappa_hat = best-candidate gain minus random gain, the deployable empirical signature; stored in every adapt_manifest chosen)"
+   ],
+   "config_fields": [],
+   "experiment_gates": [
+    "kappa_hat stored per cell: tabular 0.005-0.011 (robust-FM near-zero regime) vs tep 0.087-0.116, vision 0.058-0.090, timeseries 0.061-0.118 -- direction matches the scaling corollary",
+    "noise-ratio ablation (experiments/noise_ratio_ablation_3seed.log) and oracle rows in canonical results exercise the ceiling corollary qualitatively"
+   ],
+   "status": "THEORY_ONLY",
+   "notes": "Assumption A is never fitted or falsified mechanically in the artifacts; only the kappa_hat signature is implemented and recorded. The decomposition itself (rho, d accounting) has no code counterpart."
+  },
+  {
+   "id": "Theorem 6",
+   "statement_summary": "Dominance of measured allocation over any fixed weight under the channel-linear model: expected-utility gap = N_B * (1-cos theta_bar) * sqrt(beta* Sigma beta*) * M(B); zero iff sensitivities homogeneous at the budget margin (the gap equals the flip).",
+   "assumptions": [
+    "channel-linear data model delta_f(x) = <beta*(f,x), phi(x)> + noise, E[noise|phi]=0",
+    "Sigma_phi positive definite",
+    "near-Gaussian budget margins"
+   ],
+   "code_functions": [
+    "src/mmdataselect/fusion/adaptive.py:select L252-282 (measured-weight fusion: coordinate ascent from V1-best grid point, probes on V1 only, 'fuse learned ...' candidate added to portfolio)"
+   ],
+   "config_fields": [
+    "policy_search / ADAPT_GRPO (optional continuous search variant, default off)"
+   ],
+   "experiment_gates": [
+    "'fuse learned w=...' candidates appear in stored leaderboards (e.g. vision seed 0) and are adjudicated on V2 like every candidate"
+   ],
+   "status": "THEORY_ONLY",
+   "notes": "The MECHANISM (measured allocation) is implemented and exercised; the closed-form gap identity is never computed on data (no beta*, Sigma_phi, or cos theta_bar estimation exists in the code). Honest split: mechanism implemented, quantitative identity theory-only."
+  },
+  {
+   "id": "Proposition 3",
+   "statement_summary": "Superposition beats picking one: least-squares projection of delta onto the three channels correlates with true delta at least as well as the best single channel, with strict improvement equal to the residual partial correlation; fused-proxy ranking has regret <= best single channel.",
+   "assumptions": [
+    "least-squares projection well-defined",
+    "reference set grows for the convergence clause"
+   ],
+   "code_functions": [
+    "src/mmdataselect/fusion/adaptive.py:_default_grid/_W3 L38-46 (discrete weight simplex)",
+    "src/mmdataselect/fusion/adaptive.py:AdaptiveController._fusion (weighted fusion candidates)"
+   ],
+   "config_fields": [
+    "weight_grid (runners pass reduced grids on tabular/tep)"
+   ],
+   "experiment_gates": [
+    "fusion candidates outrank single channels on some stored leaderboards (e.g. timeseries pubcore seed 0: chosen 'fuse w=(0.5, 0, 0.5) q=0.0 lam=0.0' beat all references)"
+   ],
+   "status": "THEORY_ONLY",
+   "notes": "Paper itself frames the grid+validation as a DISCRETE APPROXIMATION of the projection (method.tex L204); no exact least-squares fit exists in code, so the proposition is not directly implemented."
+  },
+  {
+   "id": "Proposition 5",
+   "statement_summary": "Vote-ensemble strict improvement under sufficient conditions: near-disjoint harmful mis-selections (complementarity), common two-candidate core >= budget, balanced weights => harmful rate of the vote set is zero and (with Assumption A) downstream strictly exceeds the best single member; degrades non-gracefully when conditions break.",
+   "assumptions": [
+    "mechanism complementarity (near-disjoint harmful sets)",
+    "core size >= budget",
+    "balanced vote weights",
+    "Assumption A for the downstream clause"
+   ],
+   "code_functions": [
+    "src/mmdataselect/fusion/adaptive.py:select L209-217 (vote_ensemble(top3): V1-top-3, gain-margin-over-random weights, top-k by votes)",
+    "src/mmdataselect/fusion/adaptive.py:select L225-229 (METHOD_V2 diversity-regularized variant, env-gated default off)",
+    "src/mmdataselect/fusion/adaptive.py:select L235-249 (METHOD_V2C complementarity-gated variant, env-gated default off)"
+   ],
+   "config_fields": [
+    "METHOD_V2",
+    "METHOD_V2_LAM",
+    "METHOD_V2C",
+    "METHOD_V2C_THR (default 0.35)"
+   ],
+   "experiment_gates": [
+    "tep seed 1: vote_ensemble(top3) adopted by the switch (stored chosen, switched=true)",
+    "vision seed 0: vote_ensemble tops the leaderboard (0.48) but the margin rule keeps dmf_pub -- the adjudicated-not-unconditional design the proposition motivates",
+    "measured complementarity gamma_hat=8.9% on the vision arm (method.tex L150)"
+   ],
+   "status": "THEORY_ONLY",
+   "notes": "Mechanism implemented and exercised (one canonical adoption); the sufficient CONDITIONS are not machine-checked in the canonical path (the complementarity check exists only behind METHOD_V2C, default off, outside the frozen method)."
+  }
+ ],
+ "theorem4_probe": {
+  "summary": {
+   "cells_total": 16,
+   "cells_probed": 13,
+   "cells_not_reconstructible": 3,
+   "not_reconstructible_cells": [
+    "results_canonical/experiment/run_id=text-qz4-20260717T0933-stratify=1-infl=pplq-train=finetune-lmeval=1/seed_0/results.json",
+    "results_canonical/experiment/run_id=text-qz4-20260717T0933-stratify=1-infl=pplq-train=finetune-lmeval=1/seed_1/results.json",
+    "results_canonical/experiment/run_id=text-qz4-20260717T0933-stratify=1-infl=pplq-train=finetune-lmeval=1/seed_2/results.json"
+   ],
+   "empirical_rule_replay_matches_stored": "13/13",
+   "replay_mismatch_cells": [],
+   "decisions_changed_under_theory_rule": 2,
+   "changed_cells": [
+    {
+     "cell": "results_canonical/tep/tep21/run_id=pubcore-paired-20260716T1754-budget=0.3-model=mlp-noise_frac=0.4-paired_rng=1-pool=4000/seed_1/results.json",
+     "stored": "vote_ensemble(top3)",
+     "theory": "dmf",
+     "gap": 0.012398,
+     "tau_2eps": 0.118192
+    },
+    {
+     "cell": "results_canonical/timeseries/ETTh1/run_id=pubcore-paired-20260716T1754-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000/seed_0/results.json",
+     "stored": "fuse w=(0.5, 0, 0.5) q=0.0 lam=0.0",
+     "theory": "dmf",
+     "gap": 0.023471,
+     "tau_2eps": 0.026621
+    }
+   ],
+   "modalities_without_natural_bound": {
+    "timeseries": "neg-MASE unbounded; leaderboard-range proxy used (crude, stated); overlapping windows further shrink effective n_v",
+    "text(experiment)": "controller not run; no adapt_manifest; NOT_RECONSTRUCTIBLE"
+   },
+   "modalities_with_caveated_bounds": {
+    "tabular": "AUC is a U-statistic, Hoeffding-on-mean is a proxy (paper scope remark)",
+    "tep": "macro-F1 nonlinear in counts, same-form bound with larger constants (paper scope remark)"
+   },
+   "reading": "The theory-calibrated tau=2*eps radius is one order of magnitude larger than the deployed empirical margin (e.g. vision: tau~0.19 vs margin~0.007). It never creates a new switch; its only effect is to CANCEL the switches the empirical rule made, i.e. the controller would fall back to the best reference in every probed cell.",
+   "recommendation": "Keep method-v1's empirical fixed-fraction margin as the DEPLOYED rule: it is what produced every canonical number and is scoped in the paper as an empirical threshold explicitly not covered by Theorem 4 (method.tex L166/L171, fig_voting caption). A theory-calibrated switch (tau=2*eps, or the paired-difference radius the paper says is the relevant smaller quantity) would change controller decisions in the cells listed above and therefore constitutes a NEW frozen method version requiring fresh runs and re-freezing; it is NOT adopted here. This probe is read-only evidence."
+  },
+  "cells": [
+   {
+    "cell": "results_canonical/experiment/run_id=text-qz4-20260717T0933-stratify=1-infl=pplq-train=finetune-lmeval=1/seed_0/results.json",
+    "arm": "text",
+    "dataset": null,
+    "run_id": "run_id=text-qz4-20260717T0933-stratify=1-infl=pplq-train=finetune-lmeval=1",
+    "seed": 0,
+    "status": "NOT_RECONSTRUCTIBLE",
+    "reason": "adapt_manifest or leaderboard missing"
+   },
+   {
+    "cell": "results_canonical/experiment/run_id=text-qz4-20260717T0933-stratify=1-infl=pplq-train=finetune-lmeval=1/seed_1/results.json",
+    "arm": "text",
+    "dataset": null,
+    "run_id": "run_id=text-qz4-20260717T0933-stratify=1-infl=pplq-train=finetune-lmeval=1",
+    "seed": 1,
+    "status": "NOT_RECONSTRUCTIBLE",
+    "reason": "adapt_manifest or leaderboard missing"
+   },
+   {
+    "cell": "results_canonical/experiment/run_id=text-qz4-20260717T0933-stratify=1-infl=pplq-train=finetune-lmeval=1/seed_2/results.json",
+    "arm": "text",
+    "dataset": null,
+    "run_id": "run_id=text-qz4-20260717T0933-stratify=1-infl=pplq-train=finetune-lmeval=1",
+    "seed": 2,
+    "status": "NOT_RECONSTRUCTIBLE",
+    "reason": "adapt_manifest or leaderboard missing"
+   },
+   {
+    "cell": "results_canonical/tabular/electricity/run_id=pubcore-paired-20260716T1754-budget=0.5-model=tabpfn-noise_frac=0.4-paired_rng=1-pool=3000/seed_0/results.json",
+    "arm": "tabular",
+    "dataset": "electricity",
+    "run_id": "run_id=pubcore-paired-20260716T1754-budget=0.5-model=tabpfn-noise_frac=0.4-paired_rng=1-pool=3000",
+    "seed": 0,
+    "status": "PROBED",
+    "m_candidates": 27,
+    "val_n_total": 2500,
+    "n_v_adjudication_V2": 1250,
+    "val_n_source": "runner default VAL_N=2500 (scripts/run_tabular_experiment.py:42), not recorded in results.json config",
+    "metric": "TabPFN ROC AUC on V2",
+    "metric_bounded": true,
+    "bound_note": "AUC in [0,1] but a paired U-statistic, not a mean of iid per-sample terms; paper scope remark (method.tex L171): concentration governed by min(pos,neg). Hoeffding radius with n_v=1250 is a crude OPTIMISTIC proxy.",
+    "range_R": 1.0,
+    "range_R_source": "metric bounded in [0,1]",
+    "best_ref": {
+     "name": "density",
+     "gain": 0.8763191176165697
+    },
+    "overall_best": {
+     "name": "density",
+     "gain": 0.8763191176165697,
+     "is_reference": true
+    },
+    "gap_overall_minus_best_ref": 0.0,
+    "stored_decision": {
+     "strategy": "density",
+     "switched": false,
+     "val_gain": 0.8763191176165697,
+     "kappa_hat": 0.004881253498642213
+    },
+    "empirical_rule_replay": {
+     "margin": 0.013145,
+     "switch": false,
+     "chosen": "density",
+     "matches_stored": true
+    },
+    "theory_rule": {
+     "delta": 0.05,
+     "hoeffding_eps": 0.052857,
+     "tau_2eps": 0.105714,
+     "switch": false,
+     "chosen": "density"
+    },
+    "decision_changed": false
+   },
+   {
+    "cell": "results_canonical/tabular/electricity/run_id=pubcore-paired-20260716T1754-budget=0.5-model=tabpfn-noise_frac=0.4-paired_rng=1-pool=3000/seed_1/results.json",
+    "arm": "tabular",
+    "dataset": "electricity",
+    "run_id": "run_id=pubcore-paired-20260716T1754-budget=0.5-model=tabpfn-noise_frac=0.4-paired_rng=1-pool=3000",
+    "seed": 1,
+    "status": "PROBED",
+    "m_candidates": 27,
+    "val_n_total": 2500,
+    "n_v_adjudication_V2": 1250,
+    "val_n_source": "runner default VAL_N=2500 (scripts/run_tabular_experiment.py:42), not recorded in results.json config",
+    "metric": "TabPFN ROC AUC on V2",
+    "metric_bounded": true,
+    "bound_note": "AUC in [0,1] but a paired U-statistic, not a mean of iid per-sample terms; paper scope remark (method.tex L171): concentration governed by min(pos,neg). Hoeffding radius with n_v=1250 is a crude OPTIMISTIC proxy.",
+    "range_R": 1.0,
+    "range_R_source": "metric bounded in [0,1]",
+    "best_ref": {
+     "name": "tabpfn_hybrid",
+     "gain": 0.8662552687038989
+    },
+    "overall_best": {
+     "name": "tabpfn_hybrid",
+     "gain": 0.8662552687038989,
+     "is_reference": true
+    },
+    "gap_overall_minus_best_ref": 0.0,
+    "stored_decision": {
+     "strategy": "tabpfn_hybrid",
+     "switched": false,
+     "val_gain": 0.8662552687038989,
+     "kappa_hat": 0.00941122233930447
+    },
+    "empirical_rule_replay": {
+     "margin": 0.012994,
+     "switch": false,
+     "chosen": "tabpfn_hybrid",
+     "matches_stored": true
+    },
+    "theory_rule": {
+     "delta": 0.05,
+     "hoeffding_eps": 0.052857,
+     "tau_2eps": 0.105714,
+     "switch": false,
+     "chosen": "tabpfn_hybrid"
+    },
+    "decision_changed": false
+   },
+   {
+    "cell": "results_canonical/tabular/electricity/run_id=pubcore-paired-20260716T1754-budget=0.5-model=tabpfn-noise_frac=0.4-paired_rng=1-pool=3000/seed_2/results.json",
+    "arm": "tabular",
+    "dataset": "electricity",
+    "run_id": "run_id=pubcore-paired-20260716T1754-budget=0.5-model=tabpfn-noise_frac=0.4-paired_rng=1-pool=3000",
+    "seed": 2,
+    "status": "PROBED",
+    "m_candidates": 27,
+    "val_n_total": 2500,
+    "n_v_adjudication_V2": 1250,
+    "val_n_source": "runner default VAL_N=2500 (scripts/run_tabular_experiment.py:42), not recorded in results.json config",
+    "metric": "TabPFN ROC AUC on V2",
+    "metric_bounded": true,
+    "bound_note": "AUC in [0,1] but a paired U-statistic, not a mean of iid per-sample terms; paper scope remark (method.tex L171): concentration governed by min(pos,neg). Hoeffding radius with n_v=1250 is a crude OPTIMISTIC proxy.",
+    "range_R": 1.0,
+    "range_R_source": "metric bounded in [0,1]",
+    "best_ref": {
+     "name": "kcenter",
+     "gain": 0.8763156042328759
+    },
+    "overall_best": {
+     "name": "vote_ensemble(top3)",
+     "gain": 0.8772789250434733,
+     "is_reference": false
+    },
+    "gap_overall_minus_best_ref": 0.000963,
+    "stored_decision": {
+     "strategy": "kcenter",
+     "switched": false,
+     "val_gain": 0.8763156042328759,
+     "kappa_hat": 0.010743829662981041
+    },
+    "empirical_rule_replay": {
+     "margin": 0.013145,
+     "switch": false,
+     "chosen": "kcenter",
+     "matches_stored": true
+    },
+    "theory_rule": {
+     "delta": 0.05,
+     "hoeffding_eps": 0.052857,
+     "tau_2eps": 0.105714,
+     "switch": false,
+     "chosen": "kcenter"
+    },
+    "decision_changed": false
+   },
+   {
+    "cell": "results_canonical/tep/tep21/run_id=pubcore-paired-20260716T1754-budget=0.3-model=mlp-noise_frac=0.4-paired_rng=1-pool=4000/seed_0/results.json",
+    "arm": "tep",
+    "dataset": "tep21",
+    "run_id": "run_id=pubcore-paired-20260716T1754-budget=0.3-model=mlp-noise_frac=0.4-paired_rng=1-pool=4000",
+    "seed": 0,
+    "status": "PROBED",
+    "m_candidates": 27,
+    "val_n_total": 2000,
+    "n_v_adjudication_V2": 1000,
+    "val_n_source": "runner default VAL_N=2000 (scripts/run_tep_experiment.py:38), not recorded in results.json config",
+    "metric": "MLP macro-F1 on V2",
+    "metric_bounded": true,
+    "bound_note": "macro-F1 in [0,1] but a nonlinear function of class counts; paper scope remark (method.tex L171): same-form bound with larger constants. Radius is a crude proxy.",
+    "range_R": 1.0,
+    "range_R_source": "metric bounded in [0,1]",
+    "best_ref": {
+     "name": "dmf_pub",
+     "gain": 0.44088850986003525
+    },
+    "overall_best": {
+     "name": "dmf_pub",
+     "gain": 0.44088850986003525,
+     "is_reference": true
+    },
+    "gap_overall_minus_best_ref": 0.0,
+    "stored_decision": {
+     "strategy": "dmf_pub",
+     "switched": false,
+     "val_gain": 0.44088850986003525,
+     "kappa_hat": 0.0868630062420751
+    },
+    "empirical_rule_replay": {
+     "margin": 0.006613,
+     "switch": false,
+     "chosen": "dmf_pub",
+     "matches_stored": true
+    },
+    "theory_rule": {
+     "delta": 0.05,
+     "hoeffding_eps": 0.059096,
+     "tau_2eps": 0.118192,
+     "switch": false,
+     "chosen": "dmf_pub"
+    },
+    "decision_changed": false
+   },
+   {
+    "cell": "results_canonical/tep/tep21/run_id=pubcore-paired-20260716T1754-budget=0.3-model=mlp-noise_frac=0.4-paired_rng=1-pool=4000/seed_1/results.json",
+    "arm": "tep",
+    "dataset": "tep21",
+    "run_id": "run_id=pubcore-paired-20260716T1754-budget=0.3-model=mlp-noise_frac=0.4-paired_rng=1-pool=4000",
+    "seed": 1,
+    "status": "PROBED",
+    "m_candidates": 27,
+    "val_n_total": 2000,
+    "n_v_adjudication_V2": 1000,
+    "val_n_source": "runner default VAL_N=2000 (scripts/run_tep_experiment.py:38), not recorded in results.json config",
+    "metric": "MLP macro-F1 on V2",
+    "metric_bounded": true,
+    "bound_note": "macro-F1 in [0,1] but a nonlinear function of class counts; paper scope remark (method.tex L171): same-form bound with larger constants. Radius is a crude proxy.",
+    "range_R": 1.0,
+    "range_R_source": "metric bounded in [0,1]",
+    "best_ref": {
+     "name": "dmf",
+     "gain": 0.3881509181851983
+    },
+    "overall_best": {
+     "name": "vote_ensemble(top3)",
+     "gain": 0.40054918767192615,
+     "is_reference": false
+    },
+    "gap_overall_minus_best_ref": 0.012398,
+    "stored_decision": {
+     "strategy": "vote_ensemble(top3)",
+     "switched": true,
+     "val_gain": 0.40054918767192615,
+     "kappa_hat": 0.11617051602169759
+    },
+    "empirical_rule_replay": {
+     "margin": 0.005822,
+     "switch": true,
+     "chosen": "vote_ensemble(top3)",
+     "matches_stored": true
+    },
+    "theory_rule": {
+     "delta": 0.05,
+     "hoeffding_eps": 0.059096,
+     "tau_2eps": 0.118192,
+     "switch": false,
+     "chosen": "dmf"
+    },
+    "decision_changed": true
+   },
+   {
+    "cell": "results_canonical/tep/tep21/run_id=pubcore-paired-20260716T1754-budget=0.3-model=mlp-noise_frac=0.4-paired_rng=1-pool=4000/seed_2/results.json",
+    "arm": "tep",
+    "dataset": "tep21",
+    "run_id": "run_id=pubcore-paired-20260716T1754-budget=0.3-model=mlp-noise_frac=0.4-paired_rng=1-pool=4000",
+    "seed": 2,
+    "status": "PROBED",
+    "m_candidates": 27,
+    "val_n_total": 2000,
+    "n_v_adjudication_V2": 1000,
+    "val_n_source": "runner default VAL_N=2000 (scripts/run_tep_experiment.py:38), not recorded in results.json config",
+    "metric": "MLP macro-F1 on V2",
+    "metric_bounded": true,
+    "bound_note": "macro-F1 in [0,1] but a nonlinear function of class counts; paper scope remark (method.tex L171): same-form bound with larger constants. Radius is a crude proxy.",
+    "range_R": 1.0,
+    "range_R_source": "metric bounded in [0,1]",
+    "best_ref": {
+     "name": "dmf",
+     "gain": 0.4157774618427613
+    },
+    "overall_best": {
+     "name": "vote_ensemble(top3)",
+     "gain": 0.4190201073204051,
+     "is_reference": false
+    },
+    "gap_overall_minus_best_ref": 0.003243,
+    "stored_decision": {
+     "strategy": "dmf",
+     "switched": false,
+     "val_gain": 0.4157774618427613,
+     "kappa_hat": 0.10584309427558636
+    },
+    "empirical_rule_replay": {
+     "margin": 0.006237,
+     "switch": false,
+     "chosen": "dmf",
+     "matches_stored": true
+    },
+    "theory_rule": {
+     "delta": 0.05,
+     "hoeffding_eps": 0.059096,
+     "tau_2eps": 0.118192,
+     "switch": false,
+     "chosen": "dmf"
+    },
+    "decision_changed": false
+   },
+   {
+    "cell": "results_canonical/timeseries/ETTh1/run_id=ctrl-ts2-noproxy-20260717T0922-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000/seed_2/results.json",
+    "arm": "timeseries",
+    "dataset": "ETTh1",
+    "run_id": "run_id=ctrl-ts2-noproxy-20260717T0922-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000",
+    "seed": 2,
+    "status": "PROBED",
+    "m_candidates": 19,
+    "val_n_total": 1000,
+    "n_v_adjudication_V2": 500,
+    "val_n_source": "runner default VAL_N=1000 (scripts/run_timeseries_experiment.py:34), not recorded in results.json config",
+    "metric": "DLinear negative MASE on V2 windows",
+    "metric_bounded": false,
+    "bound_note": "MASE is UNBOUNDED (NOT_DIRECTLY_BOUNDED): no natural [0,1] range. R is set to the observed leaderboard value range as an explicitly crude proxy; additionally V2 windows overlap, so effective n < 500 and the radius is optimistic on both counts (paper scope remark: truncation + disjoint-window effective n).",
+    "range_R": 0.193123,
+    "range_R_source": "NOT_DIRECTLY_BOUNDED: leaderboard value range used as crude proxy (stated)",
+    "best_ref": {
+     "name": "mmdataselect",
+     "gain": -1.034858996119331
+    },
+    "overall_best": {
+     "name": "vote_ensemble(top3)",
+     "gain": -1.0336624749415755,
+     "is_reference": false
+    },
+    "gap_overall_minus_best_ref": 0.001197,
+    "stored_decision": {
+     "strategy": "mmdataselect",
+     "switched": false,
+     "val_gain": -1.034858996119331,
+     "kappa_hat": 0.06534242353694442
+    },
+    "empirical_rule_replay": {
+     "margin": 0.015523,
+     "switch": false,
+     "chosen": "mmdataselect",
+     "matches_stored": true
+    },
+    "theory_rule": {
+     "delta": 0.05,
+     "hoeffding_eps": 0.015729,
+     "tau_2eps": 0.031458,
+     "switch": false,
+     "chosen": "mmdataselect"
+    },
+    "decision_changed": false
+   },
+   {
+    "cell": "results_canonical/timeseries/ETTh1/run_id=pubcore-paired-20260716T1754-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000/seed_0/results.json",
+    "arm": "timeseries",
+    "dataset": "ETTh1",
+    "run_id": "run_id=pubcore-paired-20260716T1754-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000",
+    "seed": 0,
+    "status": "PROBED",
+    "m_candidates": 20,
+    "val_n_total": 1000,
+    "n_v_adjudication_V2": 500,
+    "val_n_source": "runner default VAL_N=1000 (scripts/run_timeseries_experiment.py:34), not recorded in results.json config",
+    "metric": "DLinear negative MASE on V2 windows",
+    "metric_bounded": false,
+    "bound_note": "MASE is UNBOUNDED (NOT_DIRECTLY_BOUNDED): no natural [0,1] range. R is set to the observed leaderboard value range as an explicitly crude proxy; additionally V2 windows overlap, so effective n < 500 and the radius is optimistic on both counts (paper scope remark: truncation + disjoint-window effective n).",
+    "range_R": 0.162798,
+    "range_R_source": "NOT_DIRECTLY_BOUNDED: leaderboard value range used as crude proxy (stated)",
+    "best_ref": {
+     "name": "dmf",
+     "gain": -1.0264135041491529
+    },
+    "overall_best": {
+     "name": "fuse w=(0.5, 0, 0.5) q=0.0 lam=0.0",
+     "gain": -1.0029427671042916,
+     "is_reference": false
+    },
+    "gap_overall_minus_best_ref": 0.023471,
+    "stored_decision": {
+     "strategy": "fuse w=(0.5, 0, 0.5) q=0.0 lam=0.0",
+     "switched": true,
+     "val_gain": -1.0029427671042916,
+     "kappa_hat": 0.11808417215735134
+    },
+    "empirical_rule_replay": {
+     "margin": 0.015396,
+     "switch": true,
+     "chosen": "fuse w=(0.5, 0, 0.5) q=0.0 lam=0.0",
+     "matches_stored": true
+    },
+    "theory_rule": {
+     "delta": 0.05,
+     "hoeffding_eps": 0.01331,
+     "tau_2eps": 0.026621,
+     "switch": false,
+     "chosen": "dmf"
+    },
+    "decision_changed": true
+   },
+   {
+    "cell": "results_canonical/timeseries/ETTh1/run_id=pubcore-paired-20260716T1754-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000/seed_1/results.json",
+    "arm": "timeseries",
+    "dataset": "ETTh1",
+    "run_id": "run_id=pubcore-paired-20260716T1754-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000",
+    "seed": 1,
+    "status": "PROBED",
+    "m_candidates": 20,
+    "val_n_total": 1000,
+    "n_v_adjudication_V2": 500,
+    "val_n_source": "runner default VAL_N=1000 (scripts/run_timeseries_experiment.py:34), not recorded in results.json config",
+    "metric": "DLinear negative MASE on V2 windows",
+    "metric_bounded": false,
+    "bound_note": "MASE is UNBOUNDED (NOT_DIRECTLY_BOUNDED): no natural [0,1] range. R is set to the observed leaderboard value range as an explicitly crude proxy; additionally V2 windows overlap, so effective n < 500 and the radius is optimistic on both counts (paper scope remark: truncation + disjoint-window effective n).",
+    "range_R": 0.178099,
+    "range_R_source": "NOT_DIRECTLY_BOUNDED: leaderboard value range used as crude proxy (stated)",
+    "best_ref": {
+     "name": "dmf_pub",
+     "gain": -1.067541897023135
+    },
+    "overall_best": {
+     "name": "vote_ensemble(top3)",
+     "gain": -1.0653010642587761,
+     "is_reference": false
+    },
+    "gap_overall_minus_best_ref": 0.002241,
+    "stored_decision": {
+     "strategy": "dmf_pub",
+     "switched": false,
+     "val_gain": -1.067541897023135,
+     "kappa_hat": 0.060801212287260986
+    },
+    "empirical_rule_replay": {
+     "margin": 0.016013,
+     "switch": false,
+     "chosen": "dmf_pub",
+     "matches_stored": true
+    },
+    "theory_rule": {
+     "delta": 0.05,
+     "hoeffding_eps": 0.014561,
+     "tau_2eps": 0.029123,
+     "switch": false,
+     "chosen": "dmf_pub"
+    },
+    "decision_changed": false
+   },
+   {
+    "cell": "results_canonical/timeseries/ETTh1/run_id=pubcore-paired-20260716T1754-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000/seed_2/results.json",
+    "arm": "timeseries",
+    "dataset": "ETTh1",
+    "run_id": "run_id=pubcore-paired-20260716T1754-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000",
+    "seed": 2,
+    "status": "PROBED",
+    "m_candidates": 20,
+    "val_n_total": 1000,
+    "n_v_adjudication_V2": 500,
+    "val_n_source": "runner default VAL_N=1000 (scripts/run_timeseries_experiment.py:34), not recorded in results.json config",
+    "metric": "DLinear negative MASE on V2 windows",
+    "metric_bounded": false,
+    "bound_note": "MASE is UNBOUNDED (NOT_DIRECTLY_BOUNDED): no natural [0,1] range. R is set to the observed leaderboard value range as an explicitly crude proxy; additionally V2 windows overlap, so effective n < 500 and the radius is optimistic on both counts (paper scope remark: truncation + disjoint-window effective n).",
+    "range_R": 0.204479,
+    "range_R_source": "NOT_DIRECTLY_BOUNDED: leaderboard value range used as crude proxy (stated)",
+    "best_ref": {
+     "name": "quadmix",
+     "gain": -1.022305590269019
+    },
+    "overall_best": {
+     "name": "quadmix",
+     "gain": -1.022305590269019,
+     "is_reference": true
+    },
+    "gap_overall_minus_best_ref": 0.0,
+    "stored_decision": {
+     "strategy": "quadmix",
+     "switched": false,
+     "val_gain": -1.022305590269019,
+     "kappa_hat": 0.07669930820950088
+    },
+    "empirical_rule_replay": {
+     "margin": 0.015335,
+     "switch": false,
+     "chosen": "quadmix",
+     "matches_stored": true
+    },
+    "theory_rule": {
+     "delta": 0.05,
+     "hoeffding_eps": 0.016718,
+     "tau_2eps": 0.033436,
+     "switch": false,
+     "chosen": "quadmix"
+    },
+    "decision_changed": false
+   },
+   {
+    "cell": "results_canonical/vision/uoft-cs_cifar100/run_id=pubcore-paired-20260716T1754-budget=0.5-noise_frac=0.4-paired_rng=1-pool=4000-val_n=800-vis_noise=inject/seed_0/results.json",
+    "arm": "vision",
+    "dataset": "uoft-cs/cifar100",
+    "run_id": "run_id=pubcore-paired-20260716T1754-budget=0.5-noise_frac=0.4-paired_rng=1-pool=4000-val_n=800-vis_noise=inject",
+    "seed": 0,
+    "status": "PROBED",
+    "m_candidates": 26,
+    "val_n_total": 800,
+    "n_v_adjudication_V2": 400,
+    "val_n_source": "results.json config val_n=800 (recorded)",
+    "metric": "linear-head top-1 accuracy on V2",
+    "metric_bounded": true,
+    "bound_note": "per-sample 0/1 loss, mean in [0,1]; Hoeffding applies directly. Leaderboard granularity 1/400 = 0.0025 confirms n_v=400.",
+    "range_R": 1.0,
+    "range_R_source": "metric bounded in [0,1]",
+    "best_ref": {
+     "name": "dmf_pub",
+     "gain": 0.475
+    },
+    "overall_best": {
+     "name": "vote_ensemble(top3)",
+     "gain": 0.48,
+     "is_reference": false
+    },
+    "gap_overall_minus_best_ref": 0.005,
+    "stored_decision": {
+     "strategy": "dmf_pub",
+     "switched": false,
+     "val_gain": 0.475,
+     "kappa_hat": 0.08999999999999997
+    },
+    "empirical_rule_replay": {
+     "margin": 0.007125,
+     "switch": false,
+     "chosen": "dmf_pub",
+     "matches_stored": true
+    },
+    "theory_rule": {
+     "delta": 0.05,
+     "hoeffding_eps": 0.093186,
+     "tau_2eps": 0.186373,
+     "switch": false,
+     "chosen": "dmf_pub"
+    },
+    "decision_changed": false
+   },
+   {
+    "cell": "results_canonical/vision/uoft-cs_cifar100/run_id=pubcore-paired-20260716T1754-budget=0.5-noise_frac=0.4-paired_rng=1-pool=4000-val_n=800-vis_noise=inject/seed_1/results.json",
+    "arm": "vision",
+    "dataset": "uoft-cs/cifar100",
+    "run_id": "run_id=pubcore-paired-20260716T1754-budget=0.5-noise_frac=0.4-paired_rng=1-pool=4000-val_n=800-vis_noise=inject",
+    "seed": 1,
+    "status": "PROBED",
+    "m_candidates": 26,
+    "val_n_total": 800,
+    "n_v_adjudication_V2": 400,
+    "val_n_source": "results.json config val_n=800 (recorded)",
+    "metric": "linear-head top-1 accuracy on V2",
+    "metric_bounded": true,
+    "bound_note": "per-sample 0/1 loss, mean in [0,1]; Hoeffding applies directly. Leaderboard granularity 1/400 = 0.0025 confirms n_v=400.",
+    "range_R": 1.0,
+    "range_R_source": "metric bounded in [0,1]",
+    "best_ref": {
+     "name": "dmf_pub",
+     "gain": 0.46
+    },
+    "overall_best": {
+     "name": "dmf_pub",
+     "gain": 0.46,
+     "is_reference": true
+    },
+    "gap_overall_minus_best_ref": 0.0,
+    "stored_decision": {
+     "strategy": "dmf_pub",
+     "switched": false,
+     "val_gain": 0.46,
+     "kappa_hat": 0.057499999999999996
+    },
+    "empirical_rule_replay": {
+     "margin": 0.0069,
+     "switch": false,
+     "chosen": "dmf_pub",
+     "matches_stored": true
+    },
+    "theory_rule": {
+     "delta": 0.05,
+     "hoeffding_eps": 0.093186,
+     "tau_2eps": 0.186373,
+     "switch": false,
+     "chosen": "dmf_pub"
+    },
+    "decision_changed": false
+   },
+   {
+    "cell": "results_canonical/vision/uoft-cs_cifar100/run_id=pubcore-paired-20260716T1754-budget=0.5-noise_frac=0.4-paired_rng=1-pool=4000-val_n=800-vis_noise=inject/seed_2/results.json",
+    "arm": "vision",
+    "dataset": "uoft-cs/cifar100",
+    "run_id": "run_id=pubcore-paired-20260716T1754-budget=0.5-noise_frac=0.4-paired_rng=1-pool=4000-val_n=800-vis_noise=inject",
+    "seed": 2,
+    "status": "PROBED",
+    "m_candidates": 26,
+    "val_n_total": 800,
+    "n_v_adjudication_V2": 400,
+    "val_n_source": "results.json config val_n=800 (recorded)",
+    "metric": "linear-head top-1 accuracy on V2",
+    "metric_bounded": true,
+    "bound_note": "per-sample 0/1 loss, mean in [0,1]; Hoeffding applies directly. Leaderboard granularity 1/400 = 0.0025 confirms n_v=400.",
+    "range_R": 1.0,
+    "range_R_source": "metric bounded in [0,1]",
+    "best_ref": {
+     "name": "auth_only",
+     "gain": 0.48
+    },
+    "overall_best": {
+     "name": "auth_only",
+     "gain": 0.48,
+     "is_reference": true
+    },
+    "gap_overall_minus_best_ref": 0.0,
+    "stored_decision": {
+     "strategy": "auth_only",
+     "switched": false,
+     "val_gain": 0.48,
+     "kappa_hat": 0.08249999999999996
+    },
+    "empirical_rule_replay": {
+     "margin": 0.0072,
+     "switch": false,
+     "chosen": "auth_only",
+     "matches_stored": true
+    },
+    "theory_rule": {
+     "delta": 0.05,
+     "hoeffding_eps": 0.093186,
+     "tau_2eps": 0.186373,
+     "switch": false,
+     "chosen": "auth_only"
+    },
+    "decision_changed": false
+   }
+  ]
+ }
+}

@@ -1,0 +1,31 @@
+#### TSSUP seed0 ####
+  influence_only   n=  900 clean%=0.72 MASE=1.2589 (0.8s)
+  coreset          n=  900 clean%=0.51 MASE=1.0770 (10.7s)
+  coreset          MASE=1.0770 clean%=0.51 n=900
+  influence_only   MASE=1.2589 clean%=0.72 n=900
+#### TSSUP seed1 ####
+  influence_only   n=  900 clean%=0.73 MASE=1.2211 (1.5s)
+  coreset          n=  900 clean%=0.49 MASE=1.0804 (15.5s)
+  coreset          MASE=1.0804 clean%=0.49 n=900
+  influence_only   MASE=1.2211 clean%=0.73 n=900
+#### TSSUP seed2 ####
+  influence_only   n=  900 clean%=0.76 MASE=1.2664 (1.0s)
+  coreset          n=  900 clean%=0.51 MASE=1.0890 (10.7s)
+  coreset          MASE=1.0890 clean%=0.51 n=900
+  influence_only   MASE=1.2664 clean%=0.76 n=900
+#### TSM1 seed0 ####
+  random           n=  900 clean%=0.63 MASE=1.2301 (1.1s)
+  mmds_adapt       n=  900 clean%=0.95 MASE=1.0225 (45.7s)
+  mmds_adapt       MASE=1.0225 clean%=0.95 n=900
+  random           MASE=1.2301 clean%=0.63 n=900
+#### TSM1 seed1 ####
+  random           n=  900 clean%=0.61 MASE=1.2266 (2.1s)
+  mmds_adapt       n=  900 clean%=0.88 MASE=1.0254 (79.6s)
+  mmds_adapt       MASE=1.0254 clean%=0.88 n=900
+  random           MASE=1.2266 clean%=0.61 n=900
+#### TSM1 seed2 ####
+  random           n=  900 clean%=0.59 MASE=1.2879 (1.3s)
+  mmds_adapt       n=  900 clean%=0.87 MASE=1.0318 (107.7s)
+  mmds_adapt       MASE=1.0318 clean%=0.87 n=900
+  random           MASE=1.2879 clean%=0.59 n=900
+#### TSSUP DONE ####

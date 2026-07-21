@@ -1,0 +1,8 @@
+  [method-v3] paired ROC-AUC certificate protocol: gate=paired_auc_gate delta=0.05 family=1 n_eff=min(n_positive,n_negative)
+tabular=electricity model=tabpfn | pool=3000 test=2000 budget=1500 classes=2 seed=0
+  tags: {'corrupt': np.int64(400), 'dup': np.int64(400), 'flip': np.int64(400), 'high': np.int64(1800)}
+    [adapt] picked 'fuse_learned_w_0_0_0_3_0_7_q_0_25_lam_0_6' (val_auc=0.854)
+  mmds_adapt       n= 1500 clean%=0.64 acc=0.7985 auc=0.8635 (721.6s)
+
+==== TABULAR (electricity, AUC higher better) ====
+  mmds_adapt       auc=0.8635 acc=0.7985 clean%=0.64 n=1500

@@ -1,0 +1,337 @@
+##### RV1 SEED=0 ETTH1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'dmf' (val_negMASE=-1.050)
+  mmds_adapt       n=  900 clean%=0.90 MASE=1.0146 (17.4s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=1.0146 clean%=0.90 n=900
+##### RV1 SEED=0 VISION #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'random' (val=0.445)
+  mmds_adapt       n= 2000 clean%=0.60 test_acc=0.4275 (66.6s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4275 clean%=0.60 n=2000
+##### RV1 SEED=0 TEP #####
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=0
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt] picked 'dmf' (val_f1=0.443)
+  mmds_adapt       n= 1200 clean%=0.84 macroF1=0.4151 acc=0.4200 (41.4s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4151 acc=0.4200 clean%=0.84 n=1200
+##### RV1 SEED=0 DAISY #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=daisy_cstr OT | L=96 H=24 pool=3000 test=1107 budget=900 dev=mps seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse w=(1, 0, 0) q=0.0 lam=0.25' (val_negMASE=-1.074)
+  mmds_adapt       n=  900 clean%=0.93 MASE=1.0127 (16.5s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=1.0127 clean%=0.93 n=900
+##### RV1 SEED=1 ETTH1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'mmdataselect' (val_negMASE=-1.108)
+  mmds_adapt       n=  900 clean%=0.84 MASE=0.9836 (17.3s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.9836 clean%=0.84 n=900
+##### RV1 SEED=1 VISION #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=1
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'dmf' (val=0.450)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4160 (68.3s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4160 clean%=0.80 n=2000
+##### RV1 SEED=1 TEP #####
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=1
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt] picked 'vote_ensemble(top3)' (val_f1=0.395)
+  mmds_adapt       n= 1200 clean%=0.68 macroF1=0.4193 acc=0.4220 (42.8s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4193 acc=0.4220 clean%=0.68 n=1200
+##### RV1 SEED=1 DAISY #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=daisy_cstr OT | L=96 H=24 pool=3000 test=1107 budget=900 dev=mps seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'dmf' (val_negMASE=-1.057)
+  mmds_adapt       n=  900 clean%=0.94 MASE=1.0154 (17.3s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=1.0154 clean%=0.94 n=900
+##### RV1 SEED=2 ETTH1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'quadmix' (val_negMASE=-1.098)
+  mmds_adapt       n=  900 clean%=0.78 MASE=1.0331 (17.3s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=1.0331 clean%=0.78 n=900
+##### RV1 SEED=2 VISION #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=2
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'fuse w=(1, 0, 0) q=0.0 lam=0.25' (val=0.465)
+  mmds_adapt       n= 2000 clean%=0.81 test_acc=0.4220 (66.9s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4220 clean%=0.81 n=2000
+##### RV1 SEED=2 TEP #####
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=2
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt] picked 'dmf' (val_f1=0.410)
+  mmds_adapt       n= 1200 clean%=0.86 macroF1=0.4157 acc=0.4173 (43.1s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4157 acc=0.4173 clean%=0.86 n=1200
+##### RV1 SEED=2 DAISY #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=daisy_cstr OT | L=96 H=24 pool=3000 test=1107 budget=900 dev=mps seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse w=(1, 0, 0) q=0.0 lam=0.6' (val_negMASE=-1.080)
+  mmds_adapt       n=  900 clean%=0.97 MASE=1.0053 (16.6s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=1.0053 clean%=0.97 n=900
+##### NEWSEED RV0 SEED=3 ETTH1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=3
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse learned w=(0.88, 0.0, 0.12) q=0.0 lam=0.6' (val_negMASE=-0.971)
+  mmds_adapt       n=  900 clean%=0.94 MASE=0.9416 (17.3s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.9416 clean%=0.94 n=900
+##### NEWSEED RV1 SEED=3 ETTH1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=3
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'mmdataselect' (val_negMASE=-1.017)
+  mmds_adapt       n=  900 clean%=0.83 MASE=0.9791 (17.3s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.9791 clean%=0.83 n=900
+##### NEWSEED RV0 SEED=4 ETTH1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=4
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse w=(1, 0, 0) q=0.0 lam=0.6' (val_negMASE=-0.935)
+  mmds_adapt       n=  900 clean%=0.94 MASE=0.9396 (16.6s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.9396 clean%=0.94 n=900
+##### NEWSEED RV1 SEED=4 ETTH1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=4
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'dmf' (val_negMASE=-1.010)
+  mmds_adapt       n=  900 clean%=0.90 MASE=0.9897 (16.5s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.9897 clean%=0.90 n=900
+##### HELDOUT RV0 SEED=0 ETTh2 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh2 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse learned w=(0.5, 0.12, 0.38) q=0.0 lam=0.0' (val_negMASE=-0.605)
+  mmds_adapt       n=  900 clean%=0.92 MASE=0.6288 (16.9s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.6288 clean%=0.92 n=900
+##### HELDOUT RV1 SEED=0 ETTh2 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh2 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse learned w=(0.5, 0.12, 0.38) q=0.0 lam=0.0' (val_negMASE=-0.627)
+  mmds_adapt       n=  900 clean%=0.92 MASE=0.6288 (16.9s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.6288 clean%=0.92 n=900
+##### HELDOUT RV0 SEED=1 ETTh2 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh2 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'vote_ensemble(top3)' (val_negMASE=-0.633)
+  mmds_adapt       n=  900 clean%=0.91 MASE=0.6442 (16.2s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.6442 clean%=0.91 n=900
+##### HELDOUT RV1 SEED=1 ETTh2 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh2 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse w=(0.5, 0, 0.5) q=0.25 lam=0.0' (val_negMASE=-0.667)
+  mmds_adapt       n=  900 clean%=0.91 MASE=0.6440 (16.2s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.6440 clean%=0.91 n=900
+##### HELDOUT RV0 SEED=2 ETTh2 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh2 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse w=(1, 0, 0) q=0.0 lam=0.6' (val_negMASE=-0.637)
+  mmds_adapt       n=  900 clean%=0.97 MASE=0.6256 (16.6s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.6256 clean%=0.97 n=900
+##### HELDOUT RV1 SEED=2 ETTh2 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh2 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'dmf' (val_negMASE=-0.678)
+  mmds_adapt       n=  900 clean%=0.92 MASE=0.6806 (16.5s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.6806 clean%=0.92 n=900
+##### HELDOUT RV0 SEED=0 ETTm1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTm1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse w=(1, 0, 0) q=0.0 lam=0.6' (val_negMASE=-1.198)
+  mmds_adapt       n=  900 clean%=0.95 MASE=1.0225 (16.7s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=1.0225 clean%=0.95 n=900
+##### HELDOUT RV1 SEED=0 ETTm1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTm1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse w=(1, 0, 0) q=0.0 lam=0.6' (val_negMASE=-1.219)
+  mmds_adapt       n=  900 clean%=0.95 MASE=1.0225 (16.7s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=1.0225 clean%=0.95 n=900
+##### HELDOUT RV0 SEED=1 ETTm1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTm1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse learned w=(0.57, 0.0, 0.43) q=0.25 lam=0.0' (val_negMASE=-1.127)
+  mmds_adapt       n=  900 clean%=0.90 MASE=1.0021 (17.0s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=1.0021 clean%=0.90 n=900
+##### HELDOUT RV1 SEED=1 ETTm1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTm1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse learned w=(0.57, 0.0, 0.43) q=0.25 lam=0.0' (val_negMASE=-1.188)
+  mmds_adapt       n=  900 clean%=0.90 MASE=1.0021 (17.1s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=1.0021 clean%=0.90 n=900
+##### HELDOUT RV0 SEED=2 ETTm1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTm1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse learned w=(0.59, 0.0, 0.41) q=0.25 lam=0.0' (val_negMASE=-1.106)
+  mmds_adapt       n=  900 clean%=0.90 MASE=1.0041 (16.9s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=1.0041 clean%=0.90 n=900
+##### HELDOUT RV1 SEED=2 ETTm1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTm1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse learned w=(0.59, 0.0, 0.41) q=0.25 lam=0.0' (val_negMASE=-1.112)
+  mmds_adapt       n=  900 clean%=0.90 MASE=1.0041 (17.0s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=1.0041 clean%=0.90 n=900
+##### RV1 SEED=0 TAB #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+tabular=electricity model=tabpfn | pool=3000 test=2000 budget=1500 classes=2 seed=0
+  tags: {'corrupt': np.int64(400), 'dup': np.int64(400), 'flip': np.int64(400), 'high': np.int64(1800)}
+    [adapt] picked 'tabpfn_hybrid' (val_auc=0.865)
+  mmds_adapt       n= 1500 clean%=0.55 acc=0.7965 auc=0.8680 (1970.6s)
+
+==== TABULAR (electricity, AUC higher better) ====
+  mmds_adapt       auc=0.8680 acc=0.7965 clean%=0.55 n=1500
+##### RV1 SEED=1 TAB #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+tabular=electricity model=tabpfn | pool=3000 test=2000 budget=1500 classes=2 seed=1
+  tags: {'corrupt': np.int64(400), 'dup': np.int64(400), 'flip': np.int64(400), 'high': np.int64(1800)}
+    [adapt] picked 'kcenter' (val_auc=0.858)
+  mmds_adapt       n= 1500 clean%=0.58 acc=0.7795 auc=0.8626 (1789.8s)
+
+==== TABULAR (electricity, AUC higher better) ====
+  mmds_adapt       auc=0.8626 acc=0.7795 clean%=0.58 n=1500
+##### RV1 SEED=2 TAB #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+tabular=electricity model=tabpfn | pool=3000 test=2000 budget=1500 classes=2 seed=2
+  tags: {'corrupt': np.int64(400), 'dup': np.int64(400), 'flip': np.int64(400), 'high': np.int64(1800)}
+    [adapt] picked 'kcenter' (val_auc=0.871)
+  mmds_adapt       n= 1500 clean%=0.58 acc=0.8080 auc=0.8877 (1830.4s)
+
+==== TABULAR (electricity, AUC higher better) ====
+  mmds_adapt       auc=0.8877 acc=0.8080 clean%=0.58 n=1500
+=== robust val (fixed) done ===

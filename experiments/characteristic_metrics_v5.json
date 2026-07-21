@@ -1,0 +1,403 @@
+{
+ "disclosure": "secondary/exploratory, post-hoc; primary = standard task metrics; v4 dominance (percentile bootstrap) relabeled exploratory and superseded by these EXACT cluster-level tests; FINAL per-cell numbers come from the pubcore-paired same-code-state batch",
+ "rank": {
+  "n_clusters": 8,
+  "clusters": [
+   "cifar100",
+   "daisy_cstr",
+   "daisy_steamgen",
+   "electricity",
+   "etth1",
+   "etth2",
+   "ettm1",
+   "tep"
+  ],
+  "common_pool": [
+   "auth_only",
+   "coreset",
+   "density",
+   "dmf",
+   "herding",
+   "influence_only",
+   "kcenter",
+   "random",
+   "semdedup",
+   "mmds_adapt"
+  ],
+  "dominance_exact": {
+   "auth_only": {
+    "cluster_diffs": [
+     0.1389,
+     -0.0463,
+     0.25,
+     0.6667,
+     0.1481,
+     0.1481,
+     0.1852,
+     0.1667
+    ],
+    "n_positive": "7/8",
+    "mean_diff": 0.2072,
+    "p_sign_exact": 0.03516,
+    "p_signflip_exact": 0.00781,
+    "p_sign_holm": 0.14062,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": false
+   },
+   "coreset": {
+    "cluster_diffs": [
+     0.7778,
+     0.4537,
+     0.3333,
+     0.0926,
+     0.5,
+     0.3704,
+     0.6667,
+     0.8333
+    ],
+    "n_positive": "8/8",
+    "mean_diff": 0.5035,
+    "p_sign_exact": 0.00391,
+    "p_signflip_exact": 0.00391,
+    "p_sign_holm": 0.03516,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": true
+   },
+   "density": {
+    "cluster_diffs": [
+     0.6111,
+     0.2685,
+     0.3611,
+     0.4074,
+     0.4815,
+     0.4074,
+     0.6481,
+     0.9444
+    ],
+    "n_positive": "8/8",
+    "mean_diff": 0.5162,
+    "p_sign_exact": 0.00391,
+    "p_signflip_exact": 0.00391,
+    "p_sign_holm": 0.03516,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": true
+   },
+   "dmf": {
+    "cluster_diffs": [
+     0.1389,
+     0.1019,
+     0.1019,
+     0.5185,
+     -0.037,
+     0.1111,
+     0.2037,
+     0.0
+    ],
+    "n_positive": "6/8",
+    "mean_diff": 0.1424,
+    "p_sign_exact": 0.14453,
+    "p_signflip_exact": 0.01562,
+    "p_sign_holm": 0.14453,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": false
+   },
+   "herding": {
+    "cluster_diffs": [
+     0.3889,
+     0.3796,
+     0.3889,
+     0.0741,
+     0.3704,
+     0.5556,
+     0.3333,
+     0.3889
+    ],
+    "n_positive": "8/8",
+    "mean_diff": 0.36,
+    "p_sign_exact": 0.00391,
+    "p_signflip_exact": 0.00391,
+    "p_sign_holm": 0.03516,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": true
+   },
+   "influence_only": {
+    "cluster_diffs": [
+     0.7778,
+     0.4722,
+     0.5278,
+     0.7778,
+     0.4815,
+     0.4259,
+     0.6667,
+     0.3889
+    ],
+    "n_positive": "8/8",
+    "mean_diff": 0.5648,
+    "p_sign_exact": 0.00391,
+    "p_signflip_exact": 0.00391,
+    "p_sign_holm": 0.03516,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": true
+   },
+   "kcenter": {
+    "cluster_diffs": [
+     0.6667,
+     0.6204,
+     0.3889,
+     -0.1111,
+     0.7222,
+     0.537,
+     0.537,
+     0.6111
+    ],
+    "n_positive": "7/8",
+    "mean_diff": 0.4965,
+    "p_sign_exact": 0.03516,
+    "p_signflip_exact": 0.00781,
+    "p_sign_holm": 0.14062,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": false
+   },
+   "random": {
+    "cluster_diffs": [
+     0.6667,
+     -0.0463,
+     0.1944,
+     0.1111,
+     0.4444,
+     0.3333,
+     0.537,
+     0.6852
+    ],
+    "n_positive": "7/8",
+    "mean_diff": 0.3657,
+    "p_sign_exact": 0.03516,
+    "p_signflip_exact": 0.00781,
+    "p_sign_holm": 0.14062,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": false
+   },
+   "semdedup": {
+    "cluster_diffs": [
+     0.6481,
+     0.2963,
+     0.3241,
+     0.2407,
+     0.4074,
+     0.2593,
+     0.2963,
+     0.4259
+    ],
+    "n_positive": "8/8",
+    "mean_diff": 0.3623,
+    "p_sign_exact": 0.00391,
+    "p_signflip_exact": 0.00391,
+    "p_sign_holm": 0.03516,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": true
+   }
+  },
+  "n_significant_holm_both_tests": "5/9",
+  "note": "with 8 clusters the minimum attainable exact p is 1/256=0.0039 (sign-flip) and 1/256 (sign test at 8/8); Holm over 9 methods means the strongest attainable Holm-adjusted p is 0.0352 - results clearing 0.05 are exact, not approximations"
+ },
+ "effect": {
+  "n_clusters": 8,
+  "clusters": [
+   "cifar100",
+   "daisy_cstr",
+   "daisy_steamgen",
+   "electricity",
+   "etth1",
+   "etth2",
+   "ettm1",
+   "tep"
+  ],
+  "common_pool": [
+   "auth_only",
+   "coreset",
+   "density",
+   "dmf",
+   "herding",
+   "influence_only",
+   "kcenter",
+   "random",
+   "semdedup",
+   "mmds_adapt"
+  ],
+  "dominance_exact": {
+   "auth_only": {
+    "cluster_diffs": [
+     0.1214,
+     -0.1714,
+     0.8652,
+     1.1907,
+     0.2286,
+     0.3593,
+     0.5189,
+     0.2706
+    ],
+    "n_positive": "7/8",
+    "mean_diff": 0.4229,
+    "p_sign_exact": 0.03516,
+    "p_signflip_exact": 0.01172,
+    "p_sign_holm": 0.10547,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": false
+   },
+   "coreset": {
+    "cluster_diffs": [
+     1.1557,
+     0.7911,
+     1.1938,
+     0.0262,
+     1.0723,
+     1.0695,
+     15.7562,
+     1.561
+    ],
+    "n_positive": "8/8",
+    "mean_diff": 2.8282,
+    "p_sign_exact": 0.00391,
+    "p_signflip_exact": 0.00391,
+    "p_sign_holm": 0.03516,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": true
+   },
+   "density": {
+    "cluster_diffs": [
+     0.9072,
+     0.4136,
+     0.9298,
+     0.5596,
+     0.876,
+     1.103,
+     1.3712,
+     1.9069
+    ],
+    "n_positive": "8/8",
+    "mean_diff": 1.0084,
+    "p_sign_exact": 0.00391,
+    "p_signflip_exact": 0.00391,
+    "p_sign_holm": 0.03516,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": true
+   },
+   "dmf": {
+    "cluster_diffs": [
+     0.113,
+     0.1657,
+     0.4728,
+     0.9527,
+     -0.1224,
+     0.4789,
+     0.5467,
+     0.0695
+    ],
+    "n_positive": "7/8",
+    "mean_diff": 0.3346,
+    "p_sign_exact": 0.03516,
+    "p_signflip_exact": 0.01562,
+    "p_sign_holm": 0.10547,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": false
+   },
+   "herding": {
+    "cluster_diffs": [
+     0.6486,
+     0.6644,
+     1.0024,
+     0.0837,
+     0.7673,
+     1.592,
+     1.0424,
+     0.8416
+    ],
+    "n_positive": "8/8",
+    "mean_diff": 0.8303,
+    "p_sign_exact": 0.00391,
+    "p_signflip_exact": 0.00391,
+    "p_sign_holm": 0.03516,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": true
+   },
+   "influence_only": {
+    "cluster_diffs": [
+     1.1988,
+     1.1103,
+     1.2094,
+     2.4904,
+     1.7869,
+     1.444,
+     1.7235,
+     0.7649
+    ],
+    "n_positive": "8/8",
+    "mean_diff": 1.466,
+    "p_sign_exact": 0.00391,
+    "p_signflip_exact": 0.00391,
+    "p_sign_holm": 0.03516,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": true
+   },
+   "kcenter": {
+    "cluster_diffs": [
+     1.0392,
+     1.9309,
+     1.0304,
+     -0.1056,
+     1.5221,
+     1.6018,
+     1.2613,
+     1.1038
+    ],
+    "n_positive": "7/8",
+    "mean_diff": 1.173,
+    "p_sign_exact": 0.03516,
+    "p_signflip_exact": 0.00781,
+    "p_sign_holm": 0.10547,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": false
+   },
+   "random": {
+    "cluster_diffs": [
+     0.9543,
+     0.0566,
+     0.6699,
+     0.0551,
+     10.8023,
+     0.9646,
+     1.3866,
+     1.2475
+    ],
+    "n_positive": "8/8",
+    "mean_diff": 2.0171,
+    "p_sign_exact": 0.00391,
+    "p_signflip_exact": 0.00391,
+    "p_sign_holm": 0.03516,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": true
+   },
+   "semdedup": {
+    "cluster_diffs": [
+     1.2608,
+     0.5817,
+     1.0797,
+     0.1362,
+     0.9743,
+     0.8196,
+     0.9406,
+     0.8394
+    ],
+    "n_positive": "8/8",
+    "mean_diff": 0.829,
+    "p_sign_exact": 0.00391,
+    "p_signflip_exact": 0.00391,
+    "p_sign_holm": 0.03516,
+    "p_signflip_holm": 0.03516,
+    "significant_holm_05": true
+   }
+  },
+  "n_significant_holm_both_tests": "6/9",
+  "note": "with 8 clusters the minimum attainable exact p is 1/256=0.0039 (sign-flip) and 1/256 (sign test at 8/8); Holm over 9 methods means the strongest attainable Holm-adjusted p is 0.0352 - results clearing 0.05 are exact, not approximations"
+ }
+}

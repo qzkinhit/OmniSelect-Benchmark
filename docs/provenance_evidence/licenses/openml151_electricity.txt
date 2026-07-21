@@ -1,0 +1,10 @@
+SOURCE: https://www.openml.org/d/151  (page is a JS SPA; license read from OpenML API)
+API:    https://www.openml.org/api/v1/json/data/151
+FETCHED: 2026-07-16 (curl -L, local Mac)
+
+licence field (verbatim from API JSON):
+  "licence":"Public"
+
+Other API metadata: name="electricity", version="1",
+  url="https://openml.org/data/v1/download/2419/electricity.arff",
+  original_data_url="http://www.inescporto.pt/~jgama/ales/ales_5.html".

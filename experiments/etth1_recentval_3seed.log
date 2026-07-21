@@ -1,0 +1,67 @@
+##### SEED 0 ETTh1 TS_VAL_MODE=recent #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  random           n=  900 clean%=0.62 MASE=1.0277 (0.2s)
+  auth_only        n=  900 clean%=0.91 MASE=0.9476 (0.2s)
+  influence_only   n=  900 clean%=0.72 MASE=1.2132 (0.2s)
+  coreset          n=  900 clean%=0.51 MASE=1.0584 (2.2s)
+  dmf              n=  900 clean%=0.91 MASE=0.9993 (1.7s)
+  mmdataselect     n=  900 clean%=0.83 MASE=1.0312 (0.2s)
+    [adapt] picked 'dmf' (val_negMASE=-0.975)
+  mmds_adapt       n=  900 clean%=0.91 MASE=0.9993 (8.9s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  auth_only        MASE=0.9476 clean%=0.91 n=900
+  dmf              MASE=0.9993 clean%=0.91 n=900
+  mmds_adapt       MASE=0.9993 clean%=0.91 n=900
+  random           MASE=1.0277 clean%=0.62 n=900
+  mmdataselect     MASE=1.0312 clean%=0.83 n=900
+  coreset          MASE=1.0584 clean%=0.51 n=900
+  influence_only   MASE=1.2132 clean%=0.72 n=900
+##### SEED 1 ETTh1 TS_VAL_MODE=recent #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  random           n=  900 clean%=0.59 MASE=1.0729 (0.2s)
+  auth_only        n=  900 clean%=0.88 MASE=0.9503 (0.2s)
+  influence_only   n=  900 clean%=0.74 MASE=1.2288 (0.2s)
+  coreset          n=  900 clean%=0.49 MASE=1.0769 (1.9s)
+  dmf              n=  900 clean%=0.89 MASE=0.9930 (1.5s)
+  mmdataselect     n=  900 clean%=0.84 MASE=0.9751 (0.2s)
+    [adapt] picked 'quadmix' (val_negMASE=-0.957)
+  mmds_adapt       n=  900 clean%=0.78 MASE=1.0096 (9.0s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  auth_only        MASE=0.9503 clean%=0.88 n=900
+  mmdataselect     MASE=0.9751 clean%=0.84 n=900
+  dmf              MASE=0.9930 clean%=0.89 n=900
+  mmds_adapt       MASE=1.0096 clean%=0.78 n=900
+  random           MASE=1.0729 clean%=0.59 n=900
+  coreset          MASE=1.0769 clean%=0.49 n=900
+  influence_only   MASE=1.2288 clean%=0.74 n=900
+##### SEED 2 ETTh1 TS_VAL_MODE=recent #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  random           n=  900 clean%=0.60 MASE=1.0633 (0.2s)
+  auth_only        n=  900 clean%=0.88 MASE=0.9459 (0.2s)
+  influence_only   n=  900 clean%=0.77 MASE=1.2529 (0.2s)
+  coreset          n=  900 clean%=0.51 MASE=1.0733 (1.9s)
+  dmf              n=  900 clean%=0.94 MASE=1.0116 (1.5s)
+  mmdataselect     n=  900 clean%=0.83 MASE=1.0202 (0.2s)
+    [adapt] picked 'dmf' (val_negMASE=-0.981)
+  mmds_adapt       n=  900 clean%=0.94 MASE=1.0116 (8.9s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  auth_only        MASE=0.9459 clean%=0.88 n=900
+  dmf              MASE=1.0116 clean%=0.94 n=900
+  mmds_adapt       MASE=1.0116 clean%=0.94 n=900
+  mmdataselect     MASE=1.0202 clean%=0.83 n=900
+  random           MASE=1.0633 clean%=0.60 n=900
+  coreset          MASE=1.0733 clean%=0.51 n=900
+  influence_only   MASE=1.2529 clean%=0.77 n=900
+=== recent-val done ===

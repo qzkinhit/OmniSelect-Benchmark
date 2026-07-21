@@ -1,0 +1,13 @@
+##### IN100 SEED=2 2026-07-16_01:55:45 #####
+[data] arrow cache: train=126689 val=5000
+[score] ResNet-18 x3 inits to epoch 10 (dev=cuda, data=imagenet100, pool=120000)
+[score] done in 1193s -> /root/autodl-tmp/OmniSelect/baselines/deepcore_original/../../outputs/score_ckpt_imagenet100_s2_e10_r3_d6c08ceb0c7c.npz
+
+==== ORIGINAL PROTOCOL: ResNet-18 from scratch, imagenet100, keep 30% (36000) ====
+  random   val=0.6152 test=0.5826  n=36000
+  el2n     val=0.3286 test=0.3078  n=36000
+  grand    val=0.3500 test=0.3334  n=36000
+  ccs      val=0.6348 test=0.6082  n=36000
+  auth     val=0.5626 test=0.5110  n=36000
+  ctrl     val=0.6348 test=0.6082  n=36000  picked=ccs
+SEED=2 python_exit=0

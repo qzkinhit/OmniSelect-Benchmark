@@ -1,0 +1,209 @@
+##### VISION vn=0 seed=0 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'dmf' (val=0.472)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4340 (68.7s)
+  auth_only        n= 2000 clean%=0.80 test_acc=0.4285 (0.1s)
+  random           n= 2000 clean%=0.60 test_acc=0.3500 (0.1s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4340 clean%=0.80 n=2000
+  auth_only        acc=0.4285 clean%=0.80 n=2000
+  random           acc=0.3500 clean%=0.60 n=2000
+##### TEP vn=0 seed=0 #####
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=0
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt] picked 'dmf' (val_f1=0.445)
+  mmds_adapt       n= 1200 clean%=0.84 macroF1=0.4151 acc=0.4200 (42.9s)
+  auth_only        n= 1200 clean%=0.84 macroF1=0.4021 acc=0.4123 (0.4s)
+  random           n= 1200 clean%=0.59 macroF1=0.3412 acc=0.3507 (0.4s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4151 acc=0.4200 clean%=0.84 n=1200
+  auth_only        F1=0.4021 acc=0.4123 clean%=0.84 n=1200
+  random           F1=0.3412 acc=0.3507 clean%=0.59 n=1200
+##### VISION vn=0 seed=1 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=1
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'dmf' (val=0.453)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4160 (69.9s)
+  auth_only        n= 2000 clean%=0.80 test_acc=0.4280 (0.2s)
+  random           n= 2000 clean%=0.59 test_acc=0.3630 (0.1s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4160 clean%=0.80 n=2000
+  auth_only        acc=0.4280 clean%=0.80 n=2000
+  random           acc=0.3630 clean%=0.59 n=2000
+##### TEP vn=0 seed=1 #####
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=1
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt] picked 'vote_ensemble(top3)' (val_f1=0.401)
+  mmds_adapt       n= 1200 clean%=0.68 macroF1=0.4193 acc=0.4220 (43.5s)
+  auth_only        n= 1200 clean%=0.83 macroF1=0.3874 acc=0.4177 (0.4s)
+  random           n= 1200 clean%=0.59 macroF1=0.3068 acc=0.3050 (0.4s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4193 acc=0.4220 clean%=0.68 n=1200
+  auth_only        F1=0.3874 acc=0.4177 clean%=0.83 n=1200
+  random           F1=0.3068 acc=0.3050 clean%=0.59 n=1200
+##### VISION vn=0.1 seed=0 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'dmf' (val=0.405)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4335 (73.3s)
+  auth_only        n= 2000 clean%=0.80 test_acc=0.4285 (0.1s)
+  random           n= 2000 clean%=0.60 test_acc=0.3500 (0.1s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4335 clean%=0.80 n=2000
+  auth_only        acc=0.4285 clean%=0.80 n=2000
+  random           acc=0.3500 clean%=0.60 n=2000
+##### TEP vn=0.1 seed=0 #####
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=0
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt] picked 'dmf' (val_f1=0.375)
+  mmds_adapt       n= 1200 clean%=0.86 macroF1=0.4131 acc=0.4277 (39.2s)
+  auth_only        n= 1200 clean%=0.84 macroF1=0.4021 acc=0.4123 (0.4s)
+  random           n= 1200 clean%=0.59 macroF1=0.3412 acc=0.3507 (0.4s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4131 acc=0.4277 clean%=0.86 n=1200
+  auth_only        F1=0.4021 acc=0.4123 clean%=0.84 n=1200
+  random           F1=0.3412 acc=0.3507 clean%=0.59 n=1200
+##### VISION vn=0.1 seed=1 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=1
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'dmf' (val=0.398)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4200 (66.5s)
+  auth_only        n= 2000 clean%=0.80 test_acc=0.4280 (0.2s)
+  random           n= 2000 clean%=0.59 test_acc=0.3630 (0.1s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4200 clean%=0.80 n=2000
+  auth_only        acc=0.4280 clean%=0.80 n=2000
+  random           acc=0.3630 clean%=0.59 n=2000
+##### TEP vn=0.1 seed=1 #####
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=1
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt] picked 'vote_ensemble(top3)' (val_f1=0.351)
+  mmds_adapt       n= 1200 clean%=0.68 macroF1=0.4194 acc=0.4230 (42.3s)
+  auth_only        n= 1200 clean%=0.83 macroF1=0.3874 acc=0.4177 (0.4s)
+  random           n= 1200 clean%=0.59 macroF1=0.3068 acc=0.3050 (0.4s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4194 acc=0.4230 clean%=0.68 n=1200
+  auth_only        F1=0.3874 acc=0.4177 clean%=0.83 n=1200
+  random           F1=0.3068 acc=0.3050 clean%=0.59 n=1200
+##### VISION vn=0.2 seed=0 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'dmf' (val=0.378)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4340 (70.2s)
+  auth_only        n= 2000 clean%=0.80 test_acc=0.4285 (0.1s)
+  random           n= 2000 clean%=0.60 test_acc=0.3500 (0.1s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4340 clean%=0.80 n=2000
+  auth_only        acc=0.4285 clean%=0.80 n=2000
+  random           acc=0.3500 clean%=0.60 n=2000
+##### TEP vn=0.2 seed=0 #####
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=0
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt] picked 'vote_ensemble(top3)' (val_f1=0.355)
+  mmds_adapt       n= 1200 clean%=0.81 macroF1=0.4123 acc=0.4143 (41.4s)
+  auth_only        n= 1200 clean%=0.84 macroF1=0.4021 acc=0.4123 (0.4s)
+  random           n= 1200 clean%=0.59 macroF1=0.3412 acc=0.3507 (0.4s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4123 acc=0.4143 clean%=0.81 n=1200
+  auth_only        F1=0.4021 acc=0.4123 clean%=0.84 n=1200
+  random           F1=0.3412 acc=0.3507 clean%=0.59 n=1200
+##### VISION vn=0.2 seed=1 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=1
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'dmf' (val=0.355)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4160 (67.6s)
+  auth_only        n= 2000 clean%=0.80 test_acc=0.4280 (0.2s)
+  random           n= 2000 clean%=0.59 test_acc=0.3630 (0.1s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4160 clean%=0.80 n=2000
+  auth_only        acc=0.4280 clean%=0.80 n=2000
+  random           acc=0.3630 clean%=0.59 n=2000
+##### TEP vn=0.2 seed=1 #####
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=1
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt] picked 'vote_ensemble(top3)' (val_f1=0.330)
+  mmds_adapt       n= 1200 clean%=0.68 macroF1=0.4137 acc=0.4177 (42.8s)
+  auth_only        n= 1200 clean%=0.83 macroF1=0.3874 acc=0.4177 (0.4s)
+  random           n= 1200 clean%=0.59 macroF1=0.3068 acc=0.3050 (0.4s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4137 acc=0.4177 clean%=0.68 n=1200
+  auth_only        F1=0.3874 acc=0.4177 clean%=0.83 n=1200
+  random           F1=0.3068 acc=0.3050 clean%=0.59 n=1200
+##### VISION vn=0.3 seed=0 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'dmf' (val=0.315)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4335 (68.3s)
+  auth_only        n= 2000 clean%=0.80 test_acc=0.4285 (0.1s)
+  random           n= 2000 clean%=0.60 test_acc=0.3500 (0.1s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4335 clean%=0.80 n=2000
+  auth_only        acc=0.4285 clean%=0.80 n=2000
+  random           acc=0.3500 clean%=0.60 n=2000
+##### TEP vn=0.3 seed=0 #####
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=0
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt] picked 'fuse w=(0.34, 0.33, 0.33) q=0.0 lam=0.0' (val_f1=0.315)
+  mmds_adapt       n= 1200 clean%=0.81 macroF1=0.4126 acc=0.4140 (39.8s)
+  auth_only        n= 1200 clean%=0.84 macroF1=0.4021 acc=0.4123 (0.4s)
+  random           n= 1200 clean%=0.59 macroF1=0.3412 acc=0.3507 (0.4s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4126 acc=0.4140 clean%=0.81 n=1200
+  auth_only        F1=0.4021 acc=0.4123 clean%=0.84 n=1200
+  random           F1=0.3412 acc=0.3507 clean%=0.59 n=1200
+##### VISION vn=0.3 seed=1 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=1
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'dmf' (val=0.300)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4155 (69.4s)
+  auth_only        n= 2000 clean%=0.80 test_acc=0.4280 (0.2s)
+  random           n= 2000 clean%=0.59 test_acc=0.3630 (0.1s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4155 clean%=0.80 n=2000
+  auth_only        acc=0.4280 clean%=0.80 n=2000
+  random           acc=0.3630 clean%=0.59 n=2000
+##### TEP vn=0.3 seed=1 #####
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=1
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt] picked 'fuse w=(0.34, 0.33, 0.33) q=0.0 lam=0.5' (val_f1=0.290)
+  mmds_adapt       n= 1200 clean%=0.68 macroF1=0.4176 acc=0.4210 (42.4s)
+  auth_only        n= 1200 clean%=0.83 macroF1=0.3874 acc=0.4177 (0.4s)
+  random           n= 1200 clean%=0.59 macroF1=0.3068 acc=0.3050 (0.4s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4176 acc=0.4210 clean%=0.68 n=1200
+  auth_only        F1=0.3874 acc=0.4177 clean%=0.83 n=1200
+  random           F1=0.3068 acc=0.3050 clean%=0.59 n=1200
+=== contamination (split protocol) done ===

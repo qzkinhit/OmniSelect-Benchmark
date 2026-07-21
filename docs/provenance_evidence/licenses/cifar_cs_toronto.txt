@@ -1,0 +1,16 @@
+SOURCE: https://www.cs.toronto.edu/~kriz/cifar.html
+FETCHED: 2026-07-16 (curl -L, local Mac)
+
+No explicit software/data license is stated on the CIFAR page. The page's only usage
+condition is a citation requirement:
+
+  "If you're going to use this dataset, please cite the tech report at the bottom of this page."
+  <h3>Reference</h3>
+  "This tech report (Chapter 3) describes the dataset and the methodology followed when
+   collecting it in much greater detail. Please cite it if you intend to use this dataset."
+
+Reference to cite: A. Krizhevsky, "Learning Multiple Layers of Features from Tiny Images",
+Tech Report, 2009 (Chapter 3).
+
+Cross-check: HF dataset card uoft-cs/cifar10 lists license field = "unknown" (see
+hf_uoft-cs_cifar10.txt). Effective terms = research use with required citation.

@@ -1,0 +1,363 @@
+{
+ "disclosure": "secondary/exploratory, post-hoc; primary = standard task metrics; v3 kept as diagnostic; dominance Holm-corrected",
+ "min_seeds": 3,
+ "bootstrap": "cluster (underlying dataset -> views -> seeds), B=10000",
+ "rank": {
+  "views": [
+   "process_tep",
+   "tabular_electricity",
+   "time_daisy_cstr",
+   "time_daisy_cstr_chronos",
+   "time_daisy_steamgen",
+   "time_daisy_steamgen_chronos",
+   "time_etth1",
+   "time_etth1_chronos",
+   "time_etth2",
+   "time_etth2_chronos",
+   "time_ettm1",
+   "time_ettm1_chronos",
+   "vision_cifar100",
+   "vision_cifar100n"
+  ],
+  "n_clusters": 8,
+  "common_pool": [
+   "auth_only",
+   "coreset",
+   "density",
+   "dmf",
+   "herding",
+   "influence_only",
+   "kcenter",
+   "random",
+   "semdedup",
+   "mmds_adapt"
+  ],
+  "scope_note": "AG/dominance/WCR computed strictly within the common 10-method pool on 14 views (8 underlying-dataset clusters); partial-coverage methods reported separately",
+  "AG": 0.1257,
+  "AG_ci95_cluster": [
+   0.0242,
+   0.2309
+  ],
+  "AG_leave_one_cluster_out": {
+   "cifar100": 0.1235,
+   "daisy_cstr": 0.1296,
+   "daisy_steamgen": 0.1296,
+   "electricity": 0.0954,
+   "etth1": 0.1528,
+   "etth2": 0.1281,
+   "ettm1": 0.1127,
+   "tep": 0.1353
+  },
+  "AG_loco_range": [
+   0.0954,
+   0.1528
+  ],
+  "dominance_holm": {
+   "auth_only": {
+    "mean_diff": 0.1772,
+    "ci95": [
+     0.0648,
+     0.2997
+    ],
+    "p_raw": 0.0018,
+    "p_holm": 0.0036,
+    "significant_holm_05": true
+   },
+   "coreset": {
+    "mean_diff": 0.5093,
+    "ci95": [
+     0.3532,
+     0.6574
+    ],
+    "p_raw": 0.0001,
+    "p_holm": 0.0009,
+    "significant_holm_05": true
+   },
+   "density": {
+    "mean_diff": 0.4934,
+    "ci95": [
+     0.3519,
+     0.6376
+    ],
+    "p_raw": 0.0001,
+    "p_holm": 0.0009,
+    "significant_holm_05": true
+   },
+   "dmf": {
+    "mean_diff": 0.1257,
+    "ci95": [
+     0.0301,
+     0.2407
+    ],
+    "p_raw": 0.0031,
+    "p_holm": 0.0036,
+    "significant_holm_05": true
+   },
+   "herding": {
+    "mean_diff": 0.3783,
+    "ci95": [
+     0.2725,
+     0.4691
+    ],
+    "p_raw": 0.0001,
+    "p_holm": 0.0009,
+    "significant_holm_05": true
+   },
+   "influence_only": {
+    "mean_diff": 0.5622,
+    "ci95": [
+     0.4299,
+     0.6975
+    ],
+    "p_raw": 0.0001,
+    "p_holm": 0.0009,
+    "significant_holm_05": true
+   },
+   "kcenter": {
+    "mean_diff": 0.5317,
+    "ci95": [
+     0.3627,
+     0.6627
+    ],
+    "p_raw": 0.0001,
+    "p_holm": 0.0009,
+    "significant_holm_05": true
+   },
+   "random": {
+    "mean_diff": 0.3611,
+    "ci95": [
+     0.1746,
+     0.5328
+    ],
+    "p_raw": 0.0001,
+    "p_holm": 0.0009,
+    "significant_holm_05": true
+   },
+   "semdedup": {
+    "mean_diff": 0.3664,
+    "ci95": [
+     0.2531,
+     0.4921
+    ],
+    "p_raw": 0.0001,
+    "p_holm": 0.0009,
+    "significant_holm_05": true
+   }
+  },
+  "n_significant_holm": "9/9",
+  "descriptive_ranks": {
+   "frac_best": 0.571,
+   "frac_top2": 0.738,
+   "median_rank_percentile": 0.944,
+   "n_cells": 42
+  },
+  "WCR_common_pool": {
+   "mmds_adapt": 0.5,
+   "random": 0.7222,
+   "dmf": 0.7407,
+   "semdedup": 0.8519,
+   "coreset": 0.8704,
+   "auth_only": 0.8889,
+   "herding": 0.9074,
+   "kcenter": 0.963,
+   "density": 0.9815,
+   "influence_only": 1.0
+  },
+  "partial_coverage_separate": {
+   "ccs": {
+    "n_views": 4,
+    "mean_utility_in_common7_pool": 0.4833,
+    "beats_controller_cells": "0/12"
+   },
+   "el2n": {
+    "n_views": 4,
+    "mean_utility_in_common7_pool": 0.0,
+    "beats_controller_cells": "0/12"
+   },
+   "grand": {
+    "n_views": 4,
+    "mean_utility_in_common7_pool": 0.0542,
+    "beats_controller_cells": "0/12"
+   }
+  }
+ },
+ "effect": {
+  "views": [
+   "process_tep",
+   "tabular_electricity",
+   "time_daisy_cstr",
+   "time_daisy_cstr_chronos",
+   "time_daisy_steamgen",
+   "time_daisy_steamgen_chronos",
+   "time_etth1",
+   "time_etth1_chronos",
+   "time_etth2",
+   "time_etth2_chronos",
+   "time_ettm1",
+   "time_ettm1_chronos",
+   "vision_cifar100",
+   "vision_cifar100n"
+  ],
+  "n_clusters": 8,
+  "common_pool": [
+   "auth_only",
+   "coreset",
+   "density",
+   "dmf",
+   "herding",
+   "influence_only",
+   "kcenter",
+   "random",
+   "semdedup",
+   "mmds_adapt"
+  ],
+  "scope_note": "AG/dominance/WCR computed strictly within the common 10-method pool on 14 views (8 underlying-dataset clusters); partial-coverage methods reported separately",
+  "AG": 0.3094,
+  "AG_ci95_cluster": [
+   0.0632,
+   0.5476
+  ],
+  "AG_leave_one_cluster_out": {
+   "cifar100": 0.3422,
+   "daisy_cstr": 0.3334,
+   "daisy_steamgen": 0.2822,
+   "electricity": 0.2599,
+   "etth1": 0.3814,
+   "etth2": 0.2812,
+   "ettm1": 0.2699,
+   "tep": 0.3279
+  },
+  "AG_loco_range": [
+   0.2599,
+   0.3814
+  ],
+  "dominance_holm": {
+   "auth_only": {
+    "mean_diff": 0.3789,
+    "ci95": [
+     0.1051,
+     0.6687
+    ],
+    "p_raw": 0.0026,
+    "p_holm": 0.0052,
+    "significant_holm_05": true
+   },
+   "coreset": {
+    "mean_diff": 3.1189,
+    "ci95": [
+     0.8058,
+     9.3498
+    ],
+    "p_raw": 0.0001,
+    "p_holm": 0.0009,
+    "significant_holm_05": true
+   },
+   "density": {
+    "mean_diff": 0.9763,
+    "ci95": [
+     0.6862,
+     1.2962
+    ],
+    "p_raw": 0.0001,
+    "p_holm": 0.0009,
+    "significant_holm_05": true
+   },
+   "dmf": {
+    "mean_diff": 0.3094,
+    "ci95": [
+     0.0798,
+     0.5668
+    ],
+    "p_raw": 0.0033,
+    "p_holm": 0.0052,
+    "significant_holm_05": true
+   },
+   "herding": {
+    "mean_diff": 0.8828,
+    "ci95": [
+     0.6023,
+     1.1791
+    ],
+    "p_raw": 0.0001,
+    "p_holm": 0.0009,
+    "significant_holm_05": true
+   },
+   "influence_only": {
+    "mean_diff": 1.4429,
+    "ci95": [
+     1.114,
+     1.7866
+    ],
+    "p_raw": 0.0001,
+    "p_holm": 0.0009,
+    "significant_holm_05": true
+   },
+   "kcenter": {
+    "mean_diff": 1.2692,
+    "ci95": [
+     0.8471,
+     1.7614
+    ],
+    "p_raw": 0.0001,
+    "p_holm": 0.0009,
+    "significant_holm_05": true
+   },
+   "random": {
+    "mean_diff": 2.2122,
+    "ci95": [
+     0.4934,
+     6.4989
+    ],
+    "p_raw": 0.0001,
+    "p_holm": 0.0009,
+    "significant_holm_05": true
+   },
+   "semdedup": {
+    "mean_diff": 0.8778,
+    "ci95": [
+     0.6106,
+     1.1433
+    ],
+    "p_raw": 0.0001,
+    "p_holm": 0.0009,
+    "significant_holm_05": true
+   }
+  },
+  "n_significant_holm": "9/9",
+  "descriptive_ranks": {
+   "frac_best": 0.571,
+   "frac_top2": 0.738,
+   "median_rank_percentile": 0.858,
+   "n_cells": 42
+  },
+  "WCR_common_pool": {
+   "mmds_adapt": 0.8787,
+   "dmf": 1.1006,
+   "semdedup": 1.9047,
+   "herding": 1.9631,
+   "density": 1.9876,
+   "auth_only": 2.4503,
+   "kcenter": 3.1834,
+   "influence_only": 3.9618,
+   "random": 20.9751,
+   "coreset": 30.3472
+  },
+  "partial_coverage_separate": {
+   "ccs": {
+    "n_views": 4,
+    "mean_utility_in_common7_pool": -0.049,
+    "beats_controller_cells": "0/12"
+   },
+   "el2n": {
+    "n_views": 4,
+    "mean_utility_in_common7_pool": -7.5587,
+    "beats_controller_cells": "0/12"
+   },
+   "grand": {
+    "n_views": 4,
+    "mean_utility_in_common7_pool": -6.5629,
+    "beats_controller_cells": "0/12"
+   }
+  }
+ }
+}

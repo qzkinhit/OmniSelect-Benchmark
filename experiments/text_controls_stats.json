@@ -1,0 +1,727 @@
+{
+ "source": "outputs/experiment/run_id=text-controls-20260717T0026-stratify=1-infl=pplq-train=finetune-lmeval=1/seed_{0,1,2}/results.json (server omni:/root/autodl-tmp/OmniSelect)",
+ "run_id": "text-controls-20260717T0026",
+ "purpose": "same-code-state text controls (base/random/noselect) so that QZ4 zip/quadmix_pub cells can be compared against controls produced by the identical code state",
+ "code_sha256_12": "2ce72a0809d4",
+ "pool_sha256_12": "84e174dbb097",
+ "verification": {
+  "expected": "3 seeds x methods base/random/noselect, finite primary metrics (per-domain ppl; lmeval acc for random/noselect)",
+  "seeds_found": [
+   0,
+   1,
+   2
+  ],
+  "issues": "none (all present, all finite)"
+ },
+ "metric_scope": "PRIMARY metrics only: per-domain PPL (+ geometric mean over 5 domains) and lm-eval accuracies (arc_easy/arc_challenge/hellaswag/openbookqa). ppl_ctrl and cost fields intentionally excluded.",
+ "per_method": {
+  "base": {
+   "ppl_per_domain": {
+    "code": {
+     "mean": 5.44,
+     "std": 0.0,
+     "n": 3,
+     "per_seed": [
+      5.44,
+      5.44,
+      5.44
+     ]
+    },
+    "general": {
+     "mean": 16.568,
+     "std": 0.0,
+     "n": 3,
+     "per_seed": [
+      16.568,
+      16.568,
+      16.568
+     ]
+    },
+    "image": {
+     "mean": 25.552,
+     "std": 0.0,
+     "n": 3,
+     "per_seed": [
+      25.552,
+      25.552,
+      25.552
+     ]
+    },
+    "math": {
+     "mean": 6.567,
+     "std": 0.0,
+     "n": 3,
+     "per_seed": [
+      6.567,
+      6.567,
+      6.567
+     ]
+    },
+    "table": {
+     "mean": 17.638,
+     "std": 0.0,
+     "n": 3,
+     "per_seed": [
+      17.638,
+      17.638,
+      17.638
+     ]
+    }
+   },
+   "ppl_gmean": {
+    "mean": 12.1681,
+    "std": 0.0,
+    "n": 3,
+    "per_seed": [
+     12.1681,
+     12.1681,
+     12.1681
+    ]
+   },
+   "lmeval_acc": null,
+   "lmeval_note": "base method carries no lmeval block in results.json (n_sel=0, ppl-only baseline)"
+  },
+  "random": {
+   "ppl_per_domain": {
+    "code": {
+     "mean": 5.3197,
+     "std": 0.0006,
+     "n": 3,
+     "per_seed": [
+      5.319,
+      5.32,
+      5.32
+     ]
+    },
+    "general": {
+     "mean": 16.43,
+     "std": 0.0062,
+     "n": 3,
+     "per_seed": [
+      16.428,
+      16.425,
+      16.437
+     ]
+    },
+    "image": {
+     "mean": 23.1007,
+     "std": 0.053,
+     "n": 3,
+     "per_seed": [
+      23.124,
+      23.04,
+      23.138
+     ]
+    },
+    "math": {
+     "mean": 6.45,
+     "std": 0.0046,
+     "n": 3,
+     "per_seed": [
+      6.446,
+      6.455,
+      6.449
+     ]
+    },
+    "table": {
+     "mean": 11.491,
+     "std": 0.0672,
+     "n": 3,
+     "per_seed": [
+      11.561,
+      11.485,
+      11.427
+     ]
+    }
+   },
+   "ppl_gmean": {
+    "mean": 10.8396,
+    "std": 0.0117,
+    "n": 3,
+    "per_seed": [
+     10.8531,
+     10.8339,
+     10.8317
+    ]
+   },
+   "lmeval_acc": {
+    "arc_easy": {
+     "mean": 0.5838,
+     "std": 0.0005,
+     "n": 3,
+     "per_seed": [
+      0.5842,
+      0.5833,
+      0.5838
+     ]
+    },
+    "arc_challenge": {
+     "mean": 0.2961,
+     "std": 0.003,
+     "n": 3,
+     "per_seed": [
+      0.2927,
+      0.2969,
+      0.2986
+     ]
+    },
+    "hellaswag": {
+     "mean": 0.4321,
+     "std": 0.0008,
+     "n": 3,
+     "per_seed": [
+      0.4317,
+      0.4331,
+      0.4316
+     ]
+    },
+    "openbookqa": {
+     "mean": 0.3233,
+     "std": 0.0031,
+     "n": 3,
+     "per_seed": [
+      0.326,
+      0.32,
+      0.324
+     ]
+    }
+   },
+   "lmeval_acc_mean_over_tasks": {
+    "mean": 0.4088,
+    "std": 0.0006,
+    "n": 3,
+    "per_seed": [
+     0.4087,
+     0.4083,
+     0.4095
+    ]
+   }
+  },
+  "noselect": {
+   "ppl_per_domain": {
+    "code": {
+     "mean": 5.3,
+     "std": 0.001,
+     "n": 3,
+     "per_seed": [
+      5.299,
+      5.301,
+      5.3
+     ]
+    },
+    "general": {
+     "mean": 16.451,
+     "std": 0.0056,
+     "n": 3,
+     "per_seed": [
+      16.45,
+      16.457,
+      16.446
+     ]
+    },
+    "image": {
+     "mean": 22.8173,
+     "std": 0.0389,
+     "n": 3,
+     "per_seed": [
+      22.784,
+      22.86,
+      22.808
+     ]
+    },
+    "math": {
+     "mean": 6.4283,
+     "std": 0.0015,
+     "n": 3,
+     "per_seed": [
+      6.43,
+      6.427,
+      6.428
+     ]
+    },
+    "table": {
+     "mean": 11.1363,
+     "std": 0.0926,
+     "n": 3,
+     "per_seed": [
+      11.111,
+      11.059,
+      11.239
+     ]
+    }
+   },
+   "ppl_gmean": {
+    "mean": 10.7328,
+    "std": 0.0157,
+    "n": 3,
+    "per_seed": [
+     10.7248,
+     10.7226,
+     10.7509
+    ]
+   },
+   "lmeval_acc": {
+    "arc_easy": {
+     "mean": 0.5861,
+     "std": 0.0011,
+     "n": 3,
+     "per_seed": [
+      0.5863,
+      0.5871,
+      0.585
+     ]
+    },
+    "arc_challenge": {
+     "mean": 0.2935,
+     "std": 0.0017,
+     "n": 3,
+     "per_seed": [
+      0.2918,
+      0.2935,
+      0.2952
+     ]
+    },
+    "hellaswag": {
+     "mean": 0.4338,
+     "std": 0.0003,
+     "n": 3,
+     "per_seed": [
+      0.4341,
+      0.4335,
+      0.4339
+     ]
+    },
+    "openbookqa": {
+     "mean": 0.3233,
+     "std": 0.0023,
+     "n": 3,
+     "per_seed": [
+      0.322,
+      0.322,
+      0.326
+     ]
+    }
+   },
+   "lmeval_acc_mean_over_tasks": {
+    "mean": 0.4092,
+    "std": 0.0008,
+    "n": 3,
+    "per_seed": [
+     0.4086,
+     0.409,
+     0.41
+    ]
+   }
+  }
+ },
+ "deltas": {
+  "random_vs_noselect": {
+   "ppl_per_domain": {
+    "code": {
+     "abs": {
+      "mean": 0.0197,
+      "std": 0.0006,
+      "n": 3,
+      "per_seed": [
+       0.02,
+       0.019,
+       0.02
+      ]
+     },
+     "rel_pct": {
+      "mean": 0.3711,
+      "std": 0.011,
+      "n": 3,
+      "per_seed": [
+       0.3774,
+       0.3584,
+       0.3774
+      ]
+     },
+     "direction": "lower_better"
+    },
+    "general": {
+     "abs": {
+      "mean": -0.021,
+      "std": 0.0115,
+      "n": 3,
+      "per_seed": [
+       -0.022,
+       -0.032,
+       -0.009
+      ]
+     },
+     "rel_pct": {
+      "mean": -0.1276,
+      "std": 0.0701,
+      "n": 3,
+      "per_seed": [
+       -0.1337,
+       -0.1944,
+       -0.0547
+      ]
+     },
+     "direction": "lower_better"
+    },
+    "image": {
+     "abs": {
+      "mean": 0.2833,
+      "std": 0.0896,
+      "n": 3,
+      "per_seed": [
+       0.34,
+       0.18,
+       0.33
+      ]
+     },
+     "rel_pct": {
+      "mean": 1.2422,
+      "std": 0.3945,
+      "n": 3,
+      "per_seed": [
+       1.4923,
+       0.7874,
+       1.4469
+      ]
+     },
+     "direction": "lower_better"
+    },
+    "math": {
+     "abs": {
+      "mean": 0.0217,
+      "std": 0.006,
+      "n": 3,
+      "per_seed": [
+       0.016,
+       0.028,
+       0.021
+      ]
+     },
+     "rel_pct": {
+      "mean": 0.3371,
+      "std": 0.0938,
+      "n": 3,
+      "per_seed": [
+       0.2488,
+       0.4357,
+       0.3267
+      ]
+     },
+     "direction": "lower_better"
+    },
+    "table": {
+     "abs": {
+      "mean": 0.3547,
+      "std": 0.1448,
+      "n": 3,
+      "per_seed": [
+       0.45,
+       0.426,
+       0.188
+      ]
+     },
+     "rel_pct": {
+      "mean": 3.1916,
+      "std": 1.3191,
+      "n": 3,
+      "per_seed": [
+       4.05,
+       3.8521,
+       1.6727
+      ]
+     },
+     "direction": "lower_better"
+    }
+   },
+   "ppl_gmean": {
+    "abs": {
+     "mean": 0.1068,
+     "std": 0.024,
+     "n": 3,
+     "per_seed": [
+      0.1282,
+      0.1113,
+      0.0808
+     ]
+    },
+    "rel_pct": {
+     "mean": 0.995,
+     "std": 0.2251,
+     "n": 3,
+     "per_seed": [
+      1.1957,
+      1.0377,
+      0.7515
+     ]
+    },
+    "direction": "lower_better"
+   },
+   "lmeval_acc": {
+    "arc_easy": {
+     "abs": {
+      "mean": -0.0024,
+      "std": 0.0013,
+      "n": 3,
+      "per_seed": [
+       -0.0021,
+       -0.0038,
+       -0.0012
+      ]
+     },
+     "rel_pct": {
+      "mean": -0.4035,
+      "std": 0.2245,
+      "n": 3,
+      "per_seed": [
+       -0.3582,
+       -0.6472,
+       -0.2051
+      ]
+     },
+     "direction": "higher_better"
+    },
+    "arc_challenge": {
+     "abs": {
+      "mean": 0.0026,
+      "std": 0.0014,
+      "n": 3,
+      "per_seed": [
+       0.0009,
+       0.0034,
+       0.0034
+      ]
+     },
+     "rel_pct": {
+      "mean": 0.8729,
+      "std": 0.4888,
+      "n": 3,
+      "per_seed": [
+       0.3084,
+       1.1584,
+       1.1518
+      ]
+     },
+     "direction": "higher_better"
+    },
+    "hellaswag": {
+     "abs": {
+      "mean": -0.0017,
+      "std": 0.0011,
+      "n": 3,
+      "per_seed": [
+       -0.0024,
+       -0.0004,
+       -0.0023
+      ]
+     },
+     "rel_pct": {
+      "mean": -0.3917,
+      "std": 0.2596,
+      "n": 3,
+      "per_seed": [
+       -0.5529,
+       -0.0923,
+       -0.5301
+      ]
+     },
+     "direction": "higher_better"
+    },
+    "openbookqa": {
+     "abs": {
+      "mean": 0.0,
+      "std": 0.0035,
+      "n": 3,
+      "per_seed": [
+       0.004,
+       -0.002,
+       -0.002
+      ]
+     },
+     "rel_pct": {
+      "mean": 0.0025,
+      "std": 1.0736,
+      "n": 3,
+      "per_seed": [
+       1.2422,
+       -0.6211,
+       -0.6135
+      ]
+     },
+     "direction": "higher_better"
+    }
+   }
+  },
+  "random_vs_base": {
+   "ppl_per_domain": {
+    "code": {
+     "abs": {
+      "mean": -0.1203,
+      "std": 0.0006,
+      "n": 3,
+      "per_seed": [
+       -0.121,
+       -0.12,
+       -0.12
+      ]
+     },
+     "rel_pct": {
+      "mean": -2.212,
+      "std": 0.0106,
+      "n": 3,
+      "per_seed": [
+       -2.2243,
+       -2.2059,
+       -2.2059
+      ]
+     },
+     "direction": "lower_better"
+    },
+    "general": {
+     "abs": {
+      "mean": -0.138,
+      "std": 0.0062,
+      "n": 3,
+      "per_seed": [
+       -0.14,
+       -0.143,
+       -0.131
+      ]
+     },
+     "rel_pct": {
+      "mean": -0.8329,
+      "std": 0.0377,
+      "n": 3,
+      "per_seed": [
+       -0.845,
+       -0.8631,
+       -0.7907
+      ]
+     },
+     "direction": "lower_better"
+    },
+    "image": {
+     "abs": {
+      "mean": -2.4513,
+      "std": 0.053,
+      "n": 3,
+      "per_seed": [
+       -2.428,
+       -2.512,
+       -2.414
+      ]
+     },
+     "rel_pct": {
+      "mean": -9.5935,
+      "std": 0.2074,
+      "n": 3,
+      "per_seed": [
+       -9.5022,
+       -9.8309,
+       -9.4474
+      ]
+     },
+     "direction": "lower_better"
+    },
+    "math": {
+     "abs": {
+      "mean": -0.117,
+      "std": 0.0046,
+      "n": 3,
+      "per_seed": [
+       -0.121,
+       -0.112,
+       -0.118
+      ]
+     },
+     "rel_pct": {
+      "mean": -1.7816,
+      "std": 0.0698,
+      "n": 3,
+      "per_seed": [
+       -1.8425,
+       -1.7055,
+       -1.7969
+      ]
+     },
+     "direction": "lower_better"
+    },
+    "table": {
+     "abs": {
+      "mean": -6.147,
+      "std": 0.0672,
+      "n": 3,
+      "per_seed": [
+       -6.077,
+       -6.153,
+       -6.211
+      ]
+     },
+     "rel_pct": {
+      "mean": -34.8509,
+      "std": 0.381,
+      "n": 3,
+      "per_seed": [
+       -34.454,
+       -34.8849,
+       -35.2137
+      ]
+     },
+     "direction": "lower_better"
+    }
+   },
+   "ppl_gmean": {
+    "abs": {
+     "mean": -1.3285,
+     "std": 0.0117,
+     "n": 3,
+     "per_seed": [
+      -1.315,
+      -1.3342,
+      -1.3364
+     ]
+    },
+    "rel_pct": {
+     "mean": -10.918,
+     "std": 0.0966,
+     "n": 3,
+     "per_seed": [
+      -10.807,
+      -10.9645,
+      -10.9826
+     ]
+    },
+    "direction": "lower_better"
+   },
+   "lmeval_acc": null,
+   "lmeval_note": "not computable: base has no lmeval block"
+  }
+ },
+ "qz4_pending_note": "RESOLVED 2026-07-17 (audit 2030): QZ4 lane run_id text-qz4-20260717T0933 COMPLETED (3 seeds exit0, /root/lane_text_qz4.done present); the deltas are recorded in the qz4 sections of this file. Original pending wording removed as self-contradictory; history preserved in git.",
+ "built": "2026-07-17, mechanical audit item \u4e8c.2",
+ "qz4_baselines_20260717": {
+  "run_id": "text-qz4-20260717T0933",
+  "validated": "1 MISS + 2 HIT, 3x exit0, cache VALID (exact permutation), zero errors",
+  "measure": "five-domain-gmean heldout ppl (same measure as controls rows)",
+  "quadmix_pub": {
+   "gmean_ppl": [
+    10.848,
+    10.892,
+    10.868
+   ],
+   "mean": 10.869,
+   "std": 0.022,
+   "lmeval_mean": 0.41
+  },
+  "zip": {
+   "mean": 10.989,
+   "std": 0.014,
+   "lmeval_mean": 0.409
+  },
+  "paired_delta_vs_random": {
+   "quadmix_pub": "+0.030+-0.029 (tie within noise)",
+   "zip": "+0.150+-0.010 (below random, significant)"
+  },
+  "note_mmds_adapt_row": "qz4 emitted an mmds_adapt row over the REDUCED 2-method portfolio (quadmix_pub+zip only) - excluded from canonical per the fill-in-controller rule",
+  "honest_reading": "on this five-domain textualized pool quadmix_pub ties same-budget random and zip trails it; both far above the untrained base; noselect (all tokens) is best - consistent with limited selection gains on this text setup"
+ }
+}

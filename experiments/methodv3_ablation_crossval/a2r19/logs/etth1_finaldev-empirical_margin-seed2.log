@@ -1,0 +1,9 @@
+  [method-v3] clipped certificate protocol: gate=hoeffding C=0.25 fusion-K=3 reference-K=0 anchor=auth_only stability=all_blocks_positive
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=cuda seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'vote_ensemble(top3)' (val_negMASE=-0.950)
+  mmds_adapt       n=  900 clean%=0.96 MASE=0.9551 (23.7s)
+
+==== TIMESERIES (ETTh1, model=dlinear, MASE lower=better) ====
+  mmds_adapt       MASE=0.9551 clean%=0.96 n=900
+saved -> /root/autodl-tmp/OmniSelect_v3_next/outputs/timeseries/ETTh1/run_id=v3-ablation-stage2-20260719-etth1_finaldev-empirical_margin-seed2-cfg=2001c919f0a4605a/seed_2/results.json

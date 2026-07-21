@@ -1,0 +1,37 @@
+{
+ "family": "cifar10_45k_160ep_original_protocol_fillin",
+ "method": "el2n",
+ "config": {
+  "DATASET": "cifar10",
+  "POOL": 45000,
+  "VAL_N": 5000,
+  "KEEP": 0.3,
+  "SCORE_EPOCH": 10,
+  "TRAIN_EPOCH": 160,
+  "SCORE_RUNS": 3,
+  "SUBSETS": "el2n",
+  "ctrl_row": "suppressed (fill-in mode)"
+ },
+ "per_seed": {
+  "0": {
+   "val": 0.896,
+   "test": 0.8967,
+   "n": 13500
+  },
+  "1": {
+   "val": 0.8172,
+   "test": 0.8017,
+   "n": 13500
+  },
+  "2": {
+   "val": 0.8528,
+   "test": 0.8518,
+   "n": 13500
+  }
+ },
+ "mean_test": 0.8501,
+ "runner_sha256": "5de6da4ce3dd6c62b4391980e9881b3861db8ee6c8c8e916f770a8317616caa1",
+ "log": "experiments/el2n_cifar45k_fillin_3seed.log",
+ "log_sha256": "63820256c8fea5be2b9957d735e3db33c0f5c0cbf0c5bbb5a75694b4f97db17b",
+ "note": "fill-in cell for the 3-seed CIFAR-10 45k/160ep family; scores from cached checkpoints; validated by this script"
+}

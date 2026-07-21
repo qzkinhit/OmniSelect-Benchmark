@@ -1,0 +1,2 @@
+DSIR fidelity: ours (crc32 1-2gram 10k buckets) vs official p-lambda data_selection, same pool(1582)/target(400)
+spearman=0.8553 pearson=0.9016 top50_overlap=0.8546

@@ -1,0 +1,57 @@
+{
+  "arm": "original_protocol",
+  "dataset": "imagenet100",
+  "seed": 1,
+  "config": {
+    "in_res": 112,
+    "score_epoch": 10,
+    "train_epoch": 40,
+    "score_runs": 3,
+    "pool": 120000,
+    "val_n": 5000,
+    "keep": 0.3,
+    "scale_note": "reduced-scale qualitative validation",
+    "recovered_from_log": "experiments/imagenet100_protocol_seed1.log",
+    "log_sha256": "0b13242cd241c293d6420b3871e3b769875aed7edae418b08adcf5e52be7bd7a",
+    "code_sha256": "d6c08ceb0c7c80bda9d1fefa2ccd3b4f6cf78cc9b2b934c946d0a7a7e9d168e7"
+  },
+  "results": [
+    {
+      "method": "random",
+      "val": 0.629,
+      "test": 0.583,
+      "n": 36000
+    },
+    {
+      "method": "el2n",
+      "val": 0.3332,
+      "test": 0.3288,
+      "n": 36000
+    },
+    {
+      "method": "grand",
+      "val": 0.3208,
+      "test": 0.3196,
+      "n": 36000
+    },
+    {
+      "method": "ccs",
+      "val": 0.636,
+      "test": 0.612,
+      "n": 36000
+    },
+    {
+      "method": "auth",
+      "val": 0.5606,
+      "test": 0.5156,
+      "n": 36000
+    },
+    {
+      "method": "ctrl",
+      "val": 0.636,
+      "test": 0.612,
+      "n": 36000,
+      "picked": "ccs"
+    }
+  ]
+}

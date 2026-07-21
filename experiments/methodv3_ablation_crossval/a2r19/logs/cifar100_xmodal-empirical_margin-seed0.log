@@ -1,0 +1,18 @@
+Using the latest cached version of the dataset since uoft-cs/cifar100 couldn't be found on the Hugging Face Hub (offline mode is enabled).
+14:25:30 | WARNING | datasets.load | Using the latest cached version of the dataset since uoft-cs/cifar100 couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'cifar100' at /root/autodl-tmp/hf_cache/datasets/uoft-cs___cifar100/cifar100/0.0.0/aadb3af77e9048adbea6b47c21a81e47dd092ae5 (last modified on Tue Jul 14 17:37:20 2026).
+14:25:30 | WARNING | datasets.packaged_modules.cache.cache | Found the latest cached dataset configuration 'cifar100' at /root/autodl-tmp/hf_cache/datasets/uoft-cs___cifar100/cifar100/0.0.0/aadb3af77e9048adbea6b47c21a81e47dd092ae5 (last modified on Tue Jul 14 17:37:20 2026).
+Using the latest cached version of the dataset since uoft-cs/cifar100 couldn't be found on the Hugging Face Hub (offline mode is enabled).
+14:25:30 | WARNING | datasets.load | Using the latest cached version of the dataset since uoft-cs/cifar100 couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'cifar100' at /root/autodl-tmp/hf_cache/datasets/uoft-cs___cifar100/cifar100/0.0.0/aadb3af77e9048adbea6b47c21a81e47dd092ae5 (last modified on Tue Jul 14 17:37:20 2026).
+14:25:30 | WARNING | datasets.packaged_modules.cache.cache | Found the latest cached dataset configuration 'cifar100' at /root/autodl-tmp/hf_cache/datasets/uoft-cs___cifar100/cifar100/0.0.0/aadb3af77e9048adbea6b47c21a81e47dd092ae5 (last modified on Tue Jul 14 17:37:20 2026).
+[encode] openai/clip-vit-base-patch32 on 4000+800+2000 imgs (dev=cuda) ...
+  [method-v3] paired accuracy certificate protocol: gate=paired_accuracy_gate delta=0.05 family=1
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'dmf' (val=0.468)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4345 (469.4s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4345 clean%=0.80 n=2000

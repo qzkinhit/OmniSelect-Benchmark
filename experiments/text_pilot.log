@@ -1,0 +1,28 @@
+########## TEXT PILOT seed 0 (mini-LM scratch, HID=320 HEADS=5) ##########
+device=mps | pool=1582 (329836 tok) | budget=164918 tok | heldout={'general': 40, 'math': 40, 'code': 40, 'image': 40, 'table': 40}
+mini-LM: hid=320 layers=4 ctx=512 | passes=3.0 | train_mode=scratch | methods=['noselect', 'random', 'dsir', 'zip', 'if_mates', 'quality_ppl', 'dmf', 'balance', 'mmdataselect']
+[influence] loaded cache (1582)
+  noselect       n=1582 hi%=0.63 red=0.677 ppl={'code': 1422.017, 'general': 2294.384, 'image': 1264.536, 'math': 620.906, 'table': 45.546} (3277.1s)
+  random         n= 789 hi%=0.63 red=0.635 ppl={'code': 3295.427, 'general': 4344.763, 'image': 3205.07, 'math': 1886.168, 'table': 479.047} (267.7s)
+  dsir           n=1148 hi%=0.66 red=0.668 ppl={'code': 3055.232, 'general': 4699.143, 'image': 2553.114, 'math': 2038.871, 'table': 325.719} (437.7s)
+  zip            n=1123 hi%=0.57 red=0.712 ppl={'code': 4268.554, 'general': 4043.256, 'image': 2522.448, 'math': 1987.482, 'table': 348.57} (608.6s)
+  if_mates       n= 892 hi%=0.68 red=0.696 ppl={'code': 2851.943, 'general': 5055.692, 'image': 2893.801, 'math': 2000.344, 'table': 343.271} (231.9s)
+  quality_ppl    n= 430 hi%=0.78 red=0.701 ppl={'code': 2684.999, 'general': 5397.384, 'image': 6512.83, 'math': 1757.069, 'table': 1630.939} (237.8s)
+  dmf            n=1076 hi%=0.62 red=0.669 ppl={'code': 3051.592, 'general': 4628.103, 'image': 2683.103, 'math': 1962.275, 'table': 326.024} (217.1s)
+  balance        n=1071 hi%=0.63 red=0.668 ppl={'code': 2954.575, 'general': 4967.531, 'image': 2794.111, 'math': 2015.765, 'table': 326.737} (558.8s)
+  mmdataselect   n= 631 hi%=0.93 red=0.614 ppl={'code': 3194.875, 'general': 4655.798, 'image': 3163.601, 'math': 1819.879, 'table': 1534.29} (1179.4s)
+
+================ EXPERIMENT (per-modality held-out PPL) ================
+method             n   hi%  set_red    code_ppl general_ppl   image_ppl    math_ppl   table_ppl
+noselect        1582  0.63    0.677    1422.017    2294.384    1264.536     620.906      45.546
+random           789  0.63    0.635    3295.427    4344.763     3205.07    1886.168     479.047
+dsir            1148  0.66    0.668    3055.232    4699.143    2553.114    2038.871     325.719
+zip             1123  0.57    0.712    4268.554    4043.256    2522.448    1987.482      348.57
+if_mates         892  0.68    0.696    2851.943    5055.692    2893.801    2000.344     343.271
+quality_ppl      430  0.78    0.701    2684.999    5397.384     6512.83    1757.069    1630.939
+dmf             1076  0.62    0.669    3051.592    4628.103    2683.103    1962.275     326.024
+balance         1071  0.63    0.668    2954.575    4967.531    2794.111    2015.765     326.737
+mmdataselect     631  0.93    0.614    3194.875    4655.798    3163.601    1819.879     1534.29
+
+saved -> /Users/qianzekai/PycharmProjects/Paper2_OmniSelect/outputs/experiment/results_seed0.json
+=== TEXT PILOT seed0 done ===

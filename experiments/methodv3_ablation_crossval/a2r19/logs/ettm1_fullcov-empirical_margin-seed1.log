@@ -1,0 +1,9 @@
+  [method-v3] clipped certificate protocol: gate=hoeffding C=0.25 fusion-K=3 reference-K=0 anchor=auth_only stability=all_blocks_positive
+timeseries=ETTm1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=cuda seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse learned w=(0.57, 0.0, 0.43) q=0.25 lam=0.0' (val_negMASE=-1.083)
+  mmds_adapt       n=  900 clean%=0.90 MASE=0.9995 (24.5s)
+
+==== TIMESERIES (ETTm1, model=dlinear, MASE lower=better) ====
+  mmds_adapt       MASE=0.9995 clean%=0.90 n=900
+saved -> /root/autodl-tmp/OmniSelect_v3_next/outputs/timeseries/ETTm1/run_id=v3-ablation-stage2-20260719-ettm1_fullcov-empirical_margin-seed1-cfg=2001c919f0a4605a/seed_1/results.json

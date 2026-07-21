@@ -1,0 +1,110 @@
+{
+  "arm": "original_protocol",
+  "dataset": "cifar10_full",
+  "seed": 0,
+  "config": {
+    "score_epoch": 10,
+    "train_epoch": 160,
+    "score_runs": 3,
+    "pool": 45000,
+    "val_n": 5000,
+    "keep": 0.3,
+    "scale_note": "original-protocol reproduction (single seed)",
+    "recovered_from_log": "experiments/cifar10_full_original_repro_seed0.log",
+    "log_sha256": "395460f187706842be8b420116580baf9a94b905555abe406ca20cd512f4ee0c",
+    "code_sha256": "d6c08ceb0c7c80bda9d1fefa2ccd3b4f6cf78cc9b2b934c946d0a7a7e9d168e7"
+  },
+  "results": [
+    {
+      "method": "random",
+      "val": 0.8862,
+      "test": 0.8836,
+      "n": 13500
+    },
+    {
+      "method": "el2n",
+      "val": 0.8818,
+      "test": 0.8784,
+      "n": 13500
+    },
+    {
+      "method": "grand",
+      "val": 0.882,
+      "test": 0.8851,
+      "n": 13500
+    },
+    {
+      "method": "ccs",
+      "val": 0.8974,
+      "test": 0.8981,
+      "n": 13500
+    },
+    {
+      "method": "auth",
+      "val": 0.8338,
+      "test": 0.8286,
+      "n": 13500
+    },
+    {
+      "method": "herding",
+      "val": 0.8934,
+      "n": 13500,
+      "test": 0.8844
+    },
+    {
+      "method": "coreset",
+      "val": 0.8794,
+      "n": 13376,
+      "test": 0.8759
+    },
+    {
+      "method": "semdedup",
+      "val": 0.9034,
+      "n": 13500,
+      "test": 0.9021
+    },
+    {
+      "method": "density",
+      "val": 0.8886,
+      "n": 13500,
+      "test": 0.8848
+    },
+    {
+      "method": "quadmix_pub",
+      "val": 0.8898,
+      "n": 13500,
+      "test": 0.8856
+    },
+    {
+      "method": "influence_only",
+      "val": 0.7832,
+      "n": 13500,
+      "test": 0.7771
+    },
+    {
+      "method": "mmdataselect",
+      "val": 0.891,
+      "n": 13500,
+      "test": 0.8821
+    },
+    {
+      "method": "dmf_pub",
+      "val": 0.874,
+      "n": 13500,
+      "test": 0.8714
+    },
+    {
+      "method": "ctrl",
+      "val": 0.9034,
+      "n": 13500,
+      "picked": "semdedup",
+      "test": 0.9021
+    }
+  ],
+  "_merge_note": {
+    "date": "2026-07-21",
+    "action": "backfilled herding/coreset/semdedup/density/quadmix_pub/influence_only/mmdataselect/dmf_pub for seed_0 (previously missing, canonical only had random/el2n/grand/ccs/auth); single-seed, matches this file's existing seed_0-only scope",
+    "raw_log": "experiments/backfill_20260721_logs/cifar10_8methods_fixed_serial-20260721.log",
+    "log_sha256": "574da869355fb25bba33ebef63b703310f7397ca11dc8d101ae197bfcfe36227"
+  }
+}

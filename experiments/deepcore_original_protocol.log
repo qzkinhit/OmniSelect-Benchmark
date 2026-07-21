@@ -1,0 +1,19 @@
+########## keep=0.1 (ResNet-18 from scratch, CIFAR-10, 原协议) ##########
+[score] training ResNet-18 from scratch to epoch 5 for EL2N/GraNd scores (dev=mps)
+[score] done in 527s
+
+==== ORIGINAL PROTOCOL: ResNet-18 from scratch, CIFAR-10, keep 10% (2000) ====
+  random   acc=0.3234  n=2000
+  el2n     acc=0.1477  n=2000
+  grand    acc=0.1671  n=2000
+  ccs      acc=0.2402  n=2000
+########## keep=0.3 (ResNet-18 from scratch, CIFAR-10, 原协议) ##########
+[score] training ResNet-18 from scratch to epoch 5 for EL2N/GraNd scores (dev=mps)
+[score] done in 398s
+
+==== ORIGINAL PROTOCOL: ResNet-18 from scratch, CIFAR-10, keep 30% (6000) ====
+  random   acc=0.4757  n=6000
+  el2n     acc=0.2054  n=6000
+  grand    acc=0.2648  n=6000
+  ccs      acc=0.5277  n=6000
+=== original-protocol done ===

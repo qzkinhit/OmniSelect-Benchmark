@@ -1,0 +1,360 @@
+##### ionosphere seed0 (clean, small budget) #####
+Traceback (most recent call last):
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 277, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 110, in main
+    Xp, yp_clean, Xval, yval, Xt, yt, n_classes = load_table(SEED)
+                                                  ^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 64, in load_table
+    sc.transform(X[test_i]), y[test_i], len(classes))
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_data.py", line 1111, in transform
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3038, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1110, in check_array
+    raise ValueError(
+ValueError: Found array with 0 sample(s) (shape=(0, 34)) while a minimum of 1 is required by StandardScaler.
+##### ionosphere seed1 (clean, small budget) #####
+Traceback (most recent call last):
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 277, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 110, in main
+    Xp, yp_clean, Xval, yval, Xt, yt, n_classes = load_table(SEED)
+                                                  ^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 64, in load_table
+    sc.transform(X[test_i]), y[test_i], len(classes))
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_data.py", line 1111, in transform
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3038, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1110, in check_array
+    raise ValueError(
+ValueError: Found array with 0 sample(s) (shape=(0, 34)) while a minimum of 1 is required by StandardScaler.
+##### ionosphere seed2 (clean, small budget) #####
+Traceback (most recent call last):
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 277, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 110, in main
+    Xp, yp_clean, Xval, yval, Xt, yt, n_classes = load_table(SEED)
+                                                  ^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 64, in load_table
+    sc.transform(X[test_i]), y[test_i], len(classes))
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_data.py", line 1111, in transform
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3038, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1110, in check_array
+    raise ValueError(
+ValueError: Found array with 0 sample(s) (shape=(0, 34)) while a minimum of 1 is required by StandardScaler.
+##### phoneme seed0 (clean, small budget) #####
+tabular=phoneme model=tabpfn | pool=350 test=500 budget=105 classes=2 seed=0
+  tags: {'high': np.int64(350)}
+  random           n=  105 clean%=1.00 acc=0.7700 auc=0.8493 (5.7s)
+  tabpfn_coreset   n=  105 clean%=1.00 acc=0.7920 auc=0.8472 (3.1s)
+  tabpfn_margin    n=  105 clean%=1.00 acc=0.7140 auc=0.7621 (5.4s)
+  tabpfn_hybrid    n=  105 clean%=1.00 acc=0.7800 auc=0.8341 (3.1s)
+
+==== TABULAR (phoneme, AUC higher better) ====
+  random           auc=0.8493 acc=0.7700 clean%=1.00 n=105
+  tabpfn_coreset   auc=0.8472 acc=0.7920 clean%=1.00 n=105
+  tabpfn_margin    auc=0.7621 acc=0.7140 clean%=1.00 n=105
+  tabpfn_hybrid    auc=0.8341 acc=0.7800 clean%=1.00 n=105
+##### phoneme seed1 (clean, small budget) #####
+tabular=phoneme model=tabpfn | pool=350 test=500 budget=105 classes=2 seed=1
+  tags: {'high': np.int64(350)}
+  random           n=  105 clean%=1.00 acc=0.7920 auc=0.8341 (5.1s)
+  tabpfn_coreset   n=  105 clean%=1.00 acc=0.8020 auc=0.8596 (3.0s)
+  tabpfn_margin    n=  105 clean%=1.00 acc=0.3180 auc=0.6330 (6.3s)
+  tabpfn_hybrid    n=  105 clean%=1.00 acc=0.7780 auc=0.8747 (3.0s)
+
+==== TABULAR (phoneme, AUC higher better) ====
+  random           auc=0.8341 acc=0.7920 clean%=1.00 n=105
+  tabpfn_coreset   auc=0.8596 acc=0.8020 clean%=1.00 n=105
+  tabpfn_margin    auc=0.6330 acc=0.3180 clean%=1.00 n=105
+  tabpfn_hybrid    auc=0.8747 acc=0.7780 clean%=1.00 n=105
+##### phoneme seed2 (clean, small budget) #####
+tabular=phoneme model=tabpfn | pool=350 test=500 budget=105 classes=2 seed=2
+  tags: {'high': np.int64(350)}
+  random           n=  105 clean%=1.00 acc=0.8400 auc=0.9001 (4.4s)
+  tabpfn_coreset   n=  105 clean%=1.00 acc=0.8220 auc=0.8854 (2.7s)
+  tabpfn_margin    n=  105 clean%=1.00 acc=0.7380 auc=0.7965 (5.0s)
+  tabpfn_hybrid    n=  105 clean%=1.00 acc=0.7960 auc=0.8433 (2.9s)
+
+==== TABULAR (phoneme, AUC higher better) ====
+  random           auc=0.9001 acc=0.8400 clean%=1.00 n=105
+  tabpfn_coreset   auc=0.8854 acc=0.8220 clean%=1.00 n=105
+  tabpfn_margin    auc=0.7965 acc=0.7380 clean%=1.00 n=105
+  tabpfn_hybrid    auc=0.8433 acc=0.7960 clean%=1.00 n=105
+=== tab-aicl original datasets done ===
+
+========== 小预算段(原文冷启动优势区, budget≈30) ==========
+##### ionosphere seed0 budget30 #####
+Traceback (most recent call last):
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 277, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 110, in main
+    Xp, yp_clean, Xval, yval, Xt, yt, n_classes = load_table(SEED)
+                                                  ^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 64, in load_table
+    sc.transform(X[test_i]), y[test_i], len(classes))
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_data.py", line 1111, in transform
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3038, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1110, in check_array
+    raise ValueError(
+ValueError: Found array with 0 sample(s) (shape=(0, 34)) while a minimum of 1 is required by StandardScaler.
+##### ionosphere seed1 budget30 #####
+Traceback (most recent call last):
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 277, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 110, in main
+    Xp, yp_clean, Xval, yval, Xt, yt, n_classes = load_table(SEED)
+                                                  ^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 64, in load_table
+    sc.transform(X[test_i]), y[test_i], len(classes))
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_data.py", line 1111, in transform
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3038, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1110, in check_array
+    raise ValueError(
+ValueError: Found array with 0 sample(s) (shape=(0, 34)) while a minimum of 1 is required by StandardScaler.
+##### ionosphere seed2 budget30 #####
+Traceback (most recent call last):
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 277, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 110, in main
+    Xp, yp_clean, Xval, yval, Xt, yt, n_classes = load_table(SEED)
+                                                  ^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/scripts/run_tabular_experiment.py", line 64, in load_table
+    sc.transform(X[test_i]), y[test_i], len(classes))
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_data.py", line 1111, in transform
+    X = validate_data(
+        ^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3038, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/.venv/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1110, in check_array
+    raise ValueError(
+ValueError: Found array with 0 sample(s) (shape=(0, 34)) while a minimum of 1 is required by StandardScaler.
+##### phoneme seed0 budget30 #####
+tabular=phoneme model=tabpfn | pool=350 test=500 budget=30 classes=2 seed=0
+  tags: {'high': np.int64(350)}
+  random           n=   30 clean%=1.00 acc=0.6960 auc=0.7297 (6.6s)
+  tabpfn_coreset   n=   30 clean%=1.00 acc=0.7300 auc=0.6550 (4.4s)
+  tabpfn_margin    n=   30 clean%=1.00 acc=0.2660 auc=0.5726 (7.6s)
+  tabpfn_hybrid    n=   30 clean%=1.00 acc=0.7540 auc=0.8146 (4.4s)
+
+==== TABULAR (phoneme, AUC higher better) ====
+  random           auc=0.7297 acc=0.6960 clean%=1.00 n=30
+  tabpfn_coreset   auc=0.6550 acc=0.7300 clean%=1.00 n=30
+  tabpfn_margin    auc=0.5726 acc=0.2660 clean%=1.00 n=30
+  tabpfn_hybrid    auc=0.8146 acc=0.7540 clean%=1.00 n=30
+##### phoneme seed1 budget30 #####
+tabular=phoneme model=tabpfn | pool=350 test=500 budget=30 classes=2 seed=1
+  tags: {'high': np.int64(350)}
+  random           n=   30 clean%=1.00 acc=0.7820 auc=0.8289 (7.4s)
+  tabpfn_coreset   n=   30 clean%=1.00 acc=0.7500 auc=0.6680 (5.2s)
+  tabpfn_margin    n=   30 clean%=1.00 acc=0.3380 auc=0.5807 (9.2s)
+  tabpfn_hybrid    n=   30 clean%=1.00 acc=0.7380 auc=0.6828 (5.2s)
+
+==== TABULAR (phoneme, AUC higher better) ====
+  random           auc=0.8289 acc=0.7820 clean%=1.00 n=30
+  tabpfn_coreset   auc=0.6680 acc=0.7500 clean%=1.00 n=30
+  tabpfn_margin    auc=0.5807 acc=0.3380 clean%=1.00 n=30
+  tabpfn_hybrid    auc=0.6828 acc=0.7380 clean%=1.00 n=30
+##### phoneme seed2 budget30 #####
+tabular=phoneme model=tabpfn | pool=350 test=500 budget=30 classes=2 seed=2
+  tags: {'high': np.int64(350)}
+  random           n=   30 clean%=1.00 acc=0.7360 auc=0.8134 (7.9s)
+  tabpfn_coreset   n=   30 clean%=1.00 acc=0.7060 auc=0.7645 (5.0s)
+  tabpfn_margin    n=   30 clean%=1.00 acc=0.6540 auc=0.6835 (8.6s)
+  tabpfn_hybrid    n=   30 clean%=1.00 acc=0.7200 auc=0.7391 (4.9s)
+
+==== TABULAR (phoneme, AUC higher better) ====
+  random           auc=0.8134 acc=0.7360 clean%=1.00 n=30
+  tabpfn_coreset   auc=0.7645 acc=0.7060 clean%=1.00 n=30
+  tabpfn_margin    auc=0.6835 acc=0.6540 clean%=1.00 n=30
+  tabpfn_hybrid    auc=0.7391 acc=0.7200 clean%=1.00 n=30
+=== small-budget done ===
+
+========== ionosphere 修正切分(池200/验50/测100) ==========
+##### ionosphere seed0 bf0.15 #####
+tabular=ionosphere model=tabpfn | pool=200 test=100 budget=30 classes=2 seed=0
+  tags: {'high': np.int64(200)}
+  random           n=   30 clean%=1.00 acc=0.9400 auc=0.9862 (5.0s)
+  tabpfn_coreset   n=   30 clean%=1.00 acc=0.8900 auc=0.9295 (2.9s)
+  tabpfn_margin    n=   30 clean%=1.00 acc=0.3000 auc=0.9443 (8.3s)
+  tabpfn_hybrid    n=   30 clean%=1.00 acc=0.7400 auc=0.9633 (3.2s)
+
+==== TABULAR (ionosphere, AUC higher better) ====
+  random           auc=0.9862 acc=0.9400 clean%=1.00 n=30
+  tabpfn_coreset   auc=0.9295 acc=0.8900 clean%=1.00 n=30
+  tabpfn_margin    auc=0.9443 acc=0.3000 clean%=1.00 n=30
+  tabpfn_hybrid    auc=0.9633 acc=0.7400 clean%=1.00 n=30
+##### ionosphere seed1 bf0.15 #####
+tabular=ionosphere model=tabpfn | pool=200 test=100 budget=30 classes=2 seed=1
+  tags: {'high': np.int64(200)}
+  random           n=   30 clean%=1.00 acc=0.9200 auc=0.9673 (5.2s)
+  tabpfn_coreset   n=   30 clean%=1.00 acc=0.4100 auc=0.7419 (3.2s)
+  tabpfn_margin    n=   30 clean%=1.00 acc=0.7900 auc=0.8442 (8.0s)
+  tabpfn_hybrid    n=   30 clean%=1.00 acc=0.8200 auc=0.9385 (3.0s)
+
+==== TABULAR (ionosphere, AUC higher better) ====
+  random           auc=0.9673 acc=0.9200 clean%=1.00 n=30
+  tabpfn_coreset   auc=0.7419 acc=0.4100 clean%=1.00 n=30
+  tabpfn_margin    auc=0.8442 acc=0.7900 clean%=1.00 n=30
+  tabpfn_hybrid    auc=0.9385 acc=0.8200 clean%=1.00 n=30
+##### ionosphere seed2 bf0.15 #####
+tabular=ionosphere model=tabpfn | pool=200 test=100 budget=30 classes=2 seed=2
+  tags: {'high': np.int64(200)}
+  random           n=   30 clean%=1.00 acc=0.8600 auc=0.9262 (5.2s)
+  tabpfn_coreset   n=   30 clean%=1.00 acc=0.9100 auc=0.9781 (3.2s)
+  tabpfn_margin    n=   30 clean%=1.00 acc=0.6000 auc=0.9438 (8.6s)
+  tabpfn_hybrid    n=   30 clean%=1.00 acc=0.4200 auc=0.8990 (3.2s)
+
+==== TABULAR (ionosphere, AUC higher better) ====
+  random           auc=0.9262 acc=0.8600 clean%=1.00 n=30
+  tabpfn_coreset   auc=0.9781 acc=0.9100 clean%=1.00 n=30
+  tabpfn_margin    auc=0.9438 acc=0.6000 clean%=1.00 n=30
+  tabpfn_hybrid    auc=0.8990 acc=0.4200 clean%=1.00 n=30
+##### ionosphere seed0 bf0.3 #####
+tabular=ionosphere model=tabpfn | pool=200 test=100 budget=60 classes=2 seed=0
+  tags: {'high': np.int64(200)}
+  random           n=   60 clean%=1.00 acc=0.9400 auc=0.9962 (5.8s)
+  tabpfn_coreset   n=   60 clean%=1.00 acc=0.8800 auc=0.9448 (3.9s)
+  tabpfn_margin    n=   60 clean%=1.00 acc=0.9500 auc=0.9695 (10.4s)
+  tabpfn_hybrid    n=   60 clean%=1.00 acc=0.8900 auc=0.9638 (4.1s)
+
+==== TABULAR (ionosphere, AUC higher better) ====
+  random           auc=0.9962 acc=0.9400 clean%=1.00 n=60
+  tabpfn_coreset   auc=0.9448 acc=0.8800 clean%=1.00 n=60
+  tabpfn_margin    auc=0.9695 acc=0.9500 clean%=1.00 n=60
+  tabpfn_hybrid    auc=0.9638 acc=0.8900 clean%=1.00 n=60
+##### ionosphere seed1 bf0.3 #####
+##### ionosphere seed0 bf0.15 #####
+tabular=ionosphere model=tabpfn | pool=200 test=100 budget=30 classes=2 seed=0
+  tags: {'high': np.int64(200)}
+  random           n=   30 clean%=1.00 acc=0.9400 auc=0.9862 (5.0s)
+  tabpfn_coreset   n=   30 clean%=1.00 acc=0.8900 auc=0.9295 (3.5s)
+  tabpfn_margin    n=   30 clean%=1.00 acc=0.3000 auc=0.9443 (8.5s)
+  tabpfn_hybrid    n=   30 clean%=1.00 acc=0.7400 auc=0.9633 (3.2s)
+
+==== TABULAR (ionosphere, AUC higher better) ====
+  random           auc=0.9862 acc=0.9400 clean%=1.00 n=30
+  tabpfn_coreset   auc=0.9295 acc=0.8900 clean%=1.00 n=30
+  tabpfn_margin    auc=0.9443 acc=0.3000 clean%=1.00 n=30
+  tabpfn_hybrid    auc=0.9633 acc=0.7400 clean%=1.00 n=30
+(ionosphere seed0 bf0.15 DONE)
+##### ionosphere seed1 bf0.15 #####
+tabular=ionosphere model=tabpfn | pool=200 test=100 budget=30 classes=2 seed=1
+  tags: {'high': np.int64(200)}
+  random           n=   30 clean%=1.00 acc=0.9200 auc=0.9673 (5.2s)
+  tabpfn_coreset   n=   30 clean%=1.00 acc=0.4100 auc=0.7419 (3.2s)
+  tabpfn_margin    n=   30 clean%=1.00 acc=0.7900 auc=0.8442 (8.7s)
+  tabpfn_hybrid    n=   30 clean%=1.00 acc=0.8200 auc=0.9385 (3.6s)
+
+==== TABULAR (ionosphere, AUC higher better) ====
+  random           auc=0.9673 acc=0.9200 clean%=1.00 n=30
+  tabpfn_coreset   auc=0.7419 acc=0.4100 clean%=1.00 n=30
+  tabpfn_margin    auc=0.8442 acc=0.7900 clean%=1.00 n=30
+  tabpfn_hybrid    auc=0.9385 acc=0.8200 clean%=1.00 n=30
+(ionosphere seed1 bf0.15 DONE)
+##### ionosphere seed2 bf0.15 #####
+tabular=ionosphere model=tabpfn | pool=200 test=100 budget=30 classes=2 seed=2
+  tags: {'high': np.int64(200)}
+  random           n=   30 clean%=1.00 acc=0.8600 auc=0.9262 (5.5s)
+  tabpfn_coreset   n=   30 clean%=1.00 acc=0.9100 auc=0.9781 (3.3s)
+  tabpfn_margin    n=   30 clean%=1.00 acc=0.6000 auc=0.9438 (8.6s)
+  tabpfn_hybrid    n=   30 clean%=1.00 acc=0.4200 auc=0.8990 (3.2s)
+
+==== TABULAR (ionosphere, AUC higher better) ====
+  random           auc=0.9262 acc=0.8600 clean%=1.00 n=30
+  tabpfn_coreset   auc=0.9781 acc=0.9100 clean%=1.00 n=30
+  tabpfn_margin    auc=0.9438 acc=0.6000 clean%=1.00 n=30
+  tabpfn_hybrid    auc=0.8990 acc=0.4200 clean%=1.00 n=30
+(ionosphere seed2 bf0.15 DONE)
+##### ionosphere seed0 bf0.3 #####
+tabular=ionosphere model=tabpfn | pool=200 test=100 budget=60 classes=2 seed=0
+  tags: {'high': np.int64(200)}
+  random           n=   60 clean%=1.00 acc=0.9400 auc=0.9962 (6.4s)
+  tabpfn_coreset   n=   60 clean%=1.00 acc=0.8800 auc=0.9448 (4.2s)
+  tabpfn_margin    n=   60 clean%=1.00 acc=0.9500 auc=0.9695 (11.0s)
+  tabpfn_hybrid    n=   60 clean%=1.00 acc=0.8900 auc=0.9638 (4.2s)
+
+==== TABULAR (ionosphere, AUC higher better) ====
+  random           auc=0.9962 acc=0.9400 clean%=1.00 n=60
+  tabpfn_coreset   auc=0.9448 acc=0.8800 clean%=1.00 n=60
+  tabpfn_margin    auc=0.9695 acc=0.9500 clean%=1.00 n=60
+  tabpfn_hybrid    auc=0.9638 acc=0.8900 clean%=1.00 n=60
+(ionosphere seed0 bf0.3 DONE)
+##### ionosphere seed1 bf0.3 #####
+tabular=ionosphere model=tabpfn | pool=200 test=100 budget=60 classes=2 seed=1
+  tags: {'high': np.int64(200)}
+  random           n=   60 clean%=1.00 acc=0.9200 auc=0.9643 (4.3s)
+  tabpfn_coreset   n=   60 clean%=1.00 acc=0.7400 auc=0.8701 (2.2s)
+  tabpfn_margin    n=   60 clean%=1.00 acc=0.8500 auc=0.9215 (6.7s)
+  tabpfn_hybrid    n=   60 clean%=1.00 acc=0.9400 auc=0.9775 (2.3s)
+
+==== TABULAR (ionosphere, AUC higher better) ====
+  random           auc=0.9643 acc=0.9200 clean%=1.00 n=60
+  tabpfn_coreset   auc=0.8701 acc=0.7400 clean%=1.00 n=60
+  tabpfn_margin    auc=0.9215 acc=0.8500 clean%=1.00 n=60
+  tabpfn_hybrid    auc=0.9775 acc=0.9400 clean%=1.00 n=60
+(ionosphere seed1 bf0.3 DONE)
+##### ionosphere seed2 bf0.3 #####
+tabular=ionosphere model=tabpfn | pool=200 test=100 budget=60 classes=2 seed=2
+  tags: {'high': np.int64(200)}
+  random           n=   60 clean%=1.00 acc=0.9200 auc=0.9581 (3.6s)
+  tabpfn_coreset   n=   60 clean%=1.00 acc=0.7700 auc=0.9648 (2.3s)
+  tabpfn_margin    n=   60 clean%=1.00 acc=0.9300 auc=0.9824 (5.5s)
+  tabpfn_hybrid    n=   60 clean%=1.00 acc=0.9200 auc=0.9738 (1.9s)
+
+==== TABULAR (ionosphere, AUC higher better) ====
+  random           auc=0.9581 acc=0.9200 clean%=1.00 n=60
+  tabpfn_coreset   auc=0.9648 acc=0.7700 clean%=1.00 n=60
+  tabpfn_margin    auc=0.9824 acc=0.9300 clean%=1.00 n=60
+  tabpfn_hybrid    auc=0.9738 acc=0.9200 clean%=1.00 n=60
+(ionosphere seed2 bf0.3 DONE)
+=== ionosphere corrected done ===

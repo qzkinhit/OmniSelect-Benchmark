@@ -1,0 +1,38 @@
+{
+  "verdict": "official-released-implementation-anchor-PASS",
+  "verdict_wording_note": "official released-implementation anchor PASS; NOT a strict paper-protocol reproduction (paper-era commit c8812e5 had README only, no code; released code hardcodes wd=5e-4 vs paper text 2e-4; no seed parameter exists, run-1 is unseeded)",
+  "date_utc": "2026-07-17",
+  "code_repo": "https://github.com/haizhongzheng/Coverage-centric-coreset-selection",
+  "code_sha": "b37f166ace760e17f4d5baae17a828bdb88c6667",
+  "code_modified": false,
+  "data": "CIFAR-10 via official loader (torchvision datasets.CIFAR10)",
+  "data_md5": "c58f30108f718f92721af3b95e74349a",
+  "config_deviations": [
+    "released code hardcodes weight_decay=5e-4 + nesterov, paper text says 2e-4",
+    "official code has no seed parameter / manual_seed anywhere; this is one unseeded run (run-1), not seed-0",
+    "paper-era commit c8812e5f33afd433b39285f5a9172d50c65d9eec is README-only (no code); main HEAD b37f166 used instead"
+  ],
+  "stages": {
+    "s1_fulltrain": {"exit": 0, "best_acc": 95.38, "paper_value": 95.23, "delta": 0.15, "log_line_range": [1, 2629]},
+    "s2_scores":    {"exit": 0, "best_acc": null,  "paper_value": null,  "delta": null, "log_line_range": [2630, 2643]},
+    "s3_ccs90":     {"exit": 0, "best_acc": 86.50, "paper_value": 86.08, "delta": 0.42, "log_line_range": [2644, 14878]},
+    "s4_rand90":    {"exit": 0, "best_acc": 83.23, "paper_value": 79.04, "delta": 4.19, "log_line_range": [14879, 27109]},
+    "s5_ccs70":     {"exit": 0, "best_acc": 93.13, "paper_value": 93.00, "delta": 0.13, "log_line_range": [27110, 31420]},
+    "s6_rand70":    {"exit": 0, "best_acc": 91.15, "paper_value": 90.94, "delta": 0.21, "log_line_range": [31421, 35727]}
+  },
+  "paired_gains": {
+    "prune90": {"ours": 3.27, "paper": 7.04},
+    "prune70": {"ours": 1.98, "paper": 2.06}
+  },
+  "acceptance": {
+    "primary_band_ccs90": "[84.25, 87.91] -> 86.50 PASS",
+    "secondary_band_ccs70": "[92.00, 94.00] -> 93.13 PASS",
+    "paired_sign": "CCS-random positive at both prune rates"
+  },
+  "exact_selected_ids": "NOT_CAPTURED (official td pickle stores Subset-local indices only)",
+  "exact_replay": "NO",
+  "tier_note": "recorded as its own tier: official released-implementation anchor; our testbed CCS (EL2N-binned local implementation) is NOT upgraded by this anchor",
+  "log_path": "/root/lane_ccs_anchor.log",
+  "stage_exits_path": "/root/ccs_anchor_stage_exits.txt",
+  "marker": "/root/CCS_ANCHOR_DONE"
+}

@@ -1,0 +1,7 @@
+#### TSKC seed0 ####
+  kcenter          n=  900 clean%=0.48 MASE=1.1000 (3.0s)
+#### TSKC seed1 ####
+  kcenter          n=  900 clean%=0.50 MASE=1.0846 (1.5s)
+#### TSKC seed2 ####
+  kcenter          n=  900 clean%=0.49 MASE=1.1217 (1.7s)
+#### TSKC DONE ####

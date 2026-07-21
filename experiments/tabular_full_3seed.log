@@ -1,0 +1,139 @@
+########## SEED 0 (electricity, TabPFN) ##########
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+tabular=electricity model=tabpfn | pool=3000 test=2000 budget=1500 classes=2 seed=0
+  tags: {'corrupt': np.int64(400), 'dup': np.int64(400), 'flip': np.int64(400), 'high': np.int64(1800)}
+  full             n= 3000 clean%=0.60 acc=0.8100 auc=0.8818 (49.6s)
+  random           n= 1500 clean%=0.60 acc=0.7970 auc=0.8674 (22.0s)
+  coreset          n= 1500 clean%=0.57 acc=0.7955 auc=0.8729 (27.3s)
+  el2n             n= 1500 clean%=0.52 acc=0.3410 auc=0.2403 (45.1s)
+  grand            n= 1500 clean%=0.51 acc=0.3840 auc=0.2660 (26.6s)
+  ccs              n= 1500 clean%=0.66 acc=0.7985 auc=0.8649 (33.0s)
+  herding          n= 1500 clean%=0.57 acc=0.7960 auc=0.8672 (27.7s)
+  kcenter          n= 1500 clean%=0.58 acc=0.8065 auc=0.8757 (25.5s)
+  semdedup         n= 1500 clean%=0.58 acc=0.8000 auc=0.8729 (31.7s)
+  density          n= 1500 clean%=0.60 acc=0.8085 auc=0.8699 (26.7s)
+  quadmix          n= 1500 clean%=0.48 acc=0.7855 auc=0.8538 (28.5s)
+  dmf              n= 1500 clean%=0.67 acc=0.7780 auc=0.8520 (393.9s)
+  auth_only        n= 1500 clean%=0.73 acc=0.7790 auc=0.8471 (18.5s)
+  influence_only   n= 1500 clean%=0.68 acc=0.7625 auc=0.8170 (18.8s)
+  mmdataselect     n= 1500 clean%=0.65 acc=0.8055 auc=0.8677 (19.3s)
+  tabpfn_coreset   n= 1500 clean%=0.58 acc=0.8065 auc=0.8757 (19.5s)
+  tabpfn_margin    n= 1500 clean%=0.51 acc=0.7305 auc=0.8159 (28.7s)
+  tabpfn_hybrid    n= 1500 clean%=0.55 acc=0.7965 auc=0.8680 (18.5s)
+    [adapt] picked 'kcenter' (val_auc=0.866)
+  mmds_adapt       n= 1500 clean%=0.58 acc=0.8065 auc=0.8757 (1017.8s)
+
+==== TABULAR (electricity, AUC higher better) ====
+  full             auc=0.8818 acc=0.8100 clean%=0.60 n=3000
+  random           auc=0.8674 acc=0.7970 clean%=0.60 n=1500
+  coreset          auc=0.8729 acc=0.7955 clean%=0.57 n=1500
+  el2n             auc=0.2403 acc=0.3410 clean%=0.52 n=1500
+  grand            auc=0.2660 acc=0.3840 clean%=0.51 n=1500
+  ccs              auc=0.8649 acc=0.7985 clean%=0.66 n=1500
+  herding          auc=0.8672 acc=0.7960 clean%=0.57 n=1500
+  kcenter          auc=0.8757 acc=0.8065 clean%=0.58 n=1500
+  semdedup         auc=0.8729 acc=0.8000 clean%=0.58 n=1500
+  density          auc=0.8699 acc=0.8085 clean%=0.60 n=1500
+  quadmix          auc=0.8538 acc=0.7855 clean%=0.48 n=1500
+  dmf              auc=0.8520 acc=0.7780 clean%=0.67 n=1500
+  auth_only        auc=0.8471 acc=0.7790 clean%=0.73 n=1500
+  influence_only   auc=0.8170 acc=0.7625 clean%=0.68 n=1500
+  mmdataselect     auc=0.8677 acc=0.8055 clean%=0.66 n=1500
+  tabpfn_coreset   auc=0.8757 acc=0.8065 clean%=0.58 n=1500
+  tabpfn_margin    auc=0.8159 acc=0.7305 clean%=0.51 n=1500
+  tabpfn_hybrid    auc=0.8680 acc=0.7965 clean%=0.55 n=1500
+  mmds_adapt       auc=0.8757 acc=0.8065 clean%=0.58 n=1500
+########## SEED 1 (electricity, TabPFN) ##########
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+tabular=electricity model=tabpfn | pool=3000 test=2000 budget=1500 classes=2 seed=1
+  tags: {'corrupt': np.int64(400), 'dup': np.int64(400), 'flip': np.int64(400), 'high': np.int64(1800)}
+  full             n= 3000 clean%=0.60 acc=0.7995 auc=0.8751 (42.7s)
+  random           n= 1500 clean%=0.59 acc=0.7845 auc=0.8638 (18.2s)
+  coreset          n= 1500 clean%=0.56 acc=0.7850 auc=0.8586 (18.6s)
+  el2n             n= 1500 clean%=0.52 acc=0.3390 auc=0.2300 (17.9s)
+  grand            n= 1500 clean%=0.53 acc=0.4255 auc=0.2724 (17.8s)
+  ccs              n= 1500 clean%=0.65 acc=0.7820 auc=0.8477 (18.2s)
+  herding          n= 1500 clean%=0.56 acc=0.7800 auc=0.8596 (18.4s)
+  kcenter          n= 1500 clean%=0.58 acc=0.7795 auc=0.8626 (18.9s)
+  semdedup         n= 1500 clean%=0.56 acc=0.7775 auc=0.8549 (18.2s)
+  density          n= 1500 clean%=0.59 acc=0.7785 auc=0.8498 (18.3s)
+  quadmix          n= 1500 clean%=0.47 acc=0.7735 auc=0.8378 (17.9s)
+  dmf              n= 1500 clean%=0.66 acc=0.7775 auc=0.8417 (347.7s)
+  auth_only        n= 1500 clean%=0.70 acc=0.7660 auc=0.8385 (17.9s)
+  influence_only   n= 1500 clean%=0.68 acc=0.7590 auc=0.8125 (17.9s)
+  mmdataselect     n= 1500 clean%=0.67 acc=0.7695 auc=0.8433 (18.1s)
+  tabpfn_coreset   n= 1500 clean%=0.58 acc=0.7795 auc=0.8626 (17.8s)
+  tabpfn_margin    n= 1500 clean%=0.56 acc=0.7790 auc=0.8287 (27.7s)
+  tabpfn_hybrid    n= 1500 clean%=0.54 acc=0.7850 auc=0.8565 (18.0s)
+    [adapt] picked 'kcenter' (val_auc=0.865)
+  mmds_adapt       n= 1500 clean%=0.58 acc=0.7795 auc=0.8626 (949.9s)
+
+==== TABULAR (electricity, AUC higher better) ====
+  full             auc=0.8751 acc=0.7995 clean%=0.60 n=3000
+  random           auc=0.8638 acc=0.7845 clean%=0.58 n=1500
+  coreset          auc=0.8586 acc=0.7850 clean%=0.56 n=1500
+  el2n             auc=0.2300 acc=0.3390 clean%=0.52 n=1500
+  grand            auc=0.2724 acc=0.4255 clean%=0.53 n=1500
+  ccs              auc=0.8477 acc=0.7820 clean%=0.65 n=1500
+  herding          auc=0.8596 acc=0.7800 clean%=0.56 n=1500
+  kcenter          auc=0.8626 acc=0.7795 clean%=0.58 n=1500
+  semdedup         auc=0.8549 acc=0.7775 clean%=0.56 n=1500
+  density          auc=0.8498 acc=0.7785 clean%=0.59 n=1500
+  quadmix          auc=0.8378 acc=0.7735 clean%=0.47 n=1500
+  dmf              auc=0.8417 acc=0.7775 clean%=0.66 n=1500
+  auth_only        auc=0.8385 acc=0.7660 clean%=0.70 n=1500
+  influence_only   auc=0.8125 acc=0.7590 clean%=0.68 n=1500
+  mmdataselect     auc=0.8433 acc=0.7695 clean%=0.67 n=1500
+  tabpfn_coreset   auc=0.8626 acc=0.7795 clean%=0.58 n=1500
+  tabpfn_margin    auc=0.8287 acc=0.7790 clean%=0.56 n=1500
+  tabpfn_hybrid    auc=0.8565 acc=0.7850 clean%=0.54 n=1500
+  mmds_adapt       auc=0.8626 acc=0.7795 clean%=0.58 n=1500
+########## SEED 2 (electricity, TabPFN) ##########
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+tabular=electricity model=tabpfn | pool=3000 test=2000 budget=1500 classes=2 seed=2
+  tags: {'corrupt': np.int64(400), 'dup': np.int64(400), 'flip': np.int64(400), 'high': np.int64(1800)}
+  full             n= 3000 clean%=0.60 acc=0.8255 auc=0.8992 (40.9s)
+  random           n= 1500 clean%=0.61 acc=0.8090 auc=0.8829 (18.7s)
+  coreset          n= 1500 clean%=0.57 acc=0.8175 auc=0.8865 (19.1s)
+  el2n             n= 1500 clean%=0.54 acc=0.3410 auc=0.2327 (18.0s)
+  grand            n= 1500 clean%=0.55 acc=0.4215 auc=0.3276 (17.9s)
+  ccs              n= 1500 clean%=0.64 acc=0.7990 auc=0.8762 (18.1s)
+  herding          n= 1500 clean%=0.57 acc=0.8140 auc=0.8879 (19.1s)
+  kcenter          n= 1500 clean%=0.58 acc=0.8080 auc=0.8877 (18.4s)
+  semdedup         n= 1500 clean%=0.56 acc=0.8140 auc=0.8826 (19.2s)
+  density          n= 1500 clean%=0.60 acc=0.7755 auc=0.8560 (19.1s)
+  quadmix          n= 1500 clean%=0.46 acc=0.7860 auc=0.8611 (18.6s)
+  dmf              n= 1500 clean%=0.63 acc=0.7900 auc=0.8601 (359.4s)
+  auth_only        n= 1500 clean%=0.71 acc=0.7715 auc=0.8506 (20.4s)
+  influence_only   n= 1500 clean%=0.66 acc=0.7640 auc=0.8188 (22.9s)
+  mmdataselect     n= 1500 clean%=0.66 acc=0.7850 auc=0.8683 (21.3s)
+  tabpfn_coreset   n= 1500 clean%=0.58 acc=0.8080 auc=0.8877 (22.3s)
+  tabpfn_margin    n= 1500 clean%=0.59 acc=0.8025 auc=0.8644 (33.0s)
+  tabpfn_hybrid    n= 1500 clean%=0.52 acc=0.8020 auc=0.8700 (23.8s)
+    [adapt] picked 'random' (val_auc=0.877)
+  mmds_adapt       n= 1500 clean%=0.59 acc=0.8140 auc=0.8851 (1097.5s)
+
+==== TABULAR (electricity, AUC higher better) ====
+  full             auc=0.8992 acc=0.8255 clean%=0.60 n=3000
+  random           auc=0.8829 acc=0.8090 clean%=0.61 n=1500
+  coreset          auc=0.8865 acc=0.8175 clean%=0.57 n=1500
+  el2n             auc=0.2327 acc=0.3410 clean%=0.54 n=1500
+  grand            auc=0.3276 acc=0.4215 clean%=0.55 n=1500
+  ccs              auc=0.8762 acc=0.7990 clean%=0.64 n=1500
+  herding          auc=0.8879 acc=0.8140 clean%=0.57 n=1500
+  kcenter          auc=0.8877 acc=0.8080 clean%=0.58 n=1500
+  semdedup         auc=0.8826 acc=0.8140 clean%=0.56 n=1500
+  density          auc=0.8560 acc=0.7755 clean%=0.60 n=1500
+  quadmix          auc=0.8611 acc=0.7860 clean%=0.46 n=1500
+  dmf              auc=0.8601 acc=0.7900 clean%=0.63 n=1500
+  auth_only        auc=0.8506 acc=0.7715 clean%=0.71 n=1500
+  influence_only   auc=0.8188 acc=0.7640 clean%=0.66 n=1500
+  mmdataselect     auc=0.8683 acc=0.7850 clean%=0.66 n=1500
+  tabpfn_coreset   auc=0.8877 acc=0.8080 clean%=0.58 n=1500
+  tabpfn_margin    auc=0.8644 acc=0.8025 clean%=0.59 n=1500
+  tabpfn_hybrid    auc=0.8700 acc=0.8020 clean%=0.52 n=1500
+  mmds_adapt       auc=0.8851 acc=0.8140 clean%=0.59 n=1500
+=== TABULAR 3-seed 完成 ===

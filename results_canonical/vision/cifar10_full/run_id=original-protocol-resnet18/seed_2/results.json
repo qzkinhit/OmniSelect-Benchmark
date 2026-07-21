@@ -1,0 +1,53 @@
+{
+  "arm": "original_protocol",
+  "dataset": "cifar10_full",
+  "seed": 2,
+  "config": {
+    "pool": 45000,
+    "train_epoch": 160,
+    "score_runs": 3,
+    "keep": 0.3,
+    "code_sha256": "d6c08ceb0c7c80bda9d1fefa2ccd3b4f6cf78cc9b2b934c946d0a7a7e9d168e7",
+    "recovered_from_log": "cifar10_full_original_repro_seed2.log",
+    "log_sha256": "aa2ad93c0d6069e22d0c6f7b0ded1ac746e54ac46cbf834526a426f6a60f522f"
+  },
+  "results": [
+    {
+      "method": "random",
+      "val": 0.8858,
+      "test": 0.8854,
+      "n": 13500
+    },
+    {
+      "method": "el2n",
+      "val": 0.8448,
+      "test": 0.847,
+      "n": 13500
+    },
+    {
+      "method": "grand",
+      "val": 0.8436,
+      "test": 0.839,
+      "n": 13500
+    },
+    {
+      "method": "ccs",
+      "val": 0.9008,
+      "test": 0.9013,
+      "n": 13500
+    },
+    {
+      "method": "auth",
+      "val": 0.8478,
+      "test": 0.8472,
+      "n": 13500
+    },
+    {
+      "method": "ctrl",
+      "val": 0.9008,
+      "test": 0.9013,
+      "n": 13500,
+      "picked": "ccs"
+    }
+  ]
+}

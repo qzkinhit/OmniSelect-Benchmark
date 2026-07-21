@@ -1,0 +1,5 @@
+schema=ablation-resume-import-v1
+source=/root/autodl-tmp/OmniSelect_v3_next/artifact/ablation_runs/methodv3_stage2/v3-ablation-stage2-20260719
+source_failed_sha256=20ed3afaaa022fe8f4c9acacc601435bd4b406532b0e5721077a04e4689d53e8
+source_plan_sha256=62defdd93a424295780c27c3926f47b1a5a13f7187f100de1544157aacb769d4
+imported_at=2026-07-19T19:51:37+08:00

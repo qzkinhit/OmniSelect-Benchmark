@@ -1,0 +1,31 @@
+# ETT upstream-URL byte comparison — captured 2026-07-16
+# Upstream raw files curl -L from github.com/zhouhaoyi/ETDataset/main/ETT-small/ on LOCAL Mac.
+# Compared against server cached-copy SHAs recorded in docs/dataset_provenance.md.
+
+## Upstream raw SHA256 (freshly downloaded 2026-07-16)
+f18de3ad269cef59bb07b5438d79bb3042d3be49bdeecf01c1cd6d29695ee066  ETTh1.csv  (upstream raw)
+a3dc2c597b9218c7ce1cd55eb77b283fd459a1d09d753063f944967dd6b9218b  ETTh2.csv  (upstream raw)
+6ce1759b1a18e3328421d5d75fadcb316c449fcd7cec32820c8dafda71986c9e  ETTm1.csv  (upstream raw)
+
+## Server cached-copy SHA256 (data/processed/, recorded in provenance ledger)
+5c155a1b14dcafcdc64f76b86c30637b80c5db42f2454d70da341cd7a8305575  etth1.csv  (server cached)
+14964a31bcfab7cdb8e5499962525fc58c719dc90c41f9a39ddf80f3def72f52  etth2.csv  (server cached)
+093cc4efd56a6bf68fb20cc93a2a79a4fbb06f02c8f4e7e5efa5520cc68afce6  ettm1.csv  (server cached)
+
+## RESULT: MISMATCH (byte level) — but semantically identical data.
+# Same row count (ETTh1/ETTh2 = 17421 lines, ETTm1 = 69681 lines), same header
+#   `date,HUFL,HULL,MUFL,MULL,LUFL,LULL,OT`, same dates, same values, no CRLF on either side.
+# Root cause identified by byte diff of ETTh1 (server copy pulled to scratchpad, diffed):
+#   the server cached copy was RE-SERIALIZED (float round-trip, last-digit precision loss),
+#   e.g. row 2016-07-01 02:00:00 column MULL:
+#     upstream : 0.35499998927116394   (17 significant digits)
+#     server   : 0.3549999892711639    (16 significant digits, trailing digit dropped)
+# File size reflects this: upstream ETTh1 = 2,589,657 bytes vs server = 2,585,281 bytes.
+# Interpretation: the cached copy is a pandas/float re-write of the upstream CSV, NOT a
+#   byte-identical mirror. Numerical difference is ~1e-17 per affected cell (float32 round-trip
+#   noise), far below the OT-forecast MASE signal. No data rows added/removed/reordered.
+#
+# ACTION for the ledger: the "upstream-URL byte-diff [PENDING]" note is now CLOSED as
+#   [EVIDENCE-OK] with a documented, benign byte-level mismatch (re-serialization), NOT a
+#   silent divergence. If exact upstream bytes are required for camera-ready, re-cache by
+#   copying the raw upstream file verbatim instead of round-tripping through pandas.

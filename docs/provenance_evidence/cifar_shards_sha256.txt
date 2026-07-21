@@ -1,0 +1,13 @@
+# CIFAR per-shard SHA256 — captured 2026-07-16 on server "omni" (autodl-container-9d94x8ag0n-5a505a19)
+# Command: sha256sum on the parquet blobs resolved from HF snapshot symlinks
+# HF cache root: /root/autodl-tmp/hf_cache/hub/
+#
+# CIFAR-10  repo uoft-cs/cifar10   pinned snapshot 0b2714987fa478483af9968de7c934580d0bb9a2
+# CIFAR-100 repo uoft-cs/cifar100  pinned snapshot aadb3af77e9048adbea6b47c21a81e47dd092ae5
+# NOTE: HF stores these large parquet files under blobs/ with the sha256 as the blob filename
+#       (git-LFS content addressing); the digests below are the sha256sum of the resolved blob.
+
+841389e6f2d64f28bf17310e430aebac20ec3ba611a3c5e231dc93c645ce84de  cifar10/plain_text/test-00000-of-00001.parquet
+8428b53a88a11ac374111006708df51469e315a22ac6d66470afd9c78d2ae883  cifar10/plain_text/train-00000-of-00001.parquet
+98776c529bb146a9c791229df74a5cf076be9b43d82dbbd334b6a7788d73dc68  cifar100/cifar100/test-00000-of-00001.parquet
+694865d6b990e234804f01268586c41e88bcbbb75e20858432c05ad4081aca23  cifar100/cifar100/train-00000-of-00001.parquet

@@ -1,0 +1,120 @@
+lane=daisy_steamgen-DLinear-full run_id=backfill-daisy_steamgen-dlinear-full-20260720 start=2026-07-20T06:41:43+08:00
+===== daisy_steamgen DLinear SEED=0 start=2026-07-20T06:41:43+08:00 =====
+scripts/run_daisy_steamgen_dlinear_full.sh: line 22: /root/autodl-tmp/OmniSelect_v3_next/.venv/bin/python: No such file or directory
+SEED=0 python_exit=127
+lane=daisy_steamgen-DLinear-full run_id=backfill-daisy_steamgen-dlinear-full-20260720 start=2026-07-20T06:46:23+08:00
+===== daisy_steamgen DLinear SEED=0 start=2026-07-20T06:46:23+08:00 =====
+timeseries=daisy_steamgen OT | L=96 H=24 pool=3000 test=1422 budget=900 dev=cuda seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=0.9817 (1.0s)
+  random           n=  900 clean%=0.60 MASE=1.1107 (0.5s)
+  coreset          n=  900 clean%=0.38 MASE=1.2865 (2.6s)
+  auth_only        n=  900 clean%=0.87 MASE=0.8422 (0.2s)
+  influence_only   n=  900 clean%=0.81 MASE=1.4153 (0.3s)
+  mmdataselect     n=  900 clean%=0.81 MASE=1.1007 (0.5s)
+    [adapt] picked 'dmf_pub' (val_negMASE=-0.893)
+  mmds_adapt       n=  900 clean%=0.92 MASE=0.8226 (67.4s)
+  herding          n=  900 clean%=0.43 MASE=1.2617 (2.5s)
+  kcenter          n=  900 clean%=0.36 MASE=1.3404 (2.0s)
+  semdedup         n=  900 clean%=0.41 MASE=1.2949 (0.4s)
+  density          n=  900 clean%=0.47 MASE=1.2529 (0.3s)
+  quadmix          n=  900 clean%=0.77 MASE=1.0707 (0.5s)
+  quadmix_pub      n=  900 clean%=0.60 MASE=1.0269 (0.4s)
+  dmf              n=  900 clean%=0.91 MASE=0.9922 (4.1s)
+  dmf_pub          n=  900 clean%=0.92 MASE=0.8226 (8.8s)
+
+==== TIMESERIES (daisy_steamgen, model=dlinear, MASE lower=better) ====
+  mmds_adapt       MASE=0.8226 clean%=0.92 n=900
+  dmf_pub          MASE=0.8226 clean%=0.92 n=900
+  auth_only        MASE=0.8422 clean%=0.87 n=900
+  full             MASE=0.9817 clean%=0.60 n=3000
+  dmf              MASE=0.9922 clean%=0.91 n=900
+  quadmix_pub      MASE=1.0269 clean%=0.60 n=900
+  quadmix          MASE=1.0707 clean%=0.77 n=900
+  mmdataselect     MASE=1.1007 clean%=0.81 n=900
+  random           MASE=1.1107 clean%=0.60 n=900
+  density          MASE=1.2529 clean%=0.47 n=900
+  herding          MASE=1.2617 clean%=0.43 n=900
+  coreset          MASE=1.2865 clean%=0.38 n=900
+  semdedup         MASE=1.2949 clean%=0.41 n=900
+  kcenter          MASE=1.3404 clean%=0.36 n=900
+  influence_only   MASE=1.4153 clean%=0.81 n=900
+saved -> /root/autodl-tmp/OmniSelect_v3_next/outputs/timeseries/daisy_steamgen/run_id=backfill-daisy_steamgen-dlinear-full-20260720-cfg=a56adda5b0f8b526/seed_0/results.json
+SEED=0 python_exit=0
+===== daisy_steamgen DLinear SEED=1 start=2026-07-20T06:48:01+08:00 =====
+timeseries=daisy_steamgen OT | L=96 H=24 pool=3000 test=1422 budget=900 dev=cuda seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=0.9876 (0.6s)
+  random           n=  900 clean%=0.60 MASE=1.1320 (0.3s)
+  coreset          n=  900 clean%=0.37 MASE=1.2822 (2.3s)
+  auth_only        n=  900 clean%=0.90 MASE=0.8792 (0.3s)
+  influence_only   n=  900 clean%=0.81 MASE=1.3870 (0.3s)
+  mmdataselect     n=  900 clean%=0.82 MASE=1.0966 (0.6s)
+    [adapt] picked 'fuse learned w=(0.87, 0.0, 0.13) q=0.0 lam=0.6' (val_negMASE=-0.943)
+  mmds_adapt       n=  900 clean%=0.92 MASE=0.8275 (69.4s)
+  herding          n=  900 clean%=0.46 MASE=1.3564 (2.3s)
+  kcenter          n=  900 clean%=0.36 MASE=1.3022 (2.1s)
+  semdedup         n=  900 clean%=0.39 MASE=1.2715 (0.6s)
+  density          n=  900 clean%=0.47 MASE=1.2294 (0.3s)
+  quadmix          n=  900 clean%=0.78 MASE=1.0815 (0.5s)
+  quadmix_pub      n=  900 clean%=0.63 MASE=1.0564 (0.6s)
+  dmf              n=  900 clean%=0.92 MASE=1.0746 (4.3s)
+  dmf_pub          n=  900 clean%=0.91 MASE=0.8537 (7.1s)
+
+==== TIMESERIES (daisy_steamgen, model=dlinear, MASE lower=better) ====
+  mmds_adapt       MASE=0.8275 clean%=0.92 n=900
+  dmf_pub          MASE=0.8537 clean%=0.91 n=900
+  auth_only        MASE=0.8792 clean%=0.90 n=900
+  full             MASE=0.9876 clean%=0.60 n=3000
+  quadmix_pub      MASE=1.0564 clean%=0.63 n=900
+  dmf              MASE=1.0746 clean%=0.92 n=900
+  quadmix          MASE=1.0815 clean%=0.78 n=900
+  mmdataselect     MASE=1.0966 clean%=0.82 n=900
+  random           MASE=1.1320 clean%=0.60 n=900
+  density          MASE=1.2294 clean%=0.47 n=900
+  semdedup         MASE=1.2715 clean%=0.39 n=900
+  coreset          MASE=1.2822 clean%=0.37 n=900
+  kcenter          MASE=1.3022 clean%=0.36 n=900
+  herding          MASE=1.3564 clean%=0.46 n=900
+  influence_only   MASE=1.3870 clean%=0.81 n=900
+saved -> /root/autodl-tmp/OmniSelect_v3_next/outputs/timeseries/daisy_steamgen/run_id=backfill-daisy_steamgen-dlinear-full-20260720-cfg=a56adda5b0f8b526/seed_1/results.json
+SEED=1 python_exit=0
+===== daisy_steamgen DLinear SEED=2 start=2026-07-20T06:49:39+08:00 =====
+timeseries=daisy_steamgen OT | L=96 H=24 pool=3000 test=1422 budget=900 dev=cuda seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=1.0302 (0.8s)
+  random           n=  900 clean%=0.58 MASE=1.2013 (0.3s)
+  coreset          n=  900 clean%=0.38 MASE=1.3084 (2.2s)
+  auth_only        n=  900 clean%=0.88 MASE=0.9249 (0.4s)
+  influence_only   n=  900 clean%=0.76 MASE=1.5067 (0.5s)
+  mmdataselect     n=  900 clean%=0.82 MASE=1.1286 (0.3s)
+    [adapt] picked 'dmf_pub' (val_negMASE=-0.967)
+  mmds_adapt       n=  900 clean%=0.91 MASE=0.8922 (99.0s)
+  herding          n=  900 clean%=0.45 MASE=1.3385 (2.9s)
+  kcenter          n=  900 clean%=0.37 MASE=1.3328 (4.6s)
+  semdedup         n=  900 clean%=0.37 MASE=1.4113 (0.7s)
+  density          n=  900 clean%=0.48 MASE=1.2804 (0.7s)
+  quadmix          n=  900 clean%=0.78 MASE=1.0727 (0.7s)
+  quadmix_pub      n=  900 clean%=0.65 MASE=1.0775 (0.8s)
+  dmf              n=  900 clean%=0.87 MASE=1.0417 (6.4s)
+  dmf_pub          n=  900 clean%=0.91 MASE=0.8922 (31.5s)
+
+==== TIMESERIES (daisy_steamgen, model=dlinear, MASE lower=better) ====
+  mmds_adapt       MASE=0.8922 clean%=0.91 n=900
+  dmf_pub          MASE=0.8922 clean%=0.91 n=900
+  auth_only        MASE=0.9249 clean%=0.88 n=900
+  full             MASE=1.0302 clean%=0.60 n=3000
+  dmf              MASE=1.0417 clean%=0.87 n=900
+  quadmix          MASE=1.0727 clean%=0.78 n=900
+  quadmix_pub      MASE=1.0775 clean%=0.65 n=900
+  mmdataselect     MASE=1.1286 clean%=0.82 n=900
+  random           MASE=1.2013 clean%=0.58 n=900
+  density          MASE=1.2804 clean%=0.48 n=900
+  coreset          MASE=1.3084 clean%=0.38 n=900
+  kcenter          MASE=1.3328 clean%=0.37 n=900
+  herding          MASE=1.3385 clean%=0.45 n=900
+  semdedup         MASE=1.4113 clean%=0.37 n=900
+  influence_only   MASE=1.5067 clean%=0.76 n=900
+saved -> /root/autodl-tmp/OmniSelect_v3_next/outputs/timeseries/daisy_steamgen/run_id=backfill-daisy_steamgen-dlinear-full-20260720-cfg=a56adda5b0f8b526/seed_2/results.json
+SEED=2 python_exit=0
+lane=daisy_steamgen-DLinear-full end=2026-07-20T06:52:21+08:00

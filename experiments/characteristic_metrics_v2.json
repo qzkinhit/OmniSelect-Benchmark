@@ -1,0 +1,281 @@
+{
+ "disclosure": "secondary/exploratory, proposed post-hoc; primary = standard task metrics",
+ "min_seeds": 3,
+ "bootstrap_B": 2000,
+ "rank": {
+  "datasets": [
+   "process_tep",
+   "tabular_electricity",
+   "time_daisy_cstr",
+   "time_daisy_cstr_chronos",
+   "time_daisy_steamgen",
+   "time_daisy_steamgen_chronos",
+   "time_etth1",
+   "time_etth1_chronos",
+   "time_etth2",
+   "time_etth2_chronos",
+   "vision_cifar100",
+   "vision_cifar100n"
+  ],
+  "n_fixed_common": 6,
+  "fixed_common": [
+   "auth_only",
+   "coreset",
+   "herding",
+   "influence_only",
+   "kcenter",
+   "random"
+  ],
+  "AG": 0.1411,
+  "AG_ci95": [
+   0.0496,
+   0.2238
+  ],
+  "TTR": 0.917,
+  "TTR_detail": {
+   "process_tep": {
+    "diff_mean": 0.0208,
+    "ci": [
+     -0.125,
+     0.1875
+    ],
+    "top_tier": true
+   },
+   "tabular_electricity": {
+    "diff_mean": -0.0208,
+    "ci": [
+     -0.125,
+     0.1875
+    ],
+    "top_tier": true
+   },
+   "time_daisy_cstr": {
+    "diff_mean": -0.0667,
+    "ci": [
+     -0.1,
+     0.0
+    ],
+    "top_tier": true
+   },
+   "time_daisy_cstr_chronos": {
+    "diff_mean": 0.5,
+    "ci": [
+     0.25,
+     0.95
+    ],
+    "top_tier": false
+   },
+   "time_daisy_steamgen": {
+    "diff_mean": -0.1,
+    "ci": [
+     -0.1,
+     -0.1
+    ],
+    "top_tier": true
+   },
+   "time_daisy_steamgen_chronos": {
+    "diff_mean": 0.3833,
+    "ci": [
+     -0.1,
+     0.7
+    ],
+    "top_tier": true
+   },
+   "time_etth1": {
+    "diff_mean": -0.1667,
+    "ci": [
+     -0.1667,
+     -0.1667
+    ],
+    "top_tier": true
+   },
+   "time_etth1_chronos": {
+    "diff_mean": 0.1167,
+    "ci": [
+     0.0,
+     0.2
+    ],
+    "top_tier": true
+   },
+   "time_etth2": {
+    "diff_mean": -0.0333,
+    "ci": [
+     -0.1,
+     0.1
+    ],
+    "top_tier": true
+   },
+   "time_etth2_chronos": {
+    "diff_mean": 0.35,
+    "ci": [
+     0.0,
+     0.75
+    ],
+    "top_tier": true
+   },
+   "vision_cifar100": {
+    "diff_mean": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "top_tier": true
+   },
+   "vision_cifar100n": {
+    "diff_mean": -0.0256,
+    "ci": [
+     -0.0769,
+     0.0
+    ],
+    "top_tier": true
+   }
+  },
+  "WCR": {
+   "mmds_adapt": 0.5,
+   "random": 0.6167,
+   "coreset": 0.7667,
+   "auth_only": 0.8333,
+   "herding": 0.8833,
+   "kcenter": 0.95,
+   "influence_only": 1.0
+  }
+ },
+ "effect": {
+  "datasets": [
+   "process_tep",
+   "tabular_electricity",
+   "time_daisy_cstr",
+   "time_daisy_cstr_chronos",
+   "time_daisy_steamgen",
+   "time_daisy_steamgen_chronos",
+   "time_etth1",
+   "time_etth1_chronos",
+   "time_etth2",
+   "time_etth2_chronos",
+   "vision_cifar100",
+   "vision_cifar100n"
+  ],
+  "n_fixed_common": 6,
+  "fixed_common": [
+   "auth_only",
+   "coreset",
+   "herding",
+   "influence_only",
+   "kcenter",
+   "random"
+  ],
+  "AG": 0.2944,
+  "AG_ci95": [
+   0.11,
+   0.4741
+  ],
+  "TTR": 0.917,
+  "TTR_detail": {
+   "process_tep": {
+    "diff_mean": -0.2503,
+    "ci": [
+     -0.8729,
+     0.1221
+    ],
+    "top_tier": true
+   },
+   "tabular_electricity": {
+    "diff_mean": -0.0903,
+    "ci": [
+     -0.3016,
+     0.1181
+    ],
+    "top_tier": true
+   },
+   "time_daisy_cstr": {
+    "diff_mean": -0.0881,
+    "ci": [
+     -0.1797,
+     0.0
+    ],
+    "top_tier": true
+   },
+   "time_daisy_cstr_chronos": {
+    "diff_mean": 0.8723,
+    "ci": [
+     0.422,
+     1.4813
+    ],
+    "top_tier": false
+   },
+   "time_daisy_steamgen": {
+    "diff_mean": -0.137,
+    "ci": [
+     -0.1814,
+     -0.072
+    ],
+    "top_tier": true
+   },
+   "time_daisy_steamgen_chronos": {
+    "diff_mean": 0.7623,
+    "ci": [
+     -0.0721,
+     1.4207
+    ],
+    "top_tier": true
+   },
+   "time_etth1": {
+    "diff_mean": -0.0929,
+    "ci": [
+     -0.1356,
+     -0.0545
+    ],
+    "top_tier": true
+   },
+   "time_etth1_chronos": {
+    "diff_mean": 0.1803,
+    "ci": [
+     0.0,
+     0.3213
+    ],
+    "top_tier": true
+   },
+   "time_etth2": {
+    "diff_mean": -0.1228,
+    "ci": [
+     -0.3978,
+     0.147
+    ],
+    "top_tier": true
+   },
+   "time_etth2_chronos": {
+    "diff_mean": 0.5006,
+    "ci": [
+     0.0,
+     1.2114
+    ],
+    "top_tier": true
+   },
+   "vision_cifar100": {
+    "diff_mean": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "top_tier": true
+   },
+   "vision_cifar100n": {
+    "diff_mean": -0.0479,
+    "ci": [
+     -0.1438,
+     0.0
+    ],
+    "top_tier": true
+   }
+  },
+  "WCR": {
+   "mmds_adapt": 0.8723,
+   "coreset": 1.8053,
+   "herding": 1.8247,
+   "auth_only": 1.9946,
+   "influence_only": 2.6372,
+   "kcenter": 3.2841,
+   "random": 17.8268
+  }
+ }
+}

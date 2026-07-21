@@ -1,0 +1,64 @@
+##### SEED 0 FULL(全保真) #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [adapt] picked 'dmf' (val=0.475)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4330 (58.0s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4330 clean%=0.80 n=2000
+METHODS="mmds_adapt" SEED=$s VIS_DATASET=uoft-cs/cifar100 .venv/bin/python  2  58.10s user 13.43s system 79% cpu 1:29.81 total
+##### SEED 0 SH(逐轮淘汰) #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'dmf' (val=0.475)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4330 (58.4s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4330 clean%=0.80 n=2000
+METHODS="mmds_adapt" SEED=$s VIS_DATASET=uoft-cs/cifar100 ADAPT_SH=1   2>&1  56.86s user 14.58s system 75% cpu 1:34.69 total
+##### SEED 1 FULL(全保真) #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=1
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [adapt] picked 'dmf' (val=0.438)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4160 (59.3s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4160 clean%=0.80 n=2000
+METHODS="mmds_adapt" SEED=$s VIS_DATASET=uoft-cs/cifar100 .venv/bin/python  2  58.21s user 14.25s system 74% cpu 1:37.42 total
+##### SEED 1 SH(逐轮淘汰) #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=1
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'dmf' (val=0.438)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4160 (62.7s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4160 clean%=0.80 n=2000
+METHODS="mmds_adapt" SEED=$s VIS_DATASET=uoft-cs/cifar100 ADAPT_SH=1   2>&1  61.74s user 14.34s system 79% cpu 1:36.26 total
+##### SEED 2 FULL(全保真) #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=2
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [adapt] picked 'semdedup' (val=0.441)
+  mmds_adapt       n= 2000 clean%=0.67 test_acc=0.4345 (69.5s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4345 clean%=0.67 n=2000
+METHODS="mmds_adapt" SEED=$s VIS_DATASET=uoft-cs/cifar100 .venv/bin/python  2  66.55s user 17.01s system 82% cpu 1:40.81 total
+##### SEED 2 SH(逐轮淘汰) #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=2
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'semdedup' (val=0.441)
+  mmds_adapt       n= 2000 clean%=0.67 test_acc=0.4345 (76.0s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4345 clean%=0.67 n=2000
+METHODS="mmds_adapt" SEED=$s VIS_DATASET=uoft-cs/cifar100 ADAPT_SH=1   2>&1  69.81s user 17.02s system 80% cpu 1:47.92 total
+=== sh compare done ===

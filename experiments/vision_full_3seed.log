@@ -1,0 +1,118 @@
+########## SEED 0 (CIFAR-100, POOL_N=4000) ##########
+[encode] openai/clip-vit-base-patch32 on 4000+800+2000 imgs (dev=mps) ...
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+  random           n= 2000 clean%=0.60 test_acc=0.3500 (0.1s)
+  full             n= 4000 clean%=0.60 test_acc=0.5360 (0.2s)
+  el2n             n= 2000 clean%=0.54 test_acc=0.2415 (0.1s)
+  grand            n= 2000 clean%=0.57 test_acc=0.3195 (0.4s)
+  ccs              n= 2000 clean%=0.61 test_acc=0.3960 (0.1s)
+  herding          n= 2000 clean%=0.61 test_acc=0.3855 (12.6s)
+  kcenter          n= 2000 clean%=0.67 test_acc=0.3805 (7.3s)
+  coreset          n= 2000 clean%=0.67 test_acc=0.3530 (17.4s)
+  semdedup         n= 2000 clean%=0.55 test_acc=0.3765 (0.5s)
+  density          n= 2000 clean%=0.70 test_acc=0.3615 (0.2s)
+  quadmix          n= 2000 clean%=0.58 test_acc=0.2855 (1.1s)
+  dmf              n= 2000 clean%=0.80 test_acc=0.4330 (3.1s)
+  auth_only        n= 2000 clean%=0.80 test_acc=0.4285 (0.1s)
+  influence_only   n= 2000 clean%=0.66 test_acc=0.3680 (0.1s)
+  mmdataselect     n= 2000 clean%=0.69 test_acc=0.3475 (0.5s)
+    [adapt] picked 'dmf' (val=0.475)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4330 (64.3s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  random           acc=0.3500 clean%=0.60 n=2000
+  full             acc=0.5360 clean%=0.60 n=4000
+  el2n             acc=0.2415 clean%=0.54 n=2000
+  grand            acc=0.3195 clean%=0.57 n=2000
+  ccs              acc=0.3960 clean%=0.61 n=2000
+  herding          acc=0.3855 clean%=0.61 n=2000
+  kcenter          acc=0.3805 clean%=0.67 n=2000
+  coreset          acc=0.3530 clean%=0.67 n=2000
+  semdedup         acc=0.3765 clean%=0.55 n=2000
+  density          acc=0.3615 clean%=0.70 n=2000
+  quadmix          acc=0.2855 clean%=0.58 n=2000
+  dmf              acc=0.4330 clean%=0.80 n=2000
+  auth_only        acc=0.4285 clean%=0.80 n=2000
+  influence_only   acc=0.3680 clean%=0.66 n=2000
+  mmdataselect     acc=0.3475 clean%=0.69 n=2000
+  mmds_adapt       acc=0.4330 clean%=0.80 n=2000
+########## SEED 1 (CIFAR-100, POOL_N=4000) ##########
+[encode] openai/clip-vit-base-patch32 on 4000+800+2000 imgs (dev=mps) ...
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=1
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+  random           n= 2000 clean%=0.59 test_acc=0.3630 (0.1s)
+  full             n= 4000 clean%=0.60 test_acc=0.5410 (0.2s)
+  el2n             n= 2000 clean%=0.50 test_acc=0.2655 (0.1s)
+  grand            n= 2000 clean%=0.59 test_acc=0.3195 (0.4s)
+  ccs              n= 2000 clean%=0.61 test_acc=0.3660 (0.1s)
+  herding          n= 2000 clean%=0.59 test_acc=0.3755 (13.9s)
+  kcenter          n= 2000 clean%=0.67 test_acc=0.3490 (7.9s)
+  coreset          n= 2000 clean%=0.66 test_acc=0.3470 (18.4s)
+  semdedup         n= 2000 clean%=0.54 test_acc=0.2975 (0.5s)
+  density          n= 2000 clean%=0.69 test_acc=0.3220 (0.2s)
+  quadmix          n= 2000 clean%=0.58 test_acc=0.3160 (1.0s)
+  dmf              n= 2000 clean%=0.80 test_acc=0.4160 (3.4s)
+  auth_only        n= 2000 clean%=0.80 test_acc=0.4280 (0.2s)
+  influence_only   n= 2000 clean%=0.70 test_acc=0.3475 (0.1s)
+  mmdataselect     n= 2000 clean%=0.66 test_acc=0.3150 (0.4s)
+    [adapt] picked 'dmf' (val=0.438)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4160 (79.6s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  random           acc=0.3630 clean%=0.59 n=2000
+  full             acc=0.5410 clean%=0.60 n=4000
+  el2n             acc=0.2655 clean%=0.50 n=2000
+  grand            acc=0.3195 clean%=0.59 n=2000
+  ccs              acc=0.3660 clean%=0.61 n=2000
+  herding          acc=0.3755 clean%=0.59 n=2000
+  kcenter          acc=0.3490 clean%=0.67 n=2000
+  coreset          acc=0.3470 clean%=0.66 n=2000
+  semdedup         acc=0.2975 clean%=0.54 n=2000
+  density          acc=0.3220 clean%=0.69 n=2000
+  quadmix          acc=0.3160 clean%=0.58 n=2000
+  dmf              acc=0.4160 clean%=0.80 n=2000
+  auth_only        acc=0.4280 clean%=0.80 n=2000
+  influence_only   acc=0.3475 clean%=0.70 n=2000
+  mmdataselect     acc=0.3150 clean%=0.66 n=2000
+  mmds_adapt       acc=0.4160 clean%=0.80 n=2000
+########## SEED 2 (CIFAR-100, POOL_N=4000) ##########
+[encode] openai/clip-vit-base-patch32 on 4000+800+2000 imgs (dev=mps) ...
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=2
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+  random           n= 2000 clean%=0.59 test_acc=0.3840 (0.2s)
+  full             n= 4000 clean%=0.60 test_acc=0.5395 (0.4s)
+  el2n             n= 2000 clean%=0.50 test_acc=0.2610 (0.2s)
+  grand            n= 2000 clean%=0.56 test_acc=0.3340 (0.8s)
+  ccs              n= 2000 clean%=0.62 test_acc=0.3620 (0.2s)
+  herding          n= 2000 clean%=0.60 test_acc=0.4000 (18.3s)
+  kcenter          n= 2000 clean%=0.66 test_acc=0.3930 (12.6s)
+  coreset          n= 2000 clean%=0.66 test_acc=0.3960 (37.7s)
+  semdedup         n= 2000 clean%=0.55 test_acc=0.2895 (1.0s)
+  density          n= 2000 clean%=0.69 test_acc=0.3675 (0.4s)
+  quadmix          n= 2000 clean%=0.57 test_acc=0.3165 (2.2s)
+  dmf              n= 2000 clean%=0.81 test_acc=0.4175 (6.2s)
+  auth_only        n= 2000 clean%=0.81 test_acc=0.4150 (0.3s)
+  influence_only   n= 2000 clean%=0.70 test_acc=0.3575 (0.2s)
+  mmdataselect     n= 2000 clean%=0.71 test_acc=0.3560 (0.7s)
+    [adapt] picked 'fuse w=(1, 0, 0) q=0.0 lam=0.25' (val=0.443)
+  mmds_adapt       n= 2000 clean%=0.81 test_acc=0.4220 (105.9s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  random           acc=0.3840 clean%=0.59 n=2000
+  full             acc=0.5395 clean%=0.60 n=4000
+  el2n             acc=0.2610 clean%=0.50 n=2000
+  grand            acc=0.3340 clean%=0.56 n=2000
+  ccs              acc=0.3620 clean%=0.62 n=2000
+  herding          acc=0.4000 clean%=0.60 n=2000
+  kcenter          acc=0.3930 clean%=0.66 n=2000
+  coreset          acc=0.3960 clean%=0.66 n=2000
+  semdedup         acc=0.2895 clean%=0.55 n=2000
+  density          acc=0.3675 clean%=0.69 n=2000
+  quadmix          acc=0.3165 clean%=0.57 n=2000
+  dmf              acc=0.4175 clean%=0.81 n=2000
+  auth_only        acc=0.4150 clean%=0.81 n=2000
+  influence_only   acc=0.3575 clean%=0.70 n=2000
+  mmdataselect     acc=0.3560 clean%=0.71 n=2000
+  mmds_adapt       acc=0.4220 clean%=0.81 n=2000
+=== VISION 3-seed 完成 ===

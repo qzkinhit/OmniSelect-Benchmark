@@ -1,0 +1,24 @@
+SOURCE: https://homes.esat.kuleuven.be/~smc/daisy/daisydata.html
+(the landing page https://homes.esat.kuleuven.be/~smc/daisy/ describes
+objectives only; the usage/citation statement is on daisydata.html)
+FETCHED: 2026-07-16 (WebFetch, local Mac)
+
+--- verbatim quotes as extracted ---
+Citation requirement:
+  "if you use one of the following datasets, you should refer to it in your
+   publications (because of the reproducibility)."
+
+Recommended citation template (as given on the page):
+  De Moor B.L.R. (ed.), DaISy: Database for the Identification of Systems,
+  Department of Electrical Engineering, ESAT/STADIUS, KU Leuven, Belgium,
+  URL: http://homes.esat.kuleuven.be/~smc/daisy/, date of visit.
+  [Used dataset: name of dataset, section Name of section, code number.]
+
+Publication sharing request:
+  "if you write such a publication, we would be very grateful if you could
+   send the reference to SMC."
+--- end ---
+
+No formal license text is published; terms are an academic citation-required
+usage statement. Applies to DaISy CSTR 98-002 (data/daisy/cstr.dat) and
+DaISy steamgen 98-003 (data/daisy/steamgen.dat) in this repo.

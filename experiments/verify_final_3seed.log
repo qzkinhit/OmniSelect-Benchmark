@@ -1,0 +1,169 @@
+#### VIS-cifar100 seed0 ####
+  random           n= 2000 clean%=0.60 test_acc=0.3500 (0.2s)
+  coreset          n= 2000 clean%=0.67 test_acc=0.3530 (79.9s)
+  auth_only        n= 2000 clean%=0.80 test_acc=0.4285 (0.6s)
+  influence_only   n= 2000 clean%=0.66 test_acc=0.3680 (0.5s)
+  mmdataselect     n= 2000 clean%=0.69 test_acc=0.3475 (1.7s)
+    [adapt] picked 'auth_only' (val=0.438)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4285 (148.3s)
+  random           acc=0.3500 clean%=0.60 n=2000
+  coreset          acc=0.3530 clean%=0.67 n=2000
+  auth_only        acc=0.4285 clean%=0.80 n=2000
+  influence_only   acc=0.3680 clean%=0.66 n=2000
+  mmdataselect     acc=0.3475 clean%=0.69 n=2000
+  mmds_adapt       acc=0.4285 clean%=0.80 n=2000
+#### VIS-cifar100 seed1 ####
+  random           n= 2000 clean%=0.59 test_acc=0.3630 (0.2s)
+  coreset          n= 2000 clean%=0.66 test_acc=0.3470 (114.2s)
+  auth_only        n= 2000 clean%=0.80 test_acc=0.4280 (0.6s)
+  influence_only   n= 2000 clean%=0.70 test_acc=0.3475 (0.4s)
+  mmdataselect     n= 2000 clean%=0.66 test_acc=0.3150 (1.1s)
+    [adapt] picked 'auth_only' (val=0.457)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4280 (255.7s)
+  random           acc=0.3630 clean%=0.59 n=2000
+  coreset          acc=0.3470 clean%=0.66 n=2000
+  auth_only        acc=0.4280 clean%=0.80 n=2000
+  influence_only   acc=0.3475 clean%=0.70 n=2000
+  mmdataselect     acc=0.3150 clean%=0.66 n=2000
+  mmds_adapt       acc=0.4280 clean%=0.80 n=2000
+#### VIS-cifar100 seed2 ####
+  random           n= 2000 clean%=0.59 test_acc=0.3840 (0.4s)
+  coreset          n= 2000 clean%=0.66 test_acc=0.3960 (92.6s)
+  auth_only        n= 2000 clean%=0.81 test_acc=0.4150 (0.5s)
+  influence_only   n= 2000 clean%=0.70 test_acc=0.3575 (0.4s)
+  mmdataselect     n= 2000 clean%=0.71 test_acc=0.3560 (1.2s)
+    [adapt] picked 'auth_only' (val=0.430)
+  mmds_adapt       n= 2000 clean%=0.81 test_acc=0.4150 (111.2s)
+  random           acc=0.3840 clean%=0.59 n=2000
+  coreset          acc=0.3960 clean%=0.66 n=2000
+  auth_only        acc=0.4150 clean%=0.81 n=2000
+  influence_only   acc=0.3575 clean%=0.70 n=2000
+  mmdataselect     acc=0.3560 clean%=0.71 n=2000
+  mmds_adapt       acc=0.4150 clean%=0.81 n=2000
+#### VIS-cifar10 seed0 ####
+  random           n= 2000 clean%=0.60 test_acc=0.9130 (0.5s)
+  coreset          n= 2000 clean%=0.66 test_acc=0.9215 (57.9s)
+  auth_only        n= 2000 clean%=0.82 test_acc=0.8875 (0.1s)
+  influence_only   n= 2000 clean%=0.80 test_acc=0.8660 (0.1s)
+  mmdataselect     n= 2000 clean%=0.79 test_acc=0.9175 (0.8s)
+    [adapt] picked 'coreset' (val=0.929)
+  mmds_adapt       n= 2000 clean%=0.66 test_acc=0.9215 (94.7s)
+  random           acc=0.9130 clean%=0.60 n=2000
+  coreset          acc=0.9215 clean%=0.66 n=2000
+  auth_only        acc=0.8875 clean%=0.82 n=2000
+  influence_only   acc=0.8660 clean%=0.80 n=2000
+  mmdataselect     acc=0.9175 clean%=0.79 n=2000
+  mmds_adapt       acc=0.9215 clean%=0.66 n=2000
+#### VIS-cifar10 seed1 ####
+  random           n= 2000 clean%=0.59 test_acc=0.9055 (0.8s)
+  coreset          n= 2000 clean%=0.64 test_acc=0.9150 (51.6s)
+  auth_only        n= 2000 clean%=0.82 test_acc=0.8660 (0.0s)
+  influence_only   n= 2000 clean%=0.79 test_acc=0.8500 (0.1s)
+  mmdataselect     n= 2000 clean%=0.79 test_acc=0.9150 (0.7s)
+    [adapt] picked 'coreset' (val=0.923)
+  mmds_adapt       n= 2000 clean%=0.64 test_acc=0.9150 (87.2s)
+  random           acc=0.9055 clean%=0.59 n=2000
+  coreset          acc=0.9150 clean%=0.64 n=2000
+  auth_only        acc=0.8660 clean%=0.82 n=2000
+  influence_only   acc=0.8500 clean%=0.79 n=2000
+  mmdataselect     acc=0.9150 clean%=0.79 n=2000
+  mmds_adapt       acc=0.9150 clean%=0.64 n=2000
+#### VIS-cifar10 seed2 ####
+  random           n= 2000 clean%=0.59 test_acc=0.9250 (0.7s)
+  coreset          n= 2000 clean%=0.68 test_acc=0.9295 (57.2s)
+  auth_only        n= 2000 clean%=0.81 test_acc=0.8890 (0.1s)
+  influence_only   n= 2000 clean%=0.79 test_acc=0.8530 (0.1s)
+  mmdataselect     n= 2000 clean%=0.79 test_acc=0.9275 (0.6s)
+    [adapt] picked 'mmdataselect' (val=0.944)
+  mmds_adapt       n= 2000 clean%=0.79 test_acc=0.9275 (38.0s)
+  random           acc=0.9250 clean%=0.59 n=2000
+  coreset          acc=0.9295 clean%=0.68 n=2000
+  auth_only        acc=0.8890 clean%=0.81 n=2000
+  influence_only   acc=0.8530 clean%=0.79 n=2000
+  mmdataselect     acc=0.9275 clean%=0.79 n=2000
+  mmds_adapt       acc=0.9275 clean%=0.79 n=2000
+#### TS seed0 ####
+  random           n=  600 clean%=0.61 MASE=1.1471 (0.1s)
+  coreset          n=  600 clean%=0.52 MASE=1.0944 (1.5s)
+  auth_only        n=  600 clean%=0.82 MASE=1.0231 (0.1s)
+  influence_only   n=  600 clean%=0.73 MASE=1.3031 (0.1s)
+  mmdataselect     n=  600 clean%=0.84 MASE=0.9957 (0.1s)
+    [adapt] picked 'mmdataselect' (val_negMASE=-1.053)
+  mmds_adapt       n=  600 clean%=0.84 MASE=0.9957 (4.1s)
+  mmdataselect     MASE=0.9957 clean%=0.84 n=600
+  mmds_adapt       MASE=0.9957 clean%=0.84 n=600
+  auth_only        MASE=1.0231 clean%=0.82 n=600
+  coreset          MASE=1.0944 clean%=0.52 n=600
+  random           MASE=1.1471 clean%=0.61 n=600
+  influence_only   MASE=1.3031 clean%=0.73 n=600
+#### TS seed1 ####
+  random           n=  600 clean%=0.61 MASE=1.1941 (0.1s)
+  coreset          n=  600 clean%=0.51 MASE=1.1426 (1.4s)
+  auth_only        n=  600 clean%=0.94 MASE=1.0403 (0.1s)
+  influence_only   n=  600 clean%=0.72 MASE=1.3215 (0.1s)
+  mmdataselect     n=  600 clean%=0.85 MASE=1.0342 (0.1s)
+    [adapt] picked 'fuse w=(1, 0, 0) q=0.0 lam=0.6' (val_negMASE=-1.031)
+  mmds_adapt       n=  600 clean%=0.95 MASE=1.0043 (4.0s)
+  mmds_adapt       MASE=1.0043 clean%=0.95 n=600
+  mmdataselect     MASE=1.0342 clean%=0.85 n=600
+  auth_only        MASE=1.0403 clean%=0.94 n=600
+  coreset          MASE=1.1426 clean%=0.51 n=600
+  random           MASE=1.1941 clean%=0.61 n=600
+  influence_only   MASE=1.3215 clean%=0.72 n=600
+#### TS seed2 ####
+  random           n=  600 clean%=0.60 MASE=1.1595 (0.1s)
+  coreset          n=  600 clean%=0.53 MASE=1.1051 (1.4s)
+  auth_only        n=  600 clean%=0.89 MASE=1.0366 (0.1s)
+  influence_only   n=  600 clean%=0.72 MASE=1.3313 (0.1s)
+  mmdataselect     n=  600 clean%=0.85 MASE=1.0262 (0.1s)
+    [adapt] picked 'fuse w=(0.5, 0, 0.5) q=0.25 lam=0.0' (val_negMASE=-0.998)
+  mmds_adapt       n=  600 clean%=0.88 MASE=1.0064 (4.0s)
+  mmds_adapt       MASE=1.0064 clean%=0.88 n=600
+  mmdataselect     MASE=1.0262 clean%=0.85 n=600
+  auth_only        MASE=1.0366 clean%=0.89 n=600
+  coreset          MASE=1.1051 clean%=0.53 n=600
+  random           MASE=1.1595 clean%=0.60 n=600
+  influence_only   MASE=1.3313 clean%=0.72 n=600
+#### TAB seed0 ####
+  random           n=  900 clean%=0.60 acc=0.7820 auc=0.8541 (15.2s)
+  coreset          n=  900 clean%=0.47 acc=0.7840 auc=0.8540 (14.5s)
+  auth_only        n=  900 clean%=0.80 acc=0.7730 auc=0.8444 (14.0s)
+  influence_only   n=  900 clean%=0.65 acc=0.7570 auc=0.8215 (14.0s)
+  mmdataselect     n=  900 clean%=0.54 acc=0.7970 auc=0.8572 (14.6s)
+    [adapt] picked 'mmdataselect' (val_auc=0.855)
+  mmds_adapt       n=  900 clean%=0.54 acc=0.7970 auc=0.8572 (234.4s)
+  random           auc=0.8541 acc=0.7820 clean%=0.60 n=900
+  coreset          auc=0.8540 acc=0.7840 clean%=0.47 n=900
+  auth_only        auc=0.8444 acc=0.7730 clean%=0.80 n=900
+  influence_only   auc=0.8215 acc=0.7570 clean%=0.65 n=900
+  mmdataselect     auc=0.8572 acc=0.7970 clean%=0.54 n=900
+  mmds_adapt       auc=0.8572 acc=0.7970 clean%=0.54 n=900
+#### TAB seed1 ####
+  random           n=  900 clean%=0.60 acc=0.7705 auc=0.8399 (15.2s)
+  coreset          n=  900 clean%=0.46 acc=0.7635 auc=0.8290 (14.6s)
+  auth_only        n=  900 clean%=0.76 acc=0.7690 auc=0.8312 (14.2s)
+  influence_only   n=  900 clean%=0.63 acc=0.7580 auc=0.8148 (13.9s)
+  mmdataselect     n=  900 clean%=0.58 acc=0.7715 auc=0.8434 (13.9s)
+    [adapt] picked 'mmdataselect' (val_auc=0.859)
+  mmds_adapt       n=  900 clean%=0.58 acc=0.7715 auc=0.8434 (211.6s)
+  random           auc=0.8399 acc=0.7705 clean%=0.60 n=900
+  coreset          auc=0.8290 acc=0.7635 clean%=0.46 n=900
+  auth_only        auc=0.8312 acc=0.7690 clean%=0.76 n=900
+  influence_only   auc=0.8148 acc=0.7580 clean%=0.63 n=900
+  mmdataselect     auc=0.8434 acc=0.7715 clean%=0.58 n=900
+  mmds_adapt       auc=0.8434 acc=0.7715 clean%=0.58 n=900
+#### TAB seed2 ####
+  random           n=  900 clean%=0.60 acc=0.7940 auc=0.8622 (14.5s)
+  coreset          n=  900 clean%=0.46 acc=0.8070 auc=0.8715 (13.6s)
+  auth_only        n=  900 clean%=0.73 acc=0.7710 auc=0.8494 (13.0s)
+  influence_only   n=  900 clean%=0.63 acc=0.7600 auc=0.8233 (12.6s)
+  mmdataselect     n=  900 clean%=0.55 acc=0.7795 auc=0.8634 (12.9s)
+    [adapt] picked 'mmdataselect' (val_auc=0.854)
+  mmds_adapt       n=  900 clean%=0.55 acc=0.7795 auc=0.8634 (208.0s)
+  random           auc=0.8622 acc=0.7940 clean%=0.60 n=900
+  coreset          auc=0.8715 acc=0.8070 clean%=0.46 n=900
+  auth_only        auc=0.8494 acc=0.7710 clean%=0.73 n=900
+  influence_only   auc=0.8233 acc=0.7600 clean%=0.63 n=900
+  mmdataselect     auc=0.8634 acc=0.7795 clean%=0.55 n=900
+  mmds_adapt       auc=0.8634 acc=0.7795 clean%=0.55 n=900
+=== SEQ VERIFY DONE ===

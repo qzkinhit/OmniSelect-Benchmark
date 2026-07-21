@@ -1,0 +1,23 @@
+# Exact audited GPU stack (audit 1910-2). Matches environment/pip_freeze_server_vgpu.txt
+# (NVIDIA vGPU-32GB, driver 570.124.04, CUDA 12.8, Python 3.12 / cp312).
+#
+# A loose `torch>=2.1` resolves to the newest wheel (observed: 2.13.0+cu130), which
+# CANNOT initialize CUDA on the audited 12.8 driver and silently falls back to CPU.
+# Use this constraints file plus the cu128 index to reproduce the audited GPU stack:
+#
+#   pip install -r requirements.txt -c environment/constraints-cu128.txt \
+#       --extra-index-url https://download.pytorch.org/whl/cu128
+#
+# Exact audited wheels (sha256 from the server freeze):
+#   torch-2.8.0+cu128-cp312-cp312-manylinux_2_28_x86_64.whl
+#     sha256=4354fc05bb79b208d6995a04ca1ceef6a9547b1c4334435574353d381c55087c
+#   torchvision-0.23.0+cu128-cp312-cp312-manylinux_2_28_x86_64.whl
+#     sha256=9cb3c13997afcb44057ca10d943c6c4cba3068afde0f370965abce9c89fcffa9
+torch==2.8.0+cu128
+torchvision==0.23.0+cu128
+#
+# Network note (audit 2030/RC-v6 diagnostic): download.pytorch.org may be
+# unreachable from some hosts; the DEFAULT PyPI wheel for torch==2.8.0 /
+# torchvision==0.23.0 on manylinux IS the cu12.8 build (torch.version.cuda=12.8),
+# so `pip install torch==2.8.0 torchvision==0.23.0` from PyPI reproduces the
+# audited stack; this file then guards any later resolution from upgrading.

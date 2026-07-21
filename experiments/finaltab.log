@@ -1,0 +1,25 @@
+#### TAB seed0 ####
+  random           n=  900 clean%=0.60 acc=0.7770 auc=0.8534 (18.2s)
+  mmdataselect     n=  900 clean%=0.54 acc=0.7965 auc=0.8568 (19.2s)
+    [adapt] picked 'mmdataselect' (val_auc=0.856)
+  mmds_adapt       n=  900 clean%=0.54 acc=0.7965 auc=0.8568 (624.3s)
+  random           auc=0.8534 acc=0.7770 clean%=0.60 n=900
+  mmdataselect     auc=0.8568 acc=0.7965 clean%=0.54 n=900
+  mmds_adapt       auc=0.8568 acc=0.7965 clean%=0.54 n=900
+#### TAB seed1 ####
+  random           n=  900 clean%=0.60 acc=0.7700 auc=0.8422 (20.5s)
+  mmdataselect     n=  900 clean%=0.58 acc=0.7845 auc=0.8514 (22.5s)
+    [adapt] picked 'mmdataselect' (val_auc=0.862)
+  mmds_adapt       n=  900 clean%=0.58 acc=0.7845 auc=0.8514 (669.4s)
+  random           auc=0.8422 acc=0.7700 clean%=0.60 n=900
+  mmdataselect     auc=0.8514 acc=0.7845 clean%=0.58 n=900
+  mmds_adapt       auc=0.8514 acc=0.7845 clean%=0.58 n=900
+#### TAB seed2 ####
+  random           n=  900 clean%=0.60 acc=0.7880 auc=0.8671 (39.8s)
+  mmdataselect     n=  900 clean%=0.55 acc=0.7775 auc=0.8626 (32.9s)
+    [adapt] picked 'random' (val_auc=0.858)
+  mmds_adapt       n=  900 clean%=0.59 acc=0.7850 auc=0.8706 (1144.3s)
+  random           auc=0.8671 acc=0.7880 clean%=0.60 n=900
+  mmdataselect     auc=0.8626 acc=0.7775 clean%=0.55 n=900
+  mmds_adapt       auc=0.8706 acc=0.7850 clean%=0.59 n=900
+#### FINALTAB DONE ####

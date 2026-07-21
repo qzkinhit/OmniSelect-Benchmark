@@ -1,0 +1,111 @@
+{
+  "run_id": "pubcore-paired-20260716T1754",
+  "arms": {
+    "vision": [
+      {
+        "file": "outputs/vision/uoft-cs_cifar100/run_id=pubcore-paired-20260716T1754-budget=0.5-noise_frac=0.4-paired_rng=1-pool=4000-val_n=800-vis_noise=inject/seed_0/results.json",
+        "seed": 0,
+        "chosen": "dmf_pub",
+        "fit_seed": 1995639018,
+        "code_sha256_12": "57ffb4a2d46a",
+        "baseline_impl_sha256": "dea8ee64236126d0bcfc6c758231a901a64cd06d66664d9e98249eb21f502d1c"
+      },
+      {
+        "file": "outputs/vision/uoft-cs_cifar100/run_id=pubcore-paired-20260716T1754-budget=0.5-noise_frac=0.4-paired_rng=1-pool=4000-val_n=800-vis_noise=inject/seed_1/results.json",
+        "seed": 1,
+        "chosen": "dmf_pub",
+        "fit_seed": 930993961,
+        "code_sha256_12": "57ffb4a2d46a",
+        "baseline_impl_sha256": "dea8ee64236126d0bcfc6c758231a901a64cd06d66664d9e98249eb21f502d1c"
+      },
+      {
+        "file": "outputs/vision/uoft-cs_cifar100/run_id=pubcore-paired-20260716T1754-budget=0.5-noise_frac=0.4-paired_rng=1-pool=4000-val_n=800-vis_noise=inject/seed_2/results.json",
+        "seed": 2,
+        "chosen": "auth_only",
+        "fit_seed": 782217513,
+        "code_sha256_12": "57ffb4a2d46a",
+        "baseline_impl_sha256": "dea8ee64236126d0bcfc6c758231a901a64cd06d66664d9e98249eb21f502d1c"
+      }
+    ],
+    "tep": [
+      {
+        "file": "outputs/tep/tep21/run_id=pubcore-paired-20260716T1754-budget=0.3-model=mlp-noise_frac=0.4-paired_rng=1-pool=4000/seed_0/results.json",
+        "seed": 0,
+        "chosen": "dmf_pub",
+        "fit_seed": 1995639018,
+        "code_sha256_12": "f2aa7fce3ecf",
+        "baseline_impl_sha256": "dea8ee64236126d0bcfc6c758231a901a64cd06d66664d9e98249eb21f502d1c"
+      },
+      {
+        "file": "outputs/tep/tep21/run_id=pubcore-paired-20260716T1754-budget=0.3-model=mlp-noise_frac=0.4-paired_rng=1-pool=4000/seed_1/results.json",
+        "seed": 1,
+        "chosen": "vote_ensemble(top3)",
+        "fit_seed": 930993961,
+        "code_sha256_12": "f2aa7fce3ecf",
+        "baseline_impl_sha256": "dea8ee64236126d0bcfc6c758231a901a64cd06d66664d9e98249eb21f502d1c"
+      },
+      {
+        "file": "outputs/tep/tep21/run_id=pubcore-paired-20260716T1754-budget=0.3-model=mlp-noise_frac=0.4-paired_rng=1-pool=4000/seed_2/results.json",
+        "seed": 2,
+        "chosen": "dmf",
+        "fit_seed": 782217513,
+        "code_sha256_12": "f2aa7fce3ecf",
+        "baseline_impl_sha256": "dea8ee64236126d0bcfc6c758231a901a64cd06d66664d9e98249eb21f502d1c"
+      }
+    ],
+    "tabular": [
+      {
+        "file": "outputs/tabular/electricity/run_id=pubcore-paired-20260716T1754-budget=0.5-model=tabpfn-noise_frac=0.4-paired_rng=1-pool=3000/seed_0/results.json",
+        "seed": 0,
+        "chosen": "density",
+        "fit_seed": 1995639018,
+        "code_sha256_12": "d2b21debe8c5",
+        "baseline_impl_sha256": "dea8ee64236126d0bcfc6c758231a901a64cd06d66664d9e98249eb21f502d1c"
+      },
+      {
+        "file": "outputs/tabular/electricity/run_id=pubcore-paired-20260716T1754-budget=0.5-model=tabpfn-noise_frac=0.4-paired_rng=1-pool=3000/seed_1/results.json",
+        "seed": 1,
+        "chosen": "tabpfn_hybrid",
+        "fit_seed": 930993961,
+        "code_sha256_12": "d2b21debe8c5",
+        "baseline_impl_sha256": "dea8ee64236126d0bcfc6c758231a901a64cd06d66664d9e98249eb21f502d1c"
+      },
+      {
+        "file": "outputs/tabular/electricity/run_id=pubcore-paired-20260716T1754-budget=0.5-model=tabpfn-noise_frac=0.4-paired_rng=1-pool=3000/seed_2/results.json",
+        "seed": 2,
+        "chosen": "kcenter",
+        "fit_seed": 782217513,
+        "code_sha256_12": "d2b21debe8c5",
+        "baseline_impl_sha256": "dea8ee64236126d0bcfc6c758231a901a64cd06d66664d9e98249eb21f502d1c"
+      }
+    ],
+    "timeseries": [
+      {
+        "file": "outputs/timeseries/ETTh1/run_id=pubcore-paired-20260716T1754-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000/seed_0/results.json",
+        "seed": 0,
+        "chosen": "fuse w=(0.5, 0, 0.5) q=0.0 lam=0.0",
+        "fit_seed": 1995639018,
+        "code_sha256_12": "89a4bdb3c722",
+        "baseline_impl_sha256": "dea8ee64236126d0bcfc6c758231a901a64cd06d66664d9e98249eb21f502d1c"
+      },
+      {
+        "file": "outputs/timeseries/ETTh1/run_id=pubcore-paired-20260716T1754-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000/seed_1/results.json",
+        "seed": 1,
+        "chosen": "dmf_pub",
+        "fit_seed": 930993961,
+        "code_sha256_12": "89a4bdb3c722",
+        "baseline_impl_sha256": "dea8ee64236126d0bcfc6c758231a901a64cd06d66664d9e98249eb21f502d1c"
+      },
+      {
+        "file": "outputs/timeseries/ETTh1/run_id=pubcore-paired-20260716T1754-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=1-pool=3000/seed_2/results.json",
+        "seed": 2,
+        "chosen": "quadmix",
+        "fit_seed": 782217513,
+        "code_sha256_12": "89a4bdb3c722",
+        "baseline_impl_sha256": "dea8ee64236126d0bcfc6c758231a901a64cd06d66664d9e98249eb21f502d1c"
+      }
+    ]
+  },
+  "status": "PASS",
+  "baseline_impl_sha256": "dea8ee64236126d0bcfc6c758231a901a64cd06d66664d9e98249eb21f502d1c"
+}

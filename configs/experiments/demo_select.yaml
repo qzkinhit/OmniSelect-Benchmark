@@ -1,0 +1,24 @@
+# Pure-CPU demo: select-only closed loop on a tiny standardized pool.
+#   python tools/standardize/make_demo.py
+#   python run_mmdataselect/run_select.py --config configs/experiments/demo_select.yaml
+experiment_id: demo_select
+
+data:
+  processed_path: data/processed/demo.jsonl
+
+select:
+  budget: { kind: fraction, value: 0.5 }
+  lam: 0.5            # importance x diversity trade-off
+  method: greedy     # greedy | gumbel
+  seed: 0
+  influence_model: null   # null -> model-free CPU proxy (no torch needed)
+
+train:
+  model_name: HuggingFaceTB/SmolLM2-135M
+  max_length: 512
+  epochs: 1
+  batch_size: 4
+  learning_rate: 2.0e-5
+
+eval:
+  tasks: [arc_easy]

@@ -1,0 +1,28 @@
+14:58:23 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/HuggingFaceTB/SmolLM2-135M/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+14:58:23 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+14:58:24 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/HuggingFaceTB/SmolLM2-135M/93efa2f097d58c2a74874c7e644dbc9b0cee75a2/config.json "HTTP/1.1 200 OK"
+14:58:24 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/HuggingFaceTB/SmolLM2-135M/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+14:58:25 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/HuggingFaceTB/SmolLM2-135M/93efa2f097d58c2a74874c7e644dbc9b0cee75a2/tokenizer_config.json "HTTP/1.1 200 OK"
+14:58:25 | INFO    | httpx | HTTP Request: GET https://huggingface.co/api/models/HuggingFaceTB/SmolLM2-135M/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+14:58:26 | INFO    | httpx | HTTP Request: GET https://huggingface.co/api/models/HuggingFaceTB/SmolLM2-135M/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+device=mps | pool=936 (272197 tok) | budget=136098 tok | heldout={'general': 40, 'math': 40, 'code': 40}
+mini-LM: hid=256 layers=4 ctx=512 | passes=8.0 | methods=['random', 'dsir', 'dedup_only', 'mmds_noauth', 'mmds_rankauth', 'mmdataselect']
+[influence] loaded cache (936)
+  random         n= 472 hi%=0.65 red=0.616 ppl={'code': 1694.573, 'general': 2718.202, 'math': 707.607} (314.4s)
+  dsir           n= 333 hi%=0.81 red=0.701 ppl={'code': 1272.562, 'general': 5380.317, 'math': 827.801} (356.9s)
+  dedup_only     n= 544 hi%=0.66 red=0.625 ppl={'code': 1522.393, 'general': 3692.301, 'math': 736.905} (215.6s)
+  mmds_noauth    n= 534 hi%=0.59 red=0.639 ppl={'code': 1345.068, 'general': 3419.333, 'math': 746.272} (328.8s)
+  mmds_rankauth  n= 433 hi%=0.77 red=0.630 ppl={'code': 1445.658, 'general': 3120.102, 'math': 718.858} (1092.2s)
+  mmdataselect   n= 404 hi%=0.91 red=0.617 ppl={'code': 1675.949, 'general': 3214.694, 'math': 674.15} (487.8s)
+
+================ EXPERIMENT (per-modality held-out PPL) ================
+method             n   hi%  set_red    code_ppl general_ppl    math_ppl
+random           472  0.65    0.616    1694.573    2718.202     707.607
+dsir             333  0.81    0.701    1272.562    5380.317     827.801
+dedup_only       544  0.66    0.625    1522.393    3692.301     736.905
+mmds_noauth      534  0.59    0.639    1345.068    3419.333     746.272
+mmds_rankauth    433  0.77    0.630    1445.658    3120.102     718.858
+mmdataselect     404  0.91    0.617    1675.949    3214.694      674.15
+
+saved -> /Users/qianzekai/PycharmProjects/Paper2_OmniSelect/outputs/experiment/results_seed0.json

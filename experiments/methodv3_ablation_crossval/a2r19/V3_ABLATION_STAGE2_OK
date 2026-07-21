@@ -1,0 +1,12 @@
+schema=v3-ablation-stage2-ok-v1
+batch_id=a2r19
+started=2026-07-19T19:55:03+08:00
+completed=2026-07-20T05:19:04+08:00
+git_head=f3baf60761ae7f737e7a4f410c01342b393979e7
+git_tree=218c8d4e450f8487898d87032f9f9141f49bf9b6
+wrapper_sha256=0c8c8377fea0abc1d2d1e797146023d81248bbb1417ca88be0c2535dc0f03c95
+ablation_module_sha256=74602078cacbd474b2e5f00d6d898558d17464c1d4c4468ac5825f2f907bcf8f
+trials=93
+ok=87
+fail_closed_honest=6
+evidence_manifest_sha256=009443aa06594a2cfd148127a5bb7ffbcd336d9a15ec571653f2846cc149677e

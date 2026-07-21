@@ -1,0 +1,117 @@
+{
+  "arm": "text",
+  "seed": 0,
+  "tag": "run_id=text-qz4-20260717T0933-stratify=1-infl=pplq-train=finetune-lmeval=1",
+  "config": {
+    "budget_frac": 0.5,
+    "passes": 3.0,
+    "hid": 320,
+    "layers": 6,
+    "ctx": 512,
+    "n": 25000,
+    "methods": [
+      "quadmix_pub",
+      "zip"
+    ],
+    "stratify": "1",
+    "infl_kind": "pplq",
+    "train_mode": "finetune",
+    "lmeval_tasks": "",
+    "run_id": "text-qz4-20260717T0933",
+    "pool_sha256_12": "84e174dbb097",
+    "code_sha256_12": "2ce72a0809d4"
+  },
+  "results": [
+    {
+      "method": "quadmix_pub",
+      "n_sel": 12300,
+      "tok_sel": 2628253,
+      "steps": 962,
+      "high_frac": 0.604,
+      "set_redundancy": 0.6603,
+      "ppl": {
+        "code": 5.322,
+        "general": 16.435,
+        "image": 23.046,
+        "math": 6.439,
+        "table": 11.614
+      },
+      "ppl_ctrl": {
+        "code": 5.647,
+        "general": 17.256,
+        "image": 26.995,
+        "math": 6.178,
+        "table": 11.684
+      },
+      "lmeval": {
+        "arc_easy": 0.5854,
+        "arc_challenge": 0.2969,
+        "hellaswag": 0.4312,
+        "openbookqa": 0.324
+      },
+      "secs": 199.8,
+      "sel_sha256_12": "a74a804a0d51"
+    },
+    {
+      "method": "zip",
+      "n_sel": 15302,
+      "tok_sel": 2627747,
+      "steps": 962,
+      "high_frac": 0.505,
+      "set_redundancy": 0.686,
+      "ppl": {
+        "code": 5.331,
+        "general": 16.461,
+        "image": 23.38,
+        "math": 6.47,
+        "table": 12.139
+      },
+      "ppl_ctrl": {
+        "code": 5.65,
+        "general": 17.29,
+        "image": 27.42,
+        "math": 6.212,
+        "table": 12.222
+      },
+      "lmeval": {
+        "arc_easy": 0.5854,
+        "arc_challenge": 0.2961,
+        "hellaswag": 0.433,
+        "openbookqa": 0.328
+      },
+      "secs": 1169.0,
+      "sel_sha256_12": "7ed265ba39b3"
+    },
+    {
+      "method": "mmds_adapt",
+      "n_sel": 12300,
+      "tok_sel": 2628253,
+      "steps": 962,
+      "high_frac": 0.604,
+      "set_redundancy": 0.6603,
+      "ppl": {
+        "code": 5.322,
+        "general": 16.435,
+        "image": 23.046,
+        "math": 6.439,
+        "table": 11.614
+      },
+      "ppl_ctrl": {
+        "code": 5.647,
+        "general": 17.256,
+        "image": 26.995,
+        "math": 6.178,
+        "table": 11.684
+      },
+      "lmeval": {
+        "arc_easy": 0.5854,
+        "arc_challenge": 0.2969,
+        "hellaswag": 0.4312,
+        "openbookqa": 0.324
+      },
+      "secs": 0.0,
+      "picked": "quadmix_pub",
+      "kappa_hat_logppl": NaN
+    }
+  ]
+}

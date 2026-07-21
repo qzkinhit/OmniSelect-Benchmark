@@ -1,0 +1,409 @@
+{
+ "disclosure": "secondary/exploratory, post-hoc; primary = standard task metrics; v2 JSON retained as diagnostic only",
+ "min_seeds": 3,
+ "bootstrap": "hierarchical (views then seeds), B=10000",
+ "rank": {
+  "views": [
+   "process_tep",
+   "tabular_electricity",
+   "time_daisy_cstr",
+   "time_daisy_cstr_chronos",
+   "time_daisy_steamgen",
+   "time_daisy_steamgen_chronos",
+   "time_etth1",
+   "time_etth1_chronos",
+   "time_etth2",
+   "time_etth2_chronos",
+   "time_ettm1_chronos",
+   "vision_cifar100",
+   "vision_cifar100n"
+  ],
+  "fully_comparable_set": [
+   "auth_only",
+   "coreset",
+   "herding",
+   "influence_only",
+   "kcenter",
+   "random"
+  ],
+  "scope_note": "AG/WCR/dominance cover ONLY the 6 strategies present on all 13 views; partial-coverage methods are in applicability_masked",
+  "AG": 0.1597,
+  "AG_ci95_hier": [
+   0.0354,
+   0.2699
+  ],
+  "AG_lovo": {
+   "process_tep": 0.1696,
+   "tabular_electricity": 0.1435,
+   "time_daisy_cstr": 0.1606,
+   "time_daisy_cstr_chronos": 0.1953,
+   "time_daisy_steamgen": 0.1647,
+   "time_daisy_steamgen_chronos": 0.1383,
+   "time_etth1": 0.1592,
+   "time_etth1_chronos": 0.1397,
+   "time_etth2": 0.1703,
+   "time_etth2_chronos": 0.1536,
+   "time_ettm1_chronos": 0.1411,
+   "vision_cifar100": 0.1731,
+   "vision_cifar100n": 0.1677
+  },
+  "AG_lovo_range": [
+   0.1383,
+   0.1953
+  ],
+  "dominance_vs_prefixed": {
+   "auth_only": {
+    "mean_diff": 0.1597,
+    "ci95": [
+     0.0337,
+     0.2735
+    ],
+    "significantly_better": true
+   },
+   "coreset": {
+    "mean_diff": 0.476,
+    "ci95": [
+     0.3058,
+     0.6221
+    ],
+    "significantly_better": true
+   },
+   "herding": {
+    "mean_diff": 0.4046,
+    "ci95": [
+     0.2634,
+     0.5291
+    ],
+    "significantly_better": true
+   },
+   "influence_only": {
+    "mean_diff": 0.5026,
+    "ci95": [
+     0.2769,
+     0.7106
+    ],
+    "significantly_better": true
+   },
+   "kcenter": {
+    "mean_diff": 0.5467,
+    "ci95": [
+     0.3776,
+     0.6959
+    ],
+    "significantly_better": true
+   },
+   "random": {
+    "mean_diff": 0.3365,
+    "ci95": [
+     0.1712,
+     0.4656
+    ],
+    "significantly_better": true
+   }
+  },
+  "n_significantly_dominated": "6/6",
+  "descriptive_ranks": {
+   "frac_best": 0.641,
+   "frac_top2": 0.795,
+   "median_rank_percentile": 0.95,
+   "n_cells": 39
+  },
+  "WCR_fully_comparable": {
+   "mmds_adapt": 0.5,
+   "random": 0.65,
+   "coreset": 0.8167,
+   "auth_only": 0.8333,
+   "herding": 0.8833,
+   "kcenter": 0.95,
+   "influence_only": 1.0
+  },
+  "applicability_masked": {
+   "auth_only": {
+    "n_views": 13,
+    "mean_utility": 0.7005,
+    "mean_regret": 0.286,
+    "worst_regret": 0.8333
+   },
+   "ccs": {
+    "n_views": 1,
+    "mean_utility": 0.6154,
+    "mean_regret": 0.359,
+    "worst_regret": 0.359
+   },
+   "coreset": {
+    "n_views": 13,
+    "mean_utility": 0.3842,
+    "mean_regret": 0.6023,
+    "worst_regret": 0.8167
+   },
+   "density": {
+    "n_views": 9,
+    "mean_utility": 0.4333,
+    "mean_regret": 0.5564,
+    "worst_regret": 0.85
+   },
+   "dmf": {
+    "n_views": 9,
+    "mean_utility": 0.7205,
+    "mean_regret": 0.2692,
+    "worst_regret": 0.5667
+   },
+   "el2n": {
+    "n_views": 4,
+    "mean_utility": 0.0469,
+    "mean_regret": 0.9259,
+    "worst_regret": 0.9744
+   },
+   "grand": {
+    "n_views": 4,
+    "mean_utility": 0.1206,
+    "mean_regret": 0.8522,
+    "worst_regret": 0.9375
+   },
+   "herding": {
+    "n_views": 13,
+    "mean_utility": 0.4556,
+    "mean_regret": 0.5309,
+    "worst_regret": 0.8833
+   },
+   "influence_only": {
+    "n_views": 13,
+    "mean_utility": 0.3576,
+    "mean_regret": 0.6288,
+    "worst_regret": 1.0
+   },
+   "kcenter": {
+    "n_views": 13,
+    "mean_utility": 0.3135,
+    "mean_regret": 0.673,
+    "worst_regret": 0.95
+   },
+   "mmds_adapt": {
+    "n_views": 13,
+    "mean_utility": 0.8602,
+    "mean_regret": 0.1263,
+    "worst_regret": 0.5
+   },
+   "quadmix": {
+    "n_views": 9,
+    "mean_utility": 0.5771,
+    "mean_regret": 0.4127,
+    "worst_regret": 0.8974
+   },
+   "random": {
+    "n_views": 13,
+    "mean_utility": 0.5237,
+    "mean_regret": 0.4628,
+    "worst_regret": 0.65
+   },
+   "semdedup": {
+    "n_views": 9,
+    "mean_utility": 0.4887,
+    "mean_regret": 0.501,
+    "worst_regret": 0.6667
+   }
+  }
+ },
+ "effect": {
+  "views": [
+   "process_tep",
+   "tabular_electricity",
+   "time_daisy_cstr",
+   "time_daisy_cstr_chronos",
+   "time_daisy_steamgen",
+   "time_daisy_steamgen_chronos",
+   "time_etth1",
+   "time_etth1_chronos",
+   "time_etth2",
+   "time_etth2_chronos",
+   "time_ettm1_chronos",
+   "vision_cifar100",
+   "vision_cifar100n"
+  ],
+  "fully_comparable_set": [
+   "auth_only",
+   "coreset",
+   "herding",
+   "influence_only",
+   "kcenter",
+   "random"
+  ],
+  "scope_note": "AG/WCR/dominance cover ONLY the 6 strategies present on all 13 views; partial-coverage methods are in applicability_masked",
+  "AG": 0.3089,
+  "AG_ci95_hier": [
+   0.0592,
+   0.556
+  ],
+  "AG_lovo": {
+   "process_tep": 0.3104,
+   "tabular_electricity": 0.2995,
+   "time_daisy_cstr": 0.3264,
+   "time_daisy_cstr_chronos": 0.3724,
+   "time_daisy_steamgen": 0.3232,
+   "time_daisy_steamgen_chronos": 0.2339,
+   "time_etth1": 0.3269,
+   "time_etth1_chronos": 0.2505,
+   "time_etth2": 0.3244,
+   "time_etth2_chronos": 0.2919,
+   "time_ettm1_chronos": 0.2944,
+   "vision_cifar100": 0.3346,
+   "vision_cifar100n": 0.327
+  },
+  "AG_lovo_range": [
+   0.2339,
+   0.3724
+  ],
+  "dominance_vs_prefixed": {
+   "auth_only": {
+    "mean_diff": 0.3089,
+    "ci95": [
+     0.056,
+     0.5635
+    ],
+    "significantly_better": true
+   },
+   "coreset": {
+    "mean_diff": 3.2383,
+    "ci95": [
+     0.7483,
+     9.883
+    ],
+    "significantly_better": true
+   },
+   "herding": {
+    "mean_diff": 0.9055,
+    "ci95": [
+     0.6134,
+     1.1821
+    ],
+    "significantly_better": true
+   },
+   "influence_only": {
+    "mean_diff": 1.154,
+    "ci95": [
+     0.6786,
+     1.6234
+    ],
+    "significantly_better": true
+   },
+   "kcenter": {
+    "mean_diff": 1.2686,
+    "ci95": [
+     0.8547,
+     1.7907
+    ],
+    "significantly_better": true
+   },
+   "random": {
+    "mean_diff": 2.0465,
+    "ci95": [
+     0.4567,
+     6.0685
+    ],
+    "significantly_better": true
+   }
+  },
+  "n_significantly_dominated": "6/6",
+  "descriptive_ranks": {
+   "frac_best": 0.641,
+   "frac_top2": 0.795,
+   "median_rank_percentile": 0.746,
+   "n_cells": 39
+  },
+  "WCR_fully_comparable": {
+   "mmds_adapt": 0.8723,
+   "herding": 1.8247,
+   "auth_only": 1.9946,
+   "influence_only": 2.6372,
+   "kcenter": 3.2841,
+   "random": 17.8268,
+   "coreset": 29.7581
+  },
+  "applicability_masked": {
+   "auth_only": {
+    "n_views": 13,
+    "mean_utility": 0.4839,
+    "mean_regret": 0.5145,
+    "worst_regret": 1.9946
+   },
+   "ccs": {
+    "n_views": 1,
+    "mean_utility": 0.1458,
+    "mean_regret": 0.6393,
+    "worst_regret": 0.6393
+   },
+   "coreset": {
+    "n_views": 13,
+    "mean_utility": -2.4455,
+    "mean_regret": 3.4439,
+    "worst_regret": 29.7581
+   },
+   "density": {
+    "n_views": 9,
+    "mean_utility": -0.0463,
+    "mean_regret": 1.0197,
+    "worst_regret": 1.7499
+   },
+   "dmf": {
+    "n_views": 9,
+    "mean_utility": 0.4408,
+    "mean_regret": 0.5326,
+    "worst_regret": 1.0315
+   },
+   "el2n": {
+    "n_views": 4,
+    "mean_utility": -6.8111,
+    "mean_regret": 7.8616,
+    "worst_regret": 17.7574
+   },
+   "grand": {
+    "n_views": 4,
+    "mean_utility": -6.43,
+    "mean_regret": 7.4805,
+    "worst_regret": 17.7574
+   },
+   "herding": {
+    "n_views": 13,
+    "mean_utility": -0.1127,
+    "mean_regret": 1.1111,
+    "worst_regret": 1.8247
+   },
+   "influence_only": {
+    "n_views": 13,
+    "mean_utility": -0.3612,
+    "mean_regret": 1.3596,
+    "worst_regret": 2.6372
+   },
+   "kcenter": {
+    "n_views": 13,
+    "mean_utility": -0.4758,
+    "mean_regret": 1.4743,
+    "worst_regret": 3.2841
+   },
+   "mmds_adapt": {
+    "n_views": 13,
+    "mean_utility": 0.7928,
+    "mean_regret": 0.2057,
+    "worst_regret": 0.8723
+   },
+   "quadmix": {
+    "n_views": 9,
+    "mean_utility": 0.1358,
+    "mean_regret": 0.8376,
+    "worst_regret": 2.0488
+   },
+   "random": {
+    "n_views": 13,
+    "mean_utility": -1.2537,
+    "mean_regret": 2.2521,
+    "worst_regret": 17.8268
+   },
+   "semdedup": {
+    "n_views": 9,
+    "mean_utility": -0.0568,
+    "mean_regret": 1.0302,
+    "worst_regret": 1.4694
+   }
+  }
+ }
+}

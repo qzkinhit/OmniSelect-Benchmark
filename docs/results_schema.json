@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OmniSelect run results.json",
+  "description": "Schema of the per-run artifact written by every run_*_experiment.py runner (one file per run_id x seed). Canonical whitelisted instances live under results_canonical/.",
+  "type": "object",
+  "required": ["results"],
+  "properties": {
+    "config": {
+      "type": "object",
+      "description": "Resolved run configuration: dataset, model, pool/budget sizes, noise fraction, seed, env-derived options. Keys vary by modality runner."
+    },
+    "fidelity_config": {
+      "type": ["object", "null"],
+      "description": "Present only for FIDELITY_MODE=published-core* runs: the published-equation parameters of the external baseline being exercised."
+    },
+    "results": {
+      "type": "array",
+      "description": "One row per evaluated method.",
+      "items": {
+        "type": "object",
+        "required": ["method"],
+        "properties": {
+          "method": {"type": "string"},
+          "n": {"type": "integer", "description": "selected sample count (budget)"},
+          "sel_sha12": {"type": "string", "description": "12-hex fingerprint of the sorted selected IDs (pairing/parity checks)"},
+          "train_order_sha12": {"type": "string", "description": "12-hex fingerprint of the training-order stream"},
+          "clean_pct": {"type": "number", "description": "fraction of selected samples whose provenance tag is clean/high"},
+          "metric": {"type": "number", "description": "primary task metric; name and direction are modality-specific (top-1 / ROC AUC / macro-F1 higher is better, MASE lower is better)"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "adapt_manifest": {
+      "type": ["object", "null"],
+      "description": "Controller decision record: leaderboard, chosen strategy, best reference, switch margin, kappa_hat, and method-v2 candidate notes (v2d/v2e/v2f) when enabled."
+    },
+    "pairing_manifest": {
+      "type": ["object", "null"],
+      "description": "PAIRED_RNG=1 fingerprints: arrays_sha256 of the exact pool/validation/test numeric arrays plus the shared-initialization and training-order rules."
+    }
+  },
+  "additionalProperties": true
+}

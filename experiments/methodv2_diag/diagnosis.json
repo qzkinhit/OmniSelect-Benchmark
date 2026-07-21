@@ -1,0 +1,2784 @@
+{
+ "generated": "methodv2_diag_20260717",
+ "read_only_sources": true,
+ "arms": {
+  "tabular": {
+   "dataset": "electricity",
+   "metric": "auc",
+   "higher_is_better": true,
+   "strongest_fixed_baseline": {
+    "name": "kcenter",
+    "mean": 0.8753
+   },
+   "strongest_external_baseline": {
+    "name": "kcenter",
+    "mean": 0.8753
+   },
+   "per_seed": {
+    "0": {
+     "tag_verification": {
+      "n_match": 18,
+      "n_mismatch": 0,
+      "verified": true
+     },
+     "noise_purity": {
+      "full": {
+       "n": 3000,
+       "high": 0.6,
+       "flip": 0.1333,
+       "corrupt": 0.1333,
+       "dup": 0.1333,
+       "corrupt_or_dup": 0.2666
+      },
+      "random": {
+       "n": 1500,
+       "high": 0.6067,
+       "flip": 0.1307,
+       "corrupt": 0.1347,
+       "dup": 0.128,
+       "corrupt_or_dup": 0.2627
+      },
+      "coreset": {
+       "n": 1500,
+       "high": 0.572,
+       "flip": 0.1287,
+       "corrupt": 0.266,
+       "dup": 0.0333,
+       "corrupt_or_dup": 0.2993
+      },
+      "auth_only": {
+       "n": 1500,
+       "high": 0.734,
+       "flip": 0.0913,
+       "corrupt": 0.0947,
+       "dup": 0.08,
+       "corrupt_or_dup": 0.1747
+      },
+      "influence_only": {
+       "n": 1500,
+       "high": 0.684,
+       "flip": 0.08,
+       "corrupt": 0.1287,
+       "dup": 0.1073,
+       "corrupt_or_dup": 0.236
+      },
+      "mmdataselect": {
+       "n": 1500,
+       "high": 0.6547,
+       "flip": 0.124,
+       "corrupt": 0.202,
+       "dup": 0.0193,
+       "corrupt_or_dup": 0.2213
+      },
+      "herding": {
+       "n": 1500,
+       "high": 0.572,
+       "flip": 0.1287,
+       "corrupt": 0.248,
+       "dup": 0.0513,
+       "corrupt_or_dup": 0.2993
+      },
+      "kcenter": {
+       "n": 1500,
+       "high": 0.5847,
+       "flip": 0.132,
+       "corrupt": 0.266,
+       "dup": 0.0173,
+       "corrupt_or_dup": 0.2833
+      },
+      "el2n": {
+       "n": 1500,
+       "high": 0.516,
+       "flip": 0.1867,
+       "corrupt": 0.138,
+       "dup": 0.1593,
+       "corrupt_or_dup": 0.2973
+      },
+      "grand": {
+       "n": 1500,
+       "high": 0.514,
+       "flip": 0.17,
+       "corrupt": 0.1507,
+       "dup": 0.1653,
+       "corrupt_or_dup": 0.316
+      },
+      "ccs": {
+       "n": 1500,
+       "high": 0.66,
+       "flip": 0.1107,
+       "corrupt": 0.104,
+       "dup": 0.1253,
+       "corrupt_or_dup": 0.2293
+      },
+      "semdedup": {
+       "n": 1500,
+       "high": 0.5653,
+       "flip": 0.114,
+       "corrupt": 0.256,
+       "dup": 0.0647,
+       "corrupt_or_dup": 0.3207
+      },
+      "density": {
+       "n": 1500,
+       "high": 0.594,
+       "flip": 0.1293,
+       "corrupt": 0.224,
+       "dup": 0.0527,
+       "corrupt_or_dup": 0.2767
+      },
+      "quadmix": {
+       "n": 1500,
+       "high": 0.472,
+       "flip": 0.0927,
+       "corrupt": 0.402,
+       "dup": 0.0333,
+       "corrupt_or_dup": 0.4353
+      },
+      "quadmix_pub": {
+       "n": 1500,
+       "high": 0.604,
+       "flip": 0.132,
+       "corrupt": 0.1367,
+       "dup": 0.1273,
+       "corrupt_or_dup": 0.264
+      },
+      "dmf": {
+       "n": 1500,
+       "high": 0.674,
+       "flip": 0.0833,
+       "corrupt": 0.2047,
+       "dup": 0.038,
+       "corrupt_or_dup": 0.2427
+      },
+      "dmf_pub": {
+       "n": 1500,
+       "high": 0.6727,
+       "flip": 0.084,
+       "corrupt": 0.208,
+       "dup": 0.0353,
+       "corrupt_or_dup": 0.2433
+      },
+      "mmds_adapt": {
+       "n": 1500,
+       "high": 0.594,
+       "flip": 0.1293,
+       "corrupt": 0.224,
+       "dup": 0.0527,
+       "corrupt_or_dup": 0.2767
+      },
+      "tabpfn_coreset": {
+       "n": 1500,
+       "high": 0.5847,
+       "flip": 0.132,
+       "corrupt": 0.266,
+       "dup": 0.0173,
+       "corrupt_or_dup": 0.2833
+      },
+      "tabpfn_margin": {
+       "n": 1500,
+       "high": 0.508,
+       "flip": 0.134,
+       "corrupt": 0.23,
+       "dup": 0.128,
+       "corrupt_or_dup": 0.358
+      },
+      "tabpfn_hybrid": {
+       "n": 1500,
+       "high": 0.5493,
+       "flip": 0.1273,
+       "corrupt": 0.2647,
+       "dup": 0.0587,
+       "corrupt_or_dup": 0.3234
+      }
+     },
+     "jaccard_controller_vs": {
+      "auth_only": 0.3129,
+      "dmf_pub": 0.396,
+      "kcenter": 0.4881,
+      "random": 0.3441
+     },
+     "leaderboard_val_test_spearman": {
+      "rho": 0.9725,
+      "n_methods": 13
+     }
+    },
+    "1": {
+     "tag_verification": {
+      "n_match": 18,
+      "n_mismatch": 0,
+      "verified": true
+     },
+     "noise_purity": {
+      "full": {
+       "n": 3000,
+       "high": 0.6,
+       "flip": 0.1333,
+       "corrupt": 0.1333,
+       "dup": 0.1333,
+       "corrupt_or_dup": 0.2666
+      },
+      "random": {
+       "n": 1500,
+       "high": 0.612,
+       "flip": 0.1273,
+       "corrupt": 0.128,
+       "dup": 0.1327,
+       "corrupt_or_dup": 0.2607
+      },
+      "coreset": {
+       "n": 1500,
+       "high": 0.5647,
+       "flip": 0.138,
+       "corrupt": 0.2647,
+       "dup": 0.0327,
+       "corrupt_or_dup": 0.2974
+      },
+      "auth_only": {
+       "n": 1500,
+       "high": 0.7027,
+       "flip": 0.094,
+       "corrupt": 0.1127,
+       "dup": 0.0907,
+       "corrupt_or_dup": 0.2034
+      },
+      "influence_only": {
+       "n": 1500,
+       "high": 0.678,
+       "flip": 0.0893,
+       "corrupt": 0.1367,
+       "dup": 0.096,
+       "corrupt_or_dup": 0.2327
+      },
+      "mmdataselect": {
+       "n": 1500,
+       "high": 0.6707,
+       "flip": 0.116,
+       "corrupt": 0.1853,
+       "dup": 0.028,
+       "corrupt_or_dup": 0.2133
+      },
+      "herding": {
+       "n": 1500,
+       "high": 0.56,
+       "flip": 0.132,
+       "corrupt": 0.2513,
+       "dup": 0.0567,
+       "corrupt_or_dup": 0.308
+      },
+      "kcenter": {
+       "n": 1500,
+       "high": 0.5787,
+       "flip": 0.1353,
+       "corrupt": 0.266,
+       "dup": 0.02,
+       "corrupt_or_dup": 0.286
+      },
+      "el2n": {
+       "n": 1500,
+       "high": 0.522,
+       "flip": 0.1773,
+       "corrupt": 0.13,
+       "dup": 0.1707,
+       "corrupt_or_dup": 0.3007
+      },
+      "grand": {
+       "n": 1500,
+       "high": 0.5313,
+       "flip": 0.1633,
+       "corrupt": 0.1453,
+       "dup": 0.16,
+       "corrupt_or_dup": 0.3053
+      },
+      "ccs": {
+       "n": 1500,
+       "high": 0.648,
+       "flip": 0.1193,
+       "corrupt": 0.1053,
+       "dup": 0.1273,
+       "corrupt_or_dup": 0.2326
+      },
+      "semdedup": {
+       "n": 1500,
+       "high": 0.562,
+       "flip": 0.112,
+       "corrupt": 0.2613,
+       "dup": 0.0647,
+       "corrupt_or_dup": 0.326
+      },
+      "density": {
+       "n": 1500,
+       "high": 0.59,
+       "flip": 0.1407,
+       "corrupt": 0.2287,
+       "dup": 0.0407,
+       "corrupt_or_dup": 0.2694
+      },
+      "quadmix": {
+       "n": 1500,
+       "high": 0.4787,
+       "flip": 0.0873,
+       "corrupt": 0.416,
+       "dup": 0.018,
+       "corrupt_or_dup": 0.434
+      },
+      "quadmix_pub": {
+       "n": 1500,
+       "high": 0.61,
+       "flip": 0.124,
+       "corrupt": 0.1407,
+       "dup": 0.1253,
+       "corrupt_or_dup": 0.266
+      },
+      "dmf": {
+       "n": 1500,
+       "high": 0.662,
+       "flip": 0.0927,
+       "corrupt": 0.198,
+       "dup": 0.0473,
+       "corrupt_or_dup": 0.2453
+      },
+      "dmf_pub": {
+       "n": 1500,
+       "high": 0.662,
+       "flip": 0.0927,
+       "corrupt": 0.198,
+       "dup": 0.0473,
+       "corrupt_or_dup": 0.2453
+      },
+      "mmds_adapt": {
+       "n": 1500,
+       "high": 0.5387,
+       "flip": 0.12,
+       "corrupt": 0.264,
+       "dup": 0.0773,
+       "corrupt_or_dup": 0.3413
+      },
+      "tabpfn_coreset": {
+       "n": 1500,
+       "high": 0.5787,
+       "flip": 0.1353,
+       "corrupt": 0.266,
+       "dup": 0.02,
+       "corrupt_or_dup": 0.286
+      },
+      "tabpfn_margin": {
+       "n": 1500,
+       "high": 0.5547,
+       "flip": 0.13,
+       "corrupt": 0.166,
+       "dup": 0.1493,
+       "corrupt_or_dup": 0.3153
+      },
+      "tabpfn_hybrid": {
+       "n": 1500,
+       "high": 0.5387,
+       "flip": 0.12,
+       "corrupt": 0.264,
+       "dup": 0.0773,
+       "corrupt_or_dup": 0.3413
+      }
+     },
+     "jaccard_controller_vs": {
+      "auth_only": 0.2723,
+      "dmf_pub": 0.3489,
+      "kcenter": 0.5674,
+      "random": 0.3316
+     },
+     "leaderboard_val_test_spearman": {
+      "rho": 0.9229,
+      "n_methods": 13
+     }
+    },
+    "2": {
+     "tag_verification": {
+      "n_match": 18,
+      "n_mismatch": 0,
+      "verified": true
+     },
+     "noise_purity": {
+      "full": {
+       "n": 3000,
+       "high": 0.6,
+       "flip": 0.1333,
+       "corrupt": 0.1333,
+       "dup": 0.1333,
+       "corrupt_or_dup": 0.2666
+      },
+      "random": {
+       "n": 1500,
+       "high": 0.5913,
+       "flip": 0.1393,
+       "corrupt": 0.128,
+       "dup": 0.1413,
+       "corrupt_or_dup": 0.2693
+      },
+      "coreset": {
+       "n": 1500,
+       "high": 0.5787,
+       "flip": 0.122,
+       "corrupt": 0.266,
+       "dup": 0.0333,
+       "corrupt_or_dup": 0.2993
+      },
+      "auth_only": {
+       "n": 1500,
+       "high": 0.6993,
+       "flip": 0.1033,
+       "corrupt": 0.1087,
+       "dup": 0.0887,
+       "corrupt_or_dup": 0.1974
+      },
+      "influence_only": {
+       "n": 1500,
+       "high": 0.6613,
+       "flip": 0.0987,
+       "corrupt": 0.136,
+       "dup": 0.104,
+       "corrupt_or_dup": 0.24
+      },
+      "mmdataselect": {
+       "n": 1500,
+       "high": 0.664,
+       "flip": 0.1213,
+       "corrupt": 0.1873,
+       "dup": 0.0273,
+       "corrupt_or_dup": 0.2146
+      },
+      "herding": {
+       "n": 1500,
+       "high": 0.568,
+       "flip": 0.118,
+       "corrupt": 0.2533,
+       "dup": 0.0607,
+       "corrupt_or_dup": 0.314
+      },
+      "kcenter": {
+       "n": 1500,
+       "high": 0.5807,
+       "flip": 0.1347,
+       "corrupt": 0.2667,
+       "dup": 0.018,
+       "corrupt_or_dup": 0.2847
+      },
+      "el2n": {
+       "n": 1500,
+       "high": 0.5387,
+       "flip": 0.168,
+       "corrupt": 0.1307,
+       "dup": 0.1627,
+       "corrupt_or_dup": 0.2934
+      },
+      "grand": {
+       "n": 1500,
+       "high": 0.5453,
+       "flip": 0.1593,
+       "corrupt": 0.152,
+       "dup": 0.1433,
+       "corrupt_or_dup": 0.2953
+      },
+      "ccs": {
+       "n": 1500,
+       "high": 0.6407,
+       "flip": 0.1253,
+       "corrupt": 0.1067,
+       "dup": 0.1273,
+       "corrupt_or_dup": 0.234
+      },
+      "semdedup": {
+       "n": 1500,
+       "high": 0.5453,
+       "flip": 0.1247,
+       "corrupt": 0.2567,
+       "dup": 0.0733,
+       "corrupt_or_dup": 0.33
+      },
+      "density": {
+       "n": 1500,
+       "high": 0.5933,
+       "flip": 0.138,
+       "corrupt": 0.2233,
+       "dup": 0.0453,
+       "corrupt_or_dup": 0.2686
+      },
+      "quadmix": {
+       "n": 1500,
+       "high": 0.4513,
+       "flip": 0.102,
+       "corrupt": 0.4193,
+       "dup": 0.0273,
+       "corrupt_or_dup": 0.4466
+      },
+      "quadmix_pub": {
+       "n": 1500,
+       "high": 0.6113,
+       "flip": 0.1333,
+       "corrupt": 0.126,
+       "dup": 0.1293,
+       "corrupt_or_dup": 0.2553
+      },
+      "dmf": {
+       "n": 1500,
+       "high": 0.624,
+       "flip": 0.0993,
+       "corrupt": 0.2413,
+       "dup": 0.0353,
+       "corrupt_or_dup": 0.2766
+      },
+      "dmf_pub": {
+       "n": 1500,
+       "high": 0.6393,
+       "flip": 0.0947,
+       "corrupt": 0.2093,
+       "dup": 0.0567,
+       "corrupt_or_dup": 0.266
+      },
+      "mmds_adapt": {
+       "n": 1500,
+       "high": 0.5807,
+       "flip": 0.1347,
+       "corrupt": 0.2667,
+       "dup": 0.018,
+       "corrupt_or_dup": 0.2847
+      },
+      "tabpfn_coreset": {
+       "n": 1500,
+       "high": 0.5807,
+       "flip": 0.1347,
+       "corrupt": 0.2667,
+       "dup": 0.018,
+       "corrupt_or_dup": 0.2847
+      },
+      "tabpfn_margin": {
+       "n": 1500,
+       "high": 0.5913,
+       "flip": 0.1207,
+       "corrupt": 0.1547,
+       "dup": 0.1333,
+       "corrupt_or_dup": 0.288
+      },
+      "tabpfn_hybrid": {
+       "n": 1500,
+       "high": 0.52,
+       "flip": 0.12,
+       "corrupt": 0.2653,
+       "dup": 0.0947,
+       "corrupt_or_dup": 0.36
+      }
+     },
+     "jaccard_controller_vs": {
+      "auth_only": 0.3038,
+      "dmf_pub": 0.4138,
+      "kcenter": 1.0,
+      "random": 0.3181
+     },
+     "leaderboard_val_test_spearman": {
+      "rho": 0.9451,
+      "n_methods": 13
+     }
+    }
+   },
+   "tag_reconstruction_verified_all_seeds": true,
+   "noise_purity_seed_mean": {
+    "auth_only": {
+     "high": 0.712,
+     "flip": 0.0962,
+     "corrupt_or_dup": 0.1918
+    },
+    "ccs": {
+     "high": 0.6496,
+     "flip": 0.1184,
+     "corrupt_or_dup": 0.232
+    },
+    "coreset": {
+     "high": 0.5718,
+     "flip": 0.1296,
+     "corrupt_or_dup": 0.2987
+    },
+    "density": {
+     "high": 0.5924,
+     "flip": 0.136,
+     "corrupt_or_dup": 0.2716
+    },
+    "dmf": {
+     "high": 0.6533,
+     "flip": 0.0918,
+     "corrupt_or_dup": 0.2549
+    },
+    "dmf_pub": {
+     "high": 0.658,
+     "flip": 0.0905,
+     "corrupt_or_dup": 0.2515
+    },
+    "el2n": {
+     "high": 0.5256,
+     "flip": 0.1773,
+     "corrupt_or_dup": 0.2971
+    },
+    "full": {
+     "high": 0.6,
+     "flip": 0.1333,
+     "corrupt_or_dup": 0.2666
+    },
+    "grand": {
+     "high": 0.5302,
+     "flip": 0.1642,
+     "corrupt_or_dup": 0.3055
+    },
+    "herding": {
+     "high": 0.5667,
+     "flip": 0.1262,
+     "corrupt_or_dup": 0.3071
+    },
+    "influence_only": {
+     "high": 0.6744,
+     "flip": 0.0893,
+     "corrupt_or_dup": 0.2362
+    },
+    "kcenter": {
+     "high": 0.5814,
+     "flip": 0.134,
+     "corrupt_or_dup": 0.2847
+    },
+    "mmdataselect": {
+     "high": 0.6631,
+     "flip": 0.1204,
+     "corrupt_or_dup": 0.2164
+    },
+    "mmds_adapt": {
+     "high": 0.5711,
+     "flip": 0.128,
+     "corrupt_or_dup": 0.3009
+    },
+    "quadmix": {
+     "high": 0.4673,
+     "flip": 0.094,
+     "corrupt_or_dup": 0.4386
+    },
+    "quadmix_pub": {
+     "high": 0.6084,
+     "flip": 0.1298,
+     "corrupt_or_dup": 0.2618
+    },
+    "random": {
+     "high": 0.6033,
+     "flip": 0.1324,
+     "corrupt_or_dup": 0.2642
+    },
+    "semdedup": {
+     "high": 0.5575,
+     "flip": 0.1169,
+     "corrupt_or_dup": 0.3256
+    },
+    "tabpfn_coreset": {
+     "high": 0.5814,
+     "flip": 0.134,
+     "corrupt_or_dup": 0.2847
+    },
+    "tabpfn_hybrid": {
+     "high": 0.536,
+     "flip": 0.1224,
+     "corrupt_or_dup": 0.3416
+    },
+    "tabpfn_margin": {
+     "high": 0.5513,
+     "flip": 0.1282,
+     "corrupt_or_dup": 0.3204
+    }
+   },
+   "jaccard_controller_seed_mean": {
+    "auth_only": 0.2963,
+    "dmf_pub": 0.3862,
+    "kcenter": 0.6852,
+    "random": 0.3313
+   },
+   "headroom": {
+    "full": 0.8853,
+    "random": 0.8671,
+    "controller": 0.8734,
+    "strongest_fixed": {
+     "kcenter": 0.8753
+    },
+    "full_vs_random_gain": 0.0182,
+    "controller_vs_random_gain": 0.0063,
+    "controller_vs_strongest_fixed": -0.0019,
+    "full_vs_controller_remaining": 0.0119,
+    "seed_std": {
+     "mmds_adapt": 0.0156,
+     "kcenter": 0.0127,
+     "random": 0.011,
+     "full": 0.0123
+    },
+    "pooled_std_ctrl_vs_best": 0.0201,
+    "ctrl_vs_best_within_seed_noise": true,
+    "class": "saturated",
+    "class_rule": "saturated if |full-random| <= 2*std(random); controller-near-ceiling if (full-controller) <= pooled std; else open-headroom. Signs oriented so positive = improvement."
+   }
+  },
+  "tep": {
+   "dataset": "tep21",
+   "metric": "f1",
+   "higher_is_better": true,
+   "strongest_fixed_baseline": {
+    "name": "dmf_pub",
+    "mean": 0.409
+   },
+   "strongest_external_baseline": {
+    "name": "dmf_pub",
+    "mean": 0.409
+   },
+   "per_seed": {
+    "0": {
+     "tag_verification": {
+      "n_match": 18,
+      "n_mismatch": 0,
+      "verified": true
+     },
+     "noise_purity": {
+      "full": {
+       "n": 4000,
+       "high": 0.6,
+       "flip": 0.1333,
+       "corrupt": 0.1333,
+       "dup": 0.1335,
+       "corrupt_or_dup": 0.2668
+      },
+      "random": {
+       "n": 1200,
+       "high": 0.615,
+       "flip": 0.1458,
+       "corrupt": 0.1208,
+       "dup": 0.1183,
+       "corrupt_or_dup": 0.2391
+      },
+      "coreset": {
+       "n": 1200,
+       "high": 0.4508,
+       "flip": 0.1158,
+       "corrupt": 0.3808,
+       "dup": 0.0525,
+       "corrupt_or_dup": 0.4333
+      },
+      "auth_only": {
+       "n": 1200,
+       "high": 0.8408,
+       "flip": 0.0192,
+       "corrupt": 0.1167,
+       "dup": 0.0233,
+       "corrupt_or_dup": 0.14
+      },
+      "influence_only": {
+       "n": 1200,
+       "high": 0.8708,
+       "flip": 0.0142,
+       "corrupt": 0.0825,
+       "dup": 0.0325,
+       "corrupt_or_dup": 0.115
+      },
+      "mmdataselect": {
+       "n": 1200,
+       "high": 0.615,
+       "flip": 0.0842,
+       "corrupt": 0.3008,
+       "dup": 0.0,
+       "corrupt_or_dup": 0.3008
+      },
+      "herding": {
+       "n": 1200,
+       "high": 0.5583,
+       "flip": 0.1583,
+       "corrupt": 0.2608,
+       "dup": 0.0225,
+       "corrupt_or_dup": 0.2833
+      },
+      "kcenter": {
+       "n": 1200,
+       "high": 0.4758,
+       "flip": 0.0908,
+       "corrupt": 0.4192,
+       "dup": 0.0142,
+       "corrupt_or_dup": 0.4334
+      },
+      "el2n": {
+       "n": 1200,
+       "high": 0.1725,
+       "flip": 0.2417,
+       "corrupt": 0.3608,
+       "dup": 0.225,
+       "corrupt_or_dup": 0.5858
+      },
+      "grand": {
+       "n": 1200,
+       "high": 0.44,
+       "flip": 0.2117,
+       "corrupt": 0.1458,
+       "dup": 0.2025,
+       "corrupt_or_dup": 0.3483
+      },
+      "ccs": {
+       "n": 1200,
+       "high": 0.6675,
+       "flip": 0.1183,
+       "corrupt": 0.0792,
+       "dup": 0.135,
+       "corrupt_or_dup": 0.2142
+      },
+      "semdedup": {
+       "n": 1200,
+       "high": 0.6667,
+       "flip": 0.145,
+       "corrupt": 0.1717,
+       "dup": 0.0167,
+       "corrupt_or_dup": 0.1884
+      },
+      "density": {
+       "n": 1200,
+       "high": 0.6308,
+       "flip": 0.145,
+       "corrupt": 0.17,
+       "dup": 0.0542,
+       "corrupt_or_dup": 0.2242
+      },
+      "quadmix": {
+       "n": 1200,
+       "high": 0.3575,
+       "flip": 0.075,
+       "corrupt": 0.5425,
+       "dup": 0.025,
+       "corrupt_or_dup": 0.5675
+      },
+      "quadmix_pub": {
+       "n": 1200,
+       "high": 0.6358,
+       "flip": 0.1192,
+       "corrupt": 0.125,
+       "dup": 0.12,
+       "corrupt_or_dup": 0.245
+      },
+      "dmf": {
+       "n": 1200,
+       "high": 0.8642,
+       "flip": 0.0117,
+       "corrupt": 0.11,
+       "dup": 0.0142,
+       "corrupt_or_dup": 0.1242
+      },
+      "dmf_pub": {
+       "n": 1200,
+       "high": 0.8417,
+       "flip": 0.0133,
+       "corrupt": 0.1342,
+       "dup": 0.0108,
+       "corrupt_or_dup": 0.145
+      },
+      "mmds_adapt": {
+       "n": 1200,
+       "high": 0.8417,
+       "flip": 0.0133,
+       "corrupt": 0.1342,
+       "dup": 0.0108,
+       "corrupt_or_dup": 0.145
+      }
+     },
+     "jaccard_controller_vs": {
+      "auth_only": 0.7505,
+      "dmf_pub": 1.0,
+      "random": 0.1707
+     },
+     "leaderboard_val_test_spearman": {
+      "rho": 0.9088,
+      "n_methods": 16
+     }
+    },
+    "1": {
+     "tag_verification": {
+      "n_match": 18,
+      "n_mismatch": 0,
+      "verified": true
+     },
+     "noise_purity": {
+      "full": {
+       "n": 4000,
+       "high": 0.6,
+       "flip": 0.1333,
+       "corrupt": 0.1333,
+       "dup": 0.1335,
+       "corrupt_or_dup": 0.2668
+      },
+      "random": {
+       "n": 1200,
+       "high": 0.6017,
+       "flip": 0.135,
+       "corrupt": 0.1367,
+       "dup": 0.1267,
+       "corrupt_or_dup": 0.2634
+      },
+      "coreset": {
+       "n": 1200,
+       "high": 0.4667,
+       "flip": 0.105,
+       "corrupt": 0.3758,
+       "dup": 0.0525,
+       "corrupt_or_dup": 0.4283
+      },
+      "auth_only": {
+       "n": 1200,
+       "high": 0.8308,
+       "flip": 0.0183,
+       "corrupt": 0.1192,
+       "dup": 0.0317,
+       "corrupt_or_dup": 0.1509
+      },
+      "influence_only": {
+       "n": 1200,
+       "high": 0.8708,
+       "flip": 0.0142,
+       "corrupt": 0.0858,
+       "dup": 0.0292,
+       "corrupt_or_dup": 0.115
+      },
+      "mmdataselect": {
+       "n": 1200,
+       "high": 0.6017,
+       "flip": 0.0842,
+       "corrupt": 0.3142,
+       "dup": 0.0,
+       "corrupt_or_dup": 0.3142
+      },
+      "herding": {
+       "n": 1200,
+       "high": 0.5917,
+       "flip": 0.135,
+       "corrupt": 0.2475,
+       "dup": 0.0258,
+       "corrupt_or_dup": 0.2733
+      },
+      "kcenter": {
+       "n": 1200,
+       "high": 0.4542,
+       "flip": 0.1067,
+       "corrupt": 0.4217,
+       "dup": 0.0175,
+       "corrupt_or_dup": 0.4392
+      },
+      "el2n": {
+       "n": 1200,
+       "high": 0.1975,
+       "flip": 0.2558,
+       "corrupt": 0.3567,
+       "dup": 0.19,
+       "corrupt_or_dup": 0.5467
+      },
+      "grand": {
+       "n": 1200,
+       "high": 0.49,
+       "flip": 0.1858,
+       "corrupt": 0.1417,
+       "dup": 0.1825,
+       "corrupt_or_dup": 0.3242
+      },
+      "ccs": {
+       "n": 1200,
+       "high": 0.665,
+       "flip": 0.1067,
+       "corrupt": 0.0842,
+       "dup": 0.1442,
+       "corrupt_or_dup": 0.2284
+      },
+      "semdedup": {
+       "n": 1200,
+       "high": 0.6692,
+       "flip": 0.155,
+       "corrupt": 0.1558,
+       "dup": 0.02,
+       "corrupt_or_dup": 0.1758
+      },
+      "density": {
+       "n": 1200,
+       "high": 0.63,
+       "flip": 0.1275,
+       "corrupt": 0.1967,
+       "dup": 0.0458,
+       "corrupt_or_dup": 0.2425
+      },
+      "quadmix": {
+       "n": 1200,
+       "high": 0.3358,
+       "flip": 0.0825,
+       "corrupt": 0.5658,
+       "dup": 0.0158,
+       "corrupt_or_dup": 0.5816
+      },
+      "quadmix_pub": {
+       "n": 1200,
+       "high": 0.6342,
+       "flip": 0.1325,
+       "corrupt": 0.1167,
+       "dup": 0.1167,
+       "corrupt_or_dup": 0.2334
+      },
+      "dmf": {
+       "n": 1200,
+       "high": 0.845,
+       "flip": 0.0158,
+       "corrupt": 0.12,
+       "dup": 0.0192,
+       "corrupt_or_dup": 0.1392
+      },
+      "dmf_pub": {
+       "n": 1200,
+       "high": 0.8125,
+       "flip": 0.0158,
+       "corrupt": 0.1692,
+       "dup": 0.0025,
+       "corrupt_or_dup": 0.1717
+      },
+      "mmds_adapt": {
+       "n": 1200,
+       "high": 0.6842,
+       "flip": 0.0292,
+       "corrupt": 0.2867,
+       "dup": 0.0,
+       "corrupt_or_dup": 0.2867
+      }
+     },
+     "jaccard_controller_vs": {
+      "auth_only": 0.4277,
+      "dmf_pub": 0.5821,
+      "random": 0.1788
+     },
+     "leaderboard_val_test_spearman": {
+      "rho": 0.8727,
+      "n_methods": 16
+     }
+    },
+    "2": {
+     "tag_verification": {
+      "n_match": 18,
+      "n_mismatch": 0,
+      "verified": true
+     },
+     "noise_purity": {
+      "full": {
+       "n": 4000,
+       "high": 0.6,
+       "flip": 0.1333,
+       "corrupt": 0.1333,
+       "dup": 0.1335,
+       "corrupt_or_dup": 0.2668
+      },
+      "random": {
+       "n": 1200,
+       "high": 0.5817,
+       "flip": 0.1383,
+       "corrupt": 0.1417,
+       "dup": 0.1383,
+       "corrupt_or_dup": 0.28
+      },
+      "coreset": {
+       "n": 1200,
+       "high": 0.4583,
+       "flip": 0.105,
+       "corrupt": 0.3833,
+       "dup": 0.0533,
+       "corrupt_or_dup": 0.4366
+      },
+      "auth_only": {
+       "n": 1200,
+       "high": 0.8425,
+       "flip": 0.0158,
+       "corrupt": 0.1075,
+       "dup": 0.0342,
+       "corrupt_or_dup": 0.1417
+      },
+      "influence_only": {
+       "n": 1200,
+       "high": 0.8817,
+       "flip": 0.01,
+       "corrupt": 0.0792,
+       "dup": 0.0292,
+       "corrupt_or_dup": 0.1084
+      },
+      "mmdataselect": {
+       "n": 1200,
+       "high": 0.6125,
+       "flip": 0.0958,
+       "corrupt": 0.2917,
+       "dup": 0.0,
+       "corrupt_or_dup": 0.2917
+      },
+      "herding": {
+       "n": 1200,
+       "high": 0.5875,
+       "flip": 0.1425,
+       "corrupt": 0.2425,
+       "dup": 0.0275,
+       "corrupt_or_dup": 0.27
+      },
+      "kcenter": {
+       "n": 1200,
+       "high": 0.4642,
+       "flip": 0.0958,
+       "corrupt": 0.4217,
+       "dup": 0.0183,
+       "corrupt_or_dup": 0.44
+      },
+      "el2n": {
+       "n": 1200,
+       "high": 0.1983,
+       "flip": 0.2483,
+       "corrupt": 0.3617,
+       "dup": 0.1917,
+       "corrupt_or_dup": 0.5534
+      },
+      "grand": {
+       "n": 1200,
+       "high": 0.4658,
+       "flip": 0.21,
+       "corrupt": 0.1417,
+       "dup": 0.1825,
+       "corrupt_or_dup": 0.3242
+      },
+      "ccs": {
+       "n": 1200,
+       "high": 0.675,
+       "flip": 0.12,
+       "corrupt": 0.0725,
+       "dup": 0.1325,
+       "corrupt_or_dup": 0.205
+      },
+      "semdedup": {
+       "n": 1200,
+       "high": 0.6708,
+       "flip": 0.145,
+       "corrupt": 0.1608,
+       "dup": 0.0233,
+       "corrupt_or_dup": 0.1841
+      },
+      "density": {
+       "n": 1200,
+       "high": 0.6208,
+       "flip": 0.1342,
+       "corrupt": 0.2033,
+       "dup": 0.0417,
+       "corrupt_or_dup": 0.245
+      },
+      "quadmix": {
+       "n": 1200,
+       "high": 0.3483,
+       "flip": 0.0692,
+       "corrupt": 0.5542,
+       "dup": 0.0283,
+       "corrupt_or_dup": 0.5825
+      },
+      "quadmix_pub": {
+       "n": 1200,
+       "high": 0.6425,
+       "flip": 0.1242,
+       "corrupt": 0.1217,
+       "dup": 0.1117,
+       "corrupt_or_dup": 0.2334
+      },
+      "dmf": {
+       "n": 1200,
+       "high": 0.865,
+       "flip": 0.0083,
+       "corrupt": 0.0992,
+       "dup": 0.0275,
+       "corrupt_or_dup": 0.1267
+      },
+      "dmf_pub": {
+       "n": 1200,
+       "high": 0.8467,
+       "flip": 0.0117,
+       "corrupt": 0.1325,
+       "dup": 0.0092,
+       "corrupt_or_dup": 0.1417
+      },
+      "mmds_adapt": {
+       "n": 1200,
+       "high": 0.865,
+       "flip": 0.0083,
+       "corrupt": 0.0992,
+       "dup": 0.0275,
+       "corrupt_or_dup": 0.1267
+      }
+     },
+     "jaccard_controller_vs": {
+      "auth_only": 0.8504,
+      "dmf_pub": 0.8293,
+      "random": 0.1673
+     },
+     "leaderboard_val_test_spearman": {
+      "rho": 0.8765,
+      "n_methods": 16
+     }
+    }
+   },
+   "tag_reconstruction_verified_all_seeds": true,
+   "noise_purity_seed_mean": {
+    "auth_only": {
+     "high": 0.838,
+     "flip": 0.0178,
+     "corrupt_or_dup": 0.1442
+    },
+    "ccs": {
+     "high": 0.6692,
+     "flip": 0.115,
+     "corrupt_or_dup": 0.2159
+    },
+    "coreset": {
+     "high": 0.4586,
+     "flip": 0.1086,
+     "corrupt_or_dup": 0.4327
+    },
+    "density": {
+     "high": 0.6272,
+     "flip": 0.1356,
+     "corrupt_or_dup": 0.2372
+    },
+    "dmf": {
+     "high": 0.8581,
+     "flip": 0.0119,
+     "corrupt_or_dup": 0.13
+    },
+    "dmf_pub": {
+     "high": 0.8336,
+     "flip": 0.0136,
+     "corrupt_or_dup": 0.1528
+    },
+    "el2n": {
+     "high": 0.1894,
+     "flip": 0.2486,
+     "corrupt_or_dup": 0.562
+    },
+    "full": {
+     "high": 0.6,
+     "flip": 0.1333,
+     "corrupt_or_dup": 0.2668
+    },
+    "grand": {
+     "high": 0.4653,
+     "flip": 0.2025,
+     "corrupt_or_dup": 0.3322
+    },
+    "herding": {
+     "high": 0.5792,
+     "flip": 0.1453,
+     "corrupt_or_dup": 0.2755
+    },
+    "influence_only": {
+     "high": 0.8744,
+     "flip": 0.0128,
+     "corrupt_or_dup": 0.1128
+    },
+    "kcenter": {
+     "high": 0.4647,
+     "flip": 0.0978,
+     "corrupt_or_dup": 0.4375
+    },
+    "mmdataselect": {
+     "high": 0.6097,
+     "flip": 0.0881,
+     "corrupt_or_dup": 0.3022
+    },
+    "mmds_adapt": {
+     "high": 0.797,
+     "flip": 0.0169,
+     "corrupt_or_dup": 0.1861
+    },
+    "quadmix": {
+     "high": 0.3472,
+     "flip": 0.0756,
+     "corrupt_or_dup": 0.5772
+    },
+    "quadmix_pub": {
+     "high": 0.6375,
+     "flip": 0.1253,
+     "corrupt_or_dup": 0.2373
+    },
+    "random": {
+     "high": 0.5995,
+     "flip": 0.1397,
+     "corrupt_or_dup": 0.2608
+    },
+    "semdedup": {
+     "high": 0.6689,
+     "flip": 0.1483,
+     "corrupt_or_dup": 0.1828
+    }
+   },
+   "jaccard_controller_seed_mean": {
+    "auth_only": 0.6762,
+    "dmf_pub": 0.8038,
+    "random": 0.1723
+   },
+   "headroom": {
+    "full": 0.4057,
+    "random": 0.3167,
+    "controller": 0.4079,
+    "strongest_fixed": {
+     "dmf_pub": 0.409
+    },
+    "full_vs_random_gain": 0.089,
+    "controller_vs_random_gain": 0.0912,
+    "controller_vs_strongest_fixed": -0.0011,
+    "full_vs_controller_remaining": -0.0022,
+    "seed_std": {
+     "mmds_adapt": 0.0059,
+     "dmf_pub": 0.002,
+     "random": 0.0131,
+     "full": 0.017
+    },
+    "pooled_std_ctrl_vs_best": 0.0062,
+    "ctrl_vs_best_within_seed_noise": true,
+    "class": "controller-near-ceiling",
+    "class_rule": "saturated if |full-random| <= 2*std(random); controller-near-ceiling if (full-controller) <= pooled std; else open-headroom. Signs oriented so positive = improvement."
+   }
+  },
+  "timeseries": {
+   "dataset": "ETTh1",
+   "metric": "mase",
+   "higher_is_better": false,
+   "strongest_fixed_baseline": {
+    "name": "auth_only",
+    "mean": 0.9501
+   },
+   "strongest_external_baseline": {
+    "name": "auth_only",
+    "mean": 0.9501
+   },
+   "per_seed": {
+    "0": {
+     "tag_verification": {
+      "n_match": 15,
+      "n_mismatch": 0,
+      "verified": true
+     },
+     "noise_purity": {
+      "full": {
+       "n": 3000,
+       "high": 0.6,
+       "corrupt": 0.1,
+       "dup": 0.1,
+       "flat": 0.1,
+       "shuffle": 0.1,
+       "corrupt_or_dup": 0.4
+      },
+      "random": {
+       "n": 900,
+       "high": 0.6,
+       "corrupt": 0.0967,
+       "dup": 0.0944,
+       "flat": 0.0989,
+       "shuffle": 0.11,
+       "corrupt_or_dup": 0.4
+      },
+      "coreset": {
+       "n": 900,
+       "high": 0.5089,
+       "corrupt": 0.3189,
+       "dup": 0.0356,
+       "flat": 0.0022,
+       "shuffle": 0.1344,
+       "corrupt_or_dup": 0.4911
+      },
+      "auth_only": {
+       "n": 900,
+       "high": 0.9067,
+       "corrupt": 0.0,
+       "dup": 0.0933,
+       "flat": 0.0,
+       "shuffle": 0.0,
+       "corrupt_or_dup": 0.0933
+      },
+      "influence_only": {
+       "n": 900,
+       "high": 0.7144,
+       "corrupt": 0.0,
+       "dup": 0.1511,
+       "flat": 0.0867,
+       "shuffle": 0.0478,
+       "corrupt_or_dup": 0.2856
+      },
+      "mmdataselect": {
+       "n": 900,
+       "high": 0.8356,
+       "corrupt": 0.0944,
+       "dup": 0.0178,
+       "flat": 0.0,
+       "shuffle": 0.0522,
+       "corrupt_or_dup": 0.1644
+      },
+      "herding": {
+       "n": 900,
+       "high": 0.5756,
+       "corrupt": 0.23,
+       "dup": 0.0222,
+       "flat": 0.0,
+       "shuffle": 0.1722,
+       "corrupt_or_dup": 0.4244
+      },
+      "kcenter": {
+       "n": 900,
+       "high": 0.4778,
+       "corrupt": 0.3322,
+       "dup": 0.0111,
+       "flat": 0.0,
+       "shuffle": 0.1789,
+       "corrupt_or_dup": 0.5222
+      },
+      "semdedup": {
+       "n": 900,
+       "high": 0.6278,
+       "corrupt": 0.1978,
+       "dup": 0.0089,
+       "flat": 0.0,
+       "shuffle": 0.1656,
+       "corrupt_or_dup": 0.3723
+      },
+      "density": {
+       "n": 900,
+       "high": 0.6044,
+       "corrupt": 0.2211,
+       "dup": 0.0289,
+       "flat": 0.0,
+       "shuffle": 0.1456,
+       "corrupt_or_dup": 0.3956
+      },
+      "quadmix": {
+       "n": 900,
+       "high": 0.7778,
+       "corrupt": 0.1078,
+       "dup": 0.0256,
+       "flat": 0.06,
+       "shuffle": 0.0289,
+       "corrupt_or_dup": 0.2223
+      },
+      "quadmix_pub": {
+       "n": 900,
+       "high": 0.6056,
+       "corrupt": 0.0911,
+       "dup": 0.1011,
+       "flat": 0.1044,
+       "shuffle": 0.0978,
+       "corrupt_or_dup": 0.3944
+      },
+      "dmf": {
+       "n": 900,
+       "high": 0.8989,
+       "corrupt": 0.0,
+       "dup": 0.1011,
+       "flat": 0.0,
+       "shuffle": 0.0,
+       "corrupt_or_dup": 0.1011
+      },
+      "dmf_pub": {
+       "n": 900,
+       "high": 0.8956,
+       "corrupt": 0.0,
+       "dup": 0.1044,
+       "flat": 0.0,
+       "shuffle": 0.0,
+       "corrupt_or_dup": 0.1044
+      },
+      "mmds_adapt": {
+       "n": 900,
+       "high": 0.8622,
+       "corrupt": 0.0589,
+       "dup": 0.0633,
+       "flat": 0.0,
+       "shuffle": 0.0156,
+       "corrupt_or_dup": 0.1378
+      }
+     },
+     "jaccard_controller_vs": {
+      "auth_only": 0.3857,
+      "dmf_pub": 0.5929,
+      "random": 0.162
+     },
+     "leaderboard_val_test_spearman": {
+      "rho": 0.7212,
+      "n_methods": 10
+     }
+    },
+    "1": {
+     "tag_verification": {
+      "n_match": 15,
+      "n_mismatch": 0,
+      "verified": true
+     },
+     "noise_purity": {
+      "full": {
+       "n": 3000,
+       "high": 0.6,
+       "corrupt": 0.1,
+       "dup": 0.1,
+       "flat": 0.1,
+       "shuffle": 0.1,
+       "corrupt_or_dup": 0.4
+      },
+      "random": {
+       "n": 900,
+       "high": 0.5989,
+       "corrupt": 0.0967,
+       "dup": 0.11,
+       "flat": 0.1056,
+       "shuffle": 0.0889,
+       "corrupt_or_dup": 0.4012
+      },
+      "coreset": {
+       "n": 900,
+       "high": 0.4878,
+       "corrupt": 0.3289,
+       "dup": 0.0367,
+       "flat": 0.0022,
+       "shuffle": 0.1444,
+       "corrupt_or_dup": 0.5122
+      },
+      "auth_only": {
+       "n": 900,
+       "high": 0.8778,
+       "corrupt": 0.0,
+       "dup": 0.1222,
+       "flat": 0.0,
+       "shuffle": 0.0,
+       "corrupt_or_dup": 0.1222
+      },
+      "influence_only": {
+       "n": 900,
+       "high": 0.7256,
+       "corrupt": 0.0,
+       "dup": 0.1256,
+       "flat": 0.0978,
+       "shuffle": 0.0511,
+       "corrupt_or_dup": 0.2745
+      },
+      "mmdataselect": {
+       "n": 900,
+       "high": 0.8411,
+       "corrupt": 0.0822,
+       "dup": 0.0178,
+       "flat": 0.0,
+       "shuffle": 0.0589,
+       "corrupt_or_dup": 0.1589
+      },
+      "herding": {
+       "n": 900,
+       "high": 0.5489,
+       "corrupt": 0.2433,
+       "dup": 0.0322,
+       "flat": 0.0,
+       "shuffle": 0.1756,
+       "corrupt_or_dup": 0.4511
+      },
+      "kcenter": {
+       "n": 900,
+       "high": 0.4978,
+       "corrupt": 0.3333,
+       "dup": 0.0122,
+       "flat": 0.0011,
+       "shuffle": 0.1556,
+       "corrupt_or_dup": 0.5022
+      },
+      "semdedup": {
+       "n": 900,
+       "high": 0.6167,
+       "corrupt": 0.2089,
+       "dup": 0.0133,
+       "flat": 0.0,
+       "shuffle": 0.1611,
+       "corrupt_or_dup": 0.3833
+      },
+      "density": {
+       "n": 900,
+       "high": 0.6089,
+       "corrupt": 0.2233,
+       "dup": 0.0344,
+       "flat": 0.0,
+       "shuffle": 0.1333,
+       "corrupt_or_dup": 0.391
+      },
+      "quadmix": {
+       "n": 900,
+       "high": 0.7767,
+       "corrupt": 0.1022,
+       "dup": 0.0267,
+       "flat": 0.06,
+       "shuffle": 0.0344,
+       "corrupt_or_dup": 0.2233
+      },
+      "quadmix_pub": {
+       "n": 900,
+       "high": 0.65,
+       "corrupt": 0.0889,
+       "dup": 0.0833,
+       "flat": 0.0811,
+       "shuffle": 0.0967,
+       "corrupt_or_dup": 0.35
+      },
+      "dmf": {
+       "n": 900,
+       "high": 0.9011,
+       "corrupt": 0.0,
+       "dup": 0.0989,
+       "flat": 0.0,
+       "shuffle": 0.0,
+       "corrupt_or_dup": 0.0989
+      },
+      "dmf_pub": {
+       "n": 900,
+       "high": 0.91,
+       "corrupt": 0.0,
+       "dup": 0.09,
+       "flat": 0.0,
+       "shuffle": 0.0,
+       "corrupt_or_dup": 0.09
+      },
+      "mmds_adapt": {
+       "n": 900,
+       "high": 0.91,
+       "corrupt": 0.0,
+       "dup": 0.09,
+       "flat": 0.0,
+       "shuffle": 0.0,
+       "corrupt_or_dup": 0.09
+      }
+     },
+     "jaccard_controller_vs": {
+      "auth_only": 0.4458,
+      "dmf_pub": 1.0,
+      "random": 0.1673
+     },
+     "leaderboard_val_test_spearman": {
+      "rho": 0.6848,
+      "n_methods": 10
+     }
+    },
+    "2": {
+     "tag_verification": {
+      "n_match": 15,
+      "n_mismatch": 0,
+      "verified": true
+     },
+     "noise_purity": {
+      "full": {
+       "n": 3000,
+       "high": 0.6,
+       "corrupt": 0.1,
+       "dup": 0.1,
+       "flat": 0.1,
+       "shuffle": 0.1,
+       "corrupt_or_dup": 0.4
+      },
+      "random": {
+       "n": 900,
+       "high": 0.5778,
+       "corrupt": 0.1078,
+       "dup": 0.1156,
+       "flat": 0.1078,
+       "shuffle": 0.0911,
+       "corrupt_or_dup": 0.4223
+      },
+      "coreset": {
+       "n": 900,
+       "high": 0.5056,
+       "corrupt": 0.3256,
+       "dup": 0.0344,
+       "flat": 0.0022,
+       "shuffle": 0.1322,
+       "corrupt_or_dup": 0.4944
+      },
+      "auth_only": {
+       "n": 900,
+       "high": 0.8833,
+       "corrupt": 0.0,
+       "dup": 0.1167,
+       "flat": 0.0,
+       "shuffle": 0.0,
+       "corrupt_or_dup": 0.1167
+      },
+      "influence_only": {
+       "n": 900,
+       "high": 0.7656,
+       "corrupt": 0.0,
+       "dup": 0.0911,
+       "flat": 0.0911,
+       "shuffle": 0.0522,
+       "corrupt_or_dup": 0.2344
+      },
+      "mmdataselect": {
+       "n": 900,
+       "high": 0.8333,
+       "corrupt": 0.1022,
+       "dup": 0.0144,
+       "flat": 0.0,
+       "shuffle": 0.05,
+       "corrupt_or_dup": 0.1666
+      },
+      "herding": {
+       "n": 900,
+       "high": 0.5989,
+       "corrupt": 0.21,
+       "dup": 0.0222,
+       "flat": 0.0056,
+       "shuffle": 0.1633,
+       "corrupt_or_dup": 0.4011
+      },
+      "kcenter": {
+       "n": 900,
+       "high": 0.4889,
+       "corrupt": 0.3333,
+       "dup": 0.0056,
+       "flat": 0.0,
+       "shuffle": 0.1722,
+       "corrupt_or_dup": 0.5111
+      },
+      "semdedup": {
+       "n": 900,
+       "high": 0.6278,
+       "corrupt": 0.2056,
+       "dup": 0.0089,
+       "flat": 0.0,
+       "shuffle": 0.1578,
+       "corrupt_or_dup": 0.3723
+      },
+      "density": {
+       "n": 900,
+       "high": 0.6322,
+       "corrupt": 0.2011,
+       "dup": 0.0389,
+       "flat": 0.0,
+       "shuffle": 0.1278,
+       "corrupt_or_dup": 0.3678
+      },
+      "quadmix": {
+       "n": 900,
+       "high": 0.7778,
+       "corrupt": 0.1044,
+       "dup": 0.0256,
+       "flat": 0.06,
+       "shuffle": 0.0322,
+       "corrupt_or_dup": 0.2222
+      },
+      "quadmix_pub": {
+       "n": 900,
+       "high": 0.6478,
+       "corrupt": 0.09,
+       "dup": 0.1044,
+       "flat": 0.0889,
+       "shuffle": 0.0689,
+       "corrupt_or_dup": 0.3522
+      },
+      "dmf": {
+       "n": 900,
+       "high": 0.9456,
+       "corrupt": 0.0011,
+       "dup": 0.0489,
+       "flat": 0.0,
+       "shuffle": 0.0044,
+       "corrupt_or_dup": 0.0544
+      },
+      "dmf_pub": {
+       "n": 900,
+       "high": 0.9622,
+       "corrupt": 0.0,
+       "dup": 0.0378,
+       "flat": 0.0,
+       "shuffle": 0.0,
+       "corrupt_or_dup": 0.0378
+      },
+      "mmds_adapt": {
+       "n": 900,
+       "high": 0.7778,
+       "corrupt": 0.1044,
+       "dup": 0.0256,
+       "flat": 0.06,
+       "shuffle": 0.0322,
+       "corrupt_or_dup": 0.2222
+      }
+     },
+     "jaccard_controller_vs": {
+      "auth_only": 0.2155,
+      "dmf_pub": 0.4132,
+      "random": 0.1781
+     },
+     "leaderboard_val_test_spearman": {
+      "rho": 0.4545,
+      "n_methods": 10
+     }
+    }
+   },
+   "tag_reconstruction_verified_all_seeds": true,
+   "noise_purity_seed_mean": {
+    "auth_only": {
+     "high": 0.8893,
+     "corrupt_or_dup": 0.1107
+    },
+    "coreset": {
+     "high": 0.5008,
+     "corrupt_or_dup": 0.4992
+    },
+    "density": {
+     "high": 0.6152,
+     "corrupt_or_dup": 0.3848
+    },
+    "dmf": {
+     "high": 0.9152,
+     "corrupt_or_dup": 0.0848
+    },
+    "dmf_pub": {
+     "high": 0.9226,
+     "corrupt_or_dup": 0.0774
+    },
+    "full": {
+     "high": 0.6,
+     "corrupt_or_dup": 0.4
+    },
+    "herding": {
+     "high": 0.5745,
+     "corrupt_or_dup": 0.4255
+    },
+    "influence_only": {
+     "high": 0.7352,
+     "corrupt_or_dup": 0.2648
+    },
+    "kcenter": {
+     "high": 0.4882,
+     "corrupt_or_dup": 0.5118
+    },
+    "mmdataselect": {
+     "high": 0.8367,
+     "corrupt_or_dup": 0.1633
+    },
+    "mmds_adapt": {
+     "high": 0.85,
+     "corrupt_or_dup": 0.15
+    },
+    "quadmix": {
+     "high": 0.7774,
+     "corrupt_or_dup": 0.2226
+    },
+    "quadmix_pub": {
+     "high": 0.6345,
+     "corrupt_or_dup": 0.3655
+    },
+    "random": {
+     "high": 0.5922,
+     "corrupt_or_dup": 0.4078
+    },
+    "semdedup": {
+     "high": 0.6241,
+     "corrupt_or_dup": 0.376
+    }
+   },
+   "jaccard_controller_seed_mean": {
+    "auth_only": 0.349,
+    "dmf_pub": 0.6687,
+    "random": 0.1691
+   },
+   "headroom": {
+    "full": 1.0049,
+    "random": 1.0564,
+    "controller": 0.9811,
+    "strongest_fixed": {
+     "auth_only": 0.9501
+    },
+    "full_vs_random_gain": 0.0515,
+    "controller_vs_random_gain": 0.0753,
+    "controller_vs_strongest_fixed": -0.031,
+    "full_vs_controller_remaining": -0.0238,
+    "seed_std": {
+     "mmds_adapt": 0.0421,
+     "auth_only": 0.0053,
+     "random": 0.0156,
+     "full": 0.0171
+    },
+    "pooled_std_ctrl_vs_best": 0.0424,
+    "ctrl_vs_best_within_seed_noise": true,
+    "class": "controller-near-ceiling",
+    "class_rule": "saturated if |full-random| <= 2*std(random); controller-near-ceiling if (full-controller) <= pooled std; else open-headroom. Signs oriented so positive = improvement."
+   }
+  },
+  "vision": {
+   "dataset": "uoft-cs_cifar100",
+   "metric": "acc",
+   "higher_is_better": true,
+   "strongest_fixed_baseline": {
+    "name": "auth_only",
+    "mean": 0.426
+   },
+   "strongest_external_baseline": {
+    "name": "auth_only",
+    "mean": 0.426
+   },
+   "per_seed": {
+    "0": {
+     "tag_verification": {
+      "n_match": 18,
+      "n_mismatch": 0,
+      "verified": true
+     },
+     "noise_purity": {
+      "full": {
+       "n": 4000,
+       "high": 0.6,
+       "flip": 0.1333,
+       "dup": 0.1333,
+       "hard": 0.1335,
+       "corrupt_or_dup": 0.1333
+      },
+      "random": {
+       "n": 2000,
+       "high": 0.6085,
+       "flip": 0.1375,
+       "dup": 0.129,
+       "hard": 0.125,
+       "corrupt_or_dup": 0.129
+      },
+      "coreset": {
+       "n": 2000,
+       "high": 0.6605,
+       "flip": 0.1515,
+       "dup": 0.0505,
+       "hard": 0.1375,
+       "corrupt_or_dup": 0.0505
+      },
+      "auth_only": {
+       "n": 2000,
+       "high": 0.8035,
+       "flip": 0.005,
+       "dup": 0.018,
+       "hard": 0.1735,
+       "corrupt_or_dup": 0.018
+      },
+      "influence_only": {
+       "n": 2000,
+       "high": 0.663,
+       "flip": 0.091,
+       "dup": 0.111,
+       "hard": 0.135,
+       "corrupt_or_dup": 0.111
+      },
+      "mmdataselect": {
+       "n": 2000,
+       "high": 0.686,
+       "flip": 0.1335,
+       "dup": 0.0355,
+       "hard": 0.145,
+       "corrupt_or_dup": 0.0355
+      },
+      "herding": {
+       "n": 2000,
+       "high": 0.6125,
+       "flip": 0.129,
+       "dup": 0.123,
+       "hard": 0.1355,
+       "corrupt_or_dup": 0.123
+      },
+      "kcenter": {
+       "n": 2000,
+       "high": 0.669,
+       "flip": 0.1495,
+       "dup": 0.033,
+       "hard": 0.1485,
+       "corrupt_or_dup": 0.033
+      },
+      "el2n": {
+       "n": 2000,
+       "high": 0.5385,
+       "flip": 0.175,
+       "dup": 0.1555,
+       "hard": 0.131,
+       "corrupt_or_dup": 0.1555
+      },
+      "grand": {
+       "n": 2000,
+       "high": 0.567,
+       "flip": 0.1525,
+       "dup": 0.15,
+       "hard": 0.1305,
+       "corrupt_or_dup": 0.15
+      },
+      "ccs": {
+       "n": 2000,
+       "high": 0.611,
+       "flip": 0.128,
+       "dup": 0.131,
+       "hard": 0.13,
+       "corrupt_or_dup": 0.131
+      },
+      "semdedup": {
+       "n": 2000,
+       "high": 0.6775,
+       "flip": 0.149,
+       "dup": 0.034,
+       "hard": 0.1395,
+       "corrupt_or_dup": 0.034
+      },
+      "density": {
+       "n": 2000,
+       "high": 0.6255,
+       "flip": 0.136,
+       "dup": 0.103,
+       "hard": 0.1355,
+       "corrupt_or_dup": 0.103
+      },
+      "quadmix": {
+       "n": 2000,
+       "high": 0.5845,
+       "flip": 0.13,
+       "dup": 0.172,
+       "hard": 0.1135,
+       "corrupt_or_dup": 0.172
+      },
+      "quadmix_pub": {
+       "n": 2000,
+       "high": 0.62,
+       "flip": 0.13,
+       "dup": 0.114,
+       "hard": 0.136,
+       "corrupt_or_dup": 0.114
+      },
+      "dmf": {
+       "n": 2000,
+       "high": 0.8035,
+       "flip": 0.005,
+       "dup": 0.0165,
+       "hard": 0.175,
+       "corrupt_or_dup": 0.0165
+      },
+      "dmf_pub": {
+       "n": 2000,
+       "high": 0.804,
+       "flip": 0.0065,
+       "dup": 0.015,
+       "hard": 0.1745,
+       "corrupt_or_dup": 0.015
+      },
+      "mmds_adapt": {
+       "n": 2000,
+       "high": 0.804,
+       "flip": 0.0065,
+       "dup": 0.015,
+       "hard": 0.1745,
+       "corrupt_or_dup": 0.015
+      }
+     },
+     "jaccard_controller_vs": {
+      "auth_only": 0.9002,
+      "dmf_pub": 1.0,
+      "random": 0.3263
+     },
+     "leaderboard_val_test_spearman": {
+      "rho": 0.8889,
+      "n_methods": 16
+     }
+    },
+    "1": {
+     "tag_verification": {
+      "n_match": 18,
+      "n_mismatch": 0,
+      "verified": true
+     },
+     "noise_purity": {
+      "full": {
+       "n": 4000,
+       "high": 0.6,
+       "flip": 0.1333,
+       "dup": 0.1333,
+       "hard": 0.1335,
+       "corrupt_or_dup": 0.1333
+      },
+      "random": {
+       "n": 2000,
+       "high": 0.5965,
+       "flip": 0.13,
+       "dup": 0.143,
+       "hard": 0.1305,
+       "corrupt_or_dup": 0.143
+      },
+      "coreset": {
+       "n": 2000,
+       "high": 0.6605,
+       "flip": 0.1415,
+       "dup": 0.0545,
+       "hard": 0.1435,
+       "corrupt_or_dup": 0.0545
+      },
+      "auth_only": {
+       "n": 2000,
+       "high": 0.7965,
+       "flip": 0.005,
+       "dup": 0.021,
+       "hard": 0.1775,
+       "corrupt_or_dup": 0.021
+      },
+      "influence_only": {
+       "n": 2000,
+       "high": 0.6965,
+       "flip": 0.0855,
+       "dup": 0.0825,
+       "hard": 0.1355,
+       "corrupt_or_dup": 0.0825
+      },
+      "mmdataselect": {
+       "n": 2000,
+       "high": 0.662,
+       "flip": 0.145,
+       "dup": 0.043,
+       "hard": 0.15,
+       "corrupt_or_dup": 0.043
+      },
+      "herding": {
+       "n": 2000,
+       "high": 0.593,
+       "flip": 0.1375,
+       "dup": 0.128,
+       "hard": 0.1415,
+       "corrupt_or_dup": 0.128
+      },
+      "kcenter": {
+       "n": 2000,
+       "high": 0.667,
+       "flip": 0.1445,
+       "dup": 0.0325,
+       "hard": 0.156,
+       "corrupt_or_dup": 0.0325
+      },
+      "el2n": {
+       "n": 2000,
+       "high": 0.5035,
+       "flip": 0.182,
+       "dup": 0.1835,
+       "hard": 0.131,
+       "corrupt_or_dup": 0.1835
+      },
+      "grand": {
+       "n": 2000,
+       "high": 0.592,
+       "flip": 0.141,
+       "dup": 0.1445,
+       "hard": 0.1225,
+       "corrupt_or_dup": 0.1445
+      },
+      "ccs": {
+       "n": 2000,
+       "high": 0.6095,
+       "flip": 0.129,
+       "dup": 0.1275,
+       "hard": 0.134,
+       "corrupt_or_dup": 0.1275
+      },
+      "semdedup": {
+       "n": 2000,
+       "high": 0.6665,
+       "flip": 0.158,
+       "dup": 0.03,
+       "hard": 0.1455,
+       "corrupt_or_dup": 0.03
+      },
+      "density": {
+       "n": 2000,
+       "high": 0.6195,
+       "flip": 0.1255,
+       "dup": 0.1165,
+       "hard": 0.1385,
+       "corrupt_or_dup": 0.1165
+      },
+      "quadmix": {
+       "n": 2000,
+       "high": 0.5825,
+       "flip": 0.1175,
+       "dup": 0.1755,
+       "hard": 0.1245,
+       "corrupt_or_dup": 0.1755
+      },
+      "quadmix_pub": {
+       "n": 2000,
+       "high": 0.6155,
+       "flip": 0.131,
+       "dup": 0.125,
+       "hard": 0.1285,
+       "corrupt_or_dup": 0.125
+      },
+      "dmf": {
+       "n": 2000,
+       "high": 0.797,
+       "flip": 0.006,
+       "dup": 0.02,
+       "hard": 0.177,
+       "corrupt_or_dup": 0.02
+      },
+      "dmf_pub": {
+       "n": 2000,
+       "high": 0.795,
+       "flip": 0.014,
+       "dup": 0.016,
+       "hard": 0.175,
+       "corrupt_or_dup": 0.016
+      },
+      "mmds_adapt": {
+       "n": 2000,
+       "high": 0.795,
+       "flip": 0.014,
+       "dup": 0.016,
+       "hard": 0.175,
+       "corrupt_or_dup": 0.016
+      }
+     },
+     "jaccard_controller_vs": {
+      "auth_only": 0.857,
+      "dmf_pub": 1.0,
+      "random": 0.3298
+     },
+     "leaderboard_val_test_spearman": {
+      "rho": 0.8961,
+      "n_methods": 16
+     }
+    },
+    "2": {
+     "tag_verification": {
+      "n_match": 18,
+      "n_mismatch": 0,
+      "verified": true
+     },
+     "noise_purity": {
+      "full": {
+       "n": 4000,
+       "high": 0.6,
+       "flip": 0.1333,
+       "dup": 0.1333,
+       "hard": 0.1335,
+       "corrupt_or_dup": 0.1333
+      },
+      "random": {
+       "n": 2000,
+       "high": 0.589,
+       "flip": 0.1365,
+       "dup": 0.139,
+       "hard": 0.1355,
+       "corrupt_or_dup": 0.139
+      },
+      "coreset": {
+       "n": 2000,
+       "high": 0.66,
+       "flip": 0.141,
+       "dup": 0.0545,
+       "hard": 0.1445,
+       "corrupt_or_dup": 0.0545
+      },
+      "auth_only": {
+       "n": 2000,
+       "high": 0.804,
+       "flip": 0.002,
+       "dup": 0.023,
+       "hard": 0.171,
+       "corrupt_or_dup": 0.023
+      },
+      "influence_only": {
+       "n": 2000,
+       "high": 0.7045,
+       "flip": 0.0735,
+       "dup": 0.079,
+       "hard": 0.143,
+       "corrupt_or_dup": 0.079
+      },
+      "mmdataselect": {
+       "n": 2000,
+       "high": 0.7135,
+       "flip": 0.0875,
+       "dup": 0.0445,
+       "hard": 0.1545,
+       "corrupt_or_dup": 0.0445
+      },
+      "herding": {
+       "n": 2000,
+       "high": 0.6045,
+       "flip": 0.142,
+       "dup": 0.119,
+       "hard": 0.1345,
+       "corrupt_or_dup": 0.119
+      },
+      "kcenter": {
+       "n": 2000,
+       "high": 0.661,
+       "flip": 0.15,
+       "dup": 0.033,
+       "hard": 0.156,
+       "corrupt_or_dup": 0.033
+      },
+      "el2n": {
+       "n": 2000,
+       "high": 0.498,
+       "flip": 0.193,
+       "dup": 0.1845,
+       "hard": 0.1245,
+       "corrupt_or_dup": 0.1845
+      },
+      "grand": {
+       "n": 2000,
+       "high": 0.564,
+       "flip": 0.1575,
+       "dup": 0.149,
+       "hard": 0.1295,
+       "corrupt_or_dup": 0.149
+      },
+      "ccs": {
+       "n": 2000,
+       "high": 0.619,
+       "flip": 0.1195,
+       "dup": 0.1275,
+       "hard": 0.134,
+       "corrupt_or_dup": 0.1275
+      },
+      "semdedup": {
+       "n": 2000,
+       "high": 0.6745,
+       "flip": 0.145,
+       "dup": 0.031,
+       "hard": 0.1495,
+       "corrupt_or_dup": 0.031
+      },
+      "density": {
+       "n": 2000,
+       "high": 0.617,
+       "flip": 0.1295,
+       "dup": 0.127,
+       "hard": 0.1265,
+       "corrupt_or_dup": 0.127
+      },
+      "quadmix": {
+       "n": 2000,
+       "high": 0.58,
+       "flip": 0.108,
+       "dup": 0.198,
+       "hard": 0.114,
+       "corrupt_or_dup": 0.198
+      },
+      "quadmix_pub": {
+       "n": 2000,
+       "high": 0.61,
+       "flip": 0.13,
+       "dup": 0.1285,
+       "hard": 0.1315,
+       "corrupt_or_dup": 0.1285
+      },
+      "dmf": {
+       "n": 2000,
+       "high": 0.812,
+       "flip": 0.0015,
+       "dup": 0.021,
+       "hard": 0.1655,
+       "corrupt_or_dup": 0.021
+      },
+      "dmf_pub": {
+       "n": 2000,
+       "high": 0.8115,
+       "flip": 0.015,
+       "dup": 0.014,
+       "hard": 0.1595,
+       "corrupt_or_dup": 0.014
+      },
+      "mmds_adapt": {
+       "n": 2000,
+       "high": 0.804,
+       "flip": 0.002,
+       "dup": 0.023,
+       "hard": 0.171,
+       "corrupt_or_dup": 0.023
+      }
+     },
+     "jaccard_controller_vs": {
+      "auth_only": 1.0,
+      "dmf_pub": 0.7857,
+      "random": 0.328
+     },
+     "leaderboard_val_test_spearman": {
+      "rho": 0.9624,
+      "n_methods": 16
+     }
+    }
+   },
+   "tag_reconstruction_verified_all_seeds": true,
+   "noise_purity_seed_mean": {
+    "auth_only": {
+     "high": 0.8013,
+     "flip": 0.004,
+     "corrupt_or_dup": 0.0207,
+     "hard": 0.174
+    },
+    "ccs": {
+     "high": 0.6132,
+     "flip": 0.1255,
+     "corrupt_or_dup": 0.1287,
+     "hard": 0.1327
+    },
+    "coreset": {
+     "high": 0.6603,
+     "flip": 0.1447,
+     "corrupt_or_dup": 0.0532,
+     "hard": 0.1418
+    },
+    "density": {
+     "high": 0.6207,
+     "flip": 0.1303,
+     "corrupt_or_dup": 0.1155,
+     "hard": 0.1335
+    },
+    "dmf": {
+     "high": 0.8042,
+     "flip": 0.0042,
+     "corrupt_or_dup": 0.0192,
+     "hard": 0.1725
+    },
+    "dmf_pub": {
+     "high": 0.8035,
+     "flip": 0.0118,
+     "corrupt_or_dup": 0.015,
+     "hard": 0.1697
+    },
+    "el2n": {
+     "high": 0.5133,
+     "flip": 0.1833,
+     "corrupt_or_dup": 0.1745,
+     "hard": 0.1288
+    },
+    "full": {
+     "high": 0.6,
+     "flip": 0.1333,
+     "corrupt_or_dup": 0.1333,
+     "hard": 0.1335
+    },
+    "grand": {
+     "high": 0.5743,
+     "flip": 0.1503,
+     "corrupt_or_dup": 0.1478,
+     "hard": 0.1275
+    },
+    "herding": {
+     "high": 0.6033,
+     "flip": 0.1362,
+     "corrupt_or_dup": 0.1233,
+     "hard": 0.1372
+    },
+    "influence_only": {
+     "high": 0.688,
+     "flip": 0.0833,
+     "corrupt_or_dup": 0.0908,
+     "hard": 0.1378
+    },
+    "kcenter": {
+     "high": 0.6657,
+     "flip": 0.148,
+     "corrupt_or_dup": 0.0328,
+     "hard": 0.1535
+    },
+    "mmdataselect": {
+     "high": 0.6872,
+     "flip": 0.122,
+     "corrupt_or_dup": 0.041,
+     "hard": 0.1498
+    },
+    "mmds_adapt": {
+     "high": 0.801,
+     "flip": 0.0075,
+     "corrupt_or_dup": 0.018,
+     "hard": 0.1735
+    },
+    "quadmix": {
+     "high": 0.5823,
+     "flip": 0.1185,
+     "corrupt_or_dup": 0.1818,
+     "hard": 0.1173
+    },
+    "quadmix_pub": {
+     "high": 0.6152,
+     "flip": 0.1303,
+     "corrupt_or_dup": 0.1225,
+     "hard": 0.132
+    },
+    "random": {
+     "high": 0.598,
+     "flip": 0.1347,
+     "corrupt_or_dup": 0.137,
+     "hard": 0.1303
+    },
+    "semdedup": {
+     "high": 0.6728,
+     "flip": 0.1507,
+     "corrupt_or_dup": 0.0317,
+     "hard": 0.1448
+    }
+   },
+   "jaccard_controller_seed_mean": {
+    "auth_only": 0.9191,
+    "dmf_pub": 0.9286,
+    "random": 0.328
+   },
+   "headroom": {
+    "full": 0.5388,
+    "random": 0.3813,
+    "controller": 0.424,
+    "strongest_fixed": {
+     "auth_only": 0.426
+    },
+    "full_vs_random_gain": 0.1575,
+    "controller_vs_random_gain": 0.0427,
+    "controller_vs_strongest_fixed": -0.002,
+    "full_vs_controller_remaining": 0.1148,
+    "seed_std": {
+     "mmds_adapt": 0.0088,
+     "auth_only": 0.0038,
+     "random": 0.0135,
+     "full": 0.0026
+    },
+    "pooled_std_ctrl_vs_best": 0.0096,
+    "ctrl_vs_best_within_seed_noise": true,
+    "class": "open-headroom",
+    "class_rule": "saturated if |full-random| <= 2*std(random); controller-near-ceiling if (full-controller) <= pooled std; else open-headroom. Signs oriented so positive = improvement."
+   }
+  }
+ },
+ "val_test_correlation": {
+  "v5_rows": {
+   "vision": {
+    "n_rows": 18,
+    "spearman_new_val_new_test": 0.3461,
+    "configs": [
+     "vision-base",
+     "vision-drop-infl",
+     "vision-drop-red",
+     "vision-nf0.2",
+     "vision-nf0.6",
+     "vision-realnoise"
+    ]
+   },
+   "tep": {
+    "n_rows": 15,
+    "spearman_new_val_new_test": 0.7857,
+    "configs": [
+     "tep-base",
+     "tep-drop-infl",
+     "tep-drop-red",
+     "tep-nf0.2",
+     "tep-nf0.6"
+    ]
+   },
+   "tabular": {
+    "n_rows": 3,
+    "spearman_new_val_new_test": 0.5,
+    "configs": [
+     "tabular-base"
+    ]
+   },
+   "timeseries": {
+    "n_rows": 27,
+    "spearman_new_val_new_test": -0.8394,
+    "configs": [
+     "chronos-ETTh1",
+     "chronos-ETTh2",
+     "chronos-ETTm1",
+     "chronos-daisy_cstr",
+     "chronos-daisy_steamgen",
+     "ts-ETTh1",
+     "ts-ETTh2",
+     "ts-daisy_cstr",
+     "ts-daisy_steamgen"
+    ]
+   },
+   "ETTh1_only": {
+    "n_rows": 6,
+    "spearman": -0.9429,
+    "configs": [
+     "chronos-ETTh1",
+     "ts-ETTh1"
+    ]
+   }
+  },
+  "note": "v5 rows mix configs within an arm (different noise fracs/channel drops), so cross-config spearman conflates config difficulty with val-test drift; leaderboard_val_test_spearman per seed (same pool, ~15-27 strategies) is the clean estimate.",
+  "pubcore_leaderboard": {
+   "tabular": {
+    "per_seed_rho": [
+     0.9725,
+     0.9229,
+     0.9451
+    ],
+    "mean_rho": 0.9468
+   },
+   "tep": {
+    "per_seed_rho": [
+     0.9088,
+     0.8727,
+     0.8765
+    ],
+    "mean_rho": 0.886
+   },
+   "timeseries": {
+    "per_seed_rho": [
+     0.7212,
+     0.6848,
+     0.4545
+    ],
+    "mean_rho": 0.6202
+   },
+   "vision": {
+    "per_seed_rho": [
+     0.8889,
+     0.8961,
+     0.9624
+    ],
+    "mean_rho": 0.9158
+   }
+  },
+  "v5_rows_direction_caveat": "For timeseries rows new_val is a val_gain (NEGATIVE MASE, higher=better) while new_test is raw MASE (lower=better); verified on ts-ETTh1 rows (e.g. seed0 val=-1.00187, test=0.9871). Therefore the timeseries v5-rows spearman of -0.8394 (ETTh1-only -0.9429) indicates ALIGNMENT across configs, not drift. Cross-config spearman also conflates config difficulty. The clean per-arm drift estimate is pubcore_leaderboard (same pool, per seed, ~15-27 strategies)."
+ },
+ "text": {
+  "old_claims": {
+   "source": "docs/code_signal_diagnosis.md (referenced by task as method_v2 text diagnostic)",
+   "code_vs_dmf": "DMF edges mmdataselect by ~1.2% on code (old stratified from-scratch regime, seed 0)",
+   "general_vs_random": "old table: mmdataselect 2472 vs random 2338 per-domain ppl (= +5.7% worse); a '~4.2%' figure is NOT-CAPTURED in any current doc"
+  },
+  "current_per_domain_ppl_mean3seed": {
+   "quadmix_pub": {
+    "code": 5.321,
+    "general": 16.432,
+    "image": 23.056,
+    "math": 6.439,
+    "table": 11.687
+   },
+   "zip": {
+    "code": 5.33,
+    "general": 16.462,
+    "image": 23.38,
+    "math": 6.47,
+    "table": 12.075
+   },
+   "mmds_adapt": {
+    "code": 5.321,
+    "general": 16.432,
+    "image": 23.056,
+    "math": 6.439,
+    "table": 11.687
+   },
+   "random": {
+    "code": 5.3197,
+    "general": 16.43,
+    "image": 23.1007,
+    "math": 6.45,
+    "table": 11.491
+   },
+   "noselect": {
+    "code": 5.3,
+    "general": 16.451,
+    "image": 22.8173,
+    "math": 6.4283,
+    "table": 11.1363
+   },
+   "base": {
+    "code": 5.44,
+    "general": 16.568,
+    "image": 25.552,
+    "math": 6.567,
+    "table": 17.638
+   }
+  },
+  "current_deltas": {
+   "mmds_adapt_vs_random_pct": {
+    "code": 0.024,
+    "general": 0.012,
+    "image": -0.194,
+    "math": -0.171,
+    "table": 1.706
+   },
+   "mmds_adapt_vs_noselect_pct": {
+    "code": 0.396,
+    "general": -0.115,
+    "image": 1.046,
+    "math": 0.166,
+    "table": 4.945
+   }
+  },
+  "dmf_dsir_current": "NOT-CAPTURED: no dmf/dmf_pub/dsir per-domain ppl rows exist in the current batches (text-controls-20260717T0026 has base/random/noselect; text-qz4-20260717T0933 has quadmix_pub/zip/mmds_adapt). The old 1.2% code-vs-DMF gap cannot be re-measured on current code state."
+ },
+ "notes": [],
+ "etth1_pick_evidence": {
+  "source": "outputs/timeseries/ETTh1/run_id=pubcore-paired-20260716T1754-*/seed_{0,1,2}/results.json adapt_manifest.chosen + results rows; seed2 canonical cell replaced per canonical_tables.final_cells.time_etth1.mmds_adapt.ts_seed2_replacement (quadmix style-proxy PROTOCOL_INVALID -> ctrl-ts2-noproxy re-run 1.0284)",
+  "per_seed": [
+   {
+    "seed": 0,
+    "chosen": "fuse w=(0.5, 0, 0.5) q=0.0 lam=0.0",
+    "switched": true,
+    "best_ref": "dmf",
+    "mmds_adapt_mase": 0.9675,
+    "auth_only_mase": 0.9561
+   },
+   {
+    "seed": 1,
+    "chosen": "dmf_pub",
+    "switched": false,
+    "best_ref": "dmf_pub",
+    "mmds_adapt_mase": 0.9475,
+    "auth_only_mase": 0.948
+   },
+   {
+    "seed": 2,
+    "chosen": "quadmix",
+    "switched": false,
+    "best_ref": "quadmix",
+    "mmds_adapt_mase_pubcore_row": 1.0075,
+    "canonical_cell_after_replacement": 1.0284,
+    "auth_only_mase": 0.9461,
+    "note": "worst pick coincides with the worst leaderboard val-test rho (0.4545)"
+   }
+  ],
+  "reading": "a different strategy is picked every seed; the pick quality tracks the per-seed leaderboard val-test rho; auth_only is stable (0.9501+-0.0053) and beats the controller mean by 0.031 MASE"
+ },
+ "verdicts": {
+  "tabular": {
+   "verdict": "no-signal-separation + seed-noise (saturated); NO actionable gap",
+   "evidence": "full-random gain 0.0182 <= 2*std(random)=0.022 (saturated by rule); controller selected-set purity 0.5711 is BELOW random 0.6033 yet controller beats random on AUC (0.8734 vs 0.8671) and auth_only with purity 0.712 scores WORST-tier 0.8433 -> purity is uncorrelated with test AUC (TabPFN is robust to the injected noise, geometry/diversity dominates); ctrl-vs-kcenter -0.0019 within pooled std 0.0201; leaderboard val-test rho 0.947 (val probe is fine, candidates are near-tied)."
+  },
+  "tep": {
+   "verdict": "seed-noise at ceiling (controller-near-ceiling); NO actionable gap",
+   "evidence": "controller 0.4079 >= full 0.4057 (F1); gap to strongest fixed dmf_pub 0.409 is -0.0011 vs pooled std 0.0062; leaderboard val-test rho 0.886; purity 0.797 close to auth ceiling 0.838."
+  },
+  "timeseries_ETTh1": {
+   "verdict": "real-mechanism-gap: validation-probe drift + raw argmax over near-tied candidates picks an unstable strategy; the ONLY actionable arm",
+   "evidence": "leaderboard val-test rho mean 0.6202 (per-seed 0.7212/0.6848/0.4545) vs 0.886-0.947 on the other three arms -> materially lower, drift hypothesis SUPPORTED; controller picks a different strategy each seed (fuse-variant/dmf_pub/quadmix) and seed2's bad pick lands 1.0284 vs auth_only 0.9461; controller 0.9811+-0.0421 vs auth_only 0.9501+-0.0053 (8x std, -0.031 MASE mean); formally still within pooled std 0.0424 but the pooled std is itself dominated by the controller's pick instability."
+  },
+  "vision": {
+   "verdict": "undertraining-or-saturation (budget/quantity-dominated); NO actionable selection-quality gap despite 'open-headroom' label",
+   "evidence": "full-random 0.1575 (open headroom by rule) but full trains on 4000 vs budget 2000 -> quantity effect; controller purity 0.801 already at the auth_only ceiling (0.8013), residual flips 0.0075 (~eliminated); only 'flip' is a real perturbation in the vision recipe (dup/hard are tag-only markers, labels/features untouched), so no further purity headroom exists; Jaccard(ctrl, auth_only)=0.9191, Jaccard(ctrl, dmf_pub)=0.9286 -> selections already near-identical; ctrl-vs-auth_only -0.002 within pooled 0.0096."
+  },
+  "text": {
+   "verdict": "no-signal-separation under the current finetune regime; NOT a candidate target",
+   "evidence": "mmds_adapt vs random per-domain ppl deltas: code +0.024%, general +0.012%, image -0.194%, math -0.171%, table +1.706% -> old gaps (code ~1.2% vs DMF, general ~5.7%/claimed-4.2% vs random) do NOT persist; dmf/dsir rows NOT-CAPTURED in current batches."
+  },
+  "arms_candidates_should_NOT_target": [
+   "tabular",
+   "tep",
+   "vision",
+   "text"
+  ],
+  "arms_with_actionable_gap": [
+   "timeseries_ETTh1"
+  ]
+ },
+ "mechanism_hypotheses_ranked": [
+  {
+   "rank": 1,
+   "hypothesis": "ETTh1 val-probe drift x near-tie argmax: the controller's validation leaderboard ranks strategies with rho ~0.45-0.72 against test on ETTh1 (vs ~0.89-0.95 elsewhere), and near-tied top candidates flip the argmax per seed; a tie-aware rule (deviate from a stable reference only beyond a paired-noise margin; else keep the reference) or a drift-robust val probe (blocked/rolling validation) targets the 0.031 MASE mean gap and the 8x std inflation vs auth_only.",
+   "evidence": "pubcore_leaderboard.timeseries per-seed rho; etth1_pick_evidence; final_cells time_etth1 mmds_adapt 0.9811+-0.0421 vs auth_only 0.9501+-0.0053"
+  },
+  {
+   "rank": 2,
+   "hypothesis": "Purity is saturated everywhere it matters: the controller already sits at the auth_only purity ceiling on vision (0.801 vs 0.8013) and near it on tep/ts; any candidate adding a better noise filter has NO remaining headroom; remaining full-vs-controller gaps (vision 0.115, tabular 0.012) are quantity/model-robustness effects, not selection quality.",
+   "evidence": "noise_purity_seed_mean all arms; vision recipe: only flip perturbs data; tabular purity-vs-AUC inversion (auth_only 0.712 purity -> 0.8433 AUC)"
+  },
+  {
+   "rank": 3,
+   "hypothesis": "The only cross-arm improvement space is pick-stability/variance reduction, not mean metric: on all four arms ctrl-vs-best is within pooled seed noise, and on 3 of 4 arms the controller pick differs per seed while test barely moves; a stability mechanism is defensible but metric-neutral except on ETTh1 where it also recovers mean.",
+   "evidence": "headroom.ctrl_vs_best_within_seed_noise true on all arms; docs/method_v2_diagnostic.md pick-instability table consistent with v5 rows"
+  }
+ ]
+}

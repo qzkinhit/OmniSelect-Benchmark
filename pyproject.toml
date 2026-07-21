@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mmdataselect"
+version = "0.1.0"
+description = "MMDataSelect: a unified, modality-agnostic data selection system for downstream foundation models (vision-language + math + code)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Zekai Qian" }]
+
+# Core dependencies are intentionally lightweight (pure-CPU). Heavy training /
+# evaluation stacks are optional extras so that `import mmdataselect` and the
+# CPU sanity smoke run without torch/transformers installed.
+dependencies = [
+    "numpy>=1.24",
+    "pyyaml>=6.0",
+    "zstandard>=0.21",
+    "rich>=13.0",
+    "tqdm>=4.65",
+]
+
+[project.optional-dependencies]
+# Downstream training / influence signal (needs a GPU or Apple MPS for real runs).
+train = [
+    "torch>=2.1",
+    "transformers>=4.44",
+    "datasets>=2.18",
+    "accelerate>=0.30",
+    "peft>=0.11",
+]
+# Benchmark evaluation harnesses.
+eval = [
+    "lm-eval>=0.4.3",
+]
+dev = [
+    "pytest>=7.4",
+]
+# Downstream models used by specific arms (tabular defaults to tabpfn; xgboost and
+# chronos-forecasting are opt-in alternates via MODEL=xgboost / TS_MODEL=chronos).
+# Needed to reproduce the tabular headline arm (Electricity) out of the box.
+arms = [
+    "tabpfn>=8.1",
+    "xgboost>=3.3",
+    "chronos-forecasting>=2.3",
+]
+# Everything, for a full local workstation install.
+all = [
+    "mmdataselect[train,eval,dev,arms]",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+mmdataselect = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

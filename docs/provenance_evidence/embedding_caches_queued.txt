@@ -1,0 +1,39 @@
+# Embedding / cache artifacts on server — queued for POST_AUDIT2 dual-end SHA manifest
+# Listed 2026-07-16 on server "omni". NOT hashed here (manifest to be built by POST_AUDIT2,
+# not by this task). Command:
+#   find /root/autodl-tmp/OmniSelect/data \( -name "*.npz" -o -name "*emb*" \) | head -40
+# Path root: /root/autodl-tmp/OmniSelect/data/
+
+cifar10_np/cifar10.npz
+processed/qpool_influence_84e174dbb097_SmolLM2-135M_c512_pplq.npz
+processed/vision_cifar10_clip-vit-base-patch32_p4000v800t2000_s0.npz
+processed/vision_cifar100_clip-vit-base-patch32_p4000v1600t2000_s0.npz
+processed/vision_cifar100_clip-vit-base-patch32_p4000v1600t2000_s1.npz
+processed/vision_cifar10_clip-vit-base-patch32_p4000v800t2000_s1.npz
+processed/vision_cifar100_clip-vit-base-patch32_p4000v800t2000_s2.npz
+processed/vision_cifar100_clip-vit-base-patch32_p4000v800t2000_s0.npz
+processed/vision_cifar100_clip-vit-base-patch32_p4000v800t2000_s1.npz
+processed/vision_cifar100_clip-vit-base-patch32_p4000v200t2000_s1.npz
+processed/vision_cifar100_clip-vit-base-patch32_p1500v400t800_s0.npz
+processed/vision_cifar100_clip-vit-base-patch32_p4000v200t2000_s0.npz
+processed/deepcore_cifar10_p1500t1000_s0.npz
+processed/vision_cifar10_clip-vit-base-patch32_p4000v2000t2000_s1.npz
+processed/vision_cifar100_clip-vit-base-patch32_p1200v400t600_s0.npz
+processed/vision_cifar10_clip-vit-base-patch32_p4000v2000t2000_s0.npz
+processed/vision_cifar10_clip-vit-base-patch32_p4000v2000t2000_s2.npz
+processed/vision_cifar100_clip-vit-base-patch32_p4000v2000t2000_s1.npz
+processed/vision_cifar100_clip-vit-base-patch32_p4000v2000t2000_s0.npz
+processed/vision_cifar100_clip-vit-base-patch32_p4000v2000t2000_s2.npz
+processed/vision_cifar100_clip-vit-base-patch32_p4000v400t2000_s1.npz
+processed/vision_cifar100_clip-vit-base-patch32_p4000v400t2000_s0.npz
+processed/vision_cifar100_clip-vit-base-patch32_p2000v500t1000_s0.npz
+processed/deepcore_cifar_p1500t1000_s0.npz
+processed/vision_cifar100_clip-vit-base-patch32_p300v120t150_s0.npz
+processed/local_scale_backup/qpool_influence.npz
+processed/local_scale_backup/qpool_influence_code.npz
+processed/local_scale_backup/qpool_influence_math.npz
+
+# NOTE: list truncated at 40 by the head filter; the *.npz CLIP/influence embedding caches and
+# the raw data snapshots (CIFAR parquet, ETT csv, OpenML gz, TEP dat) are QUEUED for the
+# POST_AUDIT2 dual-end SHA manifest that extends the existing 414-file experiment-artifact
+# manifest. Building that manifest is out of scope for this provenance-closure task.

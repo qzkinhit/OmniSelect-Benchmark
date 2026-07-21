@@ -1,0 +1,265 @@
+{
+  "arm": "timeseries",
+  "dataset": "daisy_cstr",
+  "seed": 1,
+  "config": {
+    "model": "dlinear",
+    "pool": 3000,
+    "budget": 0.3,
+    "noise": 0.4,
+    "L": 96,
+    "H": 24,
+    "paired_rng": 1,
+    "method_v3": 0,
+    "method_v3_clip": null,
+    "method_v3_topk": null,
+    "method_v3_ref_k": null,
+    "method_v3_delta": null,
+    "method_v3_ts_gate": null,
+    "method_v3_anchor": null,
+    "method_v3_ts_stability": null,
+    "val_n": 1000,
+    "test_n": 1500,
+    "ts_val_mode": "full",
+    "methods": "full,random,coreset,auth_only,influence_only,mmdataselect,mmds_adapt,herding,kcenter,semdedup,density,quadmix,quadmix_pub,dmf,dmf_pub",
+    "epochs": 60
+  },
+  "code_sha256_12": "1bdd0cd2a5e4",
+  "methodv3_impl_sha256": null,
+  "methodv3_partition_evidence": null,
+  "baseline_impl_sha256": "745ab94cc348af18c5f80197e5b1a789a3223814e13ab55089c4c56e9aea4a58",
+  "fidelity_mode": "unified-protocol",
+  "published_core_protocol": null,
+  "results": [
+    {
+      "method": "full",
+      "n": 3000,
+      "clean%": 0.6,
+      "mase": 1.0656,
+      "sel_sha12": "e2cc33c68f18",
+      "fit_seed": 930993961,
+      "train_order_sha12": "a9f91fcd89ed"
+    },
+    {
+      "method": "random",
+      "n": 900,
+      "clean%": 0.599,
+      "mase": 1.1347,
+      "sel_sha12": "e764ed172e25",
+      "fit_seed": 930993961,
+      "train_order_sha12": "976d4bb76641"
+    },
+    {
+      "method": "coreset",
+      "n": 900,
+      "clean%": 0.434,
+      "mase": 1.1494,
+      "sel_sha12": "1f6ac0cc378e",
+      "fit_seed": 930993961,
+      "train_order_sha12": "976d4bb76641"
+    },
+    {
+      "method": "auth_only",
+      "n": 900,
+      "clean%": 0.899,
+      "mase": 1.0127,
+      "sel_sha12": "3df53cca1bae",
+      "fit_seed": 930993961,
+      "train_order_sha12": "976d4bb76641"
+    },
+    {
+      "method": "influence_only",
+      "n": 900,
+      "clean%": 0.708,
+      "mase": 1.1862,
+      "sel_sha12": "ed34218ef186",
+      "fit_seed": 930993961,
+      "train_order_sha12": "976d4bb76641"
+    },
+    {
+      "method": "mmdataselect",
+      "n": 900,
+      "clean%": 0.82,
+      "mase": 1.0793,
+      "sel_sha12": "fef24a8a5fe3",
+      "fit_seed": 930993961,
+      "train_order_sha12": "976d4bb76641"
+    },
+    {
+      "method": "mmds_adapt",
+      "n": 900,
+      "clean%": 0.946,
+      "mase": 1.0034,
+      "sel_sha12": "5415cda4ac9c",
+      "fit_seed": 930993961,
+      "train_order_sha12": "976d4bb76641"
+    },
+    {
+      "method": "herding",
+      "n": 900,
+      "clean%": 0.488,
+      "mase": 1.1326,
+      "sel_sha12": "69ef6e909630",
+      "fit_seed": 930993961,
+      "train_order_sha12": "976d4bb76641"
+    },
+    {
+      "method": "kcenter",
+      "n": 900,
+      "clean%": 0.38,
+      "mase": 1.1803,
+      "sel_sha12": "1e0bc36baa45",
+      "fit_seed": 930993961,
+      "train_order_sha12": "976d4bb76641"
+    },
+    {
+      "method": "semdedup",
+      "n": 900,
+      "clean%": 0.538,
+      "mase": 1.1222,
+      "sel_sha12": "9c65bf2afe9e",
+      "fit_seed": 930993961,
+      "train_order_sha12": "976d4bb76641"
+    },
+    {
+      "method": "density",
+      "n": 900,
+      "clean%": 0.58,
+      "mase": 1.1062,
+      "sel_sha12": "a47ac535a1f2",
+      "fit_seed": 930993961,
+      "train_order_sha12": "976d4bb76641"
+    },
+    {
+      "method": "quadmix",
+      "n": 900,
+      "clean%": 0.773,
+      "mase": 1.075,
+      "sel_sha12": "594eb0927c39",
+      "fit_seed": 930993961,
+      "train_order_sha12": "976d4bb76641"
+    },
+    {
+      "method": "quadmix_pub",
+      "n": 900,
+      "clean%": 0.639,
+      "mase": 1.0541,
+      "sel_sha12": "da2f0101c114",
+      "fit_seed": 930993961,
+      "train_order_sha12": "976d4bb76641"
+    },
+    {
+      "method": "dmf",
+      "n": 900,
+      "clean%": 0.946,
+      "mase": 1.0034,
+      "sel_sha12": "5415cda4ac9c",
+      "fit_seed": 930993961,
+      "train_order_sha12": "976d4bb76641"
+    },
+    {
+      "method": "dmf_pub",
+      "n": 900,
+      "clean%": 0.943,
+      "mase": 1.0094,
+      "sel_sha12": "27c6041cc50d",
+      "fit_seed": 930993961,
+      "train_order_sha12": "976d4bb76641"
+    }
+  ],
+  "adapt_manifest": {
+    "leaderboard": [
+      [
+        "dmf",
+        -0.9756907413753488
+      ],
+      [
+        "vote_ensemble(top3)",
+        -0.9794822451621026
+      ],
+      [
+        "fuse w=(1, 0, 0) q=0.0 lam=0.6",
+        -0.981153690560988
+      ],
+      [
+        "dmf_pub",
+        -0.9819962944507497
+      ],
+      [
+        "fuse learned w=(0.79, 0.1, 0.1) q=0.25 lam=0.6",
+        -0.9869102369092188
+      ],
+      [
+        "fuse w=(1, 0, 0) q=0.25 lam=0.6",
+        -0.9879760822741516
+      ],
+      [
+        "fuse w=(1, 0, 0) q=0.0 lam=0.25",
+        -0.9915691404842379
+      ],
+      [
+        "d4",
+        -0.9986196420476285
+      ],
+      [
+        "fuse w=(0.5, 0, 0.5) q=0.25 lam=0.25",
+        -1.0050302374662667
+      ],
+      [
+        "density",
+        -1.0308819697574192
+      ],
+      [
+        "mmdataselect",
+        -1.0357944186157462
+      ],
+      [
+        "dsdm",
+        -1.0519878376991623
+      ],
+      [
+        "kcenter",
+        -1.056750370136089
+      ],
+      [
+        "quadmix_pub",
+        -1.0589951439340644
+      ],
+      [
+        "semdedup",
+        -1.0717951238256043
+      ],
+      [
+        "auth2_only",
+        -1.0840718114032266
+      ],
+      [
+        "herding",
+        -1.0994359867156185
+      ],
+      [
+        "random",
+        -1.107015636504954
+      ],
+      [
+        "auth_bottom",
+        -1.1788985830526133
+      ]
+    ],
+    "chosen": {
+      "strategy": "dmf",
+      "val_gain": -0.9756907413753488,
+      "best_ref": "dmf",
+      "switched": false,
+      "kappa_hat": 0.1313248951296051
+    },
+    "sel_sha12": "5415cda4ac9c"
+  },
+  "pairing_manifest": {
+    "pool_sha256": "295ea535eaf745d9d4c526a5ed5754038361009f30f9f5c2fc43bc28bdcf135f",
+    "validation_sha256": "eb343225fa1e2a8467d5c8ef8b1d241613f467b303f9fc1a4e6fd8a8ae0b4571",
+    "test_sha256": "366c57865575c67e33b638a14308fcd6793236d54537faa1d4f85d58f471eb60",
+    "shared_initialization_rule": "stable_seed(paper_seed, fit-stage)",
+    "training_input_order": "sorted selected integer ids then seeded epoch permutations"
+  }
+}

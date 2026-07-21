@@ -1,0 +1,120 @@
+lane=daisy_cstr-DLinear-full run_id=backfill-daisy_cstr-dlinear-full-20260720 start=2026-07-20T06:41:43+08:00
+===== daisy_cstr DLinear SEED=0 start=2026-07-20T06:41:43+08:00 =====
+scripts/run_daisy_cstr_dlinear_full.sh: line 22: /root/autodl-tmp/OmniSelect_v3_next/.venv/bin/python: No such file or directory
+SEED=0 python_exit=127
+lane=daisy_cstr-DLinear-full run_id=backfill-daisy_cstr-dlinear-full-20260720 start=2026-07-20T06:46:23+08:00
+===== daisy_cstr DLinear SEED=0 start=2026-07-20T06:46:23+08:00 =====
+timeseries=daisy_cstr OT | L=96 H=24 pool=3000 test=1107 budget=900 dev=cuda seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=1.1057 (0.9s)
+  random           n=  900 clean%=0.60 MASE=1.1002 (0.4s)
+  coreset          n=  900 clean%=0.44 MASE=1.1631 (2.6s)
+  auth_only        n=  900 clean%=0.88 MASE=1.0312 (0.2s)
+  influence_only   n=  900 clean%=0.75 MASE=1.1247 (0.2s)
+  mmdataselect     n=  900 clean%=0.82 MASE=1.0824 (0.5s)
+    [adapt] picked 'fuse learned w=(0.87, 0.0, 0.13) q=0.0 lam=0.6' (val_negMASE=-0.975)
+  mmds_adapt       n=  900 clean%=0.97 MASE=1.0232 (68.8s)
+  herding          n=  900 clean%=0.48 MASE=1.1430 (2.2s)
+  kcenter          n=  900 clean%=0.39 MASE=1.1874 (2.2s)
+  semdedup         n=  900 clean%=0.55 MASE=1.2011 (0.6s)
+  density          n=  900 clean%=0.57 MASE=1.1822 (0.4s)
+  quadmix          n=  900 clean%=0.77 MASE=1.0701 (0.5s)
+  quadmix_pub      n=  900 clean%=0.61 MASE=1.0907 (0.6s)
+  dmf              n=  900 clean%=0.94 MASE=1.0203 (4.6s)
+  dmf_pub          n=  900 clean%=0.94 MASE=1.0326 (8.3s)
+
+==== TIMESERIES (daisy_cstr, model=dlinear, MASE lower=better) ====
+  dmf              MASE=1.0203 clean%=0.94 n=900
+  mmds_adapt       MASE=1.0232 clean%=0.97 n=900
+  auth_only        MASE=1.0312 clean%=0.88 n=900
+  dmf_pub          MASE=1.0326 clean%=0.94 n=900
+  quadmix          MASE=1.0701 clean%=0.77 n=900
+  mmdataselect     MASE=1.0824 clean%=0.82 n=900
+  quadmix_pub      MASE=1.0907 clean%=0.61 n=900
+  random           MASE=1.1002 clean%=0.60 n=900
+  full             MASE=1.1057 clean%=0.60 n=3000
+  influence_only   MASE=1.1247 clean%=0.75 n=900
+  herding          MASE=1.1430 clean%=0.48 n=900
+  coreset          MASE=1.1631 clean%=0.44 n=900
+  density          MASE=1.1822 clean%=0.57 n=900
+  kcenter          MASE=1.1874 clean%=0.39 n=900
+  semdedup         MASE=1.2011 clean%=0.55 n=900
+saved -> /root/autodl-tmp/OmniSelect_v3_next/outputs/timeseries/daisy_cstr/run_id=backfill-daisy_cstr-dlinear-full-20260720-cfg=a56adda5b0f8b526/seed_0/results.json
+SEED=0 python_exit=0
+===== daisy_cstr DLinear SEED=1 start=2026-07-20T06:48:02+08:00 =====
+timeseries=daisy_cstr OT | L=96 H=24 pool=3000 test=1107 budget=900 dev=cuda seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=1.0656 (0.8s)
+  random           n=  900 clean%=0.60 MASE=1.1347 (0.2s)
+  coreset          n=  900 clean%=0.43 MASE=1.1494 (2.6s)
+  auth_only        n=  900 clean%=0.90 MASE=1.0127 (0.2s)
+  influence_only   n=  900 clean%=0.71 MASE=1.1862 (0.2s)
+  mmdataselect     n=  900 clean%=0.82 MASE=1.0793 (0.4s)
+    [adapt] picked 'dmf' (val_negMASE=-0.976)
+  mmds_adapt       n=  900 clean%=0.95 MASE=1.0034 (68.1s)
+  herding          n=  900 clean%=0.49 MASE=1.1326 (2.4s)
+  kcenter          n=  900 clean%=0.38 MASE=1.1803 (2.0s)
+  semdedup         n=  900 clean%=0.54 MASE=1.1222 (0.7s)
+  density          n=  900 clean%=0.58 MASE=1.1062 (0.4s)
+  quadmix          n=  900 clean%=0.77 MASE=1.0750 (0.3s)
+  quadmix_pub      n=  900 clean%=0.64 MASE=1.0541 (0.5s)
+  dmf              n=  900 clean%=0.95 MASE=1.0034 (4.5s)
+  dmf_pub          n=  900 clean%=0.94 MASE=1.0094 (7.1s)
+
+==== TIMESERIES (daisy_cstr, model=dlinear, MASE lower=better) ====
+  mmds_adapt       MASE=1.0034 clean%=0.95 n=900
+  dmf              MASE=1.0034 clean%=0.95 n=900
+  dmf_pub          MASE=1.0094 clean%=0.94 n=900
+  auth_only        MASE=1.0127 clean%=0.90 n=900
+  quadmix_pub      MASE=1.0541 clean%=0.64 n=900
+  full             MASE=1.0656 clean%=0.60 n=3000
+  quadmix          MASE=1.0750 clean%=0.77 n=900
+  mmdataselect     MASE=1.0793 clean%=0.82 n=900
+  density          MASE=1.1062 clean%=0.58 n=900
+  semdedup         MASE=1.1222 clean%=0.54 n=900
+  herding          MASE=1.1326 clean%=0.49 n=900
+  random           MASE=1.1347 clean%=0.60 n=900
+  coreset          MASE=1.1494 clean%=0.43 n=900
+  kcenter          MASE=1.1803 clean%=0.38 n=900
+  influence_only   MASE=1.1862 clean%=0.71 n=900
+saved -> /root/autodl-tmp/OmniSelect_v3_next/outputs/timeseries/daisy_cstr/run_id=backfill-daisy_cstr-dlinear-full-20260720-cfg=a56adda5b0f8b526/seed_1/results.json
+SEED=1 python_exit=0
+===== daisy_cstr DLinear SEED=2 start=2026-07-20T06:49:38+08:00 =====
+timeseries=daisy_cstr OT | L=96 H=24 pool=3000 test=1107 budget=900 dev=cuda seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=1.0668 (0.6s)
+  random           n=  900 clean%=0.58 MASE=1.1345 (0.2s)
+  coreset          n=  900 clean%=0.43 MASE=1.1843 (2.3s)
+  auth_only        n=  900 clean%=0.90 MASE=1.0135 (0.2s)
+  influence_only   n=  900 clean%=0.75 MASE=1.1515 (0.3s)
+  mmdataselect     n=  900 clean%=0.82 MASE=1.0689 (0.6s)
+    [adapt] picked 'vote_ensemble(top3)' (val_negMASE=-0.991)
+  mmds_adapt       n=  900 clean%=0.97 MASE=0.9979 (97.3s)
+  herding          n=  900 clean%=0.50 MASE=1.1523 (3.9s)
+  kcenter          n=  900 clean%=0.39 MASE=1.2291 (4.9s)
+  semdedup         n=  900 clean%=0.55 MASE=1.1170 (0.7s)
+  density          n=  900 clean%=0.59 MASE=1.1421 (0.6s)
+  quadmix          n=  900 clean%=0.77 MASE=1.1785 (0.5s)
+  quadmix_pub      n=  900 clean%=0.65 MASE=1.0336 (0.6s)
+  dmf              n=  900 clean%=0.93 MASE=1.0487 (5.6s)
+  dmf_pub          n=  900 clean%=0.93 MASE=1.0467 (23.9s)
+
+==== TIMESERIES (daisy_cstr, model=dlinear, MASE lower=better) ====
+  mmds_adapt       MASE=0.9979 clean%=0.97 n=900
+  auth_only        MASE=1.0135 clean%=0.90 n=900
+  quadmix_pub      MASE=1.0336 clean%=0.65 n=900
+  dmf_pub          MASE=1.0467 clean%=0.93 n=900
+  dmf              MASE=1.0487 clean%=0.93 n=900
+  full             MASE=1.0668 clean%=0.60 n=3000
+  mmdataselect     MASE=1.0689 clean%=0.82 n=900
+  semdedup         MASE=1.1170 clean%=0.55 n=900
+  random           MASE=1.1345 clean%=0.58 n=900
+  density          MASE=1.1421 clean%=0.59 n=900
+  influence_only   MASE=1.1515 clean%=0.75 n=900
+  herding          MASE=1.1523 clean%=0.50 n=900
+  quadmix          MASE=1.1785 clean%=0.77 n=900
+  coreset          MASE=1.1843 clean%=0.43 n=900
+  kcenter          MASE=1.2291 clean%=0.39 n=900
+saved -> /root/autodl-tmp/OmniSelect_v3_next/outputs/timeseries/daisy_cstr/run_id=backfill-daisy_cstr-dlinear-full-20260720-cfg=a56adda5b0f8b526/seed_2/results.json
+SEED=2 python_exit=0
+lane=daisy_cstr-DLinear-full end=2026-07-20T06:52:15+08:00

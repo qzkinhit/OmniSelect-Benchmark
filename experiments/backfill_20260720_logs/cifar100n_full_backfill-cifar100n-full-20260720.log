@@ -1,0 +1,62 @@
+06:50:19 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar100/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+06:50:20 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/uoft-cs/cifar100/aadb3af77e9048adbea6b47c21a81e47dd092ae5/README.md "HTTP/1.1 200 OK"
+06:50:20 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar100/resolve/aadb3af77e9048adbea6b47c21a81e47dd092ae5/cifar100.py "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+06:50:20 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+06:50:21 | INFO    | httpx | HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/uoft-cs/cifar100/uoft-cs/cifar100.py "HTTP/1.1 404 Not Found"
+06:50:21 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/datasets/uoft-cs/cifar100/revision/aadb3af77e9048adbea6b47c21a81e47dd092ae5 "HTTP/1.1 200 OK"
+06:50:22 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar100/resolve/aadb3af77e9048adbea6b47c21a81e47dd092ae5/.huggingface.yaml "HTTP/1.1 404 Not Found"
+06:50:22 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/datasets/uoft-cs/cifar100/tree/aadb3af77e9048adbea6b47c21a81e47dd092ae5/cifar100?recursive=true&expand=false "HTTP/1.1 200 OK"
+06:50:22 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/datasets/uoft-cs/cifar100/tree/aadb3af77e9048adbea6b47c21a81e47dd092ae5?recursive=false&expand=false "HTTP/1.1 200 OK"
+06:50:23 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar100/resolve/aadb3af77e9048adbea6b47c21a81e47dd092ae5/dataset_infos.json "HTTP/1.1 404 Not Found"
+06:50:23 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar100/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+06:50:23 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/uoft-cs/cifar100/aadb3af77e9048adbea6b47c21a81e47dd092ae5/README.md "HTTP/1.1 200 OK"
+06:50:23 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar100/resolve/aadb3af77e9048adbea6b47c21a81e47dd092ae5/cifar100.py "HTTP/1.1 404 Not Found"
+06:50:24 | INFO    | httpx | HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/uoft-cs/cifar100/uoft-cs/cifar100.py "HTTP/1.1 404 Not Found"
+06:50:24 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar100/resolve/aadb3af77e9048adbea6b47c21a81e47dd092ae5/.huggingface.yaml "HTTP/1.1 404 Not Found"
+06:50:25 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar100/resolve/aadb3af77e9048adbea6b47c21a81e47dd092ae5/dataset_infos.json "HTTP/1.1 404 Not Found"
+[encode] cached (4000 pool, 800 val, 2000 test)
+[real-noise] CIFAR-100N human labels: noise rate 0.392
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'flip': np.int64(1568), 'high': np.int64(2432)}
+  full             n= 4000 clean%=0.61 test_acc=0.4470 (7.3s)
+  random           n= 2000 clean%=0.60 test_acc=0.2870 (4.4s)
+  coreset          n= 2000 clean%=0.61 test_acc=0.3015 (107.9s)
+  auth_only        n= 2000 clean%=0.84 test_acc=0.3795 (5.4s)
+  influence_only   n= 2000 clean%=0.70 test_acc=0.3125 (4.0s)
+  mmdataselect     n= 2000 clean%=0.65 test_acc=0.3145 (5.3s)
+  herding          n= 2000 clean%=0.61 test_acc=0.3425 (67.2s)
+  kcenter          n= 2000 clean%=0.62 test_acc=0.3075 (171.0s)
+  el2n             n= 2000 clean%=0.53 test_acc=0.2345 (13.9s)
+  grand            n= 2000 clean%=0.65 test_acc=0.2955 (12.6s)
+  ccs              n= 2000 clean%=0.63 test_acc=0.3115 (11.4s)
+  semdedup         n= 2000 clean%=0.61 test_acc=0.3345 (9.9s)
+  density          n= 2000 clean%=0.62 test_acc=0.3430 (5.4s)
+  quadmix          n= 2000 clean%=0.81 test_acc=0.3660 (14.3s)
+  quadmix_pub      n= 2000 clean%=0.64 test_acc=0.3405 (10.5s)
+  dmf              n= 2000 clean%=0.85 test_acc=0.3775 (155.8s)
+  dmf_pub          n= 2000 clean%=0.84 test_acc=0.3700 (108.4s)
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'auth2_only' (val=0.415)
+  mmds_adapt       n= 2000 clean%=0.81 test_acc=0.3880 (1435.3s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  full             acc=0.4470 clean%=0.61 n=4000
+  random           acc=0.2870 clean%=0.60 n=2000
+  coreset          acc=0.3015 clean%=0.61 n=2000
+  auth_only        acc=0.3795 clean%=0.84 n=2000
+  influence_only   acc=0.3125 clean%=0.70 n=2000
+  mmdataselect     acc=0.3145 clean%=0.65 n=2000
+  herding          acc=0.3425 clean%=0.61 n=2000
+  kcenter          acc=0.3075 clean%=0.62 n=2000
+  el2n             acc=0.2345 clean%=0.53 n=2000
+  grand            acc=0.2955 clean%=0.65 n=2000
+  ccs              acc=0.3115 clean%=0.63 n=2000
+  semdedup         acc=0.3345 clean%=0.61 n=2000
+  density          acc=0.3430 clean%=0.62 n=2000
+  quadmix          acc=0.3660 clean%=0.81 n=2000
+  quadmix_pub      acc=0.3405 clean%=0.64 n=2000
+  dmf              acc=0.3775 clean%=0.85 n=2000
+  dmf_pub          acc=0.3700 clean%=0.84 n=2000
+  mmds_adapt       acc=0.3880 clean%=0.81 n=2000
+cifar100n seed0 python_exit=0

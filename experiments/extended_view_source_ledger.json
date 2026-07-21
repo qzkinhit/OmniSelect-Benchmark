@@ -1,0 +1,254 @@
+{
+ "rule": "single auditable source: results_matrix three-seed means for every cell; full parsed from the same tracked source log; v5 recorded as analysis-layer alternative only (audit 2030-4)",
+ "views": {
+  "time_etth1": {
+   "label": "ETTh1 (LSF, 2nd)",
+   "adopted_namespace": "canonical_final_cells",
+   "source": "pubcore-paired-20260716T1754 (single code state, PUBLISHED_CORE_PAIRED_MAIN_OK, independent parity re-check 9/9 MATCH on controller-picked named baselines, per-seed shared fit_seed, sel_sha12 per row; baseline_impl dea8ee64)",
+   "raw_artifacts_in_git": "results_canonical/ (pubcore-paired 12 + ctrl-ts2-noproxy 1; per-file SHA verified; rebuildable via scripts/rebuild_canonical_from_whitelist.py diff=0)",
+   "protocol_equality": "all four cells from the same paired single-code-state batch (PAIRED_RNG=1, per-seed shared fit seed, parity gate 9/9)",
+   "methods": {
+    "mmds_adapt": {
+     "mean": 0.9811,
+     "std": 0.0421,
+     "n_seeds": 3,
+     "fmt": "0.981$\\pm$0.042"
+    },
+    "auth_only": {
+     "mean": 0.9501,
+     "std": 0.0053,
+     "n_seeds": 3,
+     "fmt": "0.950$\\pm$0.005"
+    },
+    "full": {
+     "mean": 1.0049,
+     "std": 0.0171,
+     "n_seeds": 3,
+     "fmt": "1.005$\\pm$0.017"
+    },
+    "random": {
+     "mean": 1.0564,
+     "std": 0.0156,
+     "n_seeds": 3,
+     "fmt": "1.056$\\pm$0.016"
+    }
+   },
+   "alternative_namespace_matrix": {
+    "means": {
+     "auth_only": 0.9559,
+     "mmds_adapt": 0.9963,
+     "random": 1.0656
+    },
+    "adopted": false,
+    "note": "superseded pre-paired lane; kept for provenance only"
+   }
+  },
+  "time_daisy_cstr": {
+   "label": "DaISy CSTR",
+   "adopted_namespace": "results_matrix",
+   "source_log": "experiments/daisy_cstr_3seed.log",
+   "log_sha256": "ce3fe6ead7381f26662ac17db6b433ebea6d695baed39bf3afb4a779177d2220",
+   "log_sha256_reverified": true,
+   "config_hash": "5ae849b9b72381e4d2cc4d160c953e16ac4ac4deb76cba81a3ba8e359f5d6e0e",
+   "protocol_type": "unified-budget transfer (shared testbed)",
+   "protocol_equality": "all methods in this row share the same source log, config_hash, pool/split/noise/budget (unified-budget shared testbed) and seeds 0/1/2",
+   "metric": "MASE=([0-9.]+)",
+   "higher_is_better": false,
+   "methods": {
+    "mmds_adapt": {
+     "per_seed": {
+      "0": 1.0041,
+      "1": 1.0292,
+      "2": 1.0053
+     },
+     "mean": 1.0129,
+     "std": 0.0142
+    },
+    "auth_only": {
+     "per_seed": {
+      "0": 1.0299,
+      "1": 1.0303,
+      "2": 1.0178
+     },
+     "mean": 1.026,
+     "std": 0.0071
+    },
+    "full": {
+     "per_seed": [
+      1.0655,
+      1.0685,
+      1.0883
+     ],
+     "mean": 1.0741,
+     "source": "parsed from source_log full rows"
+    },
+    "random": {
+     "per_seed": {
+      "0": 1.0942,
+      "1": 1.0883,
+      "2": 1.1356
+     },
+     "mean": 1.106,
+     "std": 0.0258
+    }
+   }
+  },
+  "time_daisy_steamgen": {
+   "label": "DaISy steamgen",
+   "adopted_namespace": "results_matrix",
+   "source_log": "experiments/daisy_steamgen_3seed.log",
+   "log_sha256": "5fe6170c1abf91916cb664036903889b0f4eab1f6c6ce765e20298e3213a8c56",
+   "log_sha256_reverified": true,
+   "config_hash": "2720ce1cc7b7094d377de0b4ec3411ae240c1c4cac31ecf9820ec7da484ca88f",
+   "protocol_type": "unified-budget transfer (shared testbed)",
+   "protocol_equality": "all methods in this row share the same source log, config_hash, pool/split/noise/budget (unified-budget shared testbed) and seeds 0/1/2",
+   "metric": "MASE=([0-9.]+)",
+   "higher_is_better": false,
+   "methods": {
+    "mmds_adapt": {
+     "per_seed": {
+      "0": 0.8348,
+      "1": 0.8618,
+      "2": 0.8773
+     },
+     "mean": 0.858,
+     "std": 0.0215
+    },
+    "auth_only": {
+     "per_seed": {
+      "0": 0.8588,
+      "1": 0.8964,
+      "2": 0.9321
+     },
+     "mean": 0.8958,
+     "std": 0.0367
+    },
+    "full": {
+     "per_seed": [
+      0.9798,
+      0.9901,
+      1.0158
+     ],
+     "mean": 0.9952,
+     "source": "parsed from source_log full rows"
+    },
+    "random": {
+     "per_seed": {
+      "0": 1.0843,
+      "1": 1.1443,
+      "2": 1.2022
+     },
+     "mean": 1.1436,
+     "std": 0.059
+    }
+   }
+  },
+  "time_etth2": {
+   "label": "ETTh2 (LSF)",
+   "adopted_namespace": "results_matrix",
+   "source_log": "experiments/etth2_3seed.log",
+   "log_sha256": "186c12fd208e429d681650c997bc2d6c8a1d5b7cbb6daf9782602021226e809e",
+   "log_sha256_reverified": true,
+   "config_hash": "1eccc53b13f96c41be8262a79a478db611d1d60fbb367358f402ff2a575abe18",
+   "protocol_type": "unified-budget transfer (shared testbed)",
+   "protocol_equality": "all methods in this row share the same source log, config_hash, pool/split/noise/budget (unified-budget shared testbed) and seeds 0/1/2",
+   "metric": "MASE=([0-9.]+)",
+   "higher_is_better": false,
+   "methods": {
+    "mmds_adapt": {
+     "per_seed": {
+      "0": 0.623,
+      "1": 0.644,
+      "2": 0.6256
+     },
+     "mean": 0.6309,
+     "std": 0.0114
+    },
+    "auth_only": {
+     "per_seed": {
+      "0": 0.6292,
+      "1": 0.6359,
+      "2": 0.6542
+     },
+     "mean": 0.6398,
+     "std": 0.0129
+    },
+    "full": {
+     "per_seed": [
+      0.6522,
+      0.6686,
+      0.6868
+     ],
+     "mean": 0.6692,
+     "source": "parsed from source_log full rows"
+    },
+    "random": {
+     "per_seed": {
+      "0": 0.6848,
+      "1": 0.7152,
+      "2": 0.7205
+     },
+     "mean": 0.7068,
+     "std": 0.0193
+    }
+   }
+  },
+  "time_ettm1": {
+   "label": "ETTm1 (prose)",
+   "adopted_namespace": "results_matrix",
+   "source_log": "experiments/ettm1_dlinear_3seed.log",
+   "log_sha256": "e4490a41bf7de5eaef90cdbe24c585d532ae231b77d4bcf2a27d58b0e6f544d5",
+   "log_sha256_reverified": true,
+   "config_hash": "e96d7a608c5031b80490a8addd6af23896f511f050175150ae9eeb7045a39f27",
+   "protocol_type": "unified-budget transfer (shared testbed)",
+   "protocol_equality": "all methods in this row share the same source log, config_hash, pool/split/noise/budget (unified-budget shared testbed) and seeds 0/1/2",
+   "metric": "MASE=([0-9.]+)",
+   "higher_is_better": false,
+   "methods": {
+    "mmds_adapt": {
+     "per_seed": {
+      "0": 1.0163,
+      "1": 0.9986,
+      "2": 1.0256
+     },
+     "mean": 1.0135,
+     "std": 0.0137
+    },
+    "auth_only": {
+     "per_seed": {
+      "0": 1.0594,
+      "1": 1.0295,
+      "2": 1.0836
+     },
+     "mean": 1.0575,
+     "std": 0.0271
+    },
+    "full": {
+     "per_seed": [
+      1.0885,
+      1.095,
+      1.114
+     ],
+     "mean": 1.0992,
+     "source": "parsed from source_log full rows"
+    },
+    "random": {
+     "per_seed": {
+      "0": 1.2345,
+      "1": 1.2234,
+      "2": 1.2875
+     },
+     "mean": 1.2485,
+     "std": 0.0343
+    }
+   }
+  }
+ },
+ "derived_supp_rows": {
+  "time_daisy_cstr": "DaISy CSTR & \\textbf{1.013} & 1.026 & 1.074 & 1.106 \\\\",
+  "time_daisy_steamgen": "DaISy steamgen & \\textbf{0.858} & 0.896 & 0.995 & 1.144 \\\\",
+  "time_etth2": "ETTh2 (LSF) & \\textbf{0.631} & 0.640 & 0.669 & 0.707 \\\\",
+  "time_etth1": "ETTh1 (LSF, 2nd) & 0.981 & \\textbf{0.950} & 1.005 & 1.056 \\\\"
+ },
+ "tex_row_assertion": "PASS"
+}

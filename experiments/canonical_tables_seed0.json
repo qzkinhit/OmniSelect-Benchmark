@@ -1,0 +1,233 @@
+{
+ "_meta": {
+  "eleven_baselines": [
+   "random",
+   "coreset",
+   "herding",
+   "el2n",
+   "grand",
+   "ccs",
+   "density",
+   "quadmix_pub",
+   "dmf_pub",
+   "influence_only",
+   "mmdataselect"
+  ],
+  "internal_only_excluded": [
+   "auth_only",
+   "dmf",
+   "kcenter",
+   "semdedup"
+  ],
+  "n_beaten": 0,
+  "n_datasets": 9,
+  "n_strict_first": 5,
+  "n_tied_first": 4,
+  "rule": "seed 0 only, single run per cell, read verbatim from results_canonical/**/results.json; no hand-typed numbers. auth_only/dmf/kcenter/semdedup are the controller's own portfolio candidates and are excluded from the 11-baseline external comparison by definition."
+ },
+ "cells": {
+  "CIFAR-100": {
+   "external_11": {
+    "ccs": 0.398,
+    "coreset": 0.389,
+    "density": 0.391,
+    "dmf_pub": 0.432,
+    "el2n": 0.2415,
+    "grand": 0.3195,
+    "herding": 0.3855,
+    "influence_only": 0.368,
+    "mmdataselect": 0.348,
+    "quadmix_pub": 0.3585,
+    "random": 0.3965
+   },
+   "higher_is_better": true,
+   "internal_excluded": {
+    "auth_only": 0.4225,
+    "dmf": 0.434,
+    "kcenter": 0.3805,
+    "semdedup": 0.4015
+   },
+   "ours": 0.432
+  },
+  "CIFAR-100N": {
+   "external_11": {
+    "ccs": 0.3115,
+    "coreset": 0.3015,
+    "density": 0.343,
+    "dmf_pub": 0.37,
+    "el2n": 0.2345,
+    "grand": 0.2955,
+    "herding": 0.3425,
+    "influence_only": 0.3125,
+    "mmdataselect": 0.3145,
+    "quadmix_pub": 0.3405,
+    "random": 0.287
+   },
+   "higher_is_better": true,
+   "internal_excluded": {
+    "auth_only": 0.3795,
+    "dmf": 0.3775,
+    "kcenter": 0.3075,
+    "semdedup": 0.3345
+   },
+   "ours": 0.388
+  },
+  "DaISy-CSTR": {
+   "external_11": {
+    "coreset": 1.1631,
+    "density": 1.1822,
+    "dmf_pub": 1.0326,
+    "herding": 1.143,
+    "influence_only": 1.1247,
+    "mmdataselect": 1.0824,
+    "quadmix_pub": 1.0907,
+    "random": 1.1002
+   },
+   "higher_is_better": false,
+   "internal_excluded": {
+    "auth_only": 1.0312,
+    "dmf": 1.0203,
+    "kcenter": 1.1874,
+    "semdedup": 1.2011
+   },
+   "ours": 1.0232
+  },
+  "DaISy-steamgen": {
+   "external_11": {
+    "coreset": 1.2865,
+    "density": 1.2529,
+    "dmf_pub": 0.8226,
+    "herding": 1.2617,
+    "influence_only": 1.4153,
+    "mmdataselect": 1.1007,
+    "quadmix_pub": 1.0269,
+    "random": 1.1107
+   },
+   "higher_is_better": false,
+   "internal_excluded": {
+    "auth_only": 0.8422,
+    "dmf": 0.9922,
+    "kcenter": 1.3404,
+    "semdedup": 1.2949
+   },
+   "ours": 0.8226
+  },
+  "ETTh1": {
+   "external_11": {
+    "coreset": 1.0792,
+    "density": 1.079,
+    "dmf_pub": 1.0139,
+    "herding": 1.0795,
+    "influence_only": 1.2343,
+    "mmdataselect": 1.0427,
+    "quadmix_pub": 1.0301,
+    "random": 1.0666
+   },
+   "higher_is_better": false,
+   "internal_excluded": {
+    "auth_only": 0.9561,
+    "dmf": 1.0123,
+    "kcenter": 1.1002,
+    "semdedup": 1.0654
+   },
+   "ours": 0.9675
+  },
+  "ETTh2": {
+   "external_11": {
+    "coreset": 0.7104,
+    "density": 0.6919,
+    "dmf_pub": 0.6746,
+    "herding": 0.6971,
+    "influence_only": 0.746,
+    "mmdataselect": 0.651,
+    "quadmix_pub": 0.6585,
+    "random": 0.6836
+   },
+   "higher_is_better": false,
+   "internal_excluded": {
+    "auth_only": 0.6253,
+    "dmf": 0.6746,
+    "kcenter": 0.7143,
+    "semdedup": 0.6997
+   },
+   "ours": 0.6193
+  },
+  "ETTm1": {
+   "external_11": {
+    "coreset": 1.2154,
+    "density": 1.2566,
+    "dmf_pub": 1.0475,
+    "herding": 1.2002,
+    "influence_only": 1.3505,
+    "mmdataselect": 1.0912,
+    "quadmix_pub": 1.1883,
+    "random": 1.2127
+   },
+   "higher_is_better": false,
+   "internal_excluded": {
+    "auth_only": 1.0796,
+    "dmf": 1.0963,
+    "kcenter": 1.2795,
+    "semdedup": 1.2539
+   },
+   "ours": 1.0366
+  },
+  "Electricity": {
+   "external_11": {
+    "ccs": 0.865,
+    "coreset": 0.873,
+    "density": 0.8757,
+    "dmf_pub": 0.8518,
+    "el2n": 0.2399,
+    "grand": 0.2662,
+    "herding": 0.8674,
+    "influence_only": 0.8171,
+    "mmdataselect": 0.8678,
+    "quadmix_pub": 0.8671,
+    "random": 0.8721
+   },
+   "higher_is_better": true,
+   "internal_excluded": {
+    "auth_only": 0.8446,
+    "dmf": 0.852,
+    "kcenter": 0.8758,
+    "semdedup": 0.8629
+   },
+   "ours": 0.8757
+  },
+  "TEP21": {
+   "external_11": {
+    "ccs": 0.3651,
+    "coreset": 0.3036,
+    "density": 0.3276,
+    "dmf_pub": 0.4072,
+    "el2n": 0.0908,
+    "grand": 0.0669,
+    "herding": 0.339,
+    "influence_only": 0.3779,
+    "mmdataselect": 0.3467,
+    "quadmix_pub": 0.3296,
+    "random": 0.317
+   },
+   "higher_is_better": true,
+   "internal_excluded": {
+    "auth_only": 0.3986,
+    "dmf": 0.3892,
+    "kcenter": 0.3359,
+    "semdedup": 0.3541
+   },
+   "ours": 0.4072
+  }
+ },
+ "verdicts": {
+  "CIFAR-100": "TIED_FIRST",
+  "CIFAR-100N": "STRICT_FIRST",
+  "DaISy-CSTR": "STRICT_FIRST",
+  "DaISy-steamgen": "TIED_FIRST",
+  "ETTh1": "STRICT_FIRST",
+  "ETTh2": "STRICT_FIRST",
+  "ETTm1": "STRICT_FIRST",
+  "Electricity": "TIED_FIRST",
+  "TEP21": "TIED_FIRST"
+ }
+}

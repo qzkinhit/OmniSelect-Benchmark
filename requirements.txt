@@ -1,0 +1,43 @@
+# OmniSelect dependencies.
+#
+# Recommended install (editable, core only — enough for `import mmdataselect`
+# and the pure-CPU sanity smoke):
+#
+#     pip install -e .
+#
+# For downstream training + evaluation (any CUDA GPU or Apple MPS):
+#
+#     pip install -e ".[train,eval,dev]"
+#
+# The pins below mirror pyproject.toml [project.dependencies] for users who
+# prefer `pip install -r requirements.txt`.
+
+numpy>=1.24
+pyyaml>=6.0
+zstandard>=0.21
+rich>=13.0
+tqdm>=4.65
+
+# --- optional: downstream training / influence signal ---
+# torch>=2.1
+# transformers>=4.44
+# datasets>=2.18
+# accelerate>=0.30
+# peft>=0.11
+
+# --- optional: evaluation ---
+# lm-eval>=0.4.3
+
+# --- optional: dev ---
+# pytest>=7.4
+data-selection==1.0.3  # official p-lambda DSIR, fidelity cross-check (pinned, audited env)
+
+# torch/torchvision are intentionally NOT listed here (audit 2030): an unpinned
+# torchvision pulls the newest CUDA stack (observed: torch 2.13 + CUDA 13.1),
+# which mismatches the audited environment and cannot even initialize on the
+# audited driver. Install one of the two pinned stacks explicitly:
+#   CPU (quick start / smoke):
+#     pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cpu
+#   GPU (training, audited cu128 stack):
+#     pip install -r requirements.txt -c environment/constraints-cu128.txt \
+#         --extra-index-url https://download.pytorch.org/whl/cu128 torch torchvision

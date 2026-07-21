@@ -1,0 +1,103 @@
+########## SEED 0 (ETTh2, DLinear) ##########
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh2 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=0.6522 (0.9s)
+  random           n=  900 clean%=0.63 MASE=0.6848 (0.3s)
+  coreset          n=  900 clean%=0.46 MASE=0.7115 (5.2s)
+  herding          n=  900 clean%=0.51 MASE=0.6986 (3.0s)
+  kcenter          n=  900 clean%=0.43 MASE=0.7139 (3.1s)
+  semdedup         n=  900 clean%=0.67 MASE=0.6668 (0.8s)
+  density          n=  900 clean%=0.47 MASE=0.7049 (0.5s)
+  quadmix          n=  900 clean%=0.78 MASE=0.6588 (0.7s)
+  dmf              n=  900 clean%=0.91 MASE=0.6778 (6.6s)
+  auth_only        n=  900 clean%=0.91 MASE=0.6292 (0.4s)
+  influence_only   n=  900 clean%=0.81 MASE=0.7540 (0.3s)
+  mmdataselect     n=  900 clean%=0.82 MASE=0.6519 (0.3s)
+    [adapt] picked 'fuse w=(0.5, 0, 0.5) q=0.25 lam=0.0' (val_negMASE=-0.621)
+  mmds_adapt       n=  900 clean%=0.91 MASE=0.6230 (52.9s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.6230 clean%=0.91 n=900
+  auth_only        MASE=0.6292 clean%=0.91 n=900
+  mmdataselect     MASE=0.6519 clean%=0.82 n=900
+  full             MASE=0.6522 clean%=0.60 n=3000
+  quadmix          MASE=0.6588 clean%=0.78 n=900
+  semdedup         MASE=0.6668 clean%=0.67 n=900
+  dmf              MASE=0.6778 clean%=0.91 n=900
+  random           MASE=0.6848 clean%=0.63 n=900
+  herding          MASE=0.6986 clean%=0.51 n=900
+  density          MASE=0.7049 clean%=0.47 n=900
+  coreset          MASE=0.7115 clean%=0.46 n=900
+  kcenter          MASE=0.7139 clean%=0.43 n=900
+  influence_only   MASE=0.7540 clean%=0.81 n=900
+########## SEED 1 (ETTh2, DLinear) ##########
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh2 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=0.6686 (1.6s)
+  random           n=  900 clean%=0.60 MASE=0.7152 (0.4s)
+  coreset          n=  900 clean%=0.44 MASE=0.7335 (4.1s)
+  herding          n=  900 clean%=0.53 MASE=0.7298 (1.5s)
+  kcenter          n=  900 clean%=0.44 MASE=0.7388 (1.3s)
+  semdedup         n=  900 clean%=0.65 MASE=0.6936 (0.9s)
+  density          n=  900 clean%=0.46 MASE=0.7494 (0.7s)
+  quadmix          n=  900 clean%=0.78 MASE=0.6837 (0.6s)
+  dmf              n=  900 clean%=0.89 MASE=0.6970 (2.9s)
+  auth_only        n=  900 clean%=0.85 MASE=0.6359 (0.3s)
+  influence_only   n=  900 clean%=0.79 MASE=0.7911 (0.3s)
+  mmdataselect     n=  900 clean%=0.82 MASE=0.6846 (0.3s)
+    [adapt] picked 'fuse w=(0.5, 0, 0.5) q=0.25 lam=0.0' (val_negMASE=-0.621)
+  mmds_adapt       n=  900 clean%=0.91 MASE=0.6440 (23.3s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  auth_only        MASE=0.6359 clean%=0.85 n=900
+  mmds_adapt       MASE=0.6440 clean%=0.91 n=900
+  full             MASE=0.6686 clean%=0.60 n=3000
+  quadmix          MASE=0.6837 clean%=0.78 n=900
+  mmdataselect     MASE=0.6846 clean%=0.82 n=900
+  semdedup         MASE=0.6936 clean%=0.65 n=900
+  dmf              MASE=0.6970 clean%=0.89 n=900
+  random           MASE=0.7152 clean%=0.60 n=900
+  herding          MASE=0.7298 clean%=0.53 n=900
+  coreset          MASE=0.7335 clean%=0.44 n=900
+  kcenter          MASE=0.7388 clean%=0.44 n=900
+  density          MASE=0.7494 clean%=0.46 n=900
+  influence_only   MASE=0.7911 clean%=0.79 n=900
+########## SEED 2 (ETTh2, DLinear) ##########
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh2 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=0.6868 (1.1s)
+  random           n=  900 clean%=0.61 MASE=0.7205 (0.3s)
+  coreset          n=  900 clean%=0.46 MASE=0.7498 (3.8s)
+  herding          n=  900 clean%=0.52 MASE=0.7325 (2.8s)
+  kcenter          n=  900 clean%=0.44 MASE=0.7508 (0.9s)
+  semdedup         n=  900 clean%=0.69 MASE=0.6779 (0.6s)
+  density          n=  900 clean%=0.48 MASE=0.7432 (0.5s)
+  quadmix          n=  900 clean%=0.78 MASE=0.6789 (0.3s)
+  dmf              n=  900 clean%=0.92 MASE=0.6788 (3.3s)
+  auth_only        n=  900 clean%=0.86 MASE=0.6542 (0.3s)
+  influence_only   n=  900 clean%=0.80 MASE=0.8132 (0.3s)
+  mmdataselect     n=  900 clean%=0.82 MASE=0.6762 (0.8s)
+    [adapt] picked 'fuse w=(1, 0, 0) q=0.0 lam=0.6' (val_negMASE=-0.626)
+  mmds_adapt       n=  900 clean%=0.97 MASE=0.6256 (17.1s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.6256 clean%=0.97 n=900
+  auth_only        MASE=0.6542 clean%=0.86 n=900
+  mmdataselect     MASE=0.6762 clean%=0.82 n=900
+  semdedup         MASE=0.6779 clean%=0.69 n=900
+  dmf              MASE=0.6788 clean%=0.92 n=900
+  quadmix          MASE=0.6789 clean%=0.78 n=900
+  full             MASE=0.6868 clean%=0.60 n=3000
+  random           MASE=0.7205 clean%=0.61 n=900
+  herding          MASE=0.7325 clean%=0.52 n=900
+  density          MASE=0.7432 clean%=0.48 n=900
+  coreset          MASE=0.7498 clean%=0.46 n=900
+  kcenter          MASE=0.7508 clean%=0.44 n=900
+  influence_only   MASE=0.8132 clean%=0.80 n=900
+=== steamgen + ETTh2 3-seed 完成 ===

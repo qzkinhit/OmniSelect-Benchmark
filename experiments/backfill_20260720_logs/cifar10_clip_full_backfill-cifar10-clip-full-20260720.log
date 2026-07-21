@@ -1,0 +1,171 @@
+06:50:20 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar10/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+06:50:20 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/uoft-cs/cifar10/0b2714987fa478483af9968de7c934580d0bb9a2/README.md "HTTP/1.1 200 OK"
+06:50:20 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar10/resolve/0b2714987fa478483af9968de7c934580d0bb9a2/cifar10.py "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+06:50:20 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+06:50:21 | INFO    | httpx | HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/uoft-cs/cifar10/uoft-cs/cifar10.py "HTTP/1.1 404 Not Found"
+06:50:21 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/datasets/uoft-cs/cifar10/revision/0b2714987fa478483af9968de7c934580d0bb9a2 "HTTP/1.1 200 OK"
+06:50:21 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar10/resolve/0b2714987fa478483af9968de7c934580d0bb9a2/.huggingface.yaml "HTTP/1.1 404 Not Found"
+06:50:22 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/datasets/uoft-cs/cifar10/tree/0b2714987fa478483af9968de7c934580d0bb9a2/plain_text?recursive=true&expand=false "HTTP/1.1 200 OK"
+06:50:22 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/datasets/uoft-cs/cifar10/tree/0b2714987fa478483af9968de7c934580d0bb9a2?recursive=false&expand=false "HTTP/1.1 200 OK"
+06:50:22 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar10/resolve/0b2714987fa478483af9968de7c934580d0bb9a2/dataset_infos.json "HTTP/1.1 404 Not Found"
+06:50:23 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar10/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+06:50:23 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/uoft-cs/cifar10/0b2714987fa478483af9968de7c934580d0bb9a2/README.md "HTTP/1.1 200 OK"
+06:50:23 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar10/resolve/0b2714987fa478483af9968de7c934580d0bb9a2/cifar10.py "HTTP/1.1 404 Not Found"
+06:50:23 | INFO    | httpx | HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/uoft-cs/cifar10/uoft-cs/cifar10.py "HTTP/1.1 404 Not Found"
+06:50:24 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar10/resolve/0b2714987fa478483af9968de7c934580d0bb9a2/.huggingface.yaml "HTTP/1.1 404 Not Found"
+06:50:24 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/datasets/uoft-cs/cifar10/resolve/0b2714987fa478483af9968de7c934580d0bb9a2/dataset_infos.json "HTTP/1.1 404 Not Found"
+[encode] openai/clip-vit-base-patch32 on 4000+800+2000 imgs (dev=cuda) ...
+06:50:45 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+06:50:45 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+06:50:45 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/preprocessor_config.json "HTTP/1.1 200 OK"
+06:50:45 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+06:50:46 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+06:50:46 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/preprocessor_config.json "HTTP/1.1 200 OK"
+06:50:46 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+06:50:46 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/tokenizer_config.json "HTTP/1.1 200 OK"
+06:50:47 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+06:50:47 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/config.json "HTTP/1.1 200 OK"
+06:50:47 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+06:50:47 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+06:50:48 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/chat_template.json "HTTP/1.1 404 Not Found"
+06:50:48 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+06:50:48 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/audio_tokenizer_config.json "HTTP/1.1 404 Not Found"
+06:50:49 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+06:50:49 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+06:50:49 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/preprocessor_config.json "HTTP/1.1 200 OK"
+06:50:49 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+06:50:50 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+06:50:50 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/preprocessor_config.json "HTTP/1.1 200 OK"
+06:50:50 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+06:50:50 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/config.json "HTTP/1.1 200 OK"
+06:50:51 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+06:50:51 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/tokenizer_config.json "HTTP/1.1 200 OK"
+06:50:51 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+06:50:51 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+06:50:52 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+06:50:52 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/config.json "HTTP/1.1 200 OK"
+06:50:52 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+06:50:52 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32 "HTTP/1.1 200 OK"
+06:50:53 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/commits/main "HTTP/1.1 200 OK"
+06:50:53 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/discussions?p=0 "HTTP/1.1 200 OK"
+06:50:53 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/commits/refs%2Fpr%2F66 "HTTP/1.1 200 OK"
+06:50:53 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/refs%2Fpr%2F66/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+06:50:53 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/refs%2Fpr%2F66/model.safetensors "HTTP/1.1 302 Found"
+06:51:22 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+06:51:22 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:22 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/preprocessor_config.json "HTTP/1.1 200 OK"
+06:51:22 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+06:51:23 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:23 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/preprocessor_config.json "HTTP/1.1 200 OK"
+06:51:23 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:23 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/tokenizer_config.json "HTTP/1.1 200 OK"
+06:51:23 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:24 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/config.json "HTTP/1.1 200 OK"
+06:51:24 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+06:51:24 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+06:51:24 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/chat_template.json "HTTP/1.1 404 Not Found"
+06:51:25 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+06:51:25 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/audio_tokenizer_config.json "HTTP/1.1 404 Not Found"
+06:51:25 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+06:51:26 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:26 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/preprocessor_config.json "HTTP/1.1 200 OK"
+06:51:26 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+06:51:26 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:26 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/preprocessor_config.json "HTTP/1.1 200 OK"
+06:51:27 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:27 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/config.json "HTTP/1.1 200 OK"
+06:51:27 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:28 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/tokenizer_config.json "HTTP/1.1 200 OK"
+06:51:28 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+06:51:28 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+06:51:28 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:28 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/config.json "HTTP/1.1 200 OK"
+06:51:29 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+06:51:29 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32 "HTTP/1.1 200 OK"
+06:51:29 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/commits/main "HTTP/1.1 200 OK"
+06:51:29 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/discussions?p=0 "HTTP/1.1 200 OK"
+06:51:29 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/commits/refs%2Fpr%2F66 "HTTP/1.1 200 OK"
+06:51:29 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/refs%2Fpr%2F66/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+06:51:30 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/refs%2Fpr%2F66/model.safetensors "HTTP/1.1 302 Found"
+06:51:33 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+06:51:33 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:34 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/preprocessor_config.json "HTTP/1.1 200 OK"
+06:51:34 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+06:51:34 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:34 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/preprocessor_config.json "HTTP/1.1 200 OK"
+06:51:34 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:35 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/tokenizer_config.json "HTTP/1.1 200 OK"
+06:51:35 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:35 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/config.json "HTTP/1.1 200 OK"
+06:51:35 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+06:51:35 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+06:51:36 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/chat_template.json "HTTP/1.1 404 Not Found"
+06:51:36 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+06:51:36 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/audio_tokenizer_config.json "HTTP/1.1 404 Not Found"
+06:51:37 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+06:51:37 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:37 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/preprocessor_config.json "HTTP/1.1 200 OK"
+06:51:37 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+06:51:38 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:38 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/preprocessor_config.json "HTTP/1.1 200 OK"
+06:51:38 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:38 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/config.json "HTTP/1.1 200 OK"
+06:51:39 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:39 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/tokenizer_config.json "HTTP/1.1 200 OK"
+06:51:39 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+06:51:39 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+06:51:40 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+06:51:40 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/config.json "HTTP/1.1 200 OK"
+06:51:41 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+06:51:41 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32 "HTTP/1.1 200 OK"
+06:51:41 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/commits/main "HTTP/1.1 200 OK"
+06:51:41 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/discussions?p=0 "HTTP/1.1 200 OK"
+06:51:41 | INFO    | httpx | HTTP Request: GET https://hf-mirror.com/api/models/openai/clip-vit-base-patch32/commits/refs%2Fpr%2F66 "HTTP/1.1 200 OK"
+06:51:41 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/refs%2Fpr%2F66/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+06:51:42 | INFO    | httpx | HTTP Request: HEAD https://hf-mirror.com/openai/clip-vit-base-patch32/resolve/refs%2Fpr%2F66/model.safetensors "HTTP/1.1 302 Found"
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+  full             n= 4000 clean%=0.60 test_acc=0.9140 (15.0s)
+  random           n= 2000 clean%=0.61 test_acc=0.9120 (7.4s)
+  coreset          n= 2000 clean%=0.65 test_acc=0.9200 (57.4s)
+  auth_only        n= 2000 clean%=0.82 test_acc=0.8875 (0.2s)
+  influence_only   n= 2000 clean%=0.80 test_acc=0.8670 (0.1s)
+  mmdataselect     n= 2000 clean%=0.79 test_acc=0.9185 (0.5s)
+  herding          n= 2000 clean%=0.60 test_acc=0.9105 (32.9s)
+  kcenter          n= 2000 clean%=0.66 test_acc=0.9170 (21.9s)
+  el2n             n= 2000 clean%=0.40 test_acc=0.7060 (7.3s)
+  grand            n= 2000 clean%=0.45 test_acc=0.4910 (8.3s)
+  ccs              n= 2000 clean%=0.67 test_acc=0.9055 (5.4s)
+  semdedup         n= 2000 clean%=0.66 test_acc=0.9085 (6.0s)
+  density          n= 2000 clean%=0.62 test_acc=0.9090 (6.5s)
+  quadmix          n= 2000 clean%=0.73 test_acc=0.9100 (2.0s)
+  quadmix_pub      n= 2000 clean%=0.62 test_acc=0.9085 (6.7s)
+  dmf              n= 2000 clean%=0.81 test_acc=0.9060 (35.9s)
+  dmf_pub          n= 2000 clean%=0.81 test_acc=0.8985 (35.0s)
+/root/autodl-tmp/OmniSelect/.venv/lib/python3.12/site-packages/sklearn/model_selection/_split.py:812: UserWarning: The least populated class in y has only 1 members, which is less than n_splits=5.
+  warnings.warn(
+    [sh] fusions 42 -> 4 (cheap evals 78)
+    [adapt] picked 'random' (val=0.927)
+  mmds_adapt       n= 2000 clean%=0.61 test_acc=0.9120 (1294.4s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  full             acc=0.9140 clean%=0.60 n=4000
+  random           acc=0.9120 clean%=0.61 n=2000
+  coreset          acc=0.9200 clean%=0.65 n=2000
+  auth_only        acc=0.8875 clean%=0.82 n=2000
+  influence_only   acc=0.8670 clean%=0.80 n=2000
+  mmdataselect     acc=0.9185 clean%=0.79 n=2000
+  herding          acc=0.9105 clean%=0.60 n=2000
+  kcenter          acc=0.9170 clean%=0.66 n=2000
+  el2n             acc=0.7060 clean%=0.40 n=2000
+  grand            acc=0.4910 clean%=0.45 n=2000
+  ccs              acc=0.9055 clean%=0.67 n=2000
+  semdedup         acc=0.9085 clean%=0.66 n=2000
+  density          acc=0.9090 clean%=0.62 n=2000
+  quadmix          acc=0.9100 clean%=0.73 n=2000
+  quadmix_pub      acc=0.9085 clean%=0.62 n=2000
+  dmf              acc=0.9060 clean%=0.81 n=2000
+  dmf_pub          acc=0.8985 clean%=0.81 n=2000
+  mmds_adapt       acc=0.9120 clean%=0.61 n=2000
+cifar10-clip seed0 python_exit=0

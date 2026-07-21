@@ -1,0 +1,44 @@
+# Real single-modality (text) closed loop: language + math + code with SmolLM2-135M.
+#
+# Pool = FineWeb-Edu (general) + FineMath (math) + Python-Edu (code), each
+# standardized into UnifiedRecord jsonl, then concatenated into one processed pool:
+#
+#   python tools/standardize/fineweb.py  --n 1000 --out data/processed/fineweb.jsonl
+#   python tools/standardize/finemath.py --n 1000 --out data/processed/finemath.jsonl
+#   python tools/standardize/pyedu.py    --n 1000 --out data/processed/pyedu.jsonl
+#   cat data/processed/fineweb.jsonl data/processed/finemath.jsonl \
+#       data/processed/pyedu.jsonl > data/processed/text_pool.jsonl
+#
+# Then run the pipeline (select -> train -> eval), all sharing outputs/<experiment_id>/:
+#   python run_mmdataselect/run_pipeline.py --config configs/experiments/text_smollm135m_demo.yaml
+#
+# Requires the train+eval extras (torch/transformers/datasets/lm-eval). Stages that
+# lack their optional extra exit code 3 (skipped), so a select-only CPU run still works.
+experiment_id: text_smollm135m_demo
+
+data:
+  # Merged general+math+code pool (see header for how to build it).
+  processed_path: data/processed/text_pool.jsonl
+
+select:
+  budget: { kind: fraction, value: 0.5 }   # keep half the token/record budget
+  lam: 0.5                                   # importance x diversity trade-off
+  method: greedy                             # greedy | gumbel
+  seed: 0
+  # Influence actor uses the downstream base model's own per-sample loss.
+  # On no-torch / CPU this transparently falls back to the model-free proxy.
+  influence_model: HuggingFaceTB/SmolLM2-135M
+
+train:
+  model_name: HuggingFaceTB/SmolLM2-135M
+  max_length: 512
+  epochs: 1
+  batch_size: 4
+  learning_rate: 2.0e-5
+
+eval:
+  # language (arc_easy) + math (gsm8k); keep limit/num_fewshot small for a fast smoke.
+  tasks: [arc_easy, gsm8k]
+  batch_size: auto
+  limit: 200
+  num_fewshot: 0

@@ -1,0 +1,114 @@
+##### ETTM1DL SEED=0 2026-07-16_18:55:40 #####
+timeseries=ETTm1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=cuda seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=1.0950 (0.7s)
+  random           n=  900 clean%=0.63 MASE=1.2345 (0.3s)
+  coreset          n=  900 clean%=0.49 MASE=1.2480 (1.7s)
+  auth_only        n=  900 clean%=0.88 MASE=1.0594 (0.2s)
+  influence_only   n=  900 clean%=0.70 MASE=1.3662 (0.2s)
+  mmdataselect     n=  900 clean%=0.84 MASE=1.1394 (0.4s)
+  herding          n=  900 clean%=0.51 MASE=1.2030 (1.1s)
+  kcenter          n=  900 clean%=0.48 MASE=1.2393 (0.7s)
+  semdedup         n=  900 clean%=0.52 MASE=1.2369 (0.4s)
+  density          n=  900 clean%=0.56 MASE=1.2487 (0.2s)
+  quadmix          n=  900 clean%=0.75 MASE=1.0929 (0.2s)
+  quadmix_pub      n=  900 clean%=0.62 MASE=1.1947 (0.2s)
+  dmf              n=  900 clean%=0.85 MASE=1.1037 (1.8s)
+  dmf_pub          n=  900 clean%=0.89 MASE=1.0638 (2.9s)
+    [adapt] picked 'fuse w=(1, 0, 0) q=0.25 lam=0.6' (val_negMASE=-1.196)
+  mmds_adapt       n=  900 clean%=0.95 MASE=1.0163 (24.3s)
+
+==== TIMESERIES (ETTm1, model=dlinear, MASE lower=better) ====
+  mmds_adapt       MASE=1.0163 clean%=0.95 n=900
+  auth_only        MASE=1.0594 clean%=0.88 n=900
+  dmf_pub          MASE=1.0638 clean%=0.89 n=900
+  quadmix          MASE=1.0929 clean%=0.75 n=900
+  full             MASE=1.0950 clean%=0.60 n=3000
+  dmf              MASE=1.1037 clean%=0.85 n=900
+  mmdataselect     MASE=1.1394 clean%=0.84 n=900
+  quadmix_pub      MASE=1.1947 clean%=0.62 n=900
+  herding          MASE=1.2030 clean%=0.51 n=900
+  random           MASE=1.2345 clean%=0.63 n=900
+  semdedup         MASE=1.2369 clean%=0.52 n=900
+  kcenter          MASE=1.2393 clean%=0.48 n=900
+  coreset          MASE=1.2480 clean%=0.49 n=900
+  density          MASE=1.2487 clean%=0.56 n=900
+  influence_only   MASE=1.3662 clean%=0.70 n=900
+saved -> /root/autodl-tmp/OmniSelect/outputs/timeseries/ETTm1/run_id=ettm1-dlinear-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=0-pool=3000/seed_0/results.json
+ETTM1DL SEED=0 python_exit=0
+##### ETTM1DL SEED=1 2026-07-16_18:56:19 #####
+timeseries=ETTm1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=cuda seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=1.0885 (0.4s)
+  random           n=  900 clean%=0.61 MASE=1.2234 (0.1s)
+  coreset          n=  900 clean%=0.49 MASE=1.2048 (1.6s)
+  auth_only        n=  900 clean%=0.84 MASE=1.0295 (0.1s)
+  influence_only   n=  900 clean%=0.68 MASE=1.3481 (0.1s)
+  mmdataselect     n=  900 clean%=0.84 MASE=1.0752 (0.2s)
+  herding          n=  900 clean%=0.54 MASE=1.1729 (1.1s)
+  kcenter          n=  900 clean%=0.51 MASE=1.2051 (0.6s)
+  semdedup         n=  900 clean%=0.53 MASE=1.1837 (0.3s)
+  density          n=  900 clean%=0.56 MASE=1.1948 (0.2s)
+  quadmix          n=  900 clean%=0.78 MASE=1.1025 (0.2s)
+  quadmix_pub      n=  900 clean%=0.65 MASE=1.1886 (0.2s)
+  dmf              n=  900 clean%=0.91 MASE=1.0584 (1.3s)
+  dmf_pub          n=  900 clean%=0.89 MASE=0.9983 (2.5s)
+    [adapt] picked 'fuse learned w=(0.57, 0.0, 0.43) q=0.25 lam=0.0' (val_negMASE=-1.130)
+  mmds_adapt       n=  900 clean%=0.90 MASE=0.9986 (21.9s)
+
+==== TIMESERIES (ETTm1, model=dlinear, MASE lower=better) ====
+  dmf_pub          MASE=0.9983 clean%=0.89 n=900
+  mmds_adapt       MASE=0.9986 clean%=0.90 n=900
+  auth_only        MASE=1.0295 clean%=0.84 n=900
+  dmf              MASE=1.0584 clean%=0.91 n=900
+  mmdataselect     MASE=1.0752 clean%=0.84 n=900
+  full             MASE=1.0885 clean%=0.60 n=3000
+  quadmix          MASE=1.1025 clean%=0.78 n=900
+  herding          MASE=1.1729 clean%=0.54 n=900
+  semdedup         MASE=1.1837 clean%=0.53 n=900
+  quadmix_pub      MASE=1.1886 clean%=0.65 n=900
+  density          MASE=1.1948 clean%=0.56 n=900
+  coreset          MASE=1.2048 clean%=0.49 n=900
+  kcenter          MASE=1.2051 clean%=0.51 n=900
+  random           MASE=1.2234 clean%=0.61 n=900
+  influence_only   MASE=1.3481 clean%=0.68 n=900
+saved -> /root/autodl-tmp/OmniSelect/outputs/timeseries/ETTm1/run_id=ettm1-dlinear-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=0-pool=3000/seed_1/results.json
+ETTM1DL SEED=1 python_exit=0
+##### ETTM1DL SEED=2 2026-07-16_18:56:54 #####
+timeseries=ETTm1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=cuda seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  full             n= 3000 clean%=0.60 MASE=1.1140 (0.4s)
+  random           n=  900 clean%=0.59 MASE=1.2875 (0.1s)
+  coreset          n=  900 clean%=0.48 MASE=1.2917 (1.5s)
+  auth_only        n=  900 clean%=0.88 MASE=1.0836 (0.2s)
+  influence_only   n=  900 clean%=0.68 MASE=1.4250 (0.1s)
+  mmdataselect     n=  900 clean%=0.83 MASE=1.1296 (0.2s)
+  herding          n=  900 clean%=0.49 MASE=1.2492 (1.0s)
+  kcenter          n=  900 clean%=0.47 MASE=1.3247 (0.6s)
+  semdedup         n=  900 clean%=0.52 MASE=1.2512 (0.3s)
+  density          n=  900 clean%=0.56 MASE=1.2944 (0.3s)
+  quadmix          n=  900 clean%=0.77 MASE=1.1284 (0.2s)
+  quadmix_pub      n=  900 clean%=0.65 MASE=1.2172 (0.2s)
+  dmf              n=  900 clean%=0.88 MASE=1.1109 (1.5s)
+  dmf_pub          n=  900 clean%=0.90 MASE=1.0256 (2.8s)
+    [adapt] picked 'dmf_pub' (val_negMASE=-1.141)
+  mmds_adapt       n=  900 clean%=0.90 MASE=1.0256 (24.9s)
+
+==== TIMESERIES (ETTm1, model=dlinear, MASE lower=better) ====
+  dmf_pub          MASE=1.0256 clean%=0.90 n=900
+  mmds_adapt       MASE=1.0256 clean%=0.90 n=900
+  auth_only        MASE=1.0836 clean%=0.88 n=900
+  dmf              MASE=1.1109 clean%=0.88 n=900
+  full             MASE=1.1140 clean%=0.60 n=3000
+  quadmix          MASE=1.1284 clean%=0.77 n=900
+  mmdataselect     MASE=1.1296 clean%=0.83 n=900
+  quadmix_pub      MASE=1.2172 clean%=0.65 n=900
+  herding          MASE=1.2492 clean%=0.49 n=900
+  semdedup         MASE=1.2512 clean%=0.52 n=900
+  random           MASE=1.2875 clean%=0.59 n=900
+  coreset          MASE=1.2917 clean%=0.48 n=900
+  density          MASE=1.2944 clean%=0.56 n=900
+  kcenter          MASE=1.3247 clean%=0.47 n=900
+  influence_only   MASE=1.4250 clean%=0.68 n=900
+saved -> /root/autodl-tmp/OmniSelect/outputs/timeseries/ETTm1/run_id=ettm1-dlinear-H=24-L=96-budget=0.3-model=dlinear-noise=0.4-paired_rng=0-pool=3000/seed_2/results.json
+ETTM1DL SEED=2 python_exit=0

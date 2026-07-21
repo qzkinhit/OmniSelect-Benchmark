@@ -1,0 +1,81 @@
+########## CLEAN CIFAR-10  budget_frac=0.5 ##########
+[encode] openai/clip-vit-base-patch32 on 4000+800+2000 imgs (dev=mps) ...
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'high': np.int64(4000)}
+  full             n= 4000 clean%=1.00 test_acc=0.9240 (0.2s)
+  random           n= 2000 clean%=1.00 test_acc=0.9170 (0.1s)
+  el2n             n= 2000 clean%=1.00 test_acc=0.8420 (0.2s)
+  grand            n= 2000 clean%=1.00 test_acc=0.6150 (0.3s)
+  ccs              n= 2000 clean%=1.00 test_acc=0.9060 (0.1s)
+  herding          n= 2000 clean%=1.00 test_acc=0.9195 (36.3s)
+  kcenter          n= 2000 clean%=1.00 test_acc=0.9270 (20.4s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  full             acc=0.9240 clean%=1.00 n=4000
+  random           acc=0.9170 clean%=1.00 n=2000
+  el2n             acc=0.8420 clean%=1.00 n=2000
+  grand            acc=0.6150 clean%=1.00 n=2000
+  ccs              acc=0.9060 clean%=1.00 n=2000
+  herding          acc=0.9195 clean%=1.00 n=2000
+  kcenter          acc=0.9270 clean%=1.00 n=2000
+########## CLEAN CIFAR-10  budget_frac=0.25 ##########
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=1000 seed=0
+  pool tags: {'high': np.int64(4000)}
+  full             n= 4000 clean%=1.00 test_acc=0.9240 (0.1s)
+  random           n= 1000 clean%=1.00 test_acc=0.8975 (0.0s)
+  el2n             n= 1000 clean%=1.00 test_acc=0.6615 (0.0s)
+  grand            n= 1000 clean%=1.00 test_acc=0.3710 (0.1s)
+  ccs              n= 1000 clean%=1.00 test_acc=0.9005 (0.0s)
+  herding          n= 1000 clean%=1.00 test_acc=0.9130 (10.0s)
+  kcenter          n= 1000 clean%=1.00 test_acc=0.9160 (9.5s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  full             acc=0.9240 clean%=1.00 n=4000
+  random           acc=0.8975 clean%=1.00 n=1000
+  el2n             acc=0.6615 clean%=1.00 n=1000
+  grand            acc=0.3710 clean%=1.00 n=1000
+  ccs              acc=0.9005 clean%=1.00 n=1000
+  herding          acc=0.9130 clean%=1.00 n=1000
+  kcenter          acc=0.9160 clean%=1.00 n=1000
+########## CLEAN CIFAR-10 seed1 budget_frac=0.5 ##########
+[encode] openai/clip-vit-base-patch32 on 4000+800+2000 imgs (dev=mps) ...
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=1
+  pool tags: {'high': np.int64(4000)}
+  full             n= 4000 clean%=1.00 test_acc=0.9200 (0.1s)
+  random           n= 2000 clean%=1.00 test_acc=0.9110 (0.0s)
+  el2n             n= 2000 clean%=1.00 test_acc=0.8995 (0.1s)
+  grand            n= 2000 clean%=1.00 test_acc=0.6605 (0.2s)
+  ccs              n= 2000 clean%=1.00 test_acc=0.8820 (0.1s)
+  herding          n= 2000 clean%=1.00 test_acc=0.9150 (24.3s)
+  kcenter          n= 2000 clean%=1.00 test_acc=0.9225 (17.0s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  full             acc=0.9200 clean%=1.00 n=4000
+  random           acc=0.9110 clean%=1.00 n=2000
+  el2n             acc=0.8995 clean%=1.00 n=2000
+  grand            acc=0.6605 clean%=1.00 n=2000
+  ccs              acc=0.8820 clean%=1.00 n=2000
+  herding          acc=0.9150 clean%=1.00 n=2000
+  kcenter          acc=0.9225 clean%=1.00 n=2000
+########## CLEAN CIFAR-10 seed1 budget_frac=0.25 ##########
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=1000 seed=1
+  pool tags: {'high': np.int64(4000)}
+  full             n= 4000 clean%=1.00 test_acc=0.9200 (0.1s)
+  random           n= 1000 clean%=1.00 test_acc=0.9000 (0.0s)
+  el2n             n= 1000 clean%=1.00 test_acc=0.7180 (0.0s)
+  grand            n= 1000 clean%=1.00 test_acc=0.4825 (0.1s)
+  ccs              n= 1000 clean%=1.00 test_acc=0.8745 (0.0s)
+  herding          n= 1000 clean%=1.00 test_acc=0.9090 (13.2s)
+  kcenter          n= 1000 clean%=1.00 test_acc=0.9115 (8.3s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  full             acc=0.9200 clean%=1.00 n=4000
+  random           acc=0.9000 clean%=1.00 n=1000
+  el2n             acc=0.7180 clean%=1.00 n=1000
+  grand            acc=0.4825 clean%=1.00 n=1000
+  ccs              acc=0.8745 clean%=1.00 n=1000
+  herding          acc=0.9090 clean%=1.00 n=1000
+  kcenter          acc=0.9115 clean%=1.00 n=1000
+=== clean cifar fidelity done ===

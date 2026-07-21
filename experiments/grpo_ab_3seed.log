@@ -1,0 +1,214 @@
+##### SEED 0 VISION #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [adapt] picked 'dmf' (val=0.475)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4330 (78.4s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4330 clean%=0.80 n=2000
+##### SEED 0 TEP #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=0
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt] picked 'grpo_policy w=(0.45, 0.24, 0.31) q=0.08 lam=0.55' (val_f1=0.440)
+  mmds_adapt       n= 1200 clean%=0.68 macroF1=0.4198 acc=0.4167 (42.4s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4198 acc=0.4167 clean%=0.68 n=1200
+##### SEED 0 ETTH1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse learned w=(0.59, 0.0, 0.41) q=0.25 lam=0.0' (val_negMASE=-0.993)
+  mmds_adapt       n=  900 clean%=0.94 MASE=0.9502 (15.1s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.9502 clean%=0.94 n=900
+##### SEED 0 DAISY #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=daisy_cstr OT | L=96 H=24 pool=3000 test=1107 budget=900 dev=mps seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse w=(1, 0, 0) q=0.0 lam=0.6' (val_negMASE=-0.972)
+  mmds_adapt       n=  900 clean%=0.95 MASE=1.0041 (14.4s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=1.0041 clean%=0.95 n=900
+##### SEED 1 VISION #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=1
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [adapt] picked 'grpo_policy w=(0.6, 0.21, 0.19) q=0.12 lam=0.46' (val=0.445)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4195 (77.6s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4195 clean%=0.80 n=2000
+##### SEED 1 TEP #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=1
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt] picked 'grpo_policy w=(0.3, 0.37, 0.32) q=0.06 lam=0.68' (val_f1=0.414)
+  mmds_adapt       n= 1200 clean%=0.67 macroF1=0.4212 acc=0.4260 (40.5s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4212 acc=0.4260 clean%=0.67 n=1200
+##### SEED 1 ETTH1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'mmdataselect' (val_negMASE=-1.024)
+  mmds_adapt       n=  900 clean%=0.84 MASE=0.9836 (15.4s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.9836 clean%=0.84 n=900
+##### SEED 1 DAISY #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=daisy_cstr OT | L=96 H=24 pool=3000 test=1107 budget=900 dev=mps seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'dmf' (val_negMASE=-0.979)
+  mmds_adapt       n=  900 clean%=0.92 MASE=1.0292 (15.1s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=1.0292 clean%=0.92 n=900
+##### SEED 2 VISION #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=2
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [adapt] picked 'semdedup' (val=0.441)
+  mmds_adapt       n= 2000 clean%=0.67 test_acc=0.4345 (72.2s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4345 clean%=0.67 n=2000
+##### SEED 2 TEP #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=2
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt] picked 'dmf' (val_f1=0.418)
+  mmds_adapt       n= 1200 clean%=0.86 macroF1=0.4120 acc=0.4130 (41.0s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4120 acc=0.4130 clean%=0.86 n=1200
+##### SEED 2 ETTH1 #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'vote_ensemble(top3)' (val_negMASE=-0.992)
+  mmds_adapt       n=  900 clean%=0.90 MASE=0.9858 (14.8s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.9858 clean%=0.90 n=900
+##### SEED 2 DAISY #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=daisy_cstr OT | L=96 H=24 pool=3000 test=1107 budget=900 dev=mps seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+    [adapt] picked 'fuse w=(1, 0, 0) q=0.0 lam=0.6' (val_negMASE=-0.969)
+  mmds_adapt       n=  900 clean%=0.97 MASE=1.0053 (14.0s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=1.0053 clean%=0.97 n=900
+##### SEED 0 TAB #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)

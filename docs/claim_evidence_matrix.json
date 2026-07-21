@@ -1,0 +1,2565 @@
+{
+ "_meta": {
+  "built": "2026-07-18",
+  "task": "audit 2100-4.4 / 2257-4.2 claim-evidence matrix for the current AAAI draft",
+  "scope": "abstract (sections/abstract.tex + inline copy in p2_omniselect_aaai.tex), intro numeric/contribution claims, method claim paragraphs, tab:main + tab:external + tab:supp + text-arm paragraph in experiments.tex, conclusion",
+  "checker": "scripts/check_claim_evidence.py",
+  "binding_syntax": "relative/path.json#/json/pointer ; ops: {op:mean_seeds,path} averages per-seed values, {op:sub,a,b} is a-b",
+  "number_match_rule": "PASS if bound value matches claimed string exactly after %.nf formatting, or Decimal ROUND_HALF_UP to claim precision, or |diff|<5e-4; string bindings: claim must be substring",
+  "tex_root": "papers/mmdataselect/submissions/aaai2027",
+  "note": "matrix documents; it never edits tex. Unbindable claims listed under 'unbound'."
+ },
+ "entries": [
+  {
+   "claim_id": "abs-zh-daisy-best",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/abstract.tex",
+   "line": 2,
+   "quote": "控制器在过程工业时序上严格最优",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/mmds_adapt/mean",
+     "among": [
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/mmds_adapt/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/auth_only/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/full/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/random/mean"
+     ],
+     "expect_rank": 1
+    },
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/mmds_adapt/mean",
+     "among": [
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/mmds_adapt/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/auth_only/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/full/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/random/mean"
+     ],
+     "expect_rank": 1
+    }
+   ],
+   "run_source": "daisy_cstr_3seed.log + daisy_steamgen_3seed.log",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "secondary"
+  },
+  {
+   "claim_id": "abs-zh-toptier",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/abstract.tex",
+   "line": 2,
+   "quote": "在图像、过程故障诊断与表格上处于最优梯队或与最强对照在种子噪声内并列",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "within",
+     "target": "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/mean",
+     "other": "experiments/canonical_tables.json#/final_cells/vision_cifar100/auth_only/mean",
+     "tol": "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/std"
+    },
+    {
+     "type": "within",
+     "target": "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/mean",
+     "other": "experiments/canonical_tables.json#/final_cells/process_tep/dmf_pub/mean",
+     "tol": "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/std"
+    },
+    {
+     "type": "within",
+     "target": "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/mean",
+     "other": "experiments/canonical_tables.json#/final_cells/tabular_electricity/kcenter/mean",
+     "tol": "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/std"
+    }
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "higher",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "abs-zh-etth1-second",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/abstract.tex",
+   "line": 2,
+   "quote": "在 ETTh1 上居第二且明显优于随机",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+     "among": [
+      "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/influence_only/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/coreset/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/auth_only/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/mmdataselect/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/dmf/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/dmf_pub/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean"
+     ],
+     "expect_rank": 2
+    },
+    {
+     "type": "better",
+     "direction": "lower",
+     "target": "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+     "than": "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean"
+    }
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "abs-zh-never-worst",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/abstract.tex",
+   "line": 2,
+   "quote": "在主裁决任务上从不最差",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "not_worst",
+     "direction": "higher",
+     "target": "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/mean",
+     "among": [
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/random/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/influence_only/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/coreset/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/auth_only/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmdataselect/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/dmf/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/dmf_pub/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/mean"
+     ]
+    },
+    {
+     "type": "not_worst",
+     "direction": "lower",
+     "target": "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+     "among": [
+      "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/influence_only/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/coreset/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/auth_only/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/mmdataselect/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/dmf/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/dmf_pub/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean"
+     ]
+    },
+    {
+     "type": "not_worst",
+     "direction": "higher",
+     "target": "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/mean",
+     "among": [
+      "experiments/canonical_tables.json#/final_cells/process_tep/random/mean",
+      "experiments/canonical_tables.json#/final_cells/process_tep/influence_only/mean",
+      "experiments/canonical_tables.json#/final_cells/process_tep/coreset/mean",
+      "experiments/canonical_tables.json#/final_cells/process_tep/auth_only/mean",
+      "experiments/canonical_tables.json#/final_cells/process_tep/mmdataselect/mean",
+      "experiments/canonical_tables.json#/final_cells/process_tep/dmf/mean",
+      "experiments/canonical_tables.json#/final_cells/process_tep/dmf_pub/mean",
+      "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/mean"
+     ]
+    },
+    {
+     "type": "not_worst",
+     "direction": "higher",
+     "target": "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/mean",
+     "among": [
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/random/mean",
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/influence_only/mean",
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/coreset/mean",
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/auth_only/mean",
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmdataselect/mean",
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/dmf/mean",
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/dmf_pub/mean",
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/mean"
+     ]
+    }
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "mixed",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "abs-en-daisy-best",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/abstract.tex",
+   "line": 5,
+   "quote": "the controller is strictly best on the DaISy process-industry time series",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/mmds_adapt/mean",
+     "among": [
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/mmds_adapt/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/auth_only/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/full/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/random/mean"
+     ],
+     "expect_rank": 1
+    },
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/mmds_adapt/mean",
+     "among": [
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/mmds_adapt/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/auth_only/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/full/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/random/mean"
+     ],
+     "expect_rank": 1
+    }
+   ],
+   "run_source": "daisy_cstr_3seed.log + daisy_steamgen_3seed.log",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "secondary"
+  },
+  {
+   "claim_id": "abs-en-toptier",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/abstract.tex",
+   "line": 5,
+   "quote": "stays in the top tier or within seed noise of the strongest comparator",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "within",
+     "target": "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/mean",
+     "other": "experiments/canonical_tables.json#/final_cells/vision_cifar100/auth_only/mean",
+     "tol": "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/std"
+    },
+    {
+     "type": "within",
+     "target": "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/mean",
+     "other": "experiments/canonical_tables.json#/final_cells/process_tep/dmf_pub/mean",
+     "tol": "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/std"
+    },
+    {
+     "type": "within",
+     "target": "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/mean",
+     "other": "experiments/canonical_tables.json#/final_cells/tabular_electricity/kcenter/mean",
+     "tol": "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/std"
+    }
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "higher",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "abs-en-etth1-second",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/abstract.tex",
+   "line": 5,
+   "quote": "ranks second on ETTh1 while clearly outperforming random",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+     "among": [
+      "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/influence_only/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/coreset/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/auth_only/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/mmdataselect/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/dmf/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/dmf_pub/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean"
+     ],
+     "expect_rank": 2
+    },
+    {
+     "type": "better",
+     "direction": "lower",
+     "target": "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+     "than": "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean"
+    }
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "abs-en-text-boundary",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/abstract.tex",
+   "line": 5,
+   "quote": "published-rule transfers tie random under fine-tuning and the full-token reference is best",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/text_controls_stats.json#/per_method/noselect/ppl_gmean/mean",
+     "among": [
+      "experiments/text_controls_stats.json#/per_method/random/ppl_gmean/mean",
+      "experiments/text_controls_stats.json#/qz4_baselines_20260717/quadmix_pub/mean",
+      "experiments/text_controls_stats.json#/qz4_baselines_20260717/zip/mean",
+      "experiments/text_controls_stats.json#/per_method/noselect/ppl_gmean/mean"
+     ],
+     "expect_rank": 1
+    },
+    {
+     "type": "substring",
+     "path": "experiments/text_controls_stats.json#/qz4_baselines_20260717/paired_delta_vs_random/quadmix_pub",
+     "expect": "tie within noise"
+    }
+   ],
+   "run_source": "text-qz4-20260717T0933",
+   "run_source_notes": "controls (random/noselect/base) from same-code-state run text-controls-20260717T0026 recorded in the same stats file",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "secondary"
+  },
+  {
+   "claim_id": "abs-main-daisy-best",
+   "file": "papers/mmdataselect/submissions/aaai2027/p2_omniselect_aaai.tex",
+   "line": 33,
+   "quote": "the controller is strictly best on the DaISy process-industry time series",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/mmds_adapt/mean",
+     "among": [
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/mmds_adapt/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/auth_only/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/full/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/random/mean"
+     ],
+     "expect_rank": 1
+    },
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/mmds_adapt/mean",
+     "among": [
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/mmds_adapt/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/auth_only/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/full/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/random/mean"
+     ],
+     "expect_rank": 1
+    }
+   ],
+   "run_source": "daisy_cstr_3seed.log + daisy_steamgen_3seed.log",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "secondary"
+  },
+  {
+   "claim_id": "abs-main-toptier",
+   "file": "papers/mmdataselect/submissions/aaai2027/p2_omniselect_aaai.tex",
+   "line": 33,
+   "quote": "stays in the top tier or within seed noise of the strongest comparator",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "within",
+     "target": "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/mean",
+     "other": "experiments/canonical_tables.json#/final_cells/vision_cifar100/auth_only/mean",
+     "tol": "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/std"
+    },
+    {
+     "type": "within",
+     "target": "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/mean",
+     "other": "experiments/canonical_tables.json#/final_cells/process_tep/dmf_pub/mean",
+     "tol": "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/std"
+    },
+    {
+     "type": "within",
+     "target": "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/mean",
+     "other": "experiments/canonical_tables.json#/final_cells/tabular_electricity/kcenter/mean",
+     "tol": "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/std"
+    }
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "higher",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "abs-main-etth1-second",
+   "file": "papers/mmdataselect/submissions/aaai2027/p2_omniselect_aaai.tex",
+   "line": 33,
+   "quote": "ranks second on ETTh1 while clearly outperforming random",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+     "among": [
+      "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/influence_only/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/coreset/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/auth_only/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/mmdataselect/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/dmf/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/dmf_pub/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean"
+     ],
+     "expect_rank": 2
+    },
+    {
+     "type": "better",
+     "direction": "lower",
+     "target": "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+     "than": "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean"
+    }
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "abs-main-text-boundary",
+   "file": "papers/mmdataselect/submissions/aaai2027/p2_omniselect_aaai.tex",
+   "line": 33,
+   "quote": "published-rule transfers tie random under fine-tuning and the full-token reference is best",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/text_controls_stats.json#/per_method/noselect/ppl_gmean/mean",
+     "among": [
+      "experiments/text_controls_stats.json#/per_method/random/ppl_gmean/mean",
+      "experiments/text_controls_stats.json#/qz4_baselines_20260717/quadmix_pub/mean",
+      "experiments/text_controls_stats.json#/qz4_baselines_20260717/zip/mean",
+      "experiments/text_controls_stats.json#/per_method/noselect/ppl_gmean/mean"
+     ],
+     "expect_rank": 1
+    },
+    {
+     "type": "substring",
+     "path": "experiments/text_controls_stats.json#/qz4_baselines_20260717/paired_delta_vs_random/quadmix_pub",
+     "expect": "tie within noise"
+    }
+   ],
+   "run_source": "text-qz4-20260717T0933",
+   "run_source_notes": "controls (random/noselect/base) from same-code-state run text-controls-20260717T0026 recorded in the same stats file",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "secondary"
+  },
+  {
+   "claim_id": "intro-finding-flip",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/intro.tex",
+   "line": 15,
+   "quote": "Authenticity-only reaches $0.426$ top-1 accuracy on CIFAR-100 but only $0.843$ ROC AUC on OpenML electricity",
+   "numbers": [
+    "0.426",
+    "0.843",
+    "0.867",
+    "0.860",
+    "0.340",
+    "0.381",
+    "1.218",
+    "1.056"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/auth_only/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/auth_only/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/random/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmdataselect/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmdataselect/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/random/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/influence_only/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "lower",
+    "lower"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "intro-flip-within-modality",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/intro.tex",
+   "line": 17,
+   "quote": "Authenticity is strongest on CIFAR-100",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "rank",
+     "direction": "higher",
+     "target": "experiments/canonical_tables.json#/final_cells/vision_cifar100/auth_only/mean",
+     "among": [
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/random/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/influence_only/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/coreset/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/auth_only/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmdataselect/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/dmf/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/dmf_pub/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/mean"
+     ],
+     "expect_rank": 1
+    }
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "higher",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "intro-fig-caption-c100",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/intro.tex",
+   "line": 24,
+   "quote": "authenticity reaches $0.426$ on CIFAR-100 but falls below random on CIFAR-10",
+   "numbers": [
+    "0.426"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/auth_only/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "higher",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "intro-c4-daisy",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/intro.tex",
+   "line": 38,
+   "quote": "The controller is strictly best on DaISy",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/mmds_adapt/mean",
+     "among": [
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/mmds_adapt/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/auth_only/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/full/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/random/mean"
+     ],
+     "expect_rank": 1
+    },
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/mmds_adapt/mean",
+     "among": [
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/mmds_adapt/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/auth_only/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/full/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/random/mean"
+     ],
+     "expect_rank": 1
+    }
+   ],
+   "run_source": "daisy_cstr_3seed.log + daisy_steamgen_3seed.log",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "secondary"
+  },
+  {
+   "claim_id": "intro-c4-primary-claims",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/intro.tex",
+   "line": 38,
+   "quote": "ranks second on ETTh1 while clearly outperforming random. It is never worst on the primary adjudication tasks",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "within",
+     "target": "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/mean",
+     "other": "experiments/canonical_tables.json#/final_cells/vision_cifar100/auth_only/mean",
+     "tol": "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/std"
+    },
+    {
+     "type": "within",
+     "target": "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/mean",
+     "other": "experiments/canonical_tables.json#/final_cells/process_tep/dmf_pub/mean",
+     "tol": "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/std"
+    },
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+     "among": [
+      "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/influence_only/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/coreset/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/auth_only/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/mmdataselect/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/dmf/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/dmf_pub/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean"
+     ],
+     "expect_rank": 2
+    },
+    {
+     "type": "better",
+     "direction": "lower",
+     "target": "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+     "than": "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean"
+    },
+    {
+     "type": "not_worst",
+     "direction": "higher",
+     "target": "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/mean",
+     "among": [
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/random/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/influence_only/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/coreset/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/auth_only/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmdataselect/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/dmf/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/dmf_pub/mean",
+      "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/mean"
+     ]
+    },
+    {
+     "type": "not_worst",
+     "direction": "lower",
+     "target": "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+     "among": [
+      "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/influence_only/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/coreset/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/auth_only/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/mmdataselect/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/dmf/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/dmf_pub/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean"
+     ]
+    },
+    {
+     "type": "not_worst",
+     "direction": "higher",
+     "target": "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/mean",
+     "among": [
+      "experiments/canonical_tables.json#/final_cells/process_tep/random/mean",
+      "experiments/canonical_tables.json#/final_cells/process_tep/influence_only/mean",
+      "experiments/canonical_tables.json#/final_cells/process_tep/coreset/mean",
+      "experiments/canonical_tables.json#/final_cells/process_tep/auth_only/mean",
+      "experiments/canonical_tables.json#/final_cells/process_tep/mmdataselect/mean",
+      "experiments/canonical_tables.json#/final_cells/process_tep/dmf/mean",
+      "experiments/canonical_tables.json#/final_cells/process_tep/dmf_pub/mean",
+      "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/mean"
+     ]
+    },
+    {
+     "type": "not_worst",
+     "direction": "higher",
+     "target": "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/mean",
+     "among": [
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/random/mean",
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/influence_only/mean",
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/coreset/mean",
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/auth_only/mean",
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmdataselect/mean",
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/dmf/mean",
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/dmf_pub/mean",
+      "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/mean"
+     ]
+    }
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "mixed",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "method-auth-precondition-c100",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/method.tex",
+   "line": 58,
+   "quote": "Authenticity-only reaches $0.426$ on CIFAR-100",
+   "numbers": [
+    "0.426"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/auth_only/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "higher",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "method-phenomenon",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/method.tex",
+   "line": 100,
+   "quote": "pure authenticity is clearly best at 0.426, while fixed-weight fusion collapses to 0.340",
+   "numbers": [
+    "0.426",
+    "0.340",
+    "0.381",
+    "0.867",
+    "0.843",
+    "0.851",
+    "0.950",
+    "1.218"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/auth_only/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmdataselect/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/random/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/random/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/auth_only/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/dmf/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/auth_only/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/influence_only/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "lower",
+    "lower"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "method-legacy-random-row",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/method.tex",
+   "line": 111,
+   "quote": "Random & 0.366 & 1.066 & 0.324 & 0.871",
+   "numbers": [
+    "0.366",
+    "1.066",
+    "0.324",
+    "0.871"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/cells/vision_cifar100/random/mean",
+    "experiments/canonical_tables.json#/cells/time_etth1/random/mean",
+    "experiments/canonical_tables.json#/cells/process_tep/random/mean",
+    "experiments/canonical_tables.json#/cells/tabular_electricity/random/mean"
+   ],
+   "run_source": "legacy-registered",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "legacy-registered"
+  },
+  {
+   "claim_id": "method-legacy-influence-row",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/method.tex",
+   "line": 112,
+   "quote": "Influence only & 0.358 & 1.249 & 0.358 & 0.816",
+   "numbers": [
+    "0.358",
+    "1.249",
+    "0.358",
+    "0.816"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/cells/vision_cifar100/influence_only/mean",
+    "experiments/canonical_tables.json#/cells/time_etth1/influence_only/mean",
+    "experiments/canonical_tables.json#/cells/process_tep/influence_only/mean",
+    "experiments/canonical_tables.json#/cells/tabular_electricity/influence_only/mean"
+   ],
+   "run_source": "legacy-registered",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "legacy-registered"
+  },
+  {
+   "claim_id": "method-legacy-coverage-row",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/method.tex",
+   "line": 113,
+   "quote": "Coverage only & 0.365 & 1.082 & 0.303 & 0.873",
+   "numbers": [
+    "0.365",
+    "1.082",
+    "0.303",
+    "0.873"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/cells/vision_cifar100/coreset/mean",
+    "experiments/canonical_tables.json#/cells/time_etth1/coreset/mean",
+    "experiments/canonical_tables.json#/cells/process_tep/coreset/mean",
+    "experiments/canonical_tables.json#/cells/tabular_electricity/coreset/mean"
+   ],
+   "run_source": "legacy-registered",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "legacy-registered"
+  },
+  {
+   "claim_id": "method-legacy-auth-row",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/method.tex",
+   "line": 114,
+   "quote": "Authenticity only & 0.424 & \\textbf{0.956} & 0.394 & 0.845",
+   "numbers": [
+    "0.424",
+    "0.956",
+    "0.394",
+    "0.845"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/cells/vision_cifar100/auth_only/mean",
+    "experiments/canonical_tables.json#/cells/time_etth1/auth_only/mean",
+    "experiments/canonical_tables.json#/cells/process_tep/auth_only/mean",
+    "experiments/canonical_tables.json#/cells/tabular_electricity/auth_only/mean"
+   ],
+   "run_source": "legacy-registered",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "legacy-registered"
+  },
+  {
+   "claim_id": "method-legacy-dmf-row",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/method.tex",
+   "line": 116,
+   "quote": "Dynamic fusion DMF & 0.422 & 0.995 & 0.409 & 0.851",
+   "numbers": [
+    "0.422",
+    "0.995",
+    "0.409",
+    "0.851"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/cells/vision_cifar100/dmf/mean",
+    "experiments/canonical_tables.json#/cells/time_etth1/dmf/mean",
+    "experiments/canonical_tables.json#/cells/process_tep/dmf/mean",
+    "experiments/canonical_tables.json#/cells/tabular_electricity/dmf/mean"
+   ],
+   "run_source": "legacy-registered",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "legacy-registered"
+  },
+  {
+   "claim_id": "method-claim-boundary",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/method.tex",
+   "line": 173,
+   "quote": "in the top tier on process diagnosis at 0.408, tying the strongest fusion transfer at 0.409",
+   "numbers": [
+    "0.408",
+    "0.409",
+    "0.424",
+    "0.873",
+    "0.981",
+    "1.056",
+    "0.340"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/dmf_pub/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmdataselect/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "lower",
+    "lower",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabmain-random",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 46,
+   "quote": "Random & 0.381 & 1.056 & 0.317 & 0.867",
+   "numbers": [
+    "0.381",
+    "1.056",
+    "0.317",
+    "0.867"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/random/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/random/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/random/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabmain-influence",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 47,
+   "quote": "Influence only & 0.358 & 1.218 & 0.364 & 0.816",
+   "numbers": [
+    "0.358",
+    "1.218",
+    "0.364",
+    "0.816"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/influence_only/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/influence_only/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/influence_only/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/influence_only/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabmain-coverage",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 48,
+   "quote": "Coverage only & 0.377 & 1.083 & 0.317 & \\textbf{0.874}",
+   "numbers": [
+    "0.377",
+    "1.083",
+    "0.317",
+    "0.874"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/coreset/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/coreset/fmt",
+    "experiments/canonical_tables.json#/final_cells/process_tep/coreset/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/coreset/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabmain-auth",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 49,
+   "quote": "Authenticity only & \\textbf{0.426} & \\textbf{0.950} & 0.397 & 0.843",
+   "numbers": [
+    "0.426",
+    "0.950",
+    "0.397",
+    "0.843"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/auth_only/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/auth_only/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/auth_only/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/auth_only/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabmain-fixedfusion",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 50,
+   "quote": "Fixed-weight fusion & 0.340 & 1.019 & 0.338 & 0.860",
+   "numbers": [
+    "0.340",
+    "1.019",
+    "0.338",
+    "0.860"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmdataselect/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/mmdataselect/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/mmdataselect/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmdataselect/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabmain-dmfproxy",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 51,
+   "quote": "Dynamic fusion DMF (proxy) & 0.422 & 0.993 & 0.401 & 0.851",
+   "numbers": [
+    "0.422",
+    "0.993",
+    "0.401",
+    "0.851"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/dmf/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/dmf/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/dmf/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/dmf/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabmain-dmfpub",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 52,
+   "quote": "DMF (published-update transfer) & 0.415 & 0.985 & \\textbf{0.409} & 0.851",
+   "numbers": [
+    "0.415",
+    "0.985",
+    "0.409",
+    "0.851"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/dmf_pub/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/dmf_pub/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/dmf_pub/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/dmf_pub/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabmain-controller",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 53,
+   "quote": "\\textbf{Voting-based controller (ours)} & 0.424 & 0.981 & 0.408 & 0.873",
+   "numbers": [
+    "0.424",
+    "0.981",
+    "0.408",
+    "0.873"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-findings-rq1",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 58,
+   "quote": "the voting-based controller is the only method that never leaves the top tier and is never worst",
+   "numbers": [
+    "0.408",
+    "0.409",
+    "0.397",
+    "0.424",
+    "0.426",
+    "0.422",
+    "0.873",
+    "0.874",
+    "0.875",
+    "1.014",
+    "1.057",
+    "1.248",
+    "0.950",
+    "0.981",
+    "1.056"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/dmf_pub/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/auth_only/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/auth_only/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/dmf/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/coreset/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/kcenter/mean",
+    {
+     "op": "mean_seeds",
+     "path": "experiments/extended_view_source_ledger.json#/views/time_ettm1/methods/mmds_adapt/per_seed"
+    },
+    "experiments/canonical_tables.json#/cells/time_ettm1/auth_only/fmt",
+    {
+     "op": "mean_seeds",
+     "path": "experiments/extended_view_source_ledger.json#/views/time_ettm1/methods/random/per_seed"
+    },
+    "experiments/canonical_tables.json#/final_cells/time_etth1/auth_only/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "run_source_notes": "ETTm1 cells (1.014/1.057/1.248) from shared-testbed log ettm1_dlinear_3seed.log via extended_view_source_ledger.json",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "lower",
+    "lower",
+    "lower",
+    "lower",
+    "lower",
+    "lower"
+   ],
+   "tier": "primary",
+   "notes": " | 1.057 bound to the canonical fmt STRING (the manuscripts quote canonical fmt): the exact three-seed mean 1.0575 sits on the half boundary where the canonical generator's binary %.3f printed 1.057 while decimal ROUND_HALF_UP gives 1.058; disclosed in docs/aaai_numeric_exceptions_register.md"
+  },
+  {
+   "claim_id": "exp-findings-rq2",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 60,
+   "quote": "no single quality signal and no fixed fusion scheme generalizes across modalities",
+   "numbers": [
+    "0.426",
+    "0.950",
+    "0.843",
+    "0.867",
+    "0.860",
+    "0.340",
+    "0.381",
+    "0.422",
+    "0.851",
+    "0.875",
+    "0.343",
+    "1.106",
+    "1.218"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/auth_only/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/auth_only/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/auth_only/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/random/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmdataselect/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmdataselect/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/random/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/dmf/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/dmf/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/kcenter/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/kcenter/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/kcenter/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/influence_only/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "lower",
+    "lower"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-ts-honest-gap",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 64,
+   "quote": "the test result trails the best single signal by 0.031 MASE (0.981 versus 0.950)",
+   "numbers": [
+    "0.031",
+    "0.981",
+    "0.950"
+   ],
+   "binding": [
+    {
+     "op": "sub",
+     "a": "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+     "b": "experiments/canonical_tables.json#/final_cells/time_etth1/auth_only/mean"
+    },
+    "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/auth_only/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabext-random",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 73,
+   "quote": "Random & 0.381 & 1.056 & 0.317 & 0.867",
+   "numbers": [
+    "0.381",
+    "1.056",
+    "0.317",
+    "0.867"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/random/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/random/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/random/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabext-herding",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 74,
+   "quote": "herding (DeepCore) & 0.387 & 1.049 & 0.342 & 0.871",
+   "numbers": [
+    "0.387",
+    "1.049",
+    "0.342",
+    "0.871"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/herding/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/herding/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/herding/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/herding/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabext-kcenter",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 75,
+   "quote": "k-center (DeepCore) & 0.374 & 1.106 & 0.343 & \\textbf{0.875}",
+   "numbers": [
+    "0.374",
+    "1.106",
+    "0.343",
+    "0.875"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/kcenter/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/kcenter/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/kcenter/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/kcenter/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabext-el2n",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 76,
+   "quote": "EL2N (DeepCore) & 0.256 & -- & 0.084 & 0.234",
+   "numbers": [
+    "0.256",
+    "0.084",
+    "0.234"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/el2n/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/el2n/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/el2n/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "higher",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabext-grand",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 77,
+   "quote": "GraNd (DeepCore, proxy) & 0.324 & -- & 0.071 & 0.289",
+   "numbers": [
+    "0.324",
+    "0.071",
+    "0.289"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/grand/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/grand/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/grand/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "higher",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabext-ccs",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 78,
+   "quote": "CCS (ICLR 2023, local impl.) & 0.373 & -- & 0.372 & 0.863",
+   "numbers": [
+    "0.373",
+    "0.372",
+    "0.863"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/ccs/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/ccs/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/ccs/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "higher",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabext-semdedup",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 79,
+   "quote": "SemDeDup (2023) & 0.413 & 1.060 & 0.354 & 0.859",
+   "numbers": [
+    "0.413",
+    "1.060",
+    "0.354",
+    "0.859"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/semdedup/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/semdedup/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/semdedup/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/semdedup/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabext-density",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 80,
+   "quote": "Density (2024) & 0.402 & 1.070 & 0.343 & 0.872",
+   "numbers": [
+    "0.402",
+    "1.070",
+    "0.343",
+    "0.872"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/density/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/density/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/density/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/density/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabext-quadmixpub",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 81,
+   "quote": "QuaDMix (published-core transfer) & 0.366 & 1.013 & 0.336 & 0.871",
+   "numbers": [
+    "0.366",
+    "1.013",
+    "0.336",
+    "0.871"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/quadmix_pub/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/quadmix_pub/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/quadmix_pub/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/quadmix_pub/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabext-dmfproxy",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 82,
+   "quote": "Dynamic-fusion proxy & 0.422 & 0.993 & 0.401 & 0.851",
+   "numbers": [
+    "0.422",
+    "0.993",
+    "0.401",
+    "0.851"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/dmf/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/dmf/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/dmf/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/dmf/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabext-dmfpub",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 83,
+   "quote": "DMF (published-update transfer) & 0.415 & 0.985 & \\textbf{0.409} & 0.851",
+   "numbers": [
+    "0.415",
+    "0.985",
+    "0.409",
+    "0.851"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/dmf_pub/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/dmf_pub/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/dmf_pub/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/dmf_pub/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabext-full",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 84,
+   "quote": "Full data (no selection) & 0.539 & 1.005 & 0.406 & 0.885",
+   "numbers": [
+    "0.539",
+    "1.005",
+    "0.406",
+    "0.885"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/full/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/full/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/full/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/full/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-tabext-controller",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 85,
+   "quote": "\\textbf{Voting-based controller (ours)} & \\textbf{0.424} & \\textbf{0.981} & 0.408 & 0.873",
+   "numbers": [
+    "0.424",
+    "0.981",
+    "0.408",
+    "0.873"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-ext-analysis",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 88,
+   "quote": "score pruning with EL2N and GraNd fails badly on the noise-injected pool",
+   "numbers": [
+    "0.256",
+    "0.324",
+    "0.381",
+    "0.084",
+    "0.071",
+    "0.317",
+    "0.234",
+    "0.289",
+    "0.867",
+    "0.424",
+    "0.387",
+    "0.408",
+    "0.372",
+    "0.981",
+    "1.049",
+    "0.873",
+    "0.875"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/el2n/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/grand/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/random/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/el2n/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/grand/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/random/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/el2n/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/grand/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/random/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/herding/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/process_tep/ccs/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/time_etth1/herding/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/kcenter/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": [
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "higher",
+    "lower",
+    "lower",
+    "higher",
+    "higher"
+   ],
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-supp-swaps",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 90,
+   "quote": "the controller is strictly best at MASE 1.014, above authenticity at 1.057",
+   "numbers": [
+    "1.014",
+    "1.057",
+    "1.248",
+    "1.013",
+    "1.074",
+    "0.631",
+    "0.640",
+    "0.669",
+    "0.858",
+    "0.995",
+    "1.144"
+   ],
+   "binding": [
+    {
+     "op": "mean_seeds",
+     "path": "experiments/extended_view_source_ledger.json#/views/time_ettm1/methods/mmds_adapt/per_seed"
+    },
+    "experiments/canonical_tables.json#/cells/time_ettm1/auth_only/fmt",
+    {
+     "op": "mean_seeds",
+     "path": "experiments/extended_view_source_ledger.json#/views/time_ettm1/methods/random/per_seed"
+    },
+    "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/mmds_adapt/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/full/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_etth2/methods/mmds_adapt/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_etth2/methods/auth_only/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_etth2/methods/full/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/mmds_adapt/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/full/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/random/mean"
+   ],
+   "comparisons": [
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/mmds_adapt/mean",
+     "among": [
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/mmds_adapt/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/auth_only/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/full/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/random/mean"
+     ],
+     "expect_rank": 1
+    },
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/extended_view_source_ledger.json#/views/time_etth2/methods/mmds_adapt/mean",
+     "among": [
+      "experiments/extended_view_source_ledger.json#/views/time_etth2/methods/mmds_adapt/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_etth2/methods/auth_only/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_etth2/methods/full/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_etth2/methods/random/mean"
+     ],
+     "expect_rank": 1
+    },
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/mmds_adapt/mean",
+     "among": [
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/mmds_adapt/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/auth_only/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/full/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/random/mean"
+     ],
+     "expect_rank": 1
+    }
+   ],
+   "run_source": "ettm1_dlinear_3seed.log + daisy_cstr_3seed.log + etth2_3seed.log + daisy_steamgen_3seed.log",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "secondary",
+   "notes": " | 1.057 bound to the canonical fmt STRING (the manuscripts quote canonical fmt): the exact three-seed mean 1.0575 sits on the half boundary where the canonical generator's binary %.3f printed 1.057 while decimal ROUND_HALF_UP gives 1.058; disclosed in docs/aaai_numeric_exceptions_register.md"
+  },
+  {
+   "claim_id": "exp-tabsupp-cstr",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 95,
+   "quote": "DaISy CSTR & \\textbf{1.013} & 1.026 & 1.074 & 1.106",
+   "numbers": [
+    "1.013",
+    "1.026",
+    "1.074",
+    "1.106"
+   ],
+   "binding": [
+    "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/mmds_adapt/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/auth_only/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/full/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/random/mean"
+   ],
+   "run_source": "daisy_cstr_3seed.log",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "secondary"
+  },
+  {
+   "claim_id": "exp-tabsupp-steamgen",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 96,
+   "quote": "DaISy steamgen & \\textbf{0.858} & 0.896 & 0.995 & 1.144",
+   "numbers": [
+    "0.858",
+    "0.896",
+    "0.995",
+    "1.144"
+   ],
+   "binding": [
+    "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/mmds_adapt/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/auth_only/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/full/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_daisy_steamgen/methods/random/mean"
+   ],
+   "run_source": "daisy_steamgen_3seed.log",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "secondary"
+  },
+  {
+   "claim_id": "exp-tabsupp-etth2",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 97,
+   "quote": "ETTh2 (LSF) & \\textbf{0.631} & 0.640 & 0.669 & 0.707",
+   "numbers": [
+    "0.631",
+    "0.640",
+    "0.669",
+    "0.707"
+   ],
+   "binding": [
+    "experiments/extended_view_source_ledger.json#/views/time_etth2/methods/mmds_adapt/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_etth2/methods/auth_only/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_etth2/methods/full/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_etth2/methods/random/mean"
+   ],
+   "run_source": "etth2_3seed.log",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "secondary"
+  },
+  {
+   "claim_id": "exp-tabsupp-etth1",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 98,
+   "quote": "ETTh1 (LSF, 2nd) & 0.981 & \\textbf{0.950} & 1.005 & 1.056",
+   "numbers": [
+    "0.981",
+    "0.950",
+    "1.005",
+    "1.056"
+   ],
+   "binding": [
+    "experiments/extended_view_source_ledger.json#/views/time_etth1/methods/mmds_adapt/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_etth1/methods/auth_only/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_etth1/methods/full/mean",
+    "experiments/extended_view_source_ledger.json#/views/time_etth1/methods/random/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "exp-text-arm",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 101,
+   "quote": "five-domain geometric-mean perplexity of 10.869$\\pm$0.022, tying random at 10.840$\\pm$0.012",
+   "numbers": [
+    "10.869",
+    "0.022",
+    "10.840",
+    "0.012",
+    "10.989",
+    "0.014",
+    "10.733",
+    "0.016",
+    "12.168"
+   ],
+   "binding": [
+    "experiments/text_controls_stats.json#/qz4_baselines_20260717/quadmix_pub/mean",
+    "experiments/text_controls_stats.json#/qz4_baselines_20260717/quadmix_pub/std",
+    "experiments/text_controls_stats.json#/per_method/random/ppl_gmean/mean",
+    "experiments/text_controls_stats.json#/per_method/random/ppl_gmean/std",
+    "experiments/text_controls_stats.json#/qz4_baselines_20260717/zip/mean",
+    "experiments/text_controls_stats.json#/qz4_baselines_20260717/zip/std",
+    "experiments/text_controls_stats.json#/per_method/noselect/ppl_gmean/mean",
+    "experiments/text_controls_stats.json#/per_method/noselect/ppl_gmean/std",
+    "experiments/text_controls_stats.json#/per_method/base/ppl_gmean/mean"
+   ],
+   "comparisons": [
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/text_controls_stats.json#/per_method/noselect/ppl_gmean/mean",
+     "among": [
+      "experiments/text_controls_stats.json#/per_method/random/ppl_gmean/mean",
+      "experiments/text_controls_stats.json#/qz4_baselines_20260717/quadmix_pub/mean",
+      "experiments/text_controls_stats.json#/qz4_baselines_20260717/zip/mean",
+      "experiments/text_controls_stats.json#/per_method/noselect/ppl_gmean/mean"
+     ],
+     "expect_rank": 1
+    },
+    {
+     "type": "substring",
+     "path": "experiments/text_controls_stats.json#/qz4_baselines_20260717/paired_delta_vs_random/quadmix_pub",
+     "expect": "tie within noise"
+    }
+   ],
+   "run_source": "text-qz4-20260717T0933",
+   "run_source_notes": "controls (random/noselect/base) from same-code-state run text-controls-20260717T0026 recorded in the same stats file",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "secondary"
+  },
+  {
+   "claim_id": "exp-text-controls",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 104,
+   "quote": "the published-core QuaDMix transfer reaches a five-domain geometric-mean held-out perplexity of 10.87$\\pm$0.02",
+   "numbers": [
+    "10.87",
+    "0.02",
+    "10.84",
+    "0.01",
+    "10.99",
+    "0.01",
+    "12.17",
+    "10.73",
+    "0.02"
+   ],
+   "binding": [
+    "experiments/text_controls_stats.json#/qz4_baselines_20260717/quadmix_pub/mean",
+    "experiments/text_controls_stats.json#/qz4_baselines_20260717/quadmix_pub/std",
+    "experiments/text_controls_stats.json#/per_method/random/ppl_gmean/mean",
+    "experiments/text_controls_stats.json#/per_method/random/ppl_gmean/std",
+    "experiments/text_controls_stats.json#/qz4_baselines_20260717/zip/mean",
+    "experiments/text_controls_stats.json#/qz4_baselines_20260717/zip/std",
+    "experiments/text_controls_stats.json#/per_method/base/ppl_gmean/mean",
+    "experiments/text_controls_stats.json#/per_method/noselect/ppl_gmean/mean",
+    "experiments/text_controls_stats.json#/per_method/noselect/ppl_gmean/std"
+   ],
+   "run_source": "text-qz4-20260717T0933",
+   "run_source_notes": "controls (random/noselect/base) from same-code-state run text-controls-20260717T0026 recorded in the same stats file",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "secondary"
+  },
+  {
+   "claim_id": "exp-c100n-real-noise",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 106,
+   "quote": "Over three seeds the controller leads at 0.380, followed by dynamic fusion at 0.376",
+   "numbers": [
+    "0.380",
+    "0.376",
+    "0.374",
+    "0.329",
+    "0.217"
+   ],
+   "binding": [
+    {
+     "op": "mean_seeds",
+     "path": "experiments/results_matrix.json#/vision_cifar100n/methods/mmds_adapt"
+    },
+    {
+     "op": "mean_seeds",
+     "path": "experiments/results_matrix.json#/vision_cifar100n/methods/dmf"
+    },
+    {
+     "op": "mean_seeds",
+     "path": "experiments/results_matrix.json#/vision_cifar100n/methods/auth_only"
+    },
+    {
+     "op": "mean_seeds",
+     "path": "experiments/results_matrix.json#/vision_cifar100n/methods/random"
+    },
+    {
+     "op": "mean_seeds",
+     "path": "experiments/results_matrix.json#/vision_cifar100n/methods/el2n"
+    }
+   ],
+   "run_source": "real_noise_cifar100n_3seed.log",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "higher",
+   "tier": "secondary"
+  },
+  {
+   "claim_id": "concl-image-tabular",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/conclusion.tex",
+   "line": 3,
+   "quote": "It reaches $0.424$ top-1 accuracy on images and $0.873$ ROC AUC on tables",
+   "numbers": [
+    "0.424",
+    "0.873"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/vision_cifar100/mmds_adapt/mean",
+    "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/mean"
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "higher",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "concl-process-tie",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/conclusion.tex",
+   "line": 3,
+   "quote": "ties the strongest fusion transfer within seed noise at $0.408$ macro-F1",
+   "numbers": [
+    "0.408"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/mean"
+   ],
+   "comparisons": [
+    {
+     "type": "within",
+     "target": "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/mean",
+     "other": "experiments/canonical_tables.json#/final_cells/process_tep/dmf_pub/mean",
+     "tol": "experiments/canonical_tables.json#/final_cells/process_tep/mmds_adapt/std"
+    }
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "higher",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "concl-daisy-cstr",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/conclusion.tex",
+   "line": 3,
+   "quote": "strictly best on the DaISy CSTR task at $1.013$ MASE",
+   "numbers": [
+    "1.013"
+   ],
+   "binding": [
+    "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/mmds_adapt/mean"
+   ],
+   "comparisons": [
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/mmds_adapt/mean",
+     "among": [
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/mmds_adapt/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/auth_only/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/full/mean",
+      "experiments/extended_view_source_ledger.json#/views/time_daisy_cstr/methods/random/mean"
+     ],
+     "expect_rank": 1
+    }
+   ],
+   "run_source": "daisy_cstr_3seed.log",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "secondary"
+  },
+  {
+   "claim_id": "concl-etth1-second",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/conclusion.tex",
+   "line": 3,
+   "quote": "On ETTh1 it ranks second at $0.981$, clearly ahead of random",
+   "numbers": [
+    "0.981"
+   ],
+   "binding": [
+    "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean"
+   ],
+   "comparisons": [
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+     "among": [
+      "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/influence_only/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/coreset/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/auth_only/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/mmdataselect/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/dmf/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/dmf_pub/mean",
+      "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean"
+     ],
+     "expect_rank": 2
+    },
+    {
+     "type": "better",
+     "direction": "lower",
+     "target": "experiments/canonical_tables.json#/final_cells/time_etth1/mmds_adapt/mean",
+     "than": "experiments/canonical_tables.json#/final_cells/time_etth1/random/mean"
+    }
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "primary"
+  },
+  {
+   "claim_id": "concl-text-boundary",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/conclusion.tex",
+   "line": 3,
+   "quote": "published-rule transfers tying random and the full-token reference remaining best",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "rank",
+     "direction": "lower",
+     "target": "experiments/text_controls_stats.json#/per_method/noselect/ppl_gmean/mean",
+     "among": [
+      "experiments/text_controls_stats.json#/per_method/random/ppl_gmean/mean",
+      "experiments/text_controls_stats.json#/qz4_baselines_20260717/quadmix_pub/mean",
+      "experiments/text_controls_stats.json#/qz4_baselines_20260717/zip/mean",
+      "experiments/text_controls_stats.json#/per_method/noselect/ppl_gmean/mean"
+     ],
+     "expect_rank": 1
+    },
+    {
+     "type": "substring",
+     "path": "experiments/text_controls_stats.json#/qz4_baselines_20260717/paired_delta_vs_random/quadmix_pub",
+     "expect": "tie within noise"
+    }
+   ],
+   "run_source": "text-qz4-20260717T0933",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "lower",
+   "tier": "secondary"
+  },
+  {
+   "claim_id": "concl-limit-tabular-margin",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/conclusion.tex",
+   "line": 5,
+   "quote": "the controller's margin over the best single policy approaches zero",
+   "numbers": [],
+   "binding": [],
+   "comparisons": [
+    {
+     "type": "within",
+     "target": "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/mean",
+     "other": "experiments/canonical_tables.json#/final_cells/tabular_electricity/kcenter/mean",
+     "tol": "experiments/canonical_tables.json#/final_cells/tabular_electricity/mmds_adapt/std"
+    }
+   ],
+   "run_source": "pubcore-paired-20260716T1754",
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "metric_direction": "higher",
+   "tier": "primary"
+  }
+ ],
+ "unbound": [
+  {
+   "claim_id": "intro-within-flip-cifar10",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/intro.tex",
+   "line": 17,
+   "quote": "on CIFAR-10 it reaches $0.888$, below random at $0.913$, while coverage reaches $0.921$",
+   "numbers": [
+    "0.888",
+    "0.913",
+    "0.921"
+   ],
+   "reason": "CIFAR-10 within-modality flip arm: no CIFAR-10 view exists in canonical_tables.json, results_matrix.json, extended_view_source_ledger.json, text_controls_stats.json, or results_canonical/**/results.json; the numbers predate the paired batch and their per-seed source is not among the mandated evidence files",
+   "tier": "exploratory"
+  },
+  {
+   "claim_id": "intro-fig-caption-cifar10",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/intro.tex",
+   "line": 24,
+   "quote": "falls below random on CIFAR-10 ($0.888$ versus $0.913$), where coverage reaches $0.921$",
+   "numbers": [
+    "0.888",
+    "0.913",
+    "0.921"
+   ],
+   "reason": "same CIFAR-10 arm as intro-within-flip-cifar10; no binding available in the mandated evidence files",
+   "tier": "exploratory"
+  },
+  {
+   "claim_id": "method-auth-precondition-cifar10",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/method.tex",
+   "line": 58,
+   "quote": "but only $0.888$ on CIFAR-10, below random at $0.913$, while coverage reaches $0.921$",
+   "numbers": [
+    "0.888",
+    "0.913",
+    "0.921"
+   ],
+   "reason": "same CIFAR-10 arm; no binding available in the mandated evidence files",
+   "tier": "exploratory"
+  },
+  {
+   "claim_id": "method-oracle-diagnostic",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/method.tex",
+   "line": 69,
+   "quote": "exceed the best detector-driven selection by about 3.6 points on images and about 7 points on process diagnosis",
+   "numbers": [
+    "3.6",
+    "7",
+    "0.64",
+    "0.77"
+   ],
+   "reason": "oracle-ceiling and detector-AUROC numbers come from the method-v2 diagnostic lane (docs/method_v2_diagnostic.md, experiments/methodv2_diag), which is not among the mandated evidence files",
+   "tier": "exploratory"
+  },
+  {
+   "claim_id": "method-legacy-fixedfusion-row",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/method.tex",
+   "line": 115,
+   "quote": "Fixed-weight fusion & 0.339 & 1.018 & 0.341 & 0.860",
+   "numbers": [
+    "0.339",
+    "1.018",
+    "0.341",
+    "0.860"
+   ],
+   "reason": "registered legacy exception (docs/aaai_numeric_exceptions_register.md item 1): the legacy /cells namespace of canonical_tables.json carries no mmdataselect (fixed-fusion) cells, and no mandated evidence file reproduces this pre-paired snapshot row",
+   "tier": "legacy-registered"
+  },
+  {
+   "claim_id": "method-legacy-ours-row",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/method.tex",
+   "line": 117,
+   "quote": "Voting-based controller (ours) & \\textbf{0.428} & 0.995 & \\textbf{0.417} & \\textbf{0.874}",
+   "numbers": [
+    "0.428",
+    "0.995",
+    "0.417",
+    "0.874"
+   ],
+   "reason": "registered legacy exception (docs/aaai_numeric_exceptions_register.md item 1): 0.428/0.995/0.417 match no cell in the mandated evidence files (legacy mmds_adapt cells in canonical_tables.json /cells read 0.4315/1.004/0.4146 after the v5 override); the snapshot's exact source (controller_current_canonical_v5 split-protocol lane) is outside the mandated evidence set",
+   "tier": "legacy-registered"
+  },
+  {
+   "claim_id": "method-selfimproving-evidence",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/method.tex",
+   "line": 150,
+   "quote": "about $+0.002$ macro-F1 on TEP",
+   "numbers": [
+    "0.002",
+    "8.9"
+   ],
+   "reason": "split-protocol self-improving-candidate ablation and complementarity measurement (gamma-hat 8.9 percent) come from dedicated ablation lanes (register item 4), not from the mandated evidence files",
+   "tier": "posthoc"
+  },
+  {
+   "claim_id": "method-prescreen-42-4",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/method.tex",
+   "line": 181,
+   "quote": "full-fidelity evaluations of the fusion grid drop from 42 to 4",
+   "numbers": [
+    "42",
+    "4"
+   ],
+   "reason": "vision-arm successive-halving prescreen evidence lives in the dedicated prescreen ablation lane, not in the mandated evidence files",
+   "tier": "posthoc"
+  },
+  {
+   "claim_id": "exp-c100n-full-and-rate",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 106,
+   "quote": "a real mislabel rate of 40.2\\%",
+   "numbers": [
+    "40.2",
+    "0.448"
+   ],
+   "reason": "40.2 percent is the CIFAR-100N dataset statistic from the cited external paper, not a run result; the 0.448 full-data reference has no 'full' method in results_matrix.json#/vision_cifar100n (its source is the raw lane log, not a mandated evidence file)",
+   "tier": "secondary"
+  },
+  {
+   "claim_id": "exp-ablation-paragraph",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 108,
+   "quote": "growing the image validation set from 200 to 1600 lifts the controller monotonically from 0.423 to 0.434",
+   "numbers": [
+    "0.423",
+    "0.434",
+    "0.007",
+    "0.001",
+    "0.427",
+    "0.432",
+    "0.428",
+    "0.002"
+   ],
+   "reason": "outside the mandated matrix scope and covered by register item 4: dedicated ablation lanes (switch margin, validation size, split protocol) are not recorded in the mandated evidence files",
+   "tier": "posthoc"
+  },
+  {
+   "claim_id": "exp-contam-block",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 121,
+   "quote": "0\\% (base) & 0.425 & 0.417 & DMF or vote-ensemble",
+   "numbers": [
+    "0.425",
+    "0.417",
+    "0.427",
+    "0.416",
+    "0.413",
+    "0.415",
+    "0.004",
+    "0.324",
+    "7"
+   ],
+   "reason": "outside the mandated matrix scope and covered by register item 4: tab:contam and Proposition-6 numbers come from the dedicated contamination ablation lane (split protocol), intentionally different from the four-arm main protocol; not in the mandated evidence files",
+   "tier": "posthoc"
+  },
+  {
+   "claim_id": "exp-dsir-fidelity-anchor",
+   "file": "papers/mmdataselect/submissions/aaai2027/sections/experiments.tex",
+   "line": 32,
+   "quote": "a selection-rank correlation of 0.86 and a top-50\\% overlap of 85\\%",
+   "numbers": [
+    "0.86",
+    "85"
+   ],
+   "reason": "implementation-disclosure fidelity anchor from experiments/dsir_official_fidelity.log (baseline-fidelity lane), not among the mandated evidence files",
+   "tier": "secondary"
+  }
+ ]
+}

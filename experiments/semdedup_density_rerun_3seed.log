@@ -1,0 +1,160 @@
+##### SEED 0 VISION #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+  semdedup         n= 2000 clean%=0.68 test_acc=0.4015 (1.0s)
+  density          n= 2000 clean%=0.63 test_acc=0.3910 (0.3s)
+    [adapt] picked 'dmf' (val=0.475)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4330 (101.0s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  semdedup         acc=0.4015 clean%=0.68 n=2000
+  density          acc=0.3910 clean%=0.62 n=2000
+  mmds_adapt       acc=0.4330 clean%=0.80 n=2000
+##### SEED 0 TEP #####
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=0
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+  semdedup         n= 1200 clean%=0.67 macroF1=0.3660 acc=0.3660 (0.8s)
+  density          n= 1200 clean%=0.63 macroF1=0.3457 acc=0.3493 (0.6s)
+    [adapt] picked 'dmf' (val_f1=0.431)
+  mmds_adapt       n= 1200 clean%=0.84 macroF1=0.4138 acc=0.4193 (38.5s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4138 acc=0.4193 clean%=0.84 n=1200
+  semdedup         F1=0.3660 acc=0.3660 clean%=0.67 n=1200
+  density          F1=0.3457 acc=0.3493 clean%=0.63 n=1200
+##### SEED 0 TAB #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+tabular=electricity model=tabpfn | pool=3000 test=2000 budget=1500 classes=2 seed=0
+  tags: {'corrupt': np.int64(400), 'dup': np.int64(400), 'flip': np.int64(400), 'high': np.int64(1800)}
+  semdedup         n= 1500 clean%=0.57 acc=0.7955 auc=0.8628 (33.6s)
+  density          n= 1500 clean%=0.59 acc=0.8000 auc=0.8756 (32.3s)
+    [adapt] picked 'density' (val_auc=0.866)
+  mmds_adapt       n= 1500 clean%=0.59 acc=0.8000 auc=0.8756 (1495.5s)
+
+==== TABULAR (electricity, AUC higher better) ====
+  semdedup         auc=0.8628 acc=0.7955 clean%=0.56 n=1500
+  density          auc=0.8756 acc=0.8000 clean%=0.59 n=1500
+  mmds_adapt       auc=0.8756 acc=0.8000 clean%=0.59 n=1500
+##### SEED 0 TS #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=0
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  semdedup         n=  900 clean%=0.63 MASE=1.0739 (2.0s)
+  density          n=  900 clean%=0.60 MASE=1.0803 (0.4s)
+    [adapt] picked 'fuse w=(0.5, 0, 0.5) q=0.25 lam=0.0' (val_negMASE=-1.006)
+  mmds_adapt       n=  900 clean%=0.89 MASE=0.9721 (14.8s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.9721 clean%=0.89 n=900
+  semdedup         MASE=1.0739 clean%=0.63 n=900
+  density          MASE=1.0803 clean%=0.60 n=900
+##### SEED 1 VISION #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=1
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+  semdedup         n= 2000 clean%=0.67 test_acc=0.4035 (0.7s)
+  density          n= 2000 clean%=0.62 test_acc=0.4400 (0.2s)
+    [adapt] picked 'dmf' (val=0.438)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4160 (58.5s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  semdedup         acc=0.4035 clean%=0.67 n=2000
+  density          acc=0.4400 clean%=0.62 n=2000
+  mmds_adapt       acc=0.4160 clean%=0.80 n=2000
+##### SEED 1 TEP #####
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=1
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+  semdedup         n= 1200 clean%=0.67 macroF1=0.3642 acc=0.3703 (0.6s)
+  density          n= 1200 clean%=0.63 macroF1=0.3515 acc=0.3657 (0.4s)
+    [adapt] picked 'fuse w=(0.34, 0.33, 0.33) q=0.0 lam=0.5' (val_f1=0.399)
+  mmds_adapt       n= 1200 clean%=0.68 macroF1=0.4176 acc=0.4210 (25.1s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4176 acc=0.4210 clean%=0.68 n=1200
+  semdedup         F1=0.3642 acc=0.3703 clean%=0.67 n=1200
+  density          F1=0.3515 acc=0.3657 clean%=0.63 n=1200
+##### SEED 1 TAB #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+tabular=electricity model=tabpfn | pool=3000 test=2000 budget=1500 classes=2 seed=1
+  tags: {'corrupt': np.int64(400), 'dup': np.int64(400), 'flip': np.int64(400), 'high': np.int64(1800)}
+  semdedup         n= 1500 clean%=0.56 acc=0.7800 auc=0.8457 (19.7s)
+  density          n= 1500 clean%=0.59 acc=0.7850 auc=0.8581 (23.8s)
+    [adapt] picked 'density' (val_auc=0.867)
+  mmds_adapt       n= 1500 clean%=0.59 acc=0.7850 auc=0.8581 (1458.4s)
+
+==== TABULAR (electricity, AUC higher better) ====
+  semdedup         auc=0.8457 acc=0.7800 clean%=0.56 n=1500
+  density          auc=0.8581 acc=0.7850 clean%=0.59 n=1500
+  mmds_adapt       auc=0.8581 acc=0.7850 clean%=0.59 n=1500
+##### SEED 1 TS #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=1
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  semdedup         n=  900 clean%=0.62 MASE=1.0574 (1.3s)
+  density          n=  900 clean%=0.61 MASE=1.0613 (0.2s)
+    [adapt] picked 'mmdataselect' (val_negMASE=-1.024)
+  mmds_adapt       n=  900 clean%=0.84 MASE=0.9836 (9.1s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=0.9836 clean%=0.84 n=900
+  semdedup         MASE=1.0574 clean%=0.62 n=900
+  density          MASE=1.0613 clean%=0.61 n=900
+##### SEED 2 VISION #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=2
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+  semdedup         n= 2000 clean%=0.67 test_acc=0.4345 (0.6s)
+  density          n= 2000 clean%=0.62 test_acc=0.3760 (0.2s)
+    [adapt] picked 'semdedup' (val=0.441)
+  mmds_adapt       n= 2000 clean%=0.67 test_acc=0.4345 (58.0s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  semdedup         acc=0.4345 clean%=0.67 n=2000
+  density          acc=0.3760 clean%=0.62 n=2000
+  mmds_adapt       acc=0.4345 clean%=0.67 n=2000
+##### SEED 2 TEP #####
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=2
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+  semdedup         n= 1200 clean%=0.67 macroF1=0.3389 acc=0.3350 (0.5s)
+  density          n= 1200 clean%=0.62 macroF1=0.3335 acc=0.3233 (0.4s)
+    [adapt] picked 'dmf' (val_f1=0.418)
+  mmds_adapt       n= 1200 clean%=0.86 macroF1=0.4120 acc=0.4130 (24.7s)
+
+==== TEP (macro-F1, higher better) ====
+  mmds_adapt       F1=0.4120 acc=0.4130 clean%=0.86 n=1200
+  semdedup         F1=0.3389 acc=0.3350 clean%=0.67 n=1200
+  density          F1=0.3335 acc=0.3233 clean%=0.62 n=1200
+##### SEED 2 TAB #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+tabular=electricity model=tabpfn | pool=3000 test=2000 budget=1500 classes=2 seed=2
+  tags: {'corrupt': np.int64(400), 'dup': np.int64(400), 'flip': np.int64(400), 'high': np.int64(1800)}
+  semdedup         n= 1500 clean%=0.55 acc=0.7885 auc=0.8672 (19.1s)
+  density          n= 1500 clean%=0.59 acc=0.8080 auc=0.8822 (17.9s)
+    [adapt] picked 'random' (val_auc=0.877)
+  mmds_adapt       n= 1500 clean%=0.59 acc=0.8140 auc=0.8851 (1208.5s)
+
+==== TABULAR (electricity, AUC higher better) ====
+  semdedup         auc=0.8672 acc=0.7885 clean%=0.55 n=1500
+  density          auc=0.8822 acc=0.8080 clean%=0.59 n=1500
+  mmds_adapt       auc=0.8851 acc=0.8140 clean%=0.59 n=1500
+##### SEED 2 TS #####
+  return (x - lo) / (hi - lo)
+  return (x - lo) / (hi - lo)
+timeseries=ETTh1 OT | L=96 H=24 pool=3000 test=1500 budget=900 dev=mps seed=2
+  tags: {'corrupt': np.int64(300), 'dup': np.int64(300), 'flat': np.int64(300), 'high': np.int64(1800), 'shuffle': np.int64(300)}
+  semdedup         n=  900 clean%=0.63 MASE=1.0502 (1.3s)
+  density          n=  900 clean%=0.63 MASE=1.0895 (0.2s)
+    [adapt] picked 'quadmix' (val_negMASE=-1.011)
+  mmds_adapt       n=  900 clean%=0.78 MASE=1.0331 (9.1s)
+
+==== TIMESERIES (ETTh1, MASE lower=better) ====
+  mmds_adapt       MASE=1.0331 clean%=0.78 n=900
+  semdedup         MASE=1.0502 clean%=0.63 n=900
+  density          MASE=1.0895 clean%=0.63 n=900
+=== rerun done ===

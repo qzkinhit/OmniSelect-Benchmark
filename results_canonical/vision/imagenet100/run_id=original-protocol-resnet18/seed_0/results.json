@@ -1,0 +1,98 @@
+{
+  "arm": "original_protocol",
+  "dataset": "imagenet100",
+  "seed": 0,
+  "config": {
+    "in_res": 112,
+    "score_epoch": 10,
+    "train_epoch": 40,
+    "score_runs": 3,
+    "pool": 120000,
+    "val_n": 5000,
+    "keep": 0.3,
+    "scale_note": "reduced-scale qualitative validation",
+    "recovered_from_log": "experiments/imagenet100_protocol_seed0.log",
+    "log_sha256": "29dea232406e116aa6a3e7dfdbad0190fd9e7639f6c2aa5594e4d80e7d80b2d7",
+    "code_sha256": "d6c08ceb0c7c80bda9d1fefa2ccd3b4f6cf78cc9b2b934c946d0a7a7e9d168e7"
+  },
+  "results": [
+    {
+      "method": "random",
+      "val": 0.6182,
+      "test": 0.586,
+      "n": 36000
+    },
+    {
+      "method": "el2n",
+      "val": 0.3426,
+      "test": 0.3192,
+      "n": 36000
+    },
+    {
+      "method": "grand",
+      "val": 0.3444,
+      "test": 0.326,
+      "n": 36000
+    },
+    {
+      "method": "ccs",
+      "val": 0.6508,
+      "test": 0.6188,
+      "n": 36000
+    },
+    {
+      "method": "auth",
+      "val": 0.5632,
+      "test": 0.5186,
+      "n": 36000
+    },
+    {
+      "method": "semdedup",
+      "val": 0.626,
+      "test": 0.5874,
+      "n": 36000
+    },
+    {
+      "method": "density",
+      "val": 0.6162,
+      "test": 0.581,
+      "n": 36000
+    },
+    {
+      "method": "quadmix_pub",
+      "val": 0.6248,
+      "test": 0.5848,
+      "n": 36000
+    },
+    {
+      "method": "influence_only",
+      "val": 0.5686,
+      "test": 0.5358,
+      "n": 36000
+    },
+    {
+      "method": "mmdataselect",
+      "val": 0.5336,
+      "test": 0.4846,
+      "n": 36000
+    },
+    {
+      "method": "dmf_pub",
+      "val": 0.629,
+      "test": 0.5786,
+      "n": 36000
+    },
+    {
+      "method": "ctrl",
+      "val": 0.6508,
+      "test": 0.6188,
+      "n": 36000,
+      "picked": "ccs"
+    }
+  ],
+  "_merge_note": {
+    "date": "2026-07-21",
+    "action": "backfilled semdedup/density/quadmix_pub/influence_only/mmdataselect/dmf_pub via the fastlane (SUBSETS-filtered) run; herding/coreset/kcenter still pending in a separate full run at time of this merge",
+    "status": "PARTIAL: herding and coreset not yet included"
+  }
+}

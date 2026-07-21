@@ -1,0 +1,72 @@
+[data] arrow cache: train=126689 val=5000
+[score] ResNet-18 x3 inits to epoch 10 (dev=cuda, data=imagenet100, pool=120000)
+[score] done in 2882s -> /root/autodl-tmp/OmniSelect_v3_next/baselines/deepcore_original/../../outputs/score_ckpt_imagenet100_s0_e10_r3_d7c910ad85b8.npz
+[progress] semdedup done @ 1784625780
+[progress] density done @ 1784625810
+[progress] quadmix_pub done @ 1784625815
+[progress] influence_only done @ 1784625817
+[progress] mmdataselect done @ 1784626254
+/root/autodl-tmp/OmniSelect/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 150 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=150).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/root/autodl-tmp/OmniSelect/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 150 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=150).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/root/autodl-tmp/OmniSelect/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 150 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=150).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/root/autodl-tmp/OmniSelect/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 150 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=150).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/root/autodl-tmp/OmniSelect/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 150 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=150).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/root/autodl-tmp/OmniSelect/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 150 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=150).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[progress] dmf_pub done @ 1784626391
+
+==== ORIGINAL PROTOCOL: ResNet-18 from scratch, imagenet100, keep 30% (36000) ====
+[subset-filter] fitting only: ['semdedup', 'density', 'quadmix_pub', 'influence_only', 'mmdataselect', 'dmf_pub']
+  semdedup val=0.6260 test=0.5874  n=36000
+  density  val=0.6162 test=0.5810  n=36000
+  quadmix_pub val=0.6248 test=0.5848  n=36000
+  influence_only val=0.5686 test=0.5358  n=36000
+  mmdataselect val=0.5336 test=0.4846  n=36000
+  dmf_pub  val=0.6290 test=0.5786  n=36000

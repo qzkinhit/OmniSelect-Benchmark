@@ -1,0 +1,29 @@
+/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/src/mmdataselect/signals/base.py:20: RuntimeWarning: invalid value encountered in subtract
+  return (x - lo) / (hi - lo)
+/Users/qianzekai/PycharmProjects/Paper2_OmniSelect/src/mmdataselect/signals/base.py:20: RuntimeWarning: invalid value encountered in divide
+  return (x - lo) / (hi - lo)
+tabular=electricity model=tabpfn | pool=3000 test=2000 budget=900 classes=2 seed=0
+  tags: {'corrupt': np.int64(400), 'dup': np.int64(400), 'flip': np.int64(400), 'high': np.int64(1800)}
+  random           n=  900 clean%=0.60 acc=0.7770 auc=0.8534 (38.9s)
+  coreset          n=  900 clean%=0.47 acc=0.7800 auc=0.8524 (43.1s)
+  auth_only        n=  900 clean%=0.80 acc=0.7730 auc=0.8421 (41.5s)
+  tabpfn_coreset   n=  900 clean%=0.47 acc=0.7855 auc=0.8383 (35.8s)
+  tabpfn_margin    n=  900 clean%=0.48 acc=0.7255 auc=0.8097 (47.2s)
+  tabpfn_hybrid    n=  900 clean%=0.45 acc=0.7665 auc=0.8469 (26.7s)
+  el2n             n=  900 clean%=0.41 acc=0.2440 auc=0.2112 (24.2s)
+  grand            n=  900 clean%=0.41 acc=0.2440 auc=0.2112 (19.4s)
+  mmdataselect     n=  900 clean%=0.54 acc=0.7965 auc=0.8568 (20.4s)
+    [adapt] picked 'mmdataselect' (val_auc=0.856)
+  mmds_adapt       n=  900 clean%=0.54 acc=0.7965 auc=0.8568 (383.3s)
+
+==== TABULAR (electricity, AUC higher better) ====
+  random           auc=0.8534 acc=0.7770 clean%=0.60 n=900
+  coreset          auc=0.8524 acc=0.7800 clean%=0.47 n=900
+  auth_only        auc=0.8421 acc=0.7730 clean%=0.80 n=900
+  tabpfn_coreset   auc=0.8383 acc=0.7855 clean%=0.47 n=900
+  tabpfn_margin    auc=0.8097 acc=0.7255 clean%=0.48 n=900
+  tabpfn_hybrid    auc=0.8469 acc=0.7665 clean%=0.45 n=900
+  el2n             auc=0.2112 acc=0.2440 clean%=0.41 n=900
+  grand            auc=0.2112 acc=0.2440 clean%=0.41 n=900
+  mmdataselect     auc=0.8568 acc=0.7965 clean%=0.54 n=900
+  mmds_adapt       auc=0.8568 acc=0.7965 clean%=0.54 n=900

@@ -1,0 +1,12 @@
+##### CIFAR10-FULL SEED=0 2026-07-15_19:32:46 #####
+[score] ResNet-18 x3 inits to epoch 10 (dev=cuda, data=cifar10, pool=45000)
+[score] done in 154s -> /root/autodl-tmp/OmniSelect/baselines/deepcore_original/../../outputs/score_ckpt_cifar10_s0_e10_r3_d6c08ceb0c7c.npz
+
+==== ORIGINAL PROTOCOL: ResNet-18 from scratch, cifar10, keep 30% (13500) ====
+  random   val=0.8862 test=0.8836  n=13500
+  el2n     val=0.8818 test=0.8784  n=13500
+  grand    val=0.8820 test=0.8851  n=13500
+  ccs      val=0.8974 test=0.8981  n=13500
+  auth     val=0.8338 test=0.8286  n=13500
+  ctrl     val=0.8974 test=0.8981  n=13500  picked=ccs
+SEED=0 python_exit=0

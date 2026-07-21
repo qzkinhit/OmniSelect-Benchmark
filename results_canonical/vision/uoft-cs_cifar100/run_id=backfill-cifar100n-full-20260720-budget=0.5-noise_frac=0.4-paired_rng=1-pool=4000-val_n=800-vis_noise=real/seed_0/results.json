@@ -1,0 +1,301 @@
+{
+  "arm": "vision",
+  "dataset": "uoft-cs/cifar100",
+  "seed": 0,
+  "config": {
+    "noise_frac": 0.4,
+    "vis_noise": "real",
+    "drop": "",
+    "pool": 4000,
+    "budget": 0.5,
+    "val_n": 800,
+    "paired_rng": 1
+  },
+  "code_sha256_12": "64a6e0038db7",
+  "baseline_impl_sha256": "745ab94cc348af18c5f80197e5b1a789a3223814e13ab55089c4c56e9aea4a58",
+  "fidelity_mode": "unified-protocol",
+  "published_core_protocol": null,
+  "results": [
+    {
+      "method": "full",
+      "n": 4000,
+      "clean%": 0.608,
+      "acc": 0.447,
+      "sel_sha12": "c5ca0ea26872",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "c5ca0ea26872"
+    },
+    {
+      "method": "random",
+      "n": 2000,
+      "clean%": 0.602,
+      "acc": 0.287,
+      "sel_sha12": "61038fc62f59",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "61038fc62f59"
+    },
+    {
+      "method": "coreset",
+      "n": 2000,
+      "clean%": 0.613,
+      "acc": 0.3015,
+      "sel_sha12": "7d77661c2823",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "7d77661c2823"
+    },
+    {
+      "method": "auth_only",
+      "n": 2000,
+      "clean%": 0.845,
+      "acc": 0.3795,
+      "sel_sha12": "ac6b472f025a",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "ac6b472f025a"
+    },
+    {
+      "method": "influence_only",
+      "n": 2000,
+      "clean%": 0.696,
+      "acc": 0.3125,
+      "sel_sha12": "227efca99c82",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "227efca99c82"
+    },
+    {
+      "method": "mmdataselect",
+      "n": 2000,
+      "clean%": 0.649,
+      "acc": 0.3145,
+      "sel_sha12": "793108aff206",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "793108aff206"
+    },
+    {
+      "method": "herding",
+      "n": 2000,
+      "clean%": 0.608,
+      "acc": 0.3425,
+      "sel_sha12": "fb02ceca72e1",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "fb02ceca72e1"
+    },
+    {
+      "method": "kcenter",
+      "n": 2000,
+      "clean%": 0.618,
+      "acc": 0.3075,
+      "sel_sha12": "f90256d2ef01",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "f90256d2ef01"
+    },
+    {
+      "method": "el2n",
+      "n": 2000,
+      "clean%": 0.525,
+      "acc": 0.2345,
+      "sel_sha12": "ef09b5577527",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "ef09b5577527"
+    },
+    {
+      "method": "grand",
+      "n": 2000,
+      "clean%": 0.65,
+      "acc": 0.2955,
+      "sel_sha12": "83834f3cb449",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "83834f3cb449"
+    },
+    {
+      "method": "ccs",
+      "n": 2000,
+      "clean%": 0.629,
+      "acc": 0.3115,
+      "sel_sha12": "e0ea5b730609",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "e0ea5b730609"
+    },
+    {
+      "method": "semdedup",
+      "n": 2000,
+      "clean%": 0.606,
+      "acc": 0.3345,
+      "sel_sha12": "7d25e8a10412",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "7d25e8a10412"
+    },
+    {
+      "method": "density",
+      "n": 2000,
+      "clean%": 0.622,
+      "acc": 0.343,
+      "sel_sha12": "a3807656fddb",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "a3807656fddb"
+    },
+    {
+      "method": "quadmix",
+      "n": 2000,
+      "clean%": 0.814,
+      "acc": 0.366,
+      "sel_sha12": "1dcc4d2ec5a5",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "1dcc4d2ec5a5"
+    },
+    {
+      "method": "quadmix_pub",
+      "n": 2000,
+      "clean%": 0.637,
+      "acc": 0.3405,
+      "sel_sha12": "730b688edc69",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "730b688edc69"
+    },
+    {
+      "method": "dmf",
+      "n": 2000,
+      "clean%": 0.846,
+      "acc": 0.3775,
+      "sel_sha12": "61aed4493a82",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "61aed4493a82"
+    },
+    {
+      "method": "dmf_pub",
+      "n": 2000,
+      "clean%": 0.841,
+      "acc": 0.37,
+      "sel_sha12": "ef4bf4f17e13",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "ef4bf4f17e13"
+    },
+    {
+      "method": "mmds_adapt",
+      "n": 2000,
+      "clean%": 0.812,
+      "acc": 0.388,
+      "sel_sha12": "06d2a08da62f",
+      "fit_seed": 1995639018,
+      "train_order_sha12": "06d2a08da62f"
+    }
+  ],
+  "adapt_manifest": {
+    "leaderboard": [
+      [
+        "auth2_only",
+        0.415
+      ],
+      [
+        "fuse w=(1, 0, 0) q=0.0 lam=0.25",
+        0.405
+      ],
+      [
+        "fuse w=(1, 0, 0) q=0.0 lam=0.6",
+        0.405
+      ],
+      [
+        "fuse w=(1, 0, 0) q=0.25 lam=0.25",
+        0.405
+      ],
+      [
+        "fuse w=(1, 0, 0) q=0.25 lam=0.6",
+        0.405
+      ],
+      [
+        "auth_only",
+        0.405
+      ],
+      [
+        "vote_ensemble(top3)",
+        0.405
+      ],
+      [
+        "fuse learned w=(1.0, 0.0, 0.0) q=0.0 lam=0.25",
+        0.405
+      ],
+      [
+        "dmf",
+        0.3975
+      ],
+      [
+        "dmf_pub",
+        0.3875
+      ],
+      [
+        "dsdm",
+        0.3625
+      ],
+      [
+        "influence_only",
+        0.3375
+      ],
+      [
+        "density",
+        0.3175
+      ],
+      [
+        "quadmix_pub",
+        0.3175
+      ],
+      [
+        "mmdataselect",
+        0.315
+      ],
+      [
+        "herding",
+        0.305
+      ],
+      [
+        "semdedup",
+        0.305
+      ],
+      [
+        "kcenter",
+        0.2975
+      ],
+      [
+        "d4",
+        0.295
+      ],
+      [
+        "grand",
+        0.29
+      ],
+      [
+        "ccs",
+        0.29
+      ],
+      [
+        "coreset",
+        0.28
+      ],
+      [
+        "random",
+        0.2775
+      ],
+      [
+        "el2n",
+        0.1725
+      ],
+      [
+        "auth_bottom",
+        0.09
+      ]
+    ],
+    "chosen": {
+      "strategy": "auth2_only",
+      "val_gain": 0.415,
+      "best_ref": "auth2_only",
+      "switched": false,
+      "kappa_hat": 0.13749999999999996
+    },
+    "sel_sha12": "06d2a08da62f"
+  },
+  "pairing_manifest": {
+    "pool_sha256": "53a6c8eeb2acd41a8d803e9170d86e9d33b6b1908a29467fde0dd176cd8960b7",
+    "validation_sha256": "d45a059f60d49ccef7f7fa8f688881fa354b2ffd23501160b167d1ff9e35d427",
+    "test_sha256": "f72599d5817cc3951db288f09bd233f4456ca9dba2b2246c8ad0e7330c7ffe3e",
+    "shared_initialization_rule": "stable_seed(paper_seed, final-fit)",
+    "training_input_order": "sorted selected integer ids"
+  }
+}

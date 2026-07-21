@@ -1,0 +1,11 @@
+# OpenML electricity (data_id 151) sklearn cache — ALL files SHA256
+# Captured 2026-07-16 on server "omni" (autodl-container-9d94x8ag0n-5a505a19)
+# Command: find /root/scikit_learn_data/openml/ -type f -exec sha256sum {} \;
+# The actual ARFF data payload is the electricity.arff.gz under data/v1/download/2419/.
+# licence field from OpenML API (curl https://www.openml.org/api/v1/json/data/151): "Public"
+
+06017ab730ccf60807ff4e350df406b2d51470e812a55171a73add38bc3debe7  openml.org/api/v1/json/data/list/data_name/electricity/limit/2/data_version/1.gz
+ba8aae2c819f97561ea3cc12281cd2af8a32dfa53d9e11e0e92da52a2b9dbe51  openml.org/api/v1/json/data/151.gz
+7b97ed83bb9144c6fdfd6f388ba32c496ce22a1608f158f3f423e77da0491ff8  openml.org/api/v1/json/data/features/151.gz
+614c9a2e920e1ab927d9a4c6951dc5221d56b93136633ed86848fd65ae929eff  openml.org/api/v1/json/data/qualities/151.gz
+60df61719ff2065ae144ae7788a2a1fca603e6c5bc83c5bd82bb3b63b0d28c74  openml.org/data/v1/download/2419/electricity.arff.gz   <-- ARFF DATA PAYLOAD

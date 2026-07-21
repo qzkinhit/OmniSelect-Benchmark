@@ -1,0 +1,43 @@
+######## timeseries seed=0 ########
+  random           n=  600 clean%=0.61 MASE=1.1471 (0.1s)
+  coreset          n=  600 clean%=0.52 MASE=1.0944 (2.2s)
+  auth_only        n=  600 clean%=0.82 MASE=1.0231 (0.2s)
+  influence_only   n=  600 clean%=0.73 MASE=1.3031 (0.1s)
+  mmdataselect     n=  600 clean%=0.84 MASE=0.9957 (0.2s)
+    [adapt] picked w=(1, 0, 0) lam=0.6 q=0.0 (val_negMASE=-1.039)
+  mmds_adapt       n=  600 clean%=0.94 MASE=0.9770 (5.3s)
+  mmds_adapt       MASE=0.9770 clean%=0.94 n=600
+  mmdataselect     MASE=0.9957 clean%=0.84 n=600
+  auth_only        MASE=1.0231 clean%=0.82 n=600
+  coreset          MASE=1.0944 clean%=0.52 n=600
+  random           MASE=1.1471 clean%=0.61 n=600
+  influence_only   MASE=1.3031 clean%=0.73 n=600
+######## timeseries seed=1 ########
+  random           n=  600 clean%=0.61 MASE=1.1941 (0.1s)
+  coreset          n=  600 clean%=0.51 MASE=1.1426 (1.8s)
+  auth_only        n=  600 clean%=0.94 MASE=1.0403 (0.1s)
+  influence_only   n=  600 clean%=0.72 MASE=1.3215 (0.1s)
+  mmdataselect     n=  600 clean%=0.85 MASE=1.0342 (0.1s)
+    [adapt] picked w=(1, 0, 0) lam=0.6 q=0.0 (val_negMASE=-1.031)
+  mmds_adapt       n=  600 clean%=0.95 MASE=1.0043 (4.5s)
+  mmds_adapt       MASE=1.0043 clean%=0.95 n=600
+  mmdataselect     MASE=1.0342 clean%=0.85 n=600
+  auth_only        MASE=1.0403 clean%=0.94 n=600
+  coreset          MASE=1.1426 clean%=0.51 n=600
+  random           MASE=1.1941 clean%=0.61 n=600
+  influence_only   MASE=1.3215 clean%=0.72 n=600
+######## timeseries seed=2 ########
+  random           n=  600 clean%=0.60 MASE=1.1595 (0.1s)
+  coreset          n=  600 clean%=0.53 MASE=1.1051 (1.6s)
+  auth_only        n=  600 clean%=0.89 MASE=1.0366 (0.1s)
+  influence_only   n=  600 clean%=0.72 MASE=1.3313 (0.1s)
+  mmdataselect     n=  600 clean%=0.85 MASE=1.0262 (0.1s)
+    [adapt] picked w=(0.5, 0, 0.5) lam=0.0 q=0.25 (val_negMASE=-0.998)
+  mmds_adapt       n=  600 clean%=0.88 MASE=1.0064 (4.1s)
+  mmds_adapt       MASE=1.0064 clean%=0.88 n=600
+  mmdataselect     MASE=1.0262 clean%=0.85 n=600
+  auth_only        MASE=1.0366 clean%=0.89 n=600
+  coreset          MASE=1.1051 clean%=0.53 n=600
+  random           MASE=1.1595 clean%=0.60 n=600
+  influence_only   MASE=1.3313 clean%=0.72 n=600
+=== TIMESERIES SWEEP DONE ===

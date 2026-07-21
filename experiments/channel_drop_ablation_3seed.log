@@ -1,0 +1,458 @@
+##### VIS-DROP ch=auth SEED=0 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [adapt-drop:auth] picked 'random' (val=0.450)
+  mmds_adapt       n= 2000 clean%=0.60 test_acc=0.4275 (550.3s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4275 clean%=0.60 n=2000
+##### TEP-DROP ch=auth SEED=0 #####
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=0
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt-drop:auth] picked 'vote_ensemble(top3)' (val=0.419)
+  mmds_adapt       n= 1200 clean%=0.84 macroF1=0.3977 acc=0.4117 FDR=0.9700 FAR=0.9649 (252.3s)
+
+==== TEP (macro-F1 higher better; FDR fault detection / FAR false alarm) ====
+  mmds_adapt       F1=0.3977 acc=0.4117 FDR=0.9700 FAR=0.9649 clean%=0.84 n=1200
+##### VIS-DROP ch=auth SEED=1 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=1
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [adapt-drop:auth] picked 'random' (val=0.385)
+  mmds_adapt       n= 2000 clean%=0.59 test_acc=0.3975 (150.3s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.3975 clean%=0.59 n=2000
+##### TEP-DROP ch=auth SEED=1 #####
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=1
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt-drop:auth] picked 'fuse learned w=(0.57, 0.43) q=0.0 lam=0.5' (val=0.382)
+  mmds_adapt       n= 1200 clean%=0.70 macroF1=0.3985 acc=0.3987 FDR=0.9608 FAR=0.9112 (20.4s)
+
+==== TEP (macro-F1 higher better; FDR fault detection / FAR false alarm) ====
+  mmds_adapt       F1=0.3985 acc=0.3987 FDR=0.9608 FAR=0.9112 clean%=0.70 n=1200
+##### VIS-DROP ch=auth SEED=2 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=2
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [adapt-drop:auth] picked 'vote_ensemble(top3)' (val=0.398)
+  mmds_adapt       n= 2000 clean%=0.65 test_acc=0.3555 (255.6s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.3555 clean%=0.65 n=2000
+##### TEP-DROP ch=auth SEED=2 #####
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=2
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt-drop:auth] picked 'fuse learned w=(0.87, 0.13) q=0.0 lam=0.5' (val=0.382)
+  mmds_adapt       n= 1200 clean%=0.81 macroF1=0.3836 acc=0.3863 FDR=0.9426 FAR=0.8805 (115.2s)
+
+==== TEP (macro-F1 higher better; FDR fault detection / FAR false alarm) ====
+  mmds_adapt       F1=0.3836 acc=0.3863 FDR=0.9426 FAR=0.8805 clean%=0.81 n=1200
+##### VIS-DROP ch=infl SEED=0 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [adapt-drop:infl] picked 'fuse learned w=(0.77, 0.23) q=0.0 lam=0.0' (val=0.468)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4275 (129.6s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4275 clean%=0.80 n=2000
+##### TEP-DROP ch=infl SEED=0 #####
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=0
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt-drop:infl] picked 'vote_ensemble(top3)' (val=0.426)
+  mmds_adapt       n= 1200 clean%=0.54 macroF1=0.3993 acc=0.3980 FDR=0.9682 FAR=0.9415 (32.4s)
+
+==== TEP (macro-F1 higher better; FDR fault detection / FAR false alarm) ====
+  mmds_adapt       F1=0.3993 acc=0.3980 FDR=0.9682 FAR=0.9415 clean%=0.54 n=1200
+##### VIS-DROP ch=infl SEED=1 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=1
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [adapt-drop:infl] picked 'fuse learned w=(0.77, 0.23) q=0.0 lam=0.5' (val=0.468)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4260 (138.1s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4260 clean%=0.80 n=2000
+##### TEP-DROP ch=infl SEED=1 #####
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=1
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt-drop:infl] picked 'fuse w=(0.5, 0.5) q=0.0 lam=0.5' (val=0.381)
+  mmds_adapt       n= 1200 clean%=0.53 macroF1=0.3956 acc=0.4103 FDR=0.9668 FAR=0.9172 (33.8s)
+
+==== TEP (macro-F1 higher better; FDR fault detection / FAR false alarm) ====
+  mmds_adapt       F1=0.3956 acc=0.4103 FDR=0.9668 FAR=0.9172 clean%=0.53 n=1200
+##### VIS-DROP ch=infl SEED=2 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=2
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [adapt-drop:infl] picked 'fuse w=(1.0, 0.0) q=0.0 lam=0.5' (val=0.470)
+  mmds_adapt       n= 2000 clean%=0.81 test_acc=0.4220 (125.1s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4220 clean%=0.81 n=2000
+##### TEP-DROP ch=infl SEED=2 #####
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=2
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt-drop:infl] picked 'fuse w=(1.0, 0.0) q=0.0 lam=0.5' (val=0.399)
+  mmds_adapt       n= 1200 clean%=0.78 macroF1=0.3943 acc=0.3863 FDR=0.9212 FAR=0.8302 (207.8s)
+
+==== TEP (macro-F1 higher better; FDR fault detection / FAR false alarm) ====
+  mmds_adapt       F1=0.3943 acc=0.3863 FDR=0.9212 FAR=0.8302 clean%=0.78 n=1200
+##### VIS-DROP ch=red SEED=0 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=0
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [adapt-drop:red] picked 'fuse w=(1.0, 0.0) q=0.0 lam=0.5' (val=0.463)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4265 (185.1s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4265 clean%=0.80 n=2000
+##### TEP-DROP ch=red SEED=0 #####
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=0
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt-drop:red] picked 'fuse learned w=(0.57, 0.43) q=0.0 lam=0.5' (val=0.460)
+  mmds_adapt       n= 1200 clean%=0.82 macroF1=0.4216 acc=0.4250 FDR=0.9650 FAR=0.9474 (52.5s)
+
+==== TEP (macro-F1 higher better; FDR fault detection / FAR false alarm) ====
+  mmds_adapt       F1=0.4216 acc=0.4250 FDR=0.9650 FAR=0.9474 clean%=0.82 n=1200
+##### VIS-DROP ch=red SEED=1 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=1
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [adapt-drop:red] picked 'fuse w=(1.0, 0.0) q=0.0 lam=0.0' (val=0.450)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4300 (112.0s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4300 clean%=0.80 n=2000
+##### TEP-DROP ch=red SEED=1 #####
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=1
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt-drop:red] picked 'vote_ensemble(top3)' (val=0.386)
+  mmds_adapt       n= 1200 clean%=0.83 macroF1=0.3863 acc=0.4190 FDR=0.9629 FAR=0.9231 (244.3s)
+
+==== TEP (macro-F1 higher better; FDR fault detection / FAR false alarm) ====
+  mmds_adapt       F1=0.3863 acc=0.4190 FDR=0.9629 FAR=0.9231 clean%=0.83 n=1200
+##### VIS-DROP ch=red SEED=2 #####
+[encode] cached (4000 pool, 800 val, 2000 test)
+vision | encoder=openai/clip-vit-base-patch32 pool=4000 test=2000 budget=2000 seed=2
+  pool tags: {'dup': np.int64(533), 'flip': np.int64(533), 'hard': np.int64(534), 'high': np.int64(2400)}
+    [adapt-drop:red] picked 'fuse w=(1.0, 0.0) q=0.0 lam=0.0' (val=0.480)
+  mmds_adapt       n= 2000 clean%=0.80 test_acc=0.4255 (117.6s)
+
+==== VISION (CIFAR-100 top-1 acc, higher better) ====
+  mmds_adapt       acc=0.4255 clean%=0.80 n=2000
+##### TEP-DROP ch=red SEED=2 #####
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+  warnings.warn(
+TEP fault-diagnosis | pool=4000 test=3000 budget=1200 classes=22 seed=2
+  tags: {'corrupt': np.int64(533), 'dup': np.int64(534), 'flip': np.int64(533), 'high': np.int64(2400)}
+    [adapt-drop:red] picked 'fuse learned w=(0.57, 0.43) q=0.0 lam=0.5' (val=0.421)
+  mmds_adapt       n= 1200 clean%=0.83 macroF1=0.4110 acc=0.4013 FDR=0.9377 FAR=0.8553 (31.5s)
+
+==== TEP (macro-F1 higher better; FDR fault detection / FAR false alarm) ====
+  mmds_adapt       F1=0.4110 acc=0.4013 FDR=0.9377 FAR=0.8553 clean%=0.83 n=1200
+CHANNEL_DROP_DONE

@@ -1,0 +1,403 @@
+===== HEAD 200 of /root/lane_ccs_anchor.log =====
+===== STAGE s1_fulltrain START 2026-07-16T19:51:03Z =====
+Dataset: cifar10
+==================== Training Setting ====================
+Namespace(epochs=200, iterations=None, batch_size=256, lr=0.1, network='resnet18', dataset='cifar10', iterations_per_testing=800, data_dir='./data', base_dir='./data-model/cifar10', task_name='all-data', coreset=False, coreset_mode=None, data_score_path=None, coreset_key=None, data_score_descending=0, class_balanced=0, coreset_ratio=None, mis_key=None, mis_data_score_descending=0, mis_ratio=None, reversed_ratio=None, gpuid='0')
+==========================================================
+Last ckpt path: ./data-model/cifar10/all-data/ckpt-last.pt
+Data dir: ./data/cifar10
+50000
+10000
+resnet18
+Total epoch: 200
+Iterations per epoch: 196
+Total iterations: 39200
+Epochs per testing: 4
+**************************
+0/196
+>> batch_idx [0]: Time consumed: 0.65
+60/196
+>> batch_idx [60]: Time consumed: 2.17
+120/196
+>> batch_idx [120]: Time consumed: 3.68
+180/196
+>> batch_idx [180]: Time consumed: 5.20
+>> Epoch [0]: Loss: 390.30
+>> Epoch [0]: Training Accuracy: 30.68
+>> Epoch [0]: Time consumed: 5.61
+======= Testing... =======
+Loss: 32.28
+Test Accuracy: 39.90
+>> Test time consumed: 0.58
+**************************
+0/196
+>> batch_idx [0]: Time consumed: 0.27
+60/196
+>> batch_idx [60]: Time consumed: 1.80
+120/196
+>> batch_idx [120]: Time consumed: 3.32
+180/196
+>> batch_idx [180]: Time consumed: 4.81
+>> Epoch [1]: Loss: 285.73
+>> Epoch [1]: Training Accuracy: 46.27
+>> Epoch [1]: Time consumed: 5.21
+**************************
+0/196
+>> batch_idx [0]: Time consumed: 0.27
+60/196
+>> batch_idx [60]: Time consumed: 1.75
+120/196
+>> batch_idx [120]: Time consumed: 3.22
+180/196
+>> batch_idx [180]: Time consumed: 4.70
+>> Epoch [2]: Loss: 239.40
+>> Epoch [2]: Training Accuracy: 55.62
+>> Epoch [2]: Time consumed: 5.09
+**************************
+0/196
+>> batch_idx [0]: Time consumed: 0.26
+60/196
+>> batch_idx [60]: Time consumed: 1.76
+120/196
+>> batch_idx [120]: Time consumed: 3.24
+180/196
+>> batch_idx [180]: Time consumed: 4.72
+>> Epoch [3]: Loss: 201.08
+>> Epoch [3]: Training Accuracy: 63.13
+>> Epoch [3]: Time consumed: 5.11
+**************************
+0/196
+>> batch_idx [0]: Time consumed: 0.27
+60/196
+>> batch_idx [60]: Time consumed: 1.75
+120/196
+>> batch_idx [120]: Time consumed: 3.24
+180/196
+>> batch_idx [180]: Time consumed: 4.73
+>> Epoch [4]: Loss: 175.49
+>> Epoch [4]: Training Accuracy: 68.28
+>> Epoch [4]: Time consumed: 5.13
+======= Testing... =======
+Loss: 18.43
+Test Accuracy: 67.75
+>> Test time consumed: 0.56
+**************************
+0/196
+>> batch_idx [0]: Time consumed: 0.27
+60/196
+>> batch_idx [60]: Time consumed: 1.74
+120/196
+>> batch_idx [120]: Time consumed: 3.21
+180/196
+>> batch_idx [180]: Time consumed: 4.68
+>> Epoch [5]: Loss: 155.69
+>> Epoch [5]: Training Accuracy: 71.88
+>> Epoch [5]: Time consumed: 5.07
+**************************
+0/196
+>> batch_idx [0]: Time consumed: 0.28
+60/196
+>> batch_idx [60]: Time consumed: 1.75
+120/196
+>> batch_idx [120]: Time consumed: 3.24
+180/196
+>> batch_idx [180]: Time consumed: 4.74
+>> Epoch [6]: Loss: 139.67
+>> Epoch [6]: Training Accuracy: 75.03
+>> Epoch [6]: Time consumed: 5.13
+**************************
+0/196
+>> batch_idx [0]: Time consumed: 0.28
+60/196
+>> batch_idx [60]: Time consumed: 1.77
+120/196
+>> batch_idx [120]: Time consumed: 3.25
+180/196
+>> batch_idx [180]: Time consumed: 4.72
+>> Epoch [7]: Loss: 124.97
+>> Epoch [7]: Training Accuracy: 77.69
+>> Epoch [7]: Time consumed: 5.11
+**************************
+0/196
+>> batch_idx [0]: Time consumed: 0.27
+60/196
+>> batch_idx [60]: Time consumed: 1.74
+120/196
+>> batch_idx [120]: Time consumed: 3.21
+180/196
+>> batch_idx [180]: Time consumed: 4.68
+>> Epoch [8]: Loss: 112.46
+>> Epoch [8]: Training Accuracy: 79.98
+>> Epoch [8]: Time consumed: 5.08
+======= Testing... =======
+Loss: 15.15
+Test Accuracy: 74.08
+>> Test time consumed: 0.57
+**************************
+0/196
+>> batch_idx [0]: Time consumed: 0.28
+60/196
+>> batch_idx [60]: Time consumed: 1.76
+120/196
+>> batch_idx [120]: Time consumed: 3.23
+180/196
+>> batch_idx [180]: Time consumed: 4.69
+>> Epoch [9]: Loss: 101.45
+>> Epoch [9]: Training Accuracy: 82.01
+>> Epoch [9]: Time consumed: 5.08
+**************************
+0/196
+>> batch_idx [0]: Time consumed: 0.27
+60/196
+>> batch_idx [60]: Time consumed: 1.74
+120/196
+>> batch_idx [120]: Time consumed: 3.21
+180/196
+>> batch_idx [180]: Time consumed: 4.67
+>> Epoch [10]: Loss: 92.27
+>> Epoch [10]: Training Accuracy: 83.64
+>> Epoch [10]: Time consumed: 5.06
+**************************
+0/196
+>> batch_idx [0]: Time consumed: 0.27
+60/196
+>> batch_idx [60]: Time consumed: 1.79
+120/196
+>> batch_idx [120]: Time consumed: 3.26
+180/196
+>> batch_idx [180]: Time consumed: 4.73
+>> Epoch [11]: Loss: 86.58
+>> Epoch [11]: Training Accuracy: 84.81
+>> Epoch [11]: Time consumed: 5.12
+**************************
+0/196
+>> batch_idx [0]: Time consumed: 0.28
+60/196
+>> batch_idx [60]: Time consumed: 1.75
+120/196
+>> batch_idx [120]: Time consumed: 3.21
+180/196
+>> batch_idx [180]: Time consumed: 4.68
+>> Epoch [12]: Loss: 80.27
+>> Epoch [12]: Training Accuracy: 85.96
+>> Epoch [12]: Time consumed: 5.07
+======= Testing... =======
+Loss: 11.34
+Test Accuracy: 80.36
+>> Test time consumed: 0.58
+**************************
+0/196
+>> batch_idx [0]: Time consumed: 0.28
+60/196
+>> batch_idx [60]: Time consumed: 1.76
+120/196
+>> batch_idx [120]: Time consumed: 3.23
+180/196
+>> batch_idx [180]: Time consumed: 4.69
+>> Epoch [13]: Loss: 76.34
+>> Epoch [13]: Training Accuracy: 86.47
+>> Epoch [13]: Time consumed: 5.09
+**************************
+0/196
+
+===== TAIL 200 =====
+>> Epoch [648]: Training Accuracy: 100.00
+>> Epoch [648]: Time consumed: 1.85
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.37
+>> Epoch [649]: Loss: 0.09
+>> Epoch [649]: Training Accuracy: 100.00
+>> Epoch [649]: Time consumed: 1.88
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.32
+>> Epoch [650]: Loss: 0.09
+>> Epoch [650]: Training Accuracy: 100.00
+>> Epoch [650]: Time consumed: 1.87
+======= Testing... =======
+Loss: 6.92
+Test Accuracy: 91.01
+>> Test time consumed: 0.68
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.32
+>> Epoch [651]: Loss: 0.09
+>> Epoch [651]: Training Accuracy: 100.00
+>> Epoch [651]: Time consumed: 1.85
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.33
+>> Epoch [652]: Loss: 0.09
+>> Epoch [652]: Training Accuracy: 100.00
+>> Epoch [652]: Time consumed: 1.87
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.32
+>> Epoch [653]: Loss: 0.09
+>> Epoch [653]: Training Accuracy: 100.00
+>> Epoch [653]: Time consumed: 1.87
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.34
+>> Epoch [654]: Loss: 0.09
+>> Epoch [654]: Training Accuracy: 100.00
+>> Epoch [654]: Time consumed: 1.85
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.34
+>> Epoch [655]: Loss: 0.09
+>> Epoch [655]: Training Accuracy: 100.00
+>> Epoch [655]: Time consumed: 1.87
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.32
+>> Epoch [656]: Loss: 0.09
+>> Epoch [656]: Training Accuracy: 100.00
+>> Epoch [656]: Time consumed: 1.86
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.33
+>> Epoch [657]: Loss: 0.09
+>> Epoch [657]: Training Accuracy: 100.00
+>> Epoch [657]: Time consumed: 1.87
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.32
+>> Epoch [658]: Loss: 0.09
+>> Epoch [658]: Training Accuracy: 100.00
+>> Epoch [658]: Time consumed: 1.87
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.33
+>> Epoch [659]: Loss: 0.09
+>> Epoch [659]: Training Accuracy: 100.00
+>> Epoch [659]: Time consumed: 1.87
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.33
+>> Epoch [660]: Loss: 0.09
+>> Epoch [660]: Training Accuracy: 100.00
+>> Epoch [660]: Time consumed: 1.86
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.32
+>> Epoch [661]: Loss: 0.09
+>> Epoch [661]: Training Accuracy: 100.00
+>> Epoch [661]: Time consumed: 1.85
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.32
+>> Epoch [662]: Loss: 0.09
+>> Epoch [662]: Training Accuracy: 100.00
+>> Epoch [662]: Time consumed: 1.85
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.33
+>> Epoch [663]: Loss: 0.09
+>> Epoch [663]: Training Accuracy: 100.00
+>> Epoch [663]: Time consumed: 1.86
+======= Testing... =======
+Loss: 6.86
+Test Accuracy: 91.02
+>> Test time consumed: 0.67
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.34
+>> Epoch [664]: Loss: 0.09
+>> Epoch [664]: Training Accuracy: 100.00
+>> Epoch [664]: Time consumed: 1.87
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.33
+>> Epoch [665]: Loss: 0.10
+>> Epoch [665]: Training Accuracy: 100.00
+>> Epoch [665]: Time consumed: 1.86
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.34
+>> Epoch [666]: Loss: 0.09
+>> Epoch [666]: Training Accuracy: 100.00
+>> Epoch [666]: Time consumed: 1.87
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.32
+>> Epoch [667]: Loss: 0.10
+>> Epoch [667]: Training Accuracy: 100.00
+>> Epoch [667]: Time consumed: 1.88
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.32
+>> Epoch [668]: Loss: 0.09
+>> Epoch [668]: Training Accuracy: 100.00
+>> Epoch [668]: Time consumed: 1.88
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.32
+>> Epoch [669]: Loss: 0.09
+>> Epoch [669]: Training Accuracy: 100.00
+>> Epoch [669]: Time consumed: 1.85
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.34
+>> Epoch [670]: Loss: 0.09
+>> Epoch [670]: Training Accuracy: 100.00
+>> Epoch [670]: Time consumed: 1.87
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.34
+>> Epoch [671]: Loss: 0.09
+>> Epoch [671]: Training Accuracy: 100.00
+>> Epoch [671]: Time consumed: 1.87
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.34
+>> Epoch [672]: Loss: 0.09
+>> Epoch [672]: Training Accuracy: 100.00
+>> Epoch [672]: Time consumed: 1.87
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.34
+>> Epoch [673]: Loss: 0.09
+>> Epoch [673]: Training Accuracy: 100.00
+>> Epoch [673]: Time consumed: 1.87
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.33
+>> Epoch [674]: Loss: 0.09
+>> Epoch [674]: Training Accuracy: 100.00
+>> Epoch [674]: Time consumed: 1.87
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.33
+>> Epoch [675]: Loss: 0.09
+>> Epoch [675]: Training Accuracy: 100.00
+>> Epoch [675]: Time consumed: 1.87
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.34
+>> Epoch [676]: Loss: 0.09
+>> Epoch [676]: Training Accuracy: 100.00
+>> Epoch [676]: Time consumed: 1.88
+======= Testing... =======
+Loss: 6.83
+Test Accuracy: 91.01
+>> Test time consumed: 0.69
+**************************
+0/59
+>> batch_idx [0]: Time consumed: 0.33
+>> Epoch [677]: Loss: 0.09
+>> Epoch [677]: Training Accuracy: 100.00
+>> Epoch [677]: Time consumed: 1.88
+======= Testing... =======
+Loss: 6.83
+Test Accuracy: 91.02
+>> Test time consumed: 0.67
+==========================
+Best acc: 91.15
+Best acc: 0.9115
+Best epoch: 507
+0.9115
+Total time consumed: 1269.05
+===== STAGE s6_rand70 EXIT=0 2026-07-16T21:49:51Z =====
+ALL STAGES EXIT 0 -> CCS_ANCHOR_DONE 2026-07-16T21:49:51Z

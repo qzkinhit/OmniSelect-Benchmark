@@ -1,0 +1,59 @@
+##### TEXT SEED=0 #####
+device=mps | pool=1582 (329836 tok) | budget=164918 tok | heldout={'general': 20, 'math': 20, 'code': 20, 'image': 20, 'table': 20}
+mini-LM: hid=320 layers=4 ctx=512 | passes=3.0 | train_mode=scratch | methods=['noselect', 'random', 'dsir', 'zip', 'if_mates', 'quality_ppl', 'dmf', 'balance', 'mmdataselect']
+[influence] loaded cache (1582)
+  noselect       n=1582 hi%=0.63 red=0.677 ppl={'code': 1737.196, 'general': 2389.286, 'image': 1118.227, 'math': 688.118, 'table': 46.337} (216.9s)
+  random         n= 789 hi%=0.63 red=0.635 ppl={'code': 3690.432, 'general': 4425.448, 'image': 2933.593, 'math': 1993.091, 'table': 482.166} (131.1s)
+  dsir           n=1148 hi%=0.66 red=0.668 ppl={'code': 3422.636, 'general': 4812.44, 'image': 2349.127, 'math': 2142.333, 'table': 328.524} (147.1s)
+  zip            n=1123 hi%=0.57 red=0.712 ppl={'code': 4549.621, 'general': 4097.65, 'image': 2287.719, 'math': 2097.15, 'table': 351.712} (339.4s)
+  if_mates       n= 892 hi%=0.68 red=0.696 ppl={'code': 3213.804, 'general': 5203.304, 'image': 2685.681, 'math': 2097.705, 'table': 345.852} (147.5s)
+  quality_ppl    n= 430 hi%=0.78 red=0.701 ppl={'code': 3043.637, 'general': 5590.199, 'image': 5954.488, 'math': 1862.426, 'table': 1652.548} (142.9s)
+  dmf            n=1076 hi%=0.62 red=0.669 ppl={'code': 3398.052, 'general': 4735.479, 'image': 2463.639, 'math': 2055.73, 'table': 328.995} (166.2s)
+  balance        n=1071 hi%=0.63 red=0.668 ppl={'code': 3289.634, 'general': 5072.416, 'image': 2563.146, 'math': 2114.997, 'table': 329.098} (156.2s)
+  mmdataselect   n= 631 hi%=0.93 red=0.614 ppl={'code': 3583.629, 'general': 4796.071, 'image': 2869.165, 'math': 1925.725, 'table': 1553.535} (149.7s)
+  mmds_adapt     picked 'dsir' (adjudication log-ppl 7.5248, kappa_hat=0.1078)
+
+================ EXPERIMENT (per-modality held-out PPL) ================
+method             n   hi%  set_red    code_ppl general_ppl   image_ppl    math_ppl   table_ppl
+noselect        1582  0.63    0.677    1737.196    2389.286    1118.227     688.118      46.337
+random           789  0.63    0.635    3690.432    4425.448    2933.593    1993.091     482.166
+dsir            1148  0.66    0.668    3422.636     4812.44    2349.127    2142.333     328.524
+zip             1123  0.57    0.712    4549.621     4097.65    2287.719     2097.15     351.712
+if_mates         892  0.68    0.696    3213.804    5203.304    2685.681    2097.705     345.852
+quality_ppl      430  0.78    0.701    3043.637    5590.199    5954.488    1862.426    1652.548
+dmf             1076  0.62    0.669    3398.052    4735.479    2463.639     2055.73     328.995
+balance         1071  0.63    0.668    3289.634    5072.416    2563.146    2114.997     329.098
+mmdataselect     631  0.93    0.614    3583.629    4796.071    2869.165    1925.725    1553.535
+mmds_adapt      1148  0.66    0.668    3422.636     4812.44    2349.127    2142.333     328.524
+
+saved -> /Users/qianzekai/PycharmProjects/Paper2_OmniSelect/outputs/experiment/results_seed0.json
+##### TEXT SEED=1 #####
+device=mps | pool=1582 (329836 tok) | budget=164918 tok | heldout={'general': 20, 'math': 20, 'code': 20, 'image': 20, 'table': 20}
+mini-LM: hid=320 layers=4 ctx=512 | passes=3.0 | train_mode=scratch | methods=['noselect', 'random', 'dsir', 'zip', 'if_mates', 'quality_ppl', 'dmf', 'balance', 'mmdataselect']
+[influence] loaded cache (1582)
+  noselect       n=1582 hi%=0.63 red=0.677 ppl={'code': 1751.81, 'general': 2348.456, 'image': 1010.884, 'math': 677.086, 'table': 39.561} (250.6s)
+  random         n= 816 hi%=0.66 red=0.643 ppl={'code': 3732.344, 'general': 4581.166, 'image': 2788.945, 'math': 1959.833, 'table': 448.334} (145.6s)
+  dsir           n=1149 hi%=0.66 red=0.670 ppl={'code': 3393.319, 'general': 5015.115, 'image': 2477.522, 'math': 2171.542, 'table': 263.995} (166.5s)
+  zip            n=1123 hi%=0.57 red=0.712 ppl={'code': 4575.797, 'general': 4105.358, 'image': 2314.97, 'math': 2079.861, 'table': 294.417} (336.3s)
+  if_mates       n= 892 hi%=0.68 red=0.696 ppl={'code': 3334.349, 'general': 5455.398, 'image': 2866.314, 'math': 2072.584, 'table': 297.571} (379.2s)
+  quality_ppl    n= 430 hi%=0.78 red=0.701 ppl={'code': 3157.625, 'general': 5857.823, 'image': 6107.747, 'math': 1862.492, 'table': 1537.004} (586.9s)
+  dmf            n=1076 hi%=0.62 red=0.669 ppl={'code': 3359.467, 'general': 4930.245, 'image': 2617.986, 'math': 2094.304, 'table': 269.814} (284.6s)
+  balance        n=1071 hi%=0.63 red=0.668 ppl={'code': 3355.172, 'general': 5271.29, 'image': 2674.416, 'math': 2070.572, 'table': 257.547} (769.0s)
+  mmdataselect   n= 631 hi%=0.93 red=0.614 ppl={'code': 3586.882, 'general': 4815.548, 'image': 2798.79, 'math': 1811.394, 'table': 1363.956} (587.3s)
+  mmds_adapt     picked 'dsir' (adjudication log-ppl 7.4909, kappa_hat=0.1186)
+
+================ EXPERIMENT (per-modality held-out PPL) ================
+method             n   hi%  set_red    code_ppl general_ppl   image_ppl    math_ppl   table_ppl
+noselect        1582  0.63    0.677     1751.81    2348.456    1010.884     677.086      39.561
+random           816  0.66    0.643    3732.344    4581.166    2788.945    1959.833     448.334
+dsir            1149  0.66    0.670    3393.319    5015.115    2477.522    2171.542     263.995
+zip             1123  0.57    0.712    4575.797    4105.358     2314.97    2079.861     294.417
+if_mates         892  0.68    0.696    3334.349    5455.398    2866.314    2072.584     297.571
+quality_ppl      430  0.78    0.701    3157.625    5857.823    6107.747    1862.492    1537.004
+dmf             1076  0.62    0.669    3359.467    4930.245    2617.986    2094.304     269.814
+balance         1071  0.63    0.668    3355.172     5271.29    2674.416    2070.572     257.547
+mmdataselect     631  0.93    0.614    3586.882    4815.548     2798.79    1811.394    1363.956
+mmds_adapt      1149  0.66    0.670    3393.319    5015.115    2477.522    2171.542     263.995
+
+saved -> /Users/qianzekai/PycharmProjects/Paper2_OmniSelect/outputs/experiment/results_seed1.json
+=== text controller done ===

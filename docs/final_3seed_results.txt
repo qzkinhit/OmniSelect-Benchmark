@@ -1,0 +1,24 @@
+seeds=[0, 1, 2]  (3 files)
+
+method           hi%              code         general           image            math           table
+------------------------------------------------------------------------------------------------------
+random          0.63     1403.5± 16.4    2366.1± 22.1*   1244.4± 10.1     592.1±  8.3      34.8±  2.3 
+dsir            0.72     1353.6± 13.5    2454.8± 37.7     994.5± 15.7     614.0±  7.9      29.4±  2.9 
+dmf             0.59     1314.1±  8.4*   2531.6± 19.7    1172.9±  7.4     589.4±  2.9      27.4±  0.7 
+if_mates        0.74     1351.9±  5.8    2567.1± 35.5    1623.0± 40.4     595.9±  5.3      33.2±  2.5 
+quality_ppl     0.74     1348.6±  9.0    2562.9± 31.8    1618.5± 41.7     595.2±  6.5      33.0±  2.6 
+mmds_noauth     0.69     1382.4± 14.0    2477.1± 32.8    1034.4± 32.9     591.0±  4.8      30.7±  2.3 
+dmf_auth        0.81     1319.4± 10.8    2384.1± 14.6    1860.2± 49.2     597.6±  5.7      26.1±  0.5*
+mmds_dist       0.73     1356.6±  5.0    2388.1± 18.4    1192.8± 15.4     587.3±  7.1*     28.8±  2.6 
+mmds_v2         0.87     1382.1± 14.6    2393.4± 16.7    1335.3± 22.8     590.6±  2.4      28.3±  1.8 
+mmdataselect    0.95     1329.9± 10.7    2466.4± 12.3     985.6± 24.0*    587.5±  5.6      27.0±  1.5 
+
+(* = best/lowest mean PPL per modality)
+
+=== verdict: mmdataselect vs best baseline (per modality) ===
+  code      lose vs dmf          ours=  1329.9± 10.7  best_base=  1314.1±  8.4  gap= -1.2%  (sig)
+  general   lose vs random       ours=  2466.4± 12.3  best_base=  2366.1± 22.1  gap= -4.2%  (sig)
+  image     WIN  vs dsir         ours=   985.6± 24.0  best_base=   994.5± 15.7  gap= +0.9%  (~noise)
+  math      lose vs mmds_dist    ours=   587.5±  5.6  best_base=   587.3±  7.1  gap= -0.0%  (~noise)
+  table     lose vs dmf_auth     ours=    27.0±  1.5  best_base=    26.1±  0.5  gap= -3.7%  (~noise)
+  -> wins on 1/5 modalities

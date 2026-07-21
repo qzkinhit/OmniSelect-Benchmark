@@ -1,0 +1,236 @@
+{
+ "arm": "timeseries",
+ "dataset": "ETTm1",
+ "seed": 1,
+ "config": {
+  "model": "dlinear",
+  "pool": 3000,
+  "budget": 0.3,
+  "noise": 0.4,
+  "L": 96,
+  "H": 24,
+  "paired_rng": 1
+ },
+ "code_sha256_12": "0a7288462d2e",
+ "results": [
+  {
+   "method": "full",
+   "n": 3000,
+   "clean%": 0.6,
+   "mase": 1.0834,
+   "sel_sha12": "e2cc33c68f18",
+   "fit_seed": 922185875,
+   "train_order_sha12": "8ca4990f9ed6"
+  },
+  {
+   "method": "random",
+   "n": 900,
+   "clean%": 0.599,
+   "mase": 1.2326,
+   "sel_sha12": "e764ed172e25",
+   "fit_seed": 1070883093,
+   "train_order_sha12": "fc6439e2f171"
+  },
+  {
+   "method": "coreset",
+   "n": 900,
+   "clean%": 0.493,
+   "mase": 1.1886,
+   "sel_sha12": "6745ae6ac03e",
+   "fit_seed": 73582114,
+   "train_order_sha12": "94d723764e81"
+  },
+  {
+   "method": "auth_only",
+   "n": 900,
+   "clean%": 0.842,
+   "mase": 1.0336,
+   "sel_sha12": "ff5beb271190",
+   "fit_seed": 350187950,
+   "train_order_sha12": "5dcfe2ddad01"
+  },
+  {
+   "method": "influence_only",
+   "n": 900,
+   "clean%": 0.682,
+   "mase": 1.3724,
+   "sel_sha12": "946ba5b6c01d",
+   "fit_seed": 102375754,
+   "train_order_sha12": "1b95adb15225"
+  },
+  {
+   "method": "mmdataselect",
+   "n": 900,
+   "clean%": 0.839,
+   "mase": 1.0874,
+   "sel_sha12": "e44b58ac3291",
+   "fit_seed": 1712569519,
+   "train_order_sha12": "1cc57579a944"
+  },
+  {
+   "method": "mmds_adapt",
+   "n": 900,
+   "clean%": 0.88,
+   "mase": 1.0202,
+   "sel_sha12": "2bb06a3958da",
+   "fit_seed": 301005378,
+   "train_order_sha12": "50f5b9645a9b"
+  },
+  {
+   "method": "herding",
+   "n": 900,
+   "clean%": 0.538,
+   "mase": 1.163,
+   "sel_sha12": "d1aa069fe0a3",
+   "fit_seed": 725446649,
+   "train_order_sha12": "abc1b2577c95"
+  },
+  {
+   "method": "kcenter",
+   "n": 900,
+   "clean%": 0.507,
+   "mase": 1.2226,
+   "sel_sha12": "120f80609d3d",
+   "fit_seed": 1164758941,
+   "train_order_sha12": "113d4677d00d"
+  },
+  {
+   "method": "semdedup",
+   "n": 900,
+   "clean%": 0.532,
+   "mase": 1.1848,
+   "sel_sha12": "21a91b6fd75d",
+   "fit_seed": 1304174963,
+   "train_order_sha12": "14b6a31dddb1"
+  },
+  {
+   "method": "density",
+   "n": 900,
+   "clean%": 0.56,
+   "mase": 1.2049,
+   "sel_sha12": "5bb0c7558e5b",
+   "fit_seed": 128279664,
+   "train_order_sha12": "c6a97170cc20"
+  },
+  {
+   "method": "quadmix",
+   "n": 900,
+   "clean%": 0.779,
+   "mase": 1.1115,
+   "sel_sha12": "153a2ffbb403",
+   "fit_seed": 1376479563,
+   "train_order_sha12": "dc3f532fee10"
+  },
+  {
+   "method": "dmf",
+   "n": 900,
+   "clean%": 0.91,
+   "mase": 1.0679,
+   "sel_sha12": "966c35369941",
+   "fit_seed": 1422599766,
+   "train_order_sha12": "a10d5692d6c4"
+  },
+  {
+   "method": "quadmix_pub",
+   "n": 900,
+   "clean%": 0.65,
+   "mase": 1.1685,
+   "sel_sha12": "e7a9485896e7",
+   "fit_seed": 930993961,
+   "train_order_sha12": "976d4bb76641"
+  },
+  {
+   "method": "dmf_pub",
+   "n": 900,
+   "clean%": 0.886,
+   "mase": 0.9868,
+   "sel_sha12": "3db512c0d4ef",
+   "fit_seed": 930993961,
+   "train_order_sha12": "976d4bb76641"
+  }
+ ],
+ "adapt_manifest": {
+  "leaderboard": [
+   [
+    "fuse w=(0.5, 0, 0.5) q=0.25 lam=0.0",
+    -1.1419900463804955
+   ],
+   [
+    "vote_ensemble(top3)",
+    -1.1419900463804955
+   ],
+   [
+    "fuse w=(0.5, 0, 0.5) q=0.25 lam=0.6",
+    -1.1427211172319331
+   ],
+   [
+    "fuse learned w=(0.59, 0.0, 0.41) q=0.25 lam=0.0",
+    -1.1448196315303691
+   ],
+   [
+    "fuse w=(0.5, 0, 0.5) q=0.0 lam=0.0",
+    -1.165956222168201
+   ],
+   [
+    "fuse w=(1, 0, 0) q=0.25 lam=0.6",
+    -1.1696204778242658
+   ],
+   [
+    "mmdataselect",
+    -1.2046210102065253
+   ],
+   [
+    "dmf",
+    -1.2232221108020969
+   ],
+   [
+    "quadmix",
+    -1.2398150397094017
+   ],
+   [
+    "semdedup",
+    -1.3531310746231129
+   ],
+   [
+    "density",
+    -1.3603688116728796
+   ],
+   [
+    "dsdm",
+    -1.3743417303069554
+   ],
+   [
+    "herding",
+    -1.3896602920393855
+   ],
+   [
+    "auth2_only",
+    -1.4213065470489894
+   ],
+   [
+    "random",
+    -1.4304325856091447
+   ],
+   [
+    "kcenter",
+    -1.4792897801812754
+   ],
+   [
+    "d4",
+    -1.4905683474715559
+   ],
+   [
+    "auth_bottom",
+    -1.6295214155526114
+   ]
+  ],
+  "chosen": {
+   "strategy": "fuse w=(0.5, 0, 0.5) q=0.25 lam=0.0",
+   "val_gain": -1.1419900463804955,
+   "best_ref": "mmdataselect",
+   "switched": true,
+   "kappa_hat": 0.28844253922864915
+  },
+  "sel_sha12": "2bb06a3958da"
+ }
+}
