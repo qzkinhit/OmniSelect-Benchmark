@@ -41,7 +41,7 @@ baseline.
 git clone https://github.com/qzkinhit/OmniSelect-Benchmark.git
 cd OmniSelect-Benchmark
 python -m venv .venv && source .venv/bin/activate
-pip install -e .                      # core, pure CPU
+pip install -e ".[dev]"              # core + CPU test dependencies
 pytest -q                             # CPU-only test suite
 run_scripts/reproduce_cached.sh       # rebuild the paper's canonical tables from committed results
 ```
@@ -178,7 +178,8 @@ the five forecasting tasks and exceeds Full on all five; see
 
 ## Environment
 
-CPU quick start needs only `pip install -e .`. The audited GPU stack is Python 3.12,
+Core import and cached-table rebuilding need only `pip install -e .`; running the
+CPU test suite uses `pip install -e ".[dev]"`. The audited GPU stack is Python 3.12,
 `torch 2.8.0+cu128`, driver 570-class (`environment/pip_freeze_server_vgpu.txt`,
 `environment/constraints-cu128.txt`). Large data/artifacts ship as a versioned release
 archive (URL pending, see [`docs/ARTIFACTS_INDEX.md`](docs/ARTIFACTS_INDEX.md)).
