@@ -164,7 +164,7 @@ five-domain text language-modeling lane. These extra protocols and their run cov
 listed explicitly in [`results_canonical/README.md`](results_canonical/README.md); they are
 not silently folded into the 9-row ranking claim.
 
-The Full/NoSelect reference is available for 11 tasks. OmniSelect uses 30% of the data on
+The Full/NoSelect reference covers 10 of the 12 benchmark tasks, plus the separate frozen-CLIP CIFAR-10 instance registered alongside them. OmniSelect uses 30% of the data on
 the five forecasting tasks and exceeds Full on all five; see
 [`results_canonical/FULL_REFERENCE_COMPARISON.md`](results_canonical/FULL_REFERENCE_COMPARISON.md).
 
