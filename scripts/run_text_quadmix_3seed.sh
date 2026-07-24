@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-REPO="${REPO:-/root/autodl-tmp/OmniSelect}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO="${REPO:-$(cd "$SCRIPT_DIR/.." && pwd)}"
 RUN_ID="${RUN_ID:-text-quadmix-v1}"
-LOG="${LOG:-/root/text_quadmix_${RUN_ID}.log}"
-MARKER="${MARKER:-/root/TEXT_QUADMIX_TRANSFER_OK}"
+LOG="${LOG:-$REPO/evidence/text_quadmix_${RUN_ID}.log}"
+MARKER="${MARKER:-$REPO/evidence/TEXT_QUADMIX_TRANSFER_OK}"
 PYTHON="${PYTHON:-${REPO}/.venv/bin/python}"
 
+mkdir -p "$(dirname "$LOG")" "$(dirname "$MARKER")"
 exec > >(tee -a "${LOG}") 2>&1
-if [[ -f /root/omni_env.sh ]]; then
-  source /root/omni_env.sh
+if [[ -n "${OMNI_ENV_FILE:-}" ]]; then
+  source "${OMNI_ENV_FILE}"
 fi
 cd "${REPO}"
 echo "lane=text-quadmix run_id=${RUN_ID} start=$(date -Is)"

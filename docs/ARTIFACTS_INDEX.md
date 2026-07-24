@@ -60,9 +60,11 @@ SHA256 and verdicts: `experiments/POST_DATA_LOCK_inventory.json` →
 `split_manifest_verification` (see also `docs/dataset_provenance.md`, POST_DATA_LOCK
 section). All 12 split manifests are tracked in this repository.
 
-Text lane: **NOT_CAPTURED**: the text run exported no split manifest at runtime and
-ids are not re-derived after the fact (no-fabrication rule); its coverage cells stay
-PASS_WEAK.
+Historical text lanes: **NOT_CAPTURED** split manifests are not re-derived after the
+fact (no-fabrication rule), so their legacy coverage cells remain PASS_WEAK. The
+registered fixed-primary text portfolio separately captures selection manifests,
+selected-data records, checkpoints, predictions, configuration, and hashes; its
+compact result registration is in Git while the full bundle is local-only.
 
 ## 3. What is in git vs. what ships as a release archive
 
@@ -78,6 +80,9 @@ In git (small, canonical):
   lists, upstream byte-diff evidence, license snapshots).
 - `environment/pip_freeze_server_vgpu.txt` (environment lock) and
   `migration_manifest_vgpu_20260717T142822.json` (hardware + canonical-file SHAs).
+- `results_canonical/text/fixed_primary_20260724/`: a 5.4 MB raw result JSON,
+  concise registration summary, and integrity hash for the complete fixed-primary
+  text portfolio.
 - All code: `src/`, `scripts/`, `baselines/`, `tools/`, `configs/`, `tests/`.
 
 NOT in git (large or third-party; gitignored):
@@ -87,9 +92,13 @@ NOT in git (large or third-party; gitignored):
   from the pinned sources above and verifiable against the recorded SHA256s. The HF
   hub cache is manifest+revision only (publicly re-downloadable at the pinned
   revisions); it is **not** claimed as a byte backup.
-- The large unfiltered `outputs/` tree: only the 42 whitelisted small result JSONs under
+- The large unfiltered `outputs/` tree: only the 43 whitelisted small result JSONs under
   `results_canonical/` are tracked; embedding caches (40 `.npz`, 2.1 GiB, hashed in
   place in the POST_DATA_LOCK inventory) and model files are not.
+- The full fixed-primary text artifact bundle (about 2.3 GiB): eight checkpoints,
+  selected corpus records, selection manifests, predictions, and run evidence.
+  It is deliberately excluded from Git and the AAAI upload package, while the
+  public compact registration records its raw result and SHA-256.
 - The 308-file POST_AUDIT2 **experiment-artifact** backup (logs / results / docs /
   scripts; contains no `data/` files. It is an experiment-artifact backup, not a full
   data-integrity lock).

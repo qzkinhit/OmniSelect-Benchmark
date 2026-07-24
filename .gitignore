@@ -14,6 +14,9 @@ data/cifar_n/
 # run_scripts/, never committed. results_canonical/ (the small, committed
 # evidence behind every paper number) and data/manifests/ ARE committed.
 outputs/
+# Formal-run preflight and validation logs are local audit material, not source
+# artifacts. The content-addressed result bundle itself lives under outputs/.
+evidence/
 
 # Model weights
 *.pt

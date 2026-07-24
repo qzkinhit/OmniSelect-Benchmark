@@ -45,6 +45,7 @@ LAM = float(os.environ.get("LAM", "0.5"))
 AUTH_Q = float(os.environ.get("AUTH_Q", "0.25"))
 W_INFL = float(os.environ.get("W_INFL", "0.5"))
 PAIRED_RNG = os.environ.get("PAIRED_RNG", "0") == "1"
+SAVE_DOWNSTREAM_CHECKPOINTS = os.environ.get("SAVE_DOWNSTREAM_CHECKPOINTS", "1") == "1"
 
 
 def _read(fname):
@@ -133,6 +134,21 @@ def inject_noise(X, labels, seed, n_classes):
 
 
 
+def _trial_dir(arm, dataset, seed, extra_cfg):
+    tags = "-".join(f"{k}={v}" for k, v in sorted(extra_cfg.items()) if v not in ("", None)) or "base"
+    run_id = os.environ.get("RUN_ID", "")
+    if run_id:
+        tags = f"run_id={run_id}-" + tags
+    return os.path.join(
+        _REPO,
+        "outputs",
+        arm,
+        str(dataset).replace("/", "_"),
+        tags,
+        f"seed_{seed}",
+    )
+
+
 def _trial_dump(results, arm, dataset, seed, extra_cfg):
     """Isolated per-trial artifact: outputs/{arm}/{dataset}/{tags}/seed_{seed}/results.json,
     written atomically (tmp + os.replace), with full config metadata so trials from
@@ -140,11 +156,8 @@ def _trial_dump(results, arm, dataset, seed, extra_cfg):
     import hashlib as _h
     import json as _j
     import tempfile as _tf
-    tags = "-".join(f"{k}={v}" for k, v in sorted(extra_cfg.items()) if v not in ("", None)) or "base"
     _rid = os.environ.get("RUN_ID", "")
-    if _rid:
-        tags = f"run_id={_rid}-" + tags
-    d = os.path.join(_REPO, "outputs", arm, str(dataset).replace("/", "_"), tags, f"seed_{seed}")
+    d = _trial_dir(arm, dataset, seed, extra_cfg)
     os.makedirs(d, exist_ok=True)
     _baseline_path = os.path.join(_REPO, "src/mmdataselect/selectors/external_baselines.py")
     payload = {"arm": arm, "dataset": dataset, "seed": seed, "config": extra_cfg,
@@ -164,14 +177,33 @@ def _trial_dump(results, arm, dataset, seed, extra_cfg):
     fd, tmp = _tf.mkstemp(dir=d, suffix=".tmp")
     with os.fdopen(fd, "w") as fh:
         _j.dump(payload, fh, indent=2)
-    os.replace(tmp, os.path.join(d, "results.json"))
-    return os.path.join(d, "results.json")
+    result_path = os.path.join(d, "results.json")
+    os.replace(tmp, result_path)
+    from mmdataselect.utils.repro_bundle import write_repro_bundle
+    write_repro_bundle(
+        d,
+        repo_root=_REPO,
+        runner_path=os.path.abspath(__file__),
+        arm=arm,
+        dataset=str(dataset),
+        seed=seed,
+        config={**extra_cfg, "run_id": _rid, "methods": METHODS},
+        result_path=result_path,
+        selections=globals().get("_REPRO_SELECTIONS", {}),
+        selection_source=globals().get("_REPRO_SELECTION_SOURCE"),
+        predictions=globals().get("_REPRO_PREDICTIONS"),
+        split_manifest=globals().get("_PAIRING_MANIFEST"),
+        evaluation_data=globals().get("_REPRO_EVALUATION_DATA"),
+        checkpoint_paths=globals().get("_REPRO_CHECKPOINT_PATHS", {}),
+    )
+    return result_path
 
 def main():
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.linear_model import LogisticRegression
     from sklearn.metrics import f1_score
 
+    from mmdataselect.utils.repro_bundle import save_downstream_checkpoint
     from mmdataselect.datatypes import Modality, UnifiedRecord
     from mmdataselect.fusion.console import MultiActorConsole
     from mmdataselect.fusion.adaptive import AdaptiveController
@@ -407,6 +439,31 @@ def main():
         "shared_initialization_rule": "stable_seed(paper_seed, final-fit)",
         "training_input_order": "sorted selected integer ids",
     }
+    globals()["_REPRO_SELECTIONS"] = {}
+    globals()["_REPRO_PREDICTIONS"] = {}
+    globals()["_REPRO_SELECTION_SOURCE"] = {
+        "features": Xp,
+        "observed_labels": obs_lab,
+        "quality_tags": tag.astype(str),
+    }
+    globals()["_REPRO_EVALUATION_DATA"] = {
+        "validation_features": Xval,
+        "validation_labels": yval,
+        "calibration_features": Xcal,
+        "calibration_labels": ycal,
+        "test_features": Xt,
+        "test_labels": yt,
+    }
+    run_config = {
+        "model": MODEL,
+        "noise_frac": NOISE_FRAC,
+        "drop": os.environ.get("DROP_CHANNEL", ""),
+        "pool": POOL_N,
+        "budget": BUDGET_FRAC,
+        "paired_rng": int(PAIRED_RNG),
+    }
+    trial_dir = _trial_dir("tep", f"tep{N_FAULTS}", SEED, run_config)
+    globals()["_REPRO_CHECKPOINT_PATHS"] = {}
     results = []
     _sel_only = os.environ.get("SELECT_ONLY", "0") == "1"
     for m in METHODS:
@@ -414,6 +471,7 @@ def main():
         sel = [int(i) for i in select(m)]
         if PAIRED_RNG:
             sel = sorted(sel)
+        globals()["_REPRO_SELECTIONS"][m] = sel
         if _sel_only:  # selection-manifest replay (audit item 二): NO training, full IDs
             results.append({"method": m, "n_selected": len(sel), "selected_ids": sel,
                             "training_order": sel, "sel_sha12": sel_sha12(sel),
@@ -423,6 +481,26 @@ def main():
         fit_seed = reset_rng(SEED, "final-fit") if PAIRED_RNG else SEED
         clf = _fit(sel, fit_seed)
         pred = clf.predict(Xt)
+        globals()["_REPRO_PREDICTIONS"][m] = {
+            "y_true": yt,
+            "y_pred": pred,
+        }
+        checkpoint_path = None
+        if SAVE_DOWNSTREAM_CHECKPOINTS:
+            checkpoint_path = save_downstream_checkpoint(
+                clf,
+                os.path.join(trial_dir, "checkpoints", str(m).replace("/", "_")),
+                metadata={
+                    "arm": "tep",
+                    "dataset": f"tep{N_FAULTS}",
+                    "seed": int(SEED),
+                    "method": str(m),
+                    "fit_seed": int(fit_seed),
+                    "selection_sha12": sel_sha12(sel),
+                    "config": run_config,
+                },
+            )
+            globals()["_REPRO_CHECKPOINT_PATHS"][m] = checkpoint_path
         f1 = _f1(clf, Xt, yt); acc = float((pred == yt).mean())
         # FDR (fault detection rate, process-monitoring standard): among true-fault
         # samples, the fraction not classified as normal (class 0). FAR: among
@@ -502,6 +580,8 @@ def main():
         hi = float(np.mean(tag[sel] == "high"))
         row = {"method": m, "n": len(sel), "clean%": round(hi, 3), "f1": round(f1, 4),
                "acc": round(acc, 4), "fdr": round(fdr, 4), "far": round(far, 4), "calib": calib}
+        if checkpoint_path is not None:
+            row["checkpoint_path"] = str(checkpoint_path)
         if PAIRED_RNG:
             row.update({"sel_sha12": sel_sha12(sel), "fit_seed": fit_seed,
                         "train_order_sha12": order_sha12(sel)})
@@ -512,10 +592,7 @@ def main():
         if "f1" not in r:
             continue  # select-only manifest rows carry no metrics
         print(f"  {r['method']:16} F1={r['f1']:.4f} acc={r['acc']:.4f} FDR={r['fdr']:.4f} FAR={r['far']:.4f} clean%={r['clean%']:.2f} n={r['n']}")
-    _trial_dump(results, "tep", f"tep{N_FAULTS}", SEED,
-                {"model": MODEL, "noise_frac": NOISE_FRAC, "drop": os.environ.get("DROP_CHANNEL", ""),
-                 "pool": POOL_N, "budget": BUDGET_FRAC,
-                 "paired_rng": int(PAIRED_RNG)})
+    _trial_dump(results, "tep", f"tep{N_FAULTS}", SEED, run_config)
     out = os.path.join(_REPO, "outputs", "tep"); os.makedirs(out, exist_ok=True)
     import json
     if not os.environ.get("RUN_ID"):

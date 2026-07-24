@@ -44,6 +44,7 @@ LAM = float(os.environ.get("LAM", "0.5"))
 AUTH_Q = float(os.environ.get("AUTH_Q", "0.25"))
 W_INFL = float(os.environ.get("W_INFL", "0.5"))
 PAIRED_RNG = os.environ.get("PAIRED_RNG", "0") == "1"
+SAVE_DOWNSTREAM_CHECKPOINTS = os.environ.get("SAVE_DOWNSTREAM_CHECKPOINTS", "1") == "1"
 
 
 TS_DATASET = os.environ.get("TS_DATASET", "ETTh1")   # ETTh1 | ETTm1 | ETTh2 | ETTm2 (standard LSF benchmarks)
@@ -249,6 +250,21 @@ def mase(model, Xte, Yte, dev):
 
 
 
+def _trial_dir(arm, dataset, seed, extra_cfg):
+    tags = "-".join(f"{k}={v}" for k, v in sorted(extra_cfg.items()) if v not in ("", None)) or "base"
+    run_id = os.environ.get("RUN_ID", "")
+    if run_id:
+        tags = f"run_id={run_id}-" + tags
+    return os.path.join(
+        _REPO,
+        "outputs",
+        arm,
+        str(dataset).replace("/", "_"),
+        tags,
+        f"seed_{seed}",
+    )
+
+
 def _trial_dump(results, arm, dataset, seed, extra_cfg):
     """Isolated per-trial artifact: outputs/{arm}/{dataset}/{tags}/seed_{seed}/results.json,
     written atomically (tmp + os.replace), with full config metadata so trials from
@@ -256,11 +272,8 @@ def _trial_dump(results, arm, dataset, seed, extra_cfg):
     import hashlib as _h
     import json as _j
     import tempfile as _tf
-    tags = "-".join(f"{k}={v}" for k, v in sorted(extra_cfg.items()) if v not in ("", None)) or "base"
     _rid = os.environ.get("RUN_ID", "")
-    if _rid:
-        tags = f"run_id={_rid}-" + tags
-    d = os.path.join(_REPO, "outputs", arm, str(dataset).replace("/", "_"), tags, f"seed_{seed}")
+    d = _trial_dir(arm, dataset, seed, extra_cfg)
     os.makedirs(d, exist_ok=True)
     _baseline_path = os.path.join(_REPO, "src/mmdataselect/selectors/external_baselines.py")
     payload = {"arm": arm, "dataset": dataset, "seed": seed, "config": extra_cfg,
@@ -280,12 +293,31 @@ def _trial_dump(results, arm, dataset, seed, extra_cfg):
     fd, tmp = _tf.mkstemp(dir=d, suffix=".tmp")
     with os.fdopen(fd, "w") as fh:
         _j.dump(payload, fh, indent=2)
-    os.replace(tmp, os.path.join(d, "results.json"))
-    return os.path.join(d, "results.json")
+    result_path = os.path.join(d, "results.json")
+    os.replace(tmp, result_path)
+    from mmdataselect.utils.repro_bundle import write_repro_bundle
+    write_repro_bundle(
+        d,
+        repo_root=_REPO,
+        runner_path=os.path.abspath(__file__),
+        arm=arm,
+        dataset=str(dataset),
+        seed=seed,
+        config={**extra_cfg, "run_id": _rid, "methods": METHODS},
+        result_path=result_path,
+        selections=globals().get("_REPRO_SELECTIONS", {}),
+        selection_source=globals().get("_REPRO_SELECTION_SOURCE"),
+        predictions=globals().get("_REPRO_PREDICTIONS"),
+        split_manifest=globals().get("_PAIRING_MANIFEST"),
+        evaluation_data=globals().get("_REPRO_EVALUATION_DATA"),
+        checkpoint_paths=globals().get("_REPRO_CHECKPOINT_PATHS", {}),
+    )
+    return result_path
 
 def main():
     import torch
 
+    from mmdataselect.utils.repro_bundle import save_downstream_checkpoint
     from mmdataselect.datatypes import Modality, UnifiedRecord
     from mmdataselect.fusion.console import MultiActorConsole
     from mmdataselect.fusion.adaptive import AdaptiveController
@@ -512,11 +544,36 @@ def main():
         "shared_initialization_rule": "stable_seed(paper_seed, fit-stage)",
         "training_input_order": "sorted selected integer ids then seeded epoch permutations",
     }
+    globals()["_REPRO_SELECTIONS"] = {}
+    globals()["_REPRO_SELECTION_SOURCE"] = {
+        "context": Xp,
+        "target": Yp,
+        "quality_tags": tag.astype(str),
+    }
+    globals()["_REPRO_PREDICTIONS"] = {}
+    globals()["_REPRO_EVALUATION_DATA"] = {
+        "validation_context": Xval,
+        "validation_target": Yval,
+        "test_context": Xt,
+        "test_target": Yt,
+    }
+    run_config = {
+        "model": TS_MODEL,
+        "pool": POOL_N,
+        "budget": BUDGET_FRAC,
+        "noise": NOISE_FRAC,
+        "L": L,
+        "H": H,
+        "paired_rng": int(PAIRED_RNG),
+    }
+    trial_dir = _trial_dir("timeseries", TS_DATASET, SEED, run_config)
+    globals()["_REPRO_CHECKPOINT_PATHS"] = {}
     results = []
     _sel_only = os.environ.get("SELECT_ONLY", "0") == "1"
     for m in METHODS:
         t0 = time.time()
         sel = _paired_subset(select(m))
+        globals()["_REPRO_SELECTIONS"][m] = [int(i) for i in sel]
         selection_sha = sel_sha12(sel)
         if _sel_only:  # selection-manifest replay: NO training. train_order_sha12 is
             # produced INSIDE train_model for this arm, so replay can verify only the
@@ -530,8 +587,35 @@ def main():
         fit_seed = _fit_seed(sel, "final-fit")
         mdl = train_model(Xp[sel], Yp[sel], dev, fit_seed)
         sc = mase(mdl, Xt, Yt, dev)
+        import torch as _torch
+        with _torch.no_grad():
+            pred = mdl(
+                _torch.tensor(Xt, dtype=_torch.float32, device=dev)
+            ).cpu().numpy()
+        globals()["_REPRO_PREDICTIONS"][m] = {
+            "y_true": Yt,
+            "y_pred": pred,
+        }
+        checkpoint_path = None
+        if SAVE_DOWNSTREAM_CHECKPOINTS:
+            checkpoint_path = save_downstream_checkpoint(
+                mdl,
+                os.path.join(trial_dir, "checkpoints", str(m).replace("/", "_")),
+                metadata={
+                    "arm": "timeseries",
+                    "dataset": str(TS_DATASET),
+                    "seed": int(SEED),
+                    "method": str(m),
+                    "fit_seed": int(fit_seed),
+                    "selection_sha12": selection_sha,
+                    "config": run_config,
+                },
+            )
+            globals()["_REPRO_CHECKPOINT_PATHS"][m] = checkpoint_path
         hi = float(np.mean(tag[sel] == "high"))
         row = {"method": m, "n": len(sel), "clean%": round(hi, 3), "mase": round(sc, 4)}
+        if checkpoint_path is not None:
+            row["checkpoint_path"] = str(checkpoint_path)
         if PAIRED_RNG:
             row.update({"sel_sha12": selection_sha,
                         "fit_seed": fit_seed,
@@ -543,10 +627,7 @@ def main():
         if "mase" not in r:
             continue  # select-only manifest rows carry no metrics
         print(f"  {r['method']:16} MASE={r['mase']:.4f} clean%={r['clean%']:.2f} n={r['n']}")
-    p = _trial_dump(results, "timeseries", TS_DATASET, SEED,
-                    {"model": TS_MODEL, "pool": POOL_N, "budget": BUDGET_FRAC,
-                     "noise": NOISE_FRAC, "L": L, "H": H,
-                     "paired_rng": int(PAIRED_RNG)})
+    p = _trial_dump(results, "timeseries", TS_DATASET, SEED, run_config)
     print(f"saved -> {p}")
     if not os.environ.get("RUN_ID"):
         out = os.path.join(_REPO, "outputs", "timeseries")

@@ -5,8 +5,8 @@ All `results.json` files are machine-readable; paths preserve dataset, protocol,
 The benchmark has **6 modality/task families, 12 datasets/tasks, 11 external baseline
 rows, plus OmniSelect**. Not every baseline is mathematically applicable to every task;
 unsupported cells are marked `N/A` in the coverage ledger rather than silently replaced.
-The current release contains **42 parseable `results.json` files**, including six added
-text full-portfolio/control artifacts.
+The current release contains **43 parseable `results.json` files**, including the
+registered fixed-primary text result and the historical text full-portfolio/control artifacts.
 
 The complete fixed-primary-run comparison with the Full/NoSelect reference is in
 [`FULL_REFERENCE_COMPARISON.md`](FULL_REFERENCE_COMPARISON.md), with its machine-readable
@@ -39,12 +39,11 @@ Density, QuaDMix-pub, DMF-pub, Influence-only, Fixed-fusion, and OmniSelect.
 
 - EL2N/GraNd/CCS require supervised classification error or gradient scores and are not
   defined for regression/time-series targets.
-- The frozen text protocol directly contains Random, QuaDMix-pub, Fixed-fusion and
-  OmniSelect; `if_mates` is the text-native Influence-only implementation and `dmf` is
-  explicitly a local dynamic-fusion proxy, not a DMF-pub original-protocol reproduction.
-- Coverage/Coreset, Herding, EL2N, GraNd, CCS and Density have no frozen text adapter in
-  this result release. They are `N/A` for that column, with reasons recorded in the paper
-  and coverage ledger.
+- The registered fixed-primary text portfolio contains Random, Influence-only,
+  Coverage, Fixed-fusion, Herding, Density, QuaDMix-pub, DMF-pub, and the
+  controller. Coverage, Herding, and Density are frozen-LM-representation
+  transfers; EL2N, GraNd, and CCS remain not applicable because their
+  classification formulations have no native autoregressive-text objective.
 
 ## Text artifacts
 
@@ -57,12 +56,14 @@ Three complementary folders are public:
    PerpCorr, and OmniSelect (`mmds_adapt`).
 3. `text/frozen_controls/`: three frozen runs for Base, Random and NoSelect under the frozen
    control lane.
+4. `text/fixed_primary_20260724/`: the registered complete text portfolio result,
+   including every paper-facing applicable candidate and a compact integrity summary.
 
-The full-portfolio lane and QZ4 use the same 25,000-record pool, SmolLM2-135M, fixed
-token budget, per-domain held-out PPL and lm-eval tasks, but they are not one single code
-state. Do not combine them into a paired significance test. Historical text split/noise/
-initialization fingerprints were not captured at runtime; the text evidence remains
-`PASS_WEAK`, and this repository does not fabricate missing sidecars.
+The first three text folders are retained as historical evidence and must not be
+combined into a paired comparison. The registered fixed-primary folder is the
+paper-facing text source. Its raw result JSON is in Git; its full 2.3 GiB
+reproducibility bundle (checkpoints and selected corpus records) is intentionally
+kept outside Git and the AAAI upload package.
 
 ## Read a file
 
