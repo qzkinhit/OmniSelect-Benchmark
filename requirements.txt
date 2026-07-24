@@ -17,6 +17,7 @@ pyyaml>=6.0
 zstandard>=0.21
 rich>=13.0
 tqdm>=4.65
+scikit-learn>=1.3
 
 # --- optional: downstream training / influence signal ---
 # torch>=2.1
@@ -30,7 +31,6 @@ tqdm>=4.65
 
 # --- optional: dev ---
 # pytest>=7.4
-# scikit-learn>=1.3
 data-selection==1.0.3  # official p-lambda DSIR, fidelity cross-check (pinned, audited env)
 
 # torch/torchvision are intentionally NOT listed here (audit 2030): an unpinned

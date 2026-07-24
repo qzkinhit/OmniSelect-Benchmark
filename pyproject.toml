@@ -30,6 +30,9 @@ train = [
     "datasets>=2.18",
     "accelerate>=0.30",
     "peft>=0.11",
+    # All four benchmark runners use sklearn estimators/signals even when the
+    # downstream model itself is not a sklearn-native baseline.
+    "scikit-learn>=1.3",
 ]
 # Benchmark evaluation harnesses.
 eval = [

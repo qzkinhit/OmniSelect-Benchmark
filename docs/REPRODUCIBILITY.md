@@ -182,6 +182,52 @@ PASS_WEAK. The text lane's runtime split/noise/init fingerprints were NOT_CAPTUR
 run time and are never re-derived post hoc. No general-model text claims are made, and
 none may be added.
 
+### Formal seed-0 text rerun with complete evidence
+
+Use `scripts/run_text_seed0_primary.sh` on the GPU host. The wrapper is fail-closed:
+it requires the frozen 25,000-record pool, heldout set, influence cache,
+SmolLM2 revision, two-pass schedule, and the main table's applicable text-method
+registry to match their registered SHA-256 values before training starts.
+
+The table registry is exactly 11 baselines plus OmniSelect. Eight baselines are
+scheduled for text: Random, influence-only, Coverage, fixed fusion, Herding,
+Density, QuaDMix-pub, and DMF-pub. EL2N, GraNd, and CCS remain ``--`` because
+their classification-error/gradient protocols require a material redefinition
+for autoregressive text. Coverage, Herding, and Density are explicitly recorded
+as frozen-LM-representation transfers. No table-external method enters this run.
+
+```bash
+bash scripts/run_text_seed0_primary.sh
+```
+
+The run does not update `results_canonical` or a manuscript. Its isolated
+`outputs/experiment/run_id=.../seed_0/` directory contains:
+
+- `results.json`, including every candidate's five-domain PPL, the final
+  OmniSelect model's four lm-eval scores, exact token cap,
+  initialization/training-order hashes, and controller decision;
+- `checkpoints/<method>/`, one downstream checkpoint for every distinct candidate
+  training stream;
+- `repro_bundle/selections/<method>.json` and
+  `repro_bundle/selected_data/<method>.jsonl`, the exact ordered selection and
+  selected training dataset for every baseline and OmniSelect;
+- input, split, environment, Git-state, checkpoint, prediction/result, and
+  whole-bundle SHA-256 manifests.
+
+`scripts/validate_text_seed0_primary.py` verifies the complete result and refuses a
+partial run, a missing selected dataset/checkpoint, unequal fit conditions, or a
+tampered artifact.
+
+All four non-text primary runners use the same `repro_bundle` format. They save the
+exact selected arrays for every method, validation/test arrays, downstream
+predictions, a serialized downstream checkpoint for every fitted method,
+runtime/Git/config provenance, and content hashes alongside `results.json`.
+This applies equally to external baselines and OmniSelect.
+
+`SAVE_DOWNSTREAM_CHECKPOINTS=1` is the default; setting it to `0` is reserved
+for selection-only or lightweight smoke checks and deliberately omits the model
+artifacts.
+
 ## 5. Fidelity / anchor lanes (not main-table)
 
 - `cifar10_original_protocol_full`: from-scratch ResNet-18 on CIFAR-10

@@ -50,6 +50,7 @@ def test_rf_dispatch_runs_without_tabpfn(monkeypatch):
     monkeypatch.setenv("SEED", "0")
     monkeypatch.setenv("METHODS", "random")
     monkeypatch.setenv("RUN_ID", "rf-smoke-test")  # skips the legacy results_*.json dump
+    monkeypatch.setenv("SAVE_DOWNSTREAM_CHECKPOINTS", "0")
     for var in ("SPLIT_EXPORT_DIR", "SELECT_ONLY", "PAIRED_RNG", "ROBUST_VAL", "FIDELITY_MODE"):
         monkeypatch.delenv(var, raising=False)
 
