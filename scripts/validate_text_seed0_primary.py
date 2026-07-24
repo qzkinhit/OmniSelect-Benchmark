@@ -136,8 +136,28 @@ def _runner_sha(value) -> str:
     return hashlib.sha256(raw).hexdigest()
 
 
+def resolve_artifact_path(value: str, artifact_root: Path) -> Path:
+    """Resolve an artifact path from a result bundle after it has been moved.
+
+    Formal result JSONs retain the original server-side checkpoint path so their
+    source artifact hash remains stable. A downloaded bundle may live elsewhere;
+    in that case, recover the portable suffix beginning at checkpoints or
+    repro_bundle beneath the supplied bundle root.
+    """
+    source = Path(value)
+    if not source.is_absolute():
+        return artifact_root / source
+    if source.exists():
+        return source
+    for marker in ("checkpoints", "repro_bundle"):
+        if marker in source.parts:
+            return artifact_root.joinpath(*source.parts[source.parts.index(marker) :])
+    return source
+
+
 def validate_result(args: argparse.Namespace) -> None:
     path = args.result.resolve()
+    artifact_root = (args.artifact_root or path.parent).resolve()
     payload = json.loads(path.read_text(encoding="utf-8"))
     if payload.get("arm") != "text" or payload.get("seed") != 0:
         fail("arm/seed mismatch")
@@ -220,7 +240,10 @@ def validate_result(args: argparse.Namespace) -> None:
         order_hashes.add(training.get("training_block_order_sha256"))
         optimizer_hashes.add(training.get("optimizer_config_sha256"))
         caps.add(row.get("effective_train_tokens"))
-        if not Path(row.get("checkpoint_path", "")).is_dir():
+        checkpoint = resolve_artifact_path(
+            str(row.get("checkpoint_path", "")), artifact_root
+        )
+        if not checkpoint.is_dir():
             fail(f"{method}: checkpoint directory missing")
     dmf_metadata = by_method["dmf_pub"].get("selector_metadata") or {}
     if (
@@ -250,7 +273,7 @@ def validate_result(args: argparse.Namespace) -> None:
         if len(values) != 1 or None in values:
             fail(f"candidates do not share one {label}: {values}")
 
-    bundle = path.parent / "repro_bundle"
+    bundle = artifact_root / "repro_bundle"
     errors = validate_repro_bundle(bundle)
     if errors:
         fail("repro bundle invalid: " + "; ".join(errors))
@@ -279,7 +302,10 @@ def validate_result(args: argparse.Namespace) -> None:
     final_row = final_rows[0]
     if final_row.get("picked") not in RUN_METHODS:
         fail("OmniSelect selected an arm outside the applicable main-table registry")
-    if not Path(final_row.get("checkpoint_path", "")).is_dir():
+    final_checkpoint = resolve_artifact_path(
+        str(final_row.get("checkpoint_path", "")), artifact_root
+    )
+    if not final_checkpoint.is_dir():
         fail("OmniSelect selected checkpoint directory is missing")
     _finite_positive(final_row.get("gmean_ppl"), "OmniSelect geometric PPL")
     final_ppl = final_row.get("ppl")
@@ -319,6 +345,11 @@ def parser() -> argparse.ArgumentParser:
     pre.set_defaults(func=preflight)
     result = commands.add_parser("result")
     result.add_argument("--result", type=Path, required=True)
+    result.add_argument(
+        "--artifact-root",
+        type=Path,
+        help="moved run directory containing checkpoints/ and repro_bundle/; defaults to the result's parent",
+    )
     result.add_argument("--output", type=Path, required=True)
     result.set_defaults(func=validate_result)
     return root

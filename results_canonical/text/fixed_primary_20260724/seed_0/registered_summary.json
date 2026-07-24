@@ -1,0 +1,66 @@
+{
+  "schema_version": "omniselect.fixed-primary-text-registration.v1",
+  "run_completed_utc": "2026-07-24T06:25:36Z",
+  "raw_result": {
+    "path": "results.json",
+    "sha256": "2d18b22619f9bee399735b814e841482e9cad7cc8481d894cfa61493ff001ab5",
+    "source_payload_artifact_sha256": "7aacd60038a5ec1fa3542df030506a50cadcf7ad24ce15ccb9e2a9b6ff949bfd"
+  },
+  "protocol": {
+    "pool_records": 25000,
+    "domains": ["general", "math", "code", "image", "table"],
+    "downstream_model": "HuggingFaceTB/SmolLM2-135M",
+    "budget_fraction": 0.5,
+    "applicable_candidates": [
+      "random",
+      "influence_only",
+      "coverage_text",
+      "fixed_fusion",
+      "herding_text",
+      "density_text",
+      "quadmix_pub",
+      "dmf_pub"
+    ],
+    "not_applicable": {
+      "el2n": "no native autoregressive-text objective",
+      "grand": "no native autoregressive-text objective",
+      "ccs": "no native autoregressive-text objective"
+    }
+  },
+  "gmean_ppl_lower_is_better": {
+    "random": 11.073388180049143,
+    "influence_only": 11.17516673340807,
+    "coverage_text": 11.435231892119152,
+    "fixed_fusion": 11.182210916979068,
+    "herding_text": 11.044150249228661,
+    "density_text": 11.33016880897955,
+    "quadmix_pub": 11.143291732226436,
+    "dmf_pub": 11.202676235365551,
+    "omniselect": 11.044150249228661
+  },
+  "controller": {
+    "selected_arm": "herding_text",
+    "challenger_arm": "fixed_fusion",
+    "decision": "KEEP_REFERENCE",
+    "reason": "LCB_NOT_STRICTLY_POSITIVE"
+  },
+  "final_lm_eval_accuracy": {
+    "arc_easy": 0.585859,
+    "arc_challenge": 0.293515,
+    "hellaswag": 0.432284,
+    "openbookqa": 0.322
+  },
+  "full_local_artifact": {
+    "included_in_git": false,
+    "approximate_size_gib": 2.3,
+    "contents": [
+      "eight checkpoints",
+      "selected corpus records",
+      "selection manifests",
+      "predictions",
+      "run configuration and environment",
+      "integrity manifests"
+    ],
+    "original_evidence_manifest_sha256": "3a0f1aa0128b6ecbb5960f01992ff98da186e788a543a5934eabbc72f6987fe2"
+  }
+}

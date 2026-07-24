@@ -1,8 +1,30 @@
 import subprocess
+import importlib.util
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def _validator_module():
+    spec = importlib.util.spec_from_file_location(
+        "text_seed0_validator", ROOT / "scripts/validate_text_seed0_primary.py"
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    return module
+
+
+def test_validator_resolves_moved_checkpoint_paths(tmp_path):
+    validator = _validator_module()
+    original = Path("/root/server/run/seed_0/checkpoints/herding_text")
+    assert validator.resolve_artifact_path(original.as_posix(), tmp_path) == (
+        tmp_path / "checkpoints" / "herding_text"
+    )
+    assert validator.resolve_artifact_path("checkpoints/random", tmp_path) == (
+        tmp_path / "checkpoints" / "random"
+    )
 
 
 def test_seed0_wrapper_is_valid_bash():

@@ -177,10 +177,10 @@ Stratified per-domain token budget (`BUDGET_FRAC` default 0.5). Metrics = per-do
 held-out perplexity + lm-eval tasks (`LMEVAL_TASKS` default
 `arc_easy,arc_challenge,hellaswag,openbookqa`). Evidence:
 `experiments/master_coverage.json` cells `text_stratify1_main` /
-`text_globalmix_proxy`. **Scope limit:** the zip / quadmix_pub cells are graded
-PASS_WEAK. The text lane's runtime split/noise/init fingerprints were NOT_CAPTURED at
-run time and are never re-derived post hoc. No general-model text claims are made, and
-none may be added.
+`text_globalmix_proxy`. Those historical lanes remain PASS_WEAK and are retained
+for provenance only. The complete fixed-primary portfolio registered below supersedes
+them as the paper-facing text source; no missing sidecar is fabricated for the
+historical lanes.
 
 ### Formal seed-0 text rerun with complete evidence
 
@@ -200,8 +200,9 @@ as frozen-LM-representation transfers. No table-external method enters this run.
 bash scripts/run_text_seed0_primary.sh
 ```
 
-The run does not update `results_canonical` or a manuscript. Its isolated
-`outputs/experiment/run_id=.../seed_0/` directory contains:
+The runner writes an isolated `outputs/experiment/run_id=.../seed_0/` directory.
+Registering a validated result in `results_canonical/` and updating a manuscript
+remain explicit audited actions, never an automatic side effect. Its run directory contains:
 
 - `results.json`, including every candidate's five-domain PPL, the final
   OmniSelect model's four lm-eval scores, exact token cap,
@@ -227,6 +228,34 @@ This applies equally to external baselines and OmniSelect.
 `SAVE_DOWNSTREAM_CHECKPOINTS=1` is the default; setting it to `0` is reserved
 for selection-only or lightweight smoke checks and deliberately omits the model
 artifacts.
+
+### Registered fixed-primary text result
+
+The completed fixed-primary portfolio is registered at
+`results_canonical/text/fixed_primary_20260724/seed_0/results.json`. Its raw
+SHA-256 is
+`2d18b22619f9bee399735b814e841482e9cad7cc8481d894cfa61493ff001ab5`.
+All eight applicable candidates share one recorded pool, model, token cap, initial
+state, training order, and evaluation path:
+
+| Candidate | Five-domain geometric-mean PPL (lower is better) |
+|---|---:|
+| Random | 11.073388180049143 |
+| Influence-only | 11.17516673340807 |
+| Coverage | 11.435231892119152 |
+| Fixed-fusion | 11.182210916979068 |
+| Herding | 11.044150249228661 |
+| Density | 11.33016880897955 |
+| QuaDMix-pub | 11.143291732226436 |
+| DMF-pub | 11.202676235365551 |
+| OmniSelect | 11.044150249228661 |
+
+The controller retains Herding after fixed fusion fails confirmation. EL2N, GraNd,
+and CCS remain not applicable because their frozen classification formulations do
+not define an autoregressive-text objective. The compact result JSON, summary, code,
+and tests are in Git. The full 2.3 GiB run bundle, including selected records and
+checkpoints, is intentionally excluded from Git and the AAAI upload package. A moved
+local bundle is validated with `--artifact-root /path/to/run`.
 
 ## 5. Fidelity / anchor lanes (not main-table)
 
