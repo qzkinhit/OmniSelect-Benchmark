@@ -1,0 +1,63 @@
+{
+  "rule": {
+    "seeds": {
+      "C-100": [
+        0,
+        1,
+        2
+      ],
+      "C-100N": [
+        0,
+        1,
+        2
+      ],
+      "C-10": [
+        0,
+        1,
+        2
+      ],
+      "ETTh1": [
+        0,
+        1,
+        2
+      ],
+      "ETTm1": [
+        0,
+        1,
+        2
+      ],
+      "ETTh2": [
+        0,
+        1,
+        2
+      ],
+      "CSTR": [
+        0,
+        1,
+        2
+      ],
+      "Steam": [
+        0,
+        1,
+        2
+      ],
+      "TEP21": [
+        0,
+        1,
+        2
+      ],
+      "Elec": [
+        0,
+        1,
+        2
+      ],
+      "Text": [
+        0,
+        1,
+        2
+      ]
+    },
+    "rule": "multi-seed runs per task, listed in results/paper/seeds_reported.json; the validation-size panel lists its runs per level there as well",
+    "statistics": "arithmetic mean and sample SD (ddof=1)"
+  }
+}

@@ -1,0 +1,625 @@
+{
+  "statistics": "mean and sample standard deviation (ddof=1), the runs the paper reports; delta=new minus same-seed control, positive favours new",
+  "validation_size": {
+    "points": [
+      {
+        "val_n": 200,
+        "seed": 0,
+        "test": 0.457,
+        "rank": 0.55,
+        "elected": "coop_herding",
+        "random_test": 0.3965,
+        "infl_test": 0.433,
+        "auth_test": 0.4315,
+        "control_test": 0.5055,
+        "delta_control": -0.04849999999999993,
+        "condition": "val_n=200",
+        "track": "vision",
+        "dataset": "cifar100",
+        "source": "validation_size/n_200"
+      },
+      {
+        "val_n": 200,
+        "seed": 1,
+        "test": 0.4625,
+        "rank": 0.43,
+        "elected": "coop_herding",
+        "random_test": 0.377,
+        "infl_test": 0.4475,
+        "auth_test": 0.43,
+        "control_test": 0.461,
+        "delta_control": 0.0015000000000000013,
+        "condition": "val_n=200",
+        "track": "vision",
+        "dataset": "cifar100",
+        "source": "validation_size/n_200"
+      },
+      {
+        "val_n": 200,
+        "seed": 2,
+        "test": 0.466,
+        "rank": 0.44,
+        "elected": "coop_herding",
+        "random_test": 0.3835,
+        "infl_test": 0.4345,
+        "auth_test": 0.424,
+        "control_test": 0.4995,
+        "delta_control": -0.033499999999999974,
+        "condition": "val_n=200",
+        "track": "vision",
+        "dataset": "cifar100",
+        "source": "validation_size/n_200"
+      },
+      {
+        "val_n": 400,
+        "seed": 0,
+        "test": 0.4605,
+        "rank": 0.505,
+        "elected": "infomax",
+        "random_test": 0.377,
+        "infl_test": 0.44,
+        "auth_test": 0.43,
+        "control_test": 0.461,
+        "delta_control": -0.0005000000000000004,
+        "condition": "val_n=400",
+        "track": "vision",
+        "dataset": "cifar100",
+        "source": "validation_size/n_400"
+      },
+      {
+        "val_n": 400,
+        "seed": 1,
+        "test": 0.4425,
+        "rank": 0.47,
+        "elected": "dmf_pub",
+        "random_test": 0.375,
+        "infl_test": 0.435,
+        "auth_test": 0.4185,
+        "control_test": 0.477,
+        "delta_control": -0.034499999999999975,
+        "condition": "val_n=400",
+        "track": "vision",
+        "dataset": "cifar100",
+        "source": "validation_size/n_400"
+      },
+      {
+        "val_n": 400,
+        "seed": 2,
+        "test": 0.4635,
+        "rank": 0.47,
+        "elected": "influence_only",
+        "random_test": 0.393,
+        "infl_test": 0.4635,
+        "auth_test": 0.4395,
+        "control_test": 0.5035,
+        "delta_control": -0.039999999999999925,
+        "condition": "val_n=400",
+        "track": "vision",
+        "dataset": "cifar100",
+        "source": "validation_size/n_400"
+      },
+      {
+        "val_n": 800,
+        "seed": 0,
+        "test": 0.4735,
+        "rank": 0.5075,
+        "elected": "fuse w=(0, 1, 0) q=0.0 lam=0.25",
+        "random_test": 0.3545,
+        "infl_test": 0.468,
+        "auth_test": 0.414,
+        "control_test": 0.4735,
+        "delta_control": 0.0,
+        "condition": "full",
+        "track": "vision",
+        "dataset": "cifar100",
+        "source": "main"
+      },
+      {
+        "val_n": 800,
+        "seed": 1,
+        "test": 0.4775,
+        "rank": 0.54,
+        "elected": "fuse w=(0, 1, 0) q=0.0 lam=0.6",
+        "random_test": 0.4335,
+        "infl_test": 0.471,
+        "auth_test": 0.43,
+        "control_test": 0.4775,
+        "delta_control": 0.0,
+        "condition": "full",
+        "track": "vision",
+        "dataset": "cifar100",
+        "source": "main"
+      },
+      {
+        "val_n": 800,
+        "seed": 2,
+        "test": 0.509,
+        "rank": 0.515,
+        "elected": "mmdataselect",
+        "random_test": 0.405,
+        "infl_test": 0.5025,
+        "auth_test": 0.451,
+        "control_test": 0.509,
+        "delta_control": 0.0,
+        "condition": "full",
+        "track": "vision",
+        "dataset": "cifar100",
+        "source": "main"
+      },
+      {
+        "val_n": 1600,
+        "seed": 0,
+        "test": 0.511,
+        "rank": 0.52,
+        "elected": "influence_only",
+        "random_test": 0.3965,
+        "infl_test": 0.511,
+        "auth_test": 0.4315,
+        "control_test": 0.5055,
+        "delta_control": 0.00550000000000006,
+        "condition": "val_n=1600",
+        "track": "vision",
+        "dataset": "cifar100",
+        "source": "validation_size/n_1600"
+      },
+      {
+        "val_n": 1600,
+        "seed": 1,
+        "test": 0.5025,
+        "rank": 0.5425,
+        "elected": "fuse learned w=(0.0, 0.88, 0.12) q=0.0 lam=0.0",
+        "random_test": 0.377,
+        "infl_test": 0.5025,
+        "auth_test": 0.43,
+        "control_test": 0.461,
+        "delta_control": 0.041499999999999926,
+        "condition": "val_n=1600",
+        "track": "vision",
+        "dataset": "cifar100",
+        "source": "validation_size/n_1600"
+      },
+      {
+        "val_n": 1600,
+        "seed": 2,
+        "test": 0.536,
+        "rank": 0.52875,
+        "elected": "influence_only",
+        "random_test": 0.388,
+        "infl_test": 0.536,
+        "auth_test": 0.462,
+        "control_test": 0.5255,
+        "delta_control": 0.010500000000000065,
+        "condition": "val_n=1600",
+        "track": "vision",
+        "dataset": "cifar100",
+        "source": "validation_size/n_1600"
+      }
+    ],
+    "summary": [
+      {
+        "val_n": 200,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "test": {
+          "values": [
+            0.457,
+            0.4625,
+            0.466
+          ],
+          "mean": 0.4618333333333333,
+          "n": 3,
+          "sample_sd": 0.004536885862938737
+        },
+        "delta_control": {
+          "values": [
+            -0.04849999999999993,
+            0.0015000000000000013,
+            -0.033499999999999974
+          ],
+          "mean": -0.026833333333333303,
+          "n": 3,
+          "sample_sd": 0.02565800719723439
+        }
+      },
+      {
+        "val_n": 400,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "test": {
+          "values": [
+            0.4605,
+            0.4425,
+            0.4635
+          ],
+          "mean": 0.4555,
+          "n": 3,
+          "sample_sd": 0.011357816691600558
+        },
+        "delta_control": {
+          "values": [
+            -0.0005000000000000004,
+            -0.034499999999999975,
+            -0.039999999999999925
+          ],
+          "mean": -0.024999999999999967,
+          "n": 3,
+          "sample_sd": 0.021395092895334637
+        }
+      },
+      {
+        "val_n": 800,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "test": {
+          "values": [
+            0.4735,
+            0.4775,
+            0.509
+          ],
+          "mean": 0.48666666666666664,
+          "n": 3,
+          "sample_sd": 0.019444365079203125
+        },
+        "delta_control": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "n": 3,
+          "sample_sd": 0.0
+        }
+      },
+      {
+        "val_n": 1600,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "test": {
+          "values": [
+            0.511,
+            0.5025,
+            0.536
+          ],
+          "mean": 0.5165000000000001,
+          "n": 3,
+          "sample_sd": 0.017414074767268035
+        },
+        "delta_control": {
+          "values": [
+            0.00550000000000006,
+            0.041499999999999926,
+            0.010500000000000065
+          ],
+          "mean": 0.019166666666666683,
+          "n": 3,
+          "sample_sd": 0.01950213663508002
+        }
+      }
+    ]
+  },
+  "signal_drop": {
+    "C-100": {
+      "drop_A": {
+        "n": 3,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "mean_rel": 0.032743942370657815,
+        "mean_abs": 0.0001666666666666483,
+        "lo": -0.0005504421216248498,
+        "hi": 0.0008837754549581464,
+        "verdict": "tie",
+        "neg": 0,
+        "pos": 1,
+        "rel_per_seed": [
+          0.0,
+          0.0,
+          0.09823182711197345
+        ]
+      },
+      "drop_I": {
+        "n": 3,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "mean_rel": -6.643412868363373,
+        "mean_abs": -0.03249999999999997,
+        "lo": -0.05496050664999252,
+        "hi": -0.01003949335000743,
+        "verdict": "worse",
+        "neg": 3,
+        "pos": 0,
+        "rel_per_seed": [
+          -6.652587117212244,
+          -5.026178010471197,
+          -8.251473477406677
+        ]
+      },
+      "drop_C": {
+        "n": 3,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "mean_rel": -1.266611042315952,
+        "mean_abs": -0.006166666666666672,
+        "lo": -0.007600884243249947,
+        "hi": -0.004732449090083397,
+        "verdict": "worse",
+        "neg": 3,
+        "pos": 0,
+        "rel_per_seed": [
+          -1.1615628299894296,
+          -1.3612565445026192,
+          -1.2770137524558076
+        ]
+      }
+    },
+    "C-100N": {
+      "drop_A": {
+        "n": 3,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "mean_rel": -5.113347845293798,
+        "mean_abs": -0.02099999999999998,
+        "lo": -0.03929681677979809,
+        "hi": -0.0027031832202018685,
+        "verdict": "worse",
+        "neg": 3,
+        "pos": 0,
+        "rel_per_seed": [
+          -3.286978508217449,
+          -6.7401960784313655,
+          -5.312868949232577
+        ]
+      },
+      "drop_I": {
+        "n": 3,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "mean_rel": -0.5959610983036244,
+        "mean_abs": -0.0024999999999999836,
+        "lo": -0.028524232625779376,
+        "hi": 0.023524232625779407,
+        "verdict": "tie",
+        "neg": 1,
+        "pos": 1,
+        "rel_per_seed": [
+          1.6434892541087245,
+          -3.431372549019598,
+          0.0
+        ]
+      },
+      "drop_C": {
+        "n": 3,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "mean_rel": -6.333339974376837,
+        "mean_abs": -0.026166666666666654,
+        "lo": -0.05735059396803969,
+        "hi": 0.00501726063470638,
+        "verdict": "tie",
+        "neg": 3,
+        "pos": 0,
+        "rel_per_seed": [
+          -3.286978508217449,
+          -6.7401960784313655,
+          -8.972845336481695
+        ]
+      }
+    },
+    "TEP21": {
+      "drop_A": {
+        "n": 3,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "mean_rel": -1.8495849071889074,
+        "mean_abs": -0.007785034409100981,
+        "lo": -0.028755603607528102,
+        "hi": 0.013185534789326138,
+        "verdict": "tie",
+        "neg": 2,
+        "pos": 0,
+        "rel_per_seed": [
+          0.0,
+          -3.998401702187896,
+          -1.5503530193788264
+        ]
+      },
+      "drop_I": {
+        "n": 3,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "mean_rel": -3.260174283907046,
+        "mean_abs": -0.01408741712941495,
+        "lo": -0.04802629145223375,
+        "hi": 0.01985145719340385,
+        "verdict": "tie",
+        "neg": 2,
+        "pos": 0,
+        "rel_per_seed": [
+          -6.259857769994603,
+          0.0,
+          -3.5206650817265337
+        ]
+      },
+      "drop_C": {
+        "n": 3,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "mean_rel": -4.882409800804797,
+        "mean_abs": -0.020888619290091188,
+        "lo": -0.03279808721588523,
+        "hi": -0.008979151364297144,
+        "verdict": "worse",
+        "neg": 3,
+        "pos": 0,
+        "rel_per_seed": [
+          -6.057254201822635,
+          -4.43944915027493,
+          -4.150526050316823
+        ]
+      }
+    },
+    "Elec": {
+      "drop_A": {
+        "n": 3,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "mean_rel": 0.0,
+        "mean_abs": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "verdict": "tie",
+        "neg": 0,
+        "pos": 0,
+        "rel_per_seed": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "drop_I": {
+        "n": 3,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "mean_rel": 0.03805250911021304,
+        "mean_abs": 0.0002998047777749517,
+        "lo": -0.012057057788853215,
+        "hi": 0.012656667344403117,
+        "verdict": "tie",
+        "neg": 1,
+        "pos": 1,
+        "rel_per_seed": [
+          0.6249021383002386,
+          0.0,
+          -0.5107446109695994
+        ]
+      },
+      "drop_C": {
+        "n": 3,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "mean_rel": -0.1412325409981667,
+        "mean_abs": -0.001222792235447745,
+        "lo": -0.006484042585213432,
+        "hi": 0.004038458114317942,
+        "verdict": "tie",
+        "neg": 1,
+        "pos": 0,
+        "rel_per_seed": [
+          0.0,
+          -0.42369762299450014,
+          0.0
+        ]
+      }
+    },
+    "ETTm1": {
+      "drop_A": {
+        "n": 3,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "mean_rel": -22.01368421701422,
+        "mean_abs": -0.22381010683963587,
+        "lo": -0.2649845272860788,
+        "hi": -0.18263568639319291,
+        "verdict": "worse",
+        "neg": 3,
+        "pos": 0,
+        "rel_per_seed": [
+          -24.045919644122797,
+          -21.560216105769648,
+          -20.434916901150217
+        ]
+      },
+      "drop_I": {
+        "n": 3,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "mean_rel": 0.0,
+        "mean_abs": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "verdict": "tie",
+        "neg": 0,
+        "pos": 0,
+        "rel_per_seed": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "drop_C": {
+        "n": 3,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "mean_rel": -2.161587543199039,
+        "mean_abs": -0.022017423753423415,
+        "lo": -0.03339764108741674,
+        "hi": -0.01063720641943009,
+        "verdict": "worse",
+        "neg": 3,
+        "pos": 0,
+        "rel_per_seed": [
+          -1.7001056668433676,
+          -2.2349237434497047,
+          -2.5497332193040445
+        ]
+      }
+    }
+  }
+}

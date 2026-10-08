@@ -1,0 +1,2238 @@
+{
+ "scope": {
+  "tasks": [
+   "C-100",
+   "C-100N",
+   "C-10",
+   "ETTh1",
+   "ETTm1",
+   "ETTh2",
+   "CSTR",
+   "Steam",
+   "TEP21",
+   "Elec",
+   "Text"
+  ],
+  "n_tasks": 11,
+  "seeds_per_task": {
+   "C-100": 3,
+   "C-100N": 3,
+   "C-10": 3,
+   "ETTh1": 3,
+   "ETTm1": 3,
+   "ETTh2": 3,
+   "CSTR": 3,
+   "Steam": 3,
+   "TEP21": 3,
+   "Elec": 3,
+   "Text": 3
+  },
+  "deprecated_key_suffixes": "mixed10/five9/five_seed denote legacy names, not the current counts"
+ },
+ "verdicts_all_cells_five_seed": {
+  "cells": 114,
+  "W": 89,
+  "T": 25,
+  "L": 0,
+  "N/A": 0,
+  "per_baseline": {
+   "random": {
+    "W": 8,
+    "T": 3,
+    "L": 0,
+    "N/A": 0
+   },
+   "influence_only": {
+    "W": 9,
+    "T": 2,
+    "L": 0,
+    "N/A": 0
+   },
+   "coreset": {
+    "W": 9,
+    "T": 2,
+    "L": 0,
+    "N/A": 0
+   },
+   "mmdataselect": {
+    "W": 9,
+    "T": 2,
+    "L": 0,
+    "N/A": 0
+   },
+   "auth_only": {
+    "W": 5,
+    "T": 6,
+    "L": 0,
+    "N/A": 0
+   },
+   "herding": {
+    "W": 9,
+    "T": 2,
+    "L": 0,
+    "N/A": 0
+   },
+   "el2n": {
+    "W": 4,
+    "T": 1,
+    "L": 0,
+    "N/A": 0
+   },
+   "grand": {
+    "W": 5,
+    "T": 0,
+    "L": 0,
+    "N/A": 0
+   },
+   "ccs": {
+    "W": 4,
+    "T": 1,
+    "L": 0,
+    "N/A": 0
+   },
+   "density": {
+    "W": 11,
+    "T": 0,
+    "L": 0,
+    "N/A": 0
+   },
+   "quadmix_pub": {
+    "W": 7,
+    "T": 4,
+    "L": 0,
+    "N/A": 0
+   },
+   "dmf_pub": {
+    "W": 9,
+    "T": 2,
+    "L": 0,
+    "N/A": 0
+   }
+  }
+ },
+ "vs_strongest": {
+  "C-100": [
+   "influence_only",
+   "W"
+  ],
+  "C-100N": [
+   "influence_only",
+   "T"
+  ],
+  "C-10": [
+   "ccs",
+   "T"
+  ],
+  "ETTh1": [
+   "auth_only",
+   "T"
+  ],
+  "ETTm1": [
+   "auth_only",
+   "T"
+  ],
+  "ETTh2": [
+   "auth_only",
+   "T"
+  ],
+  "CSTR": [
+   "auth_only",
+   "T"
+  ],
+  "Steam": [
+   "auth_only",
+   "W"
+  ],
+  "TEP21": [
+   "dmf_pub",
+   "W"
+  ],
+  "Elec": [
+   "coreset",
+   "W"
+  ],
+  "Text": [
+   "herding",
+   "T"
+  ]
+ },
+ "vs_strongest_counts": {
+  "W": 4,
+  "T": 7,
+  "L": 0,
+  "N/A": 0
+ },
+ "below_random_pairs": {
+  "pairs": 33,
+  "below": 0,
+  "equal": 0
+ },
+ "gains_mixed10": {
+  "random": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.0,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "influence_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.08618246406148024,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "coreset": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.030726243419591983,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "mmdataselect": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.006695447966117382,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "auth_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.09825599912713533,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "herding": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.008692238158168416,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "el2n": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "TEP21",
+    "Elec"
+   ],
+   "mean_gain": -0.4025285936844547,
+   "omni_mean_gain_same_tasks": 0.15029764234417392
+  },
+  "grand": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "TEP21",
+    "Elec"
+   ],
+   "mean_gain": -0.32109678170752665,
+   "omni_mean_gain_same_tasks": 0.15029764234417392
+  },
+  "ccs": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "TEP21",
+    "Elec"
+   ],
+   "mean_gain": -0.06733332299290028,
+   "omni_mean_gain_same_tasks": 0.15029764234417392
+  },
+  "density": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.004442660143537535,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "quadmix_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.012553556369874024,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "dmf_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.017290383789429126,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "mmds_adapt": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.13601282958432015,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "full": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.13699590985892038,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  }
+ },
+ "gains_five9": {
+  "random": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.0,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "influence_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.08618246406148024,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "coreset": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.030726243419591983,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "mmdataselect": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.006695447966117382,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "auth_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.09825599912713533,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "herding": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.008692238158168416,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "el2n": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "TEP21",
+    "Elec"
+   ],
+   "mean_gain": -0.4025285936844547,
+   "omni_mean_gain_same_tasks": 0.15029764234417392
+  },
+  "grand": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "TEP21",
+    "Elec"
+   ],
+   "mean_gain": -0.32109678170752665,
+   "omni_mean_gain_same_tasks": 0.15029764234417392
+  },
+  "ccs": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "TEP21",
+    "Elec"
+   ],
+   "mean_gain": -0.06733332299290028,
+   "omni_mean_gain_same_tasks": 0.15029764234417392
+  },
+  "density": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.004442660143537535,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "quadmix_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.012553556369874024,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "dmf_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.017290383789429126,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "mmds_adapt": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.13601282958432015,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "full": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.13699590985892038,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  }
+ },
+ "strongest_by_mean_gain_all10": "auth_only",
+ "displayed_oracle_gain_mixed10": 0.12715117671547124,
+ "displayed_oracle_gain_five9": 0.12715117671547124,
+ "displayed_below_random_tasks": {
+  "influence_only": [
+   "C-10",
+   "ETTh1",
+   "ETTm1",
+   "ETTh2",
+   "CSTR",
+   "Steam",
+   "Elec",
+   "Text"
+  ],
+  "coreset": [
+   "C-100",
+   "C-100N",
+   "ETTh2",
+   "CSTR",
+   "Steam",
+   "Text"
+  ],
+  "mmdataselect": [
+   "C-10",
+   "ETTh2",
+   "CSTR",
+   "Steam",
+   "Elec",
+   "Text"
+  ],
+  "auth_only": [
+   "C-10",
+   "Elec",
+   "Text"
+  ],
+  "herding": [
+   "C-100",
+   "ETTh2",
+   "CSTR",
+   "Steam"
+  ],
+  "el2n": [
+   "C-100",
+   "C-100N",
+   "C-10",
+   "TEP21",
+   "Elec"
+  ],
+  "grand": [
+   "C-100",
+   "C-100N",
+   "C-10",
+   "TEP21",
+   "Elec"
+  ],
+  "ccs": [
+   "C-100",
+   "C-100N",
+   "Elec"
+  ],
+  "density": [
+   "C-100",
+   "C-100N",
+   "CSTR",
+   "Steam",
+   "Text"
+  ],
+  "quadmix_pub": [
+   "C-100",
+   "C-100N",
+   "C-10",
+   "Text"
+  ],
+  "dmf_pub": [
+   "C-10",
+   "ETTh2",
+   "CSTR",
+   "Steam",
+   "Elec",
+   "Text"
+  ]
+ },
+ "friedman_mixed10": {
+  "strategies": [
+   "random",
+   "influence_only",
+   "coreset",
+   "mmdataselect",
+   "auth_only",
+   "herding",
+   "density",
+   "quadmix_pub",
+   "dmf_pub",
+   "mmds_adapt"
+  ],
+  "avg_ranks": {
+   "random": 6.182,
+   "influence_only": 7.545,
+   "coreset": 7.0,
+   "mmdataselect": 6.364,
+   "auth_only": 4.227,
+   "herding": 5.091,
+   "density": 6.091,
+   "quadmix_pub": 5.455,
+   "dmf_pub": 5.818,
+   "mmds_adapt": 1.227
+  },
+  "chi2": 33.787210584344,
+  "p": 9.732621273238895e-05,
+  "k": 10,
+  "N": 11,
+  "CD": 4.084297935532539,
+  "scope_note": "Original fully covered method set only. Adaptation rows are excluded; all-method ranking is descriptive in table_method_ranks.json."
+ },
+ "wilcoxon_mixed10": {
+  "random": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "influence_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 10,
+   "neg": 1,
+   "zero": 0,
+   "p_one": 0.00146484375,
+   "holm": 0.00732421875
+  },
+  "coreset": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "mmdataselect": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "auth_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 10,
+   "pos": 9,
+   "neg": 1,
+   "zero": 1,
+   "p_one": 0.0029296875,
+   "holm": 0.01171875
+  },
+  "herding": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "el2n": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "TEP21",
+    "Elec"
+   ],
+   "n": 5,
+   "n_nonzero": 5,
+   "pos": 5,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.03125,
+   "holm": 0.09375
+  },
+  "grand": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "TEP21",
+    "Elec"
+   ],
+   "n": 5,
+   "n_nonzero": 5,
+   "pos": 5,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.03125,
+   "holm": 0.09375
+  },
+  "ccs": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "TEP21",
+    "Elec"
+   ],
+   "n": 5,
+   "n_nonzero": 5,
+   "pos": 5,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.03125,
+   "holm": 0.09375
+  },
+  "density": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "quadmix_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "dmf_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  }
+ },
+ "coverage": {
+  "C-100": {
+   "n_rank": 400,
+   "n_con": 240,
+   "n_conf": 160,
+   "m_nominal": 27,
+   "m_distinct": 24,
+   "grid_total_distinct": 21,
+   "finalists": 4,
+   "m_nominal_range": [
+    27,
+    27
+   ],
+   "m_distinct_range": [
+    24,
+    26
+   ],
+   "n_eff": 400,
+   "2r1_distinct": 0.1852961586820121,
+   "2r1_nominal": 0.18687852097175675,
+   "adoptions": 2,
+   "seeds": 3
+  },
+  "C-100N": {
+   "n_rank": 400,
+   "n_con": 240,
+   "n_conf": 160,
+   "m_nominal": 27,
+   "m_distinct": 24,
+   "grid_total_distinct": 20,
+   "finalists": 4,
+   "m_nominal_range": [
+    27,
+    27
+   ],
+   "m_distinct_range": [
+    24,
+    25
+   ],
+   "n_eff": 400,
+   "2r1_distinct": 0.1852961586820121,
+   "2r1_nominal": 0.18687852097175675,
+   "adoptions": 0,
+   "seeds": 3
+  },
+  "C-10": {
+   "n_rank": 2500,
+   "n_con": 1500,
+   "n_conf": 1000,
+   "m_nominal": 17,
+   "m_distinct": 17,
+   "grid_total_distinct": 0,
+   "finalists": null,
+   "m_nominal_range": [
+    17,
+    17
+   ],
+   "m_distinct_range": [
+    17,
+    17
+   ],
+   "n_eff": 2500,
+   "2r1_distinct": 0.07223347034814347,
+   "2r1_nominal": 0.07223347034814347,
+   "adoptions": 0,
+   "seeds": 3
+  },
+  "ETTh1": {
+   "n_rank": 500,
+   "n_con": 300,
+   "n_conf": 200,
+   "m_nominal": 24,
+   "m_distinct": 23,
+   "grid_total_distinct": 40,
+   "finalists": 4,
+   "m_nominal_range": [
+    24,
+    24
+   ],
+   "m_distinct_range": [
+    22,
+    24
+   ],
+   "n_eff": 500,
+   "2r1_distinct": 0.16521953480194873,
+   "2r1_nominal": 0.16573392271302675,
+   "adoptions": 2,
+   "seeds": 3
+  },
+  "ETTm1": {
+   "n_rank": 500,
+   "n_con": 300,
+   "n_conf": 200,
+   "m_nominal": 24,
+   "m_distinct": 21,
+   "grid_total_distinct": 38,
+   "finalists": 4,
+   "m_nominal_range": [
+    24,
+    24
+   ],
+   "m_distinct_range": [
+    21,
+    22
+   ],
+   "n_eff": 500,
+   "2r1_distinct": 0.16411461716541106,
+   "2r1_nominal": 0.16573392271302675,
+   "adoptions": 2,
+   "seeds": 3
+  },
+  "ETTh2": {
+   "n_rank": 500,
+   "n_con": 300,
+   "n_conf": 200,
+   "m_nominal": 24,
+   "m_distinct": 24,
+   "grid_total_distinct": 39,
+   "finalists": 4,
+   "m_nominal_range": [
+    24,
+    24
+   ],
+   "m_distinct_range": [
+    24,
+    24
+   ],
+   "n_eff": 500,
+   "2r1_distinct": 0.16573392271302675,
+   "2r1_nominal": 0.16573392271302675,
+   "adoptions": 3,
+   "seeds": 3
+  },
+  "CSTR": {
+   "n_rank": 373,
+   "n_con": 224,
+   "n_conf": 149,
+   "m_nominal": 24,
+   "m_distinct": 24,
+   "grid_total_distinct": 40,
+   "finalists": 4,
+   "m_nominal_range": [
+    24,
+    24
+   ],
+   "m_distinct_range": [
+    22,
+    24
+   ],
+   "n_eff": 373,
+   "2r1_distinct": 0.1918854283447695,
+   "2r1_nominal": 0.1918854283447695,
+   "adoptions": 0,
+   "seeds": 3
+  },
+  "Steam": {
+   "n_rank": 500,
+   "n_con": 300,
+   "n_conf": 200,
+   "m_nominal": 24,
+   "m_distinct": 24,
+   "grid_total_distinct": 40,
+   "finalists": 4,
+   "m_nominal_range": [
+    24,
+    24
+   ],
+   "m_distinct_range": [
+    24,
+    24
+   ],
+   "n_eff": 500,
+   "2r1_distinct": 0.16573392271302675,
+   "2r1_nominal": 0.16573392271302675,
+   "adoptions": 3,
+   "seeds": 3
+  },
+  "TEP21": {
+   "n_rank": 1000,
+   "n_con": 600,
+   "n_conf": 400,
+   "m_nominal": 28,
+   "m_distinct": 28,
+   "grid_total_distinct": 6,
+   "finalists": 4,
+   "m_nominal_range": [
+    28,
+    28
+   ],
+   "m_distinct_range": [
+    28,
+    28
+   ],
+   "n_eff": 1000,
+   "2r1_distinct": 0.11849965370657536,
+   "2r1_nominal": 0.11849965370657536,
+   "adoptions": 2,
+   "seeds": 3
+  },
+  "Elec": {
+   "n_rank": 1250,
+   "n_con": 750,
+   "n_conf": 500,
+   "m_nominal": 29,
+   "m_distinct": 26,
+   "grid_total_distinct": 11,
+   "finalists": 4,
+   "m_nominal_range": [
+    29,
+    29
+   ],
+   "m_distinct_range": [
+    26,
+    27
+   ],
+   "n_eff": 542,
+   "2r1_distinct": 0.160108081485468,
+   "2r1_nominal": 0.16136154180535786,
+   "adoptions": 0,
+   "seeds": 3
+  },
+  "Text": {
+   "n_rank": 600,
+   "n_con": 400,
+   "n_conf": 500,
+   "m_nominal": 15,
+   "m_distinct": 15,
+   "grid_total_distinct": 1,
+   "finalists": null,
+   "m_nominal_range": [
+    15,
+    15
+   ],
+   "m_distinct_range": [
+    15,
+    15
+   ],
+   "n_eff": 600,
+   "2r1_distinct": 0.14602430910886205,
+   "2r1_nominal": 0.14602430910886205,
+   "adoptions": 0,
+   "seeds": 3
+  },
+  "C-10-CLIP": {
+   "n_rank": 400,
+   "n_con": 240,
+   "n_conf": 160,
+   "m_nominal": 27,
+   "m_distinct": 26,
+   "grid_total_distinct": 35,
+   "finalists": 4,
+   "m_nominal_range": [
+    27,
+    27
+   ],
+   "m_distinct_range": [
+    25,
+    26
+   ],
+   "n_eff": 400,
+   "2r1_distinct": 0.18637295930653966,
+   "2r1_nominal": 0.18687852097175675,
+   "adoptions": 0,
+   "seeds": 3
+  }
+ },
+ "fde": {
+  "C-100": {
+   "total": [
+    34.5,
+    35.0
+   ],
+   "member": [
+    14.5,
+    14.5
+   ],
+   "con": [
+    18.5,
+    19.0
+   ],
+   "ranking": [
+    1.0,
+    1.5
+   ],
+   "fits": [
+    68,
+    69
+   ],
+   "secs_total": [
+    530.8931735670194,
+    640.9366880320013
+   ],
+   "secs_controller": [
+    175.47367379814386,
+    204.58238928811625
+   ],
+   "full_fit_secs": [
+    2.269274421967566,
+    4.509100483031943
+   ]
+  },
+  "C-100N": {
+   "total": [
+    34.0,
+    35.5
+   ],
+   "member": [
+    14.5,
+    14.5
+   ],
+   "con": [
+    18.5,
+    20.0
+   ],
+   "ranking": [
+    1.0,
+    1.0
+   ],
+   "fits": [
+    67,
+    70
+   ],
+   "secs_total": [
+    584.1854462919291,
+    2448.266799219884
+   ],
+   "secs_controller": [
+    237.4268680261448,
+    1316.2908799480647
+   ],
+   "full_fit_secs": [
+    1.756616277154535,
+    7.509973471984267
+   ]
+  },
+  "C-10": {
+   "total": [
+    6.099999999999999,
+    6.099999999999999
+   ],
+   "member": [
+    0,
+    0
+   ],
+   "con": [
+    4.799999999999999,
+    4.799999999999999
+   ],
+   "ranking": [
+    1.3,
+    1.3
+   ],
+   "fits": [
+    18,
+    18
+   ],
+   "secs_total": [
+    22067.845470838947,
+    27150.540962134954
+   ],
+   "secs_controller": [
+    19713.08382225409,
+    24831.859154833015
+   ],
+   "full_fit_secs": [
+    1887.2825279131066,
+    2605.8472307301126
+   ]
+  },
+  "ETTh1": {
+   "total": [
+    26.200000000000017,
+    27.10000000000002
+   ],
+   "member": [
+    8.700000000000001,
+    8.700000000000001
+   ],
+   "con": [
+    16.200000000000017,
+    17.10000000000002
+   ],
+   "ranking": [
+    1.3,
+    1.3
+   ],
+   "fits": [
+    77,
+    80
+   ],
+   "secs_total": [
+    79.50975395715795,
+    132.86392212915234
+   ],
+   "secs_controller": [
+    34.00742667913437,
+    54.16550088999793
+   ],
+   "full_fit_secs": [
+    1.1381501900032163,
+    1.9198847888037562
+   ]
+  },
+  "ETTm1": {
+   "total": [
+    25.30000000000002,
+    26.200000000000017
+   ],
+   "member": [
+    8.700000000000001,
+    8.700000000000001
+   ],
+   "con": [
+    15.600000000000016,
+    16.200000000000017
+   ],
+   "ranking": [
+    1.0,
+    1.3
+   ],
+   "fits": [
+    74,
+    77
+   ],
+   "secs_total": [
+    71.08422884112224,
+    166.9751033289358
+   ],
+   "secs_controller": [
+    30.248388830805197,
+    41.94143287301995
+   ],
+   "full_fit_secs": [
+    1.1638136110268533,
+    1.7648072689771652
+   ]
+  },
+  "ETTh2": {
+   "total": [
+    27.40000000000002,
+    28.300000000000022
+   ],
+   "member": [
+    8.700000000000001,
+    8.700000000000001
+   ],
+   "con": [
+    17.40000000000002,
+    18.300000000000022
+   ],
+   "ranking": [
+    1.3,
+    1.3
+   ],
+   "fits": [
+    81,
+    84
+   ],
+   "secs_total": [
+    68.97796599799767,
+    215.06271430198103
+   ],
+   "secs_controller": [
+    30.20543999108486,
+    42.900623579043895
+   ],
+   "full_fit_secs": [
+    1.1050919559784234,
+    1.3060368339065462
+   ]
+  },
+  "CSTR": {
+   "total": [
+    26.80000000000002,
+    27.100000000000023
+   ],
+   "member": [
+    8.700000000000001,
+    8.700000000000001
+   ],
+   "con": [
+    16.80000000000002,
+    17.40000000000002
+   ],
+   "ranking": [
+    1.0,
+    1.3
+   ],
+   "fits": [
+    79,
+    80
+   ],
+   "secs_total": [
+    58.65702260914259,
+    252.97400281718
+   ],
+   "secs_controller": [
+    22.46630693390034,
+    38.042292542988434
+   ],
+   "full_fit_secs": [
+    0.8843858418986201,
+    1.479575539007783
+   ]
+  },
+  "Steam": {
+   "total": [
+    27.70000000000002,
+    27.70000000000002
+   ],
+   "member": [
+    8.700000000000001,
+    8.700000000000001
+   ],
+   "con": [
+    17.70000000000002,
+    17.70000000000002
+   ],
+   "ranking": [
+    1.3,
+    1.3
+   ],
+   "fits": [
+    82,
+    82
+   ],
+   "secs_total": [
+    52.673597775865346,
+    95.39808871713467
+   ],
+   "secs_controller": [
+    25.517965818056837,
+    39.85604255995713
+   ],
+   "full_fit_secs": [
+    0.8713143770582974,
+    1.306680380133912
+   ]
+  },
+  "TEP21": {
+   "total": [
+    21.000000000000007,
+    22.20000000000001
+   ],
+   "member": [
+    10.700000000000006,
+    10.700000000000006
+   ],
+   "con": [
+    9.0,
+    10.200000000000003
+   ],
+   "ranking": [
+    1.3,
+    1.3
+   ],
+   "fits": [
+    57,
+    61
+   ],
+   "secs_total": [
+    262.23551017115824,
+    460.0808067009784
+   ],
+   "secs_controller": [
+    54.33062373101711,
+    176.79060569196008
+   ],
+   "full_fit_secs": [
+    4.967528288019821,
+    8.771933673182502
+   ]
+  },
+  "Elec": {
+   "total": [
+    0.0,
+    0.0
+   ],
+   "member": [
+    0.0,
+    0.0
+   ],
+   "con": [
+    0.0,
+    0.0
+   ],
+   "ranking": [
+    0.0,
+    0.0
+   ],
+   "fits": [
+    54,
+    58
+   ],
+   "secs_total": [
+    201.86995296599343,
+    426.89677871903405
+   ],
+   "secs_controller": [
+    76.17955335997976,
+    173.50774568901397
+   ],
+   "full_fit_secs": [
+    0.490381226176396,
+    1.1283034191001207
+   ]
+  },
+  "Text": {
+   "total": [
+    8.538199999999998,
+    8.662999999999998
+   ],
+   "member": [
+    0,
+    0
+   ],
+   "con": [
+    7.0369199999999985,
+    7.073199999999999
+   ],
+   "ranking": [
+    1.50128,
+    1.60172
+   ],
+   "fits": [
+    16,
+    16
+   ],
+   "secs_total": [
+    10993.392008319031,
+    11561.183505991008
+   ],
+   "secs_controller": [
+    4778.609917121008,
+    5995.2712311709765
+   ],
+   "full_fit_secs": [
+    155.74727174802683,
+    298.51520183100365
+   ]
+  },
+  "C-10-CLIP": {
+   "total": [
+    41.5,
+    43.5
+   ],
+   "member": [
+    14.5,
+    14.5
+   ],
+   "con": [
+    25.5,
+    27.5
+   ],
+   "ranking": [
+    1.0,
+    1.5
+   ],
+   "fits": [
+    82,
+    86
+   ],
+   "secs_total": [
+    487.84761282010004,
+    1948.1088832849637
+   ],
+   "secs_controller": [
+    99.30338390986435,
+    584.9091950259171
+   ],
+   "full_fit_secs": [
+    1.129424256971106,
+    5.081274302909151
+   ]
+  }
+ },
+ "verdicts_all_cells": {
+  "cells": 114,
+  "W": 89,
+  "T": 25,
+  "L": 0,
+  "N/A": 0,
+  "per_baseline": {
+   "random": {
+    "W": 8,
+    "T": 3,
+    "L": 0,
+    "N/A": 0
+   },
+   "influence_only": {
+    "W": 9,
+    "T": 2,
+    "L": 0,
+    "N/A": 0
+   },
+   "coreset": {
+    "W": 9,
+    "T": 2,
+    "L": 0,
+    "N/A": 0
+   },
+   "mmdataselect": {
+    "W": 9,
+    "T": 2,
+    "L": 0,
+    "N/A": 0
+   },
+   "auth_only": {
+    "W": 5,
+    "T": 6,
+    "L": 0,
+    "N/A": 0
+   },
+   "herding": {
+    "W": 9,
+    "T": 2,
+    "L": 0,
+    "N/A": 0
+   },
+   "el2n": {
+    "W": 4,
+    "T": 1,
+    "L": 0,
+    "N/A": 0
+   },
+   "grand": {
+    "W": 5,
+    "T": 0,
+    "L": 0,
+    "N/A": 0
+   },
+   "ccs": {
+    "W": 4,
+    "T": 1,
+    "L": 0,
+    "N/A": 0
+   },
+   "density": {
+    "W": 11,
+    "T": 0,
+    "L": 0,
+    "N/A": 0
+   },
+   "quadmix_pub": {
+    "W": 7,
+    "T": 4,
+    "L": 0,
+    "N/A": 0
+   },
+   "dmf_pub": {
+    "W": 9,
+    "T": 2,
+    "L": 0,
+    "N/A": 0
+   }
+  }
+ },
+ "gains": {
+  "random": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.0,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "influence_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.08618246406148024,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "coreset": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.030726243419591983,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "mmdataselect": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.006695447966117382,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "auth_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.09825599912713533,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "herding": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.008692238158168416,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "el2n": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "TEP21",
+    "Elec"
+   ],
+   "mean_gain": -0.4025285936844547,
+   "omni_mean_gain_same_tasks": 0.15029764234417392
+  },
+  "grand": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "TEP21",
+    "Elec"
+   ],
+   "mean_gain": -0.32109678170752665,
+   "omni_mean_gain_same_tasks": 0.15029764234417392
+  },
+  "ccs": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "TEP21",
+    "Elec"
+   ],
+   "mean_gain": -0.06733332299290028,
+   "omni_mean_gain_same_tasks": 0.15029764234417392
+  },
+  "density": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.004442660143537535,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "quadmix_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.012553556369874024,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "dmf_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.017290383789429126,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "mmds_adapt": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.13601282958432015,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  },
+  "full": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.13699590985892038,
+   "omni_mean_gain_same_tasks": 0.13601282958432015
+  }
+ },
+ "strongest_by_mean_gain": "auth_only",
+ "displayed_oracle_gain": 0.12715117671547124,
+ "friedman_original_methods": {
+  "strategies": [
+   "random",
+   "influence_only",
+   "coreset",
+   "mmdataselect",
+   "auth_only",
+   "herding",
+   "density",
+   "quadmix_pub",
+   "dmf_pub",
+   "mmds_adapt"
+  ],
+  "avg_ranks": {
+   "random": 6.182,
+   "influence_only": 7.545,
+   "coreset": 7.0,
+   "mmdataselect": 6.364,
+   "auth_only": 4.227,
+   "herding": 5.091,
+   "density": 6.091,
+   "quadmix_pub": 5.455,
+   "dmf_pub": 5.818,
+   "mmds_adapt": 1.227
+  },
+  "chi2": 33.787210584344,
+  "p": 9.732621273238895e-05,
+  "k": 10,
+  "N": 11,
+  "CD": 4.084297935532539,
+  "scope_note": "Original fully covered method set only. Adaptation rows are excluded; all-method ranking is descriptive in table_method_ranks.json."
+ },
+ "wilcoxon": {
+  "random": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "influence_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 10,
+   "neg": 1,
+   "zero": 0,
+   "p_one": 0.00146484375,
+   "holm": 0.00732421875
+  },
+  "coreset": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "mmdataselect": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "auth_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 10,
+   "pos": 9,
+   "neg": 1,
+   "zero": 1,
+   "p_one": 0.0029296875,
+   "holm": 0.01171875
+  },
+  "herding": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "el2n": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "TEP21",
+    "Elec"
+   ],
+   "n": 5,
+   "n_nonzero": 5,
+   "pos": 5,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.03125,
+   "holm": 0.09375
+  },
+  "grand": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "TEP21",
+    "Elec"
+   ],
+   "n": 5,
+   "n_nonzero": 5,
+   "pos": 5,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.03125,
+   "holm": 0.09375
+  },
+  "ccs": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "TEP21",
+    "Elec"
+   ],
+   "n": 5,
+   "n_nonzero": 5,
+   "pos": 5,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.03125,
+   "holm": 0.09375
+  },
+  "density": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "quadmix_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "dmf_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  }
+ },
+ "inference_limits": "Per-task t intervals are descriptive unadjusted paired intervals. Cross-task Wilcoxon uses one-sided exact permutation with Holm over available baselines. Independent text adaptations are excluded from paired inference against historical OmniSelect."
+}

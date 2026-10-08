@@ -1,0 +1,2336 @@
+{
+ "scope": {
+  "tasks": [
+   "C-100",
+   "C-100N",
+   "C-10",
+   "ETTh1",
+   "ETTm1",
+   "ETTh2",
+   "CSTR",
+   "Steam",
+   "TEP21",
+   "Elec",
+   "Text"
+  ],
+  "n_tasks": 11,
+  "seeds_per_task": {
+   "C-100": 3,
+   "C-100N": 3,
+   "C-10": 3,
+   "ETTh1": 3,
+   "ETTm1": 3,
+   "ETTh2": 3,
+   "CSTR": 3,
+   "Steam": 3,
+   "TEP21": 3,
+   "Elec": 3,
+   "Text": 3
+  },
+  "deprecated_key_suffixes": "mixed10/five9/five_seed denote legacy names, not the current counts"
+ },
+ "verdicts_all_cells_five_seed": {
+  "cells": 132,
+  "W": 121,
+  "T": 8,
+  "L": 0,
+  "N/A": 3,
+  "per_baseline": {
+   "random": {
+    "W": 9,
+    "T": 2,
+    "L": 0,
+    "N/A": 0
+   },
+   "influence_only": {
+    "W": 10,
+    "T": 1,
+    "L": 0,
+    "N/A": 0
+   },
+   "coreset": {
+    "W": 11,
+    "T": 0,
+    "L": 0,
+    "N/A": 0
+   },
+   "mmdataselect": {
+    "W": 10,
+    "T": 1,
+    "L": 0,
+    "N/A": 0
+   },
+   "auth_only": {
+    "W": 11,
+    "T": 0,
+    "L": 0,
+    "N/A": 0
+   },
+   "herding": {
+    "W": 10,
+    "T": 1,
+    "L": 0,
+    "N/A": 0
+   },
+   "el2n": {
+    "W": 9,
+    "T": 1,
+    "L": 0,
+    "N/A": 1
+   },
+   "grand": {
+    "W": 9,
+    "T": 1,
+    "L": 0,
+    "N/A": 1
+   },
+   "ccs": {
+    "W": 9,
+    "T": 1,
+    "L": 0,
+    "N/A": 1
+   },
+   "density": {
+    "W": 11,
+    "T": 0,
+    "L": 0,
+    "N/A": 0
+   },
+   "quadmix_pub": {
+    "W": 11,
+    "T": 0,
+    "L": 0,
+    "N/A": 0
+   },
+   "dmf_pub": {
+    "W": 11,
+    "T": 0,
+    "L": 0,
+    "N/A": 0
+   }
+  }
+ },
+ "vs_strongest": {
+  "C-100": [
+   "influence_only",
+   "W"
+  ],
+  "C-100N": [
+   "influence_only",
+   "W"
+  ],
+  "C-10": [
+   "ccs",
+   "T"
+  ],
+  "ETTh1": [
+   "auth_only",
+   "W"
+  ],
+  "ETTm1": [
+   "auth_only",
+   "W"
+  ],
+  "ETTh2": [
+   "auth_only",
+   "W"
+  ],
+  "CSTR": [
+   "auth_only",
+   "W"
+  ],
+  "Steam": [
+   "auth_only",
+   "W"
+  ],
+  "TEP21": [
+   "dmf_pub",
+   "W"
+  ],
+  "Elec": [
+   "coreset",
+   "W"
+  ],
+  "Text": [
+   "herding",
+   "T"
+  ]
+ },
+ "vs_strongest_counts": {
+  "W": 9,
+  "T": 2,
+  "L": 0,
+  "N/A": 0
+ },
+ "below_random_pairs": {
+  "pairs": 33,
+  "below": 0,
+  "equal": 0
+ },
+ "gains_mixed10": {
+  "random": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.0,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "influence_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.08612823678021977,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "coreset": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.030696659269729608,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "mmdataselect": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.006494284893895134,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "auth_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.09807988273051894,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "herding": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.008960039099077803,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "el2n": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.21558479367154215,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "grand": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.17049208037666227,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "ccs": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.0281373724982552,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "density": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.003945670495192912,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "quadmix_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.012390658663110066,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "dmf_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.017393823394910538,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "mmds_adapt": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.14927921032243383,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "full": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.1371761044482494,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  }
+ },
+ "gains_five9": {
+  "random": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.0,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "influence_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.08612823678021977,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "coreset": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.030696659269729608,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "mmdataselect": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.006494284893895134,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "auth_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.09807988273051894,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "herding": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.008960039099077803,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "el2n": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.21558479367154215,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "grand": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.17049208037666227,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "ccs": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.0281373724982552,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "density": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.003945670495192912,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "quadmix_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.012390658663110066,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "dmf_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.017393823394910538,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "mmds_adapt": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.14927921032243383,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "full": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.1371761044482494,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  }
+ },
+ "strongest_by_mean_gain_all10": "auth_only",
+ "displayed_oracle_gain_mixed10": 0.12741731436124232,
+ "displayed_oracle_gain_five9": 0.12741731436124232,
+ "displayed_below_random_tasks": {
+  "influence_only": [
+   "C-10",
+   "ETTh1",
+   "ETTm1",
+   "ETTh2",
+   "CSTR",
+   "Steam",
+   "Elec",
+   "Text"
+  ],
+  "coreset": [
+   "C-100",
+   "C-100N",
+   "ETTh2",
+   "CSTR",
+   "Steam",
+   "Text"
+  ],
+  "mmdataselect": [
+   "C-10",
+   "ETTh2",
+   "CSTR",
+   "Steam",
+   "Elec",
+   "Text"
+  ],
+  "auth_only": [
+   "C-10",
+   "Elec",
+   "Text"
+  ],
+  "herding": [
+   "C-100",
+   "ETTh2",
+   "CSTR",
+   "Steam"
+  ],
+  "el2n": [
+   "C-100",
+   "C-100N",
+   "C-10",
+   "ETTh2",
+   "CSTR",
+   "Steam",
+   "TEP21",
+   "Elec",
+   "Text"
+  ],
+  "grand": [
+   "C-100",
+   "C-100N",
+   "C-10",
+   "ETTh1",
+   "ETTm1",
+   "ETTh2",
+   "CSTR",
+   "Steam",
+   "TEP21",
+   "Elec",
+   "Text"
+  ],
+  "ccs": [
+   "C-100",
+   "C-100N",
+   "ETTh1",
+   "ETTm1",
+   "ETTh2",
+   "Elec",
+   "Text"
+  ],
+  "density": [
+   "C-100",
+   "C-100N",
+   "CSTR",
+   "Steam",
+   "Text"
+  ],
+  "quadmix_pub": [
+   "C-100",
+   "C-100N",
+   "C-10",
+   "Text"
+  ],
+  "dmf_pub": [
+   "C-10",
+   "ETTh2",
+   "CSTR",
+   "Steam",
+   "Elec",
+   "Text"
+  ]
+ },
+ "friedman_mixed10": {
+  "strategies": [
+   "random",
+   "influence_only",
+   "coreset",
+   "mmdataselect",
+   "auth_only",
+   "herding",
+   "density",
+   "quadmix_pub",
+   "dmf_pub",
+   "mmds_adapt"
+  ],
+  "avg_ranks": {
+   "random": 6.182,
+   "influence_only": 7.636,
+   "coreset": 7.0,
+   "mmdataselect": 6.364,
+   "auth_only": 4.364,
+   "herding": 5.136,
+   "density": 6.0,
+   "quadmix_pub": 5.455,
+   "dmf_pub": 5.818,
+   "mmds_adapt": 1.045
+  },
+  "chi2": 35.59316427783908,
+  "p": 4.680690962427993e-05,
+  "k": 10,
+  "N": 11,
+  "CD": 4.084297935532539,
+  "scope_note": "Original fully covered method set only. Adaptation rows are excluded; all-method ranking is descriptive in table_method_ranks.json."
+ },
+ "wilcoxon_mixed10": {
+  "random": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "influence_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "coreset": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "mmdataselect": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "auth_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "herding": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 10,
+   "pos": 10,
+   "neg": 0,
+   "zero": 1,
+   "p_one": 0.0009765625,
+   "holm": 0.005859375
+  },
+  "el2n": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec"
+   ],
+   "n": 10,
+   "n_nonzero": 10,
+   "pos": 10,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.0009765625,
+   "holm": 0.005859375
+  },
+  "grand": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec"
+   ],
+   "n": 10,
+   "n_nonzero": 10,
+   "pos": 10,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.0009765625,
+   "holm": 0.005859375
+  },
+  "ccs": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec"
+   ],
+   "n": 10,
+   "n_nonzero": 9,
+   "pos": 9,
+   "neg": 0,
+   "zero": 1,
+   "p_one": 0.001953125,
+   "holm": 0.005859375
+  },
+  "density": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "quadmix_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "dmf_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  }
+ },
+ "coverage": {
+  "C-100": {
+   "n_rank": 400,
+   "n_con": 240,
+   "n_conf": 160,
+   "m_nominal": 32,
+   "m_distinct": 28,
+   "grid_total_distinct": 21,
+   "finalists": 4,
+   "m_nominal_range": [
+    32,
+    32
+   ],
+   "m_distinct_range": [
+    28,
+    30
+   ],
+   "n_eff": 400,
+   "2r1_distinct": 0.18736440382699618,
+   "2r1_nominal": 0.18913771909528865,
+   "adoptions": 2,
+   "seeds": 3
+  },
+  "C-100N": {
+   "n_rank": 400,
+   "n_con": 240,
+   "n_conf": 160,
+   "m_nominal": 32,
+   "m_distinct": 29,
+   "grid_total_distinct": 20,
+   "finalists": 4,
+   "m_nominal_range": [
+    32,
+    32
+   ],
+   "m_distinct_range": [
+    29,
+    30
+   ],
+   "n_eff": 400,
+   "2r1_distinct": 0.18783204311432608,
+   "2r1_nominal": 0.18913771909528865,
+   "adoptions": 3,
+   "seeds": 3
+  },
+  "C-10": {
+   "n_rank": 2500,
+   "n_con": 1500,
+   "n_conf": 1000,
+   "m_nominal": 22,
+   "m_distinct": 22,
+   "grid_total_distinct": 0,
+   "finalists": null,
+   "m_nominal_range": [
+    22,
+    22
+   ],
+   "m_distinct_range": [
+    22,
+    22
+   ],
+   "n_eff": 2500,
+   "2r1_distinct": 0.07364738641647646,
+   "2r1_nominal": 0.07364738641647646,
+   "adoptions": 0,
+   "seeds": 3
+  },
+  "ETTh1": {
+   "n_rank": 500,
+   "n_con": 300,
+   "n_conf": 200,
+   "m_nominal": 29,
+   "m_distinct": 28,
+   "grid_total_distinct": 40,
+   "finalists": 4,
+   "m_nominal_range": [
+    29,
+    29
+   ],
+   "m_distinct_range": [
+    26,
+    29
+   ],
+   "n_eff": 500,
+   "2r1_distinct": 0.16758381740835407,
+   "2r1_nominal": 0.16800208670252176,
+   "adoptions": 3,
+   "seeds": 3
+  },
+  "ETTm1": {
+   "n_rank": 500,
+   "n_con": 300,
+   "n_conf": 200,
+   "m_nominal": 29,
+   "m_distinct": 27,
+   "grid_total_distinct": 38,
+   "finalists": 4,
+   "m_nominal_range": [
+    29,
+    29
+   ],
+   "m_distinct_range": [
+    26,
+    27
+   ],
+   "n_eff": 500,
+   "2r1_distinct": 0.16714923057098727,
+   "2r1_nominal": 0.16800208670252176,
+   "adoptions": 3,
+   "seeds": 3
+  },
+  "ETTh2": {
+   "n_rank": 500,
+   "n_con": 300,
+   "n_conf": 200,
+   "m_nominal": 29,
+   "m_distinct": 29,
+   "grid_total_distinct": 39,
+   "finalists": 4,
+   "m_nominal_range": [
+    29,
+    29
+   ],
+   "m_distinct_range": [
+    29,
+    29
+   ],
+   "n_eff": 500,
+   "2r1_distinct": 0.16800208670252176,
+   "2r1_nominal": 0.16800208670252176,
+   "adoptions": 3,
+   "seeds": 3
+  },
+  "CSTR": {
+   "n_rank": 373,
+   "n_con": 224,
+   "n_conf": 149,
+   "m_nominal": 29,
+   "m_distinct": 29,
+   "grid_total_distinct": 40,
+   "finalists": 4,
+   "m_nominal_range": [
+    29,
+    29
+   ],
+   "m_distinct_range": [
+    27,
+    29
+   ],
+   "n_eff": 373,
+   "2r1_distinct": 0.19451149071966448,
+   "2r1_nominal": 0.19451149071966448,
+   "adoptions": 0,
+   "seeds": 3
+  },
+  "Steam": {
+   "n_rank": 500,
+   "n_con": 300,
+   "n_conf": 200,
+   "m_nominal": 29,
+   "m_distinct": 28,
+   "grid_total_distinct": 40,
+   "finalists": 4,
+   "m_nominal_range": [
+    29,
+    29
+   ],
+   "m_distinct_range": [
+    28,
+    29
+   ],
+   "n_eff": 500,
+   "2r1_distinct": 0.16758381740835407,
+   "2r1_nominal": 0.16800208670252176,
+   "adoptions": 3,
+   "seeds": 3
+  },
+  "TEP21": {
+   "n_rank": 1000,
+   "n_con": 600,
+   "n_conf": 400,
+   "m_nominal": 33,
+   "m_distinct": 32,
+   "grid_total_distinct": 6,
+   "finalists": 4,
+   "m_nominal_range": [
+    33,
+    33
+   ],
+   "m_distinct_range": [
+    32,
+    33
+   ],
+   "n_eff": 1000,
+   "2r1_distinct": 0.11962119675804672,
+   "2r1_nominal": 0.11987816327905944,
+   "adoptions": 2,
+   "seeds": 3
+  },
+  "Elec": {
+   "n_rank": 1250,
+   "n_con": 750,
+   "n_conf": 500,
+   "m_nominal": 34,
+   "m_distinct": 32,
+   "grid_total_distinct": 11,
+   "finalists": 4,
+   "m_nominal_range": [
+    34,
+    34
+   ],
+   "m_distinct_range": [
+    31,
+    32
+   ],
+   "n_eff": 542,
+   "2r1_distinct": 0.16248321351745282,
+   "2r1_nominal": 0.1631701619982395,
+   "adoptions": 0,
+   "seeds": 3
+  },
+  "Text": {
+   "n_rank": 600,
+   "n_con": 400,
+   "n_conf": 500,
+   "m_nominal": 20,
+   "m_distinct": 19,
+   "grid_total_distinct": 1,
+   "finalists": null,
+   "m_nominal_range": [
+    20,
+    20
+   ],
+   "m_distinct_range": [
+    19,
+    19
+   ],
+   "n_eff": 600,
+   "2r1_distinct": 0.14869788648218213,
+   "2r1_nominal": 0.14927169554951275,
+   "adoptions": 0,
+   "seeds": 3
+  },
+  "C-10-CLIP": {
+   "n_rank": 400,
+   "n_con": 240,
+   "n_conf": 160,
+   "m_nominal": 32,
+   "m_distinct": 31,
+   "grid_total_distinct": 35,
+   "finalists": 4,
+   "m_nominal_range": [
+    32,
+    32
+   ],
+   "m_distinct_range": [
+    30,
+    31
+   ],
+   "n_eff": 400,
+   "2r1_distinct": 0.18871760196917356,
+   "2r1_nominal": 0.18913771909528865,
+   "adoptions": 0,
+   "seeds": 3
+  }
+ },
+ "fde": {
+  "C-100": {
+   "total": [
+    42.0,
+    42.5
+   ],
+   "member": [
+    14.5,
+    14.5
+   ],
+   "con": [
+    26.0,
+    26.5
+   ],
+   "ranking": [
+    1.0,
+    1.5
+   ],
+   "fits": [
+    83,
+    84
+   ],
+   "secs_total": [
+    852.2273206601385,
+    4591.38738448103
+   ],
+   "secs_controller": [
+    329.0654939149972,
+    802.4470121900085
+   ],
+   "full_fit_secs": [
+    0.9176654978655279,
+    8.619702178053558
+   ]
+  },
+  "C-100N": {
+   "total": [
+    41.5,
+    43.0
+   ],
+   "member": [
+    14.5,
+    14.5
+   ],
+   "con": [
+    26.0,
+    27.5
+   ],
+   "ranking": [
+    1.0,
+    1.5
+   ],
+   "fits": [
+    82,
+    85
+   ],
+   "secs_total": [
+    856.9031616419088,
+    3043.8645594818518
+   ],
+   "secs_controller": [
+    75.96812919410877,
+    705.0439517118502
+   ],
+   "full_fit_secs": [
+    1.2894242859911174,
+    8.718332438031211
+   ]
+  },
+  "C-10": {
+   "total": [
+    10.600000000000001,
+    10.600000000000001
+   ],
+   "member": [
+    0,
+    0
+   ],
+   "con": [
+    9.3,
+    9.3
+   ],
+   "ranking": [
+    1.3,
+    1.3
+   ],
+   "fits": [
+    33,
+    33
+   ],
+   "secs_total": [
+    33711.312655801885,
+    45477.19067533896
+   ],
+   "secs_controller": [
+    25868.73915945785,
+    37414.90821615001
+   ],
+   "full_fit_secs": [
+    1370.2517706761137,
+    4447.1312057201285
+   ]
+  },
+  "ETTh1": {
+   "total": [
+    30.100000000000026,
+    31.00000000000003
+   ],
+   "member": [
+    8.700000000000001,
+    8.700000000000001
+   ],
+   "con": [
+    20.100000000000026,
+    21.00000000000003
+   ],
+   "ranking": [
+    1.3,
+    1.3
+   ],
+   "fits": [
+    90,
+    93
+   ],
+   "secs_total": [
+    120.85414366098121,
+    182.69889729702845
+   ],
+   "secs_controller": [
+    36.913528566015884,
+    65.60239110793918
+   ],
+   "full_fit_secs": [
+    0.9343678508885205,
+    2.2984553629066795
+   ]
+  },
+  "ETTm1": {
+   "total": [
+    30.100000000000026,
+    30.400000000000027
+   ],
+   "member": [
+    8.700000000000001,
+    8.700000000000001
+   ],
+   "con": [
+    20.100000000000026,
+    20.400000000000027
+   ],
+   "ranking": [
+    1.0,
+    1.3
+   ],
+   "fits": [
+    90,
+    91
+   ],
+   "secs_total": [
+    79.05973137402907,
+    233.9502807930112
+   ],
+   "secs_controller": [
+    31.945121940923855,
+    58.93899240298197
+   ],
+   "full_fit_secs": [
+    1.0440192469395697,
+    1.4159891728777438
+   ]
+  },
+  "ETTh2": {
+   "total": [
+    31.60000000000003,
+    32.500000000000036
+   ],
+   "member": [
+    8.700000000000001,
+    8.700000000000001
+   ],
+   "con": [
+    21.60000000000003,
+    22.500000000000032
+   ],
+   "ranking": [
+    1.3,
+    1.3
+   ],
+   "fits": [
+    95,
+    98
+   ],
+   "secs_total": [
+    86.48168647894636,
+    266.97341442201287
+   ],
+   "secs_controller": [
+    33.380300502991304,
+    41.24769236706197
+   ],
+   "full_fit_secs": [
+    0.9688983550295234,
+    1.5185028871055692
+   ]
+  },
+  "CSTR": {
+   "total": [
+    31.30000000000003,
+    31.60000000000003
+   ],
+   "member": [
+    8.700000000000001,
+    8.700000000000001
+   ],
+   "con": [
+    21.30000000000003,
+    21.90000000000003
+   ],
+   "ranking": [
+    1.0,
+    1.3
+   ],
+   "fits": [
+    94,
+    95
+   ],
+   "secs_total": [
+    87.17706766305491,
+    338.11631432990544
+   ],
+   "secs_controller": [
+    32.317622667877,
+    45.22993843606673
+   ],
+   "full_fit_secs": [
+    0.9408564509358257,
+    1.084916896885261
+   ]
+  },
+  "Steam": {
+   "total": [
+    31.60000000000003,
+    31.90000000000003
+   ],
+   "member": [
+    8.700000000000001,
+    8.700000000000001
+   ],
+   "con": [
+    21.60000000000003,
+    21.90000000000003
+   ],
+   "ranking": [
+    1.3,
+    1.3
+   ],
+   "fits": [
+    95,
+    96
+   ],
+   "secs_total": [
+    77.12489547091536,
+    78.35377987194806
+   ],
+   "secs_controller": [
+    30.487385775195435,
+    32.61697967397049
+   ],
+   "full_fit_secs": [
+    0.9226037650369108,
+    1.1222493769600987
+   ]
+  },
+  "TEP21": {
+   "total": [
+    25.200000000000017,
+    26.40000000000002
+   ],
+   "member": [
+    10.700000000000006,
+    10.700000000000006
+   ],
+   "con": [
+    13.20000000000001,
+    14.400000000000013
+   ],
+   "ranking": [
+    1.3,
+    1.3
+   ],
+   "fits": [
+    71,
+    75
+   ],
+   "secs_total": [
+    435.4858640159946,
+    779.202770861797
+   ],
+   "secs_controller": [
+    90.71885938080959,
+    238.87643924704753
+   ],
+   "full_fit_secs": [
+    5.769141508964822,
+    10.458164910087362
+   ]
+  },
+  "Elec": {
+   "total": [
+    0.0,
+    0.0
+   ],
+   "member": [
+    0.0,
+    0.0
+   ],
+   "con": [
+    0.0,
+    0.0
+   ],
+   "ranking": [
+    0.0,
+    0.0
+   ],
+   "fits": [
+    68,
+    72
+   ],
+   "secs_total": [
+    208.24794736504555,
+    635.9698827599641
+   ],
+   "secs_controller": [
+    68.53201292501763,
+    245.17817595694214
+   ],
+   "full_fit_secs": [
+    0.443119540810585,
+    1.107242067111656
+   ]
+  },
+  "Text": {
+   "total": [
+    11.20136,
+    11.363560000000001
+   ],
+   "member": [
+    0,
+    0
+   ],
+   "con": [
+    9.70008,
+    9.76504
+   ],
+   "ranking": [
+    1.50128,
+    1.60172
+   ],
+   "fits": [
+    22,
+    22
+   ],
+   "secs_total": [
+    9084.417812430998,
+    10111.326320542023
+   ],
+   "secs_controller": [
+    4780.926235680934,
+    5177.285889801104
+   ],
+   "full_fit_secs": [
+    152.48792040301487,
+    154.5904099040199
+   ]
+  },
+  "C-10-CLIP": {
+   "total": [
+    49.0,
+    51.0
+   ],
+   "member": [
+    14.5,
+    14.5
+   ],
+   "con": [
+    33.0,
+    35.0
+   ],
+   "ranking": [
+    1.0,
+    1.5
+   ],
+   "fits": [
+    97,
+    101
+   ],
+   "secs_total": [
+    859.358759930823,
+    1477.4517424697988
+   ],
+   "secs_controller": [
+    172.43694796413183,
+    488.3695367539767
+   ],
+   "full_fit_secs": [
+    1.041636826004833,
+    3.8182237029541284
+   ]
+  }
+ },
+ "verdicts_all_cells": {
+  "cells": 132,
+  "W": 121,
+  "T": 8,
+  "L": 0,
+  "N/A": 3,
+  "per_baseline": {
+   "random": {
+    "W": 9,
+    "T": 2,
+    "L": 0,
+    "N/A": 0
+   },
+   "influence_only": {
+    "W": 10,
+    "T": 1,
+    "L": 0,
+    "N/A": 0
+   },
+   "coreset": {
+    "W": 11,
+    "T": 0,
+    "L": 0,
+    "N/A": 0
+   },
+   "mmdataselect": {
+    "W": 10,
+    "T": 1,
+    "L": 0,
+    "N/A": 0
+   },
+   "auth_only": {
+    "W": 11,
+    "T": 0,
+    "L": 0,
+    "N/A": 0
+   },
+   "herding": {
+    "W": 10,
+    "T": 1,
+    "L": 0,
+    "N/A": 0
+   },
+   "el2n": {
+    "W": 9,
+    "T": 1,
+    "L": 0,
+    "N/A": 1
+   },
+   "grand": {
+    "W": 9,
+    "T": 1,
+    "L": 0,
+    "N/A": 1
+   },
+   "ccs": {
+    "W": 9,
+    "T": 1,
+    "L": 0,
+    "N/A": 1
+   },
+   "density": {
+    "W": 11,
+    "T": 0,
+    "L": 0,
+    "N/A": 0
+   },
+   "quadmix_pub": {
+    "W": 11,
+    "T": 0,
+    "L": 0,
+    "N/A": 0
+   },
+   "dmf_pub": {
+    "W": 11,
+    "T": 0,
+    "L": 0,
+    "N/A": 0
+   }
+  }
+ },
+ "gains": {
+  "random": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.0,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "influence_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.08612823678021977,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "coreset": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.030696659269729608,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "mmdataselect": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.006494284893895134,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "auth_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.09807988273051894,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "herding": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.008960039099077803,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "el2n": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.21558479367154215,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "grand": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.17049208037666227,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "ccs": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.0281373724982552,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "density": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": -0.003945670495192912,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "quadmix_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.012390658663110066,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "dmf_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.017393823394910538,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "mmds_adapt": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.14927921032243383,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  },
+  "full": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "mean_gain": 0.1371761044482494,
+   "omni_mean_gain_same_tasks": 0.14927921032243383
+  }
+ },
+ "strongest_by_mean_gain": "auth_only",
+ "displayed_oracle_gain": 0.12741731436124232,
+ "friedman_original_methods": {
+  "strategies": [
+   "random",
+   "influence_only",
+   "coreset",
+   "mmdataselect",
+   "auth_only",
+   "herding",
+   "density",
+   "quadmix_pub",
+   "dmf_pub",
+   "mmds_adapt"
+  ],
+  "avg_ranks": {
+   "random": 6.182,
+   "influence_only": 7.636,
+   "coreset": 7.0,
+   "mmdataselect": 6.364,
+   "auth_only": 4.364,
+   "herding": 5.136,
+   "density": 6.0,
+   "quadmix_pub": 5.455,
+   "dmf_pub": 5.818,
+   "mmds_adapt": 1.045
+  },
+  "chi2": 35.59316427783908,
+  "p": 4.680690962427993e-05,
+  "k": 10,
+  "N": 11,
+  "CD": 4.084297935532539,
+  "scope_note": "Original fully covered method set only. Adaptation rows are excluded; all-method ranking is descriptive in table_method_ranks.json."
+ },
+ "wilcoxon": {
+  "random": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "influence_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "coreset": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "mmdataselect": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "auth_only": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "herding": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 10,
+   "pos": 10,
+   "neg": 0,
+   "zero": 1,
+   "p_one": 0.0009765625,
+   "holm": 0.005859375
+  },
+  "el2n": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec"
+   ],
+   "n": 10,
+   "n_nonzero": 10,
+   "pos": 10,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.0009765625,
+   "holm": 0.005859375
+  },
+  "grand": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec"
+   ],
+   "n": 10,
+   "n_nonzero": 10,
+   "pos": 10,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.0009765625,
+   "holm": 0.005859375
+  },
+  "ccs": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec"
+   ],
+   "n": 10,
+   "n_nonzero": 9,
+   "pos": 9,
+   "neg": 0,
+   "zero": 1,
+   "p_one": 0.001953125,
+   "holm": 0.005859375
+  },
+  "density": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "quadmix_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  },
+  "dmf_pub": {
+   "tasks": [
+    "C-100",
+    "C-100N",
+    "C-10",
+    "ETTh1",
+    "ETTm1",
+    "ETTh2",
+    "CSTR",
+    "Steam",
+    "TEP21",
+    "Elec",
+    "Text"
+   ],
+   "n": 11,
+   "n_nonzero": 11,
+   "pos": 11,
+   "neg": 0,
+   "zero": 0,
+   "p_one": 0.00048828125,
+   "holm": 0.005859375
+  }
+ },
+ "inference_limits": "Per-task t intervals are descriptive unadjusted paired intervals. Cross-task Wilcoxon uses one-sided exact permutation with Holm over available baselines. Independent text adaptations are excluded from paired inference against historical OmniSelect."
+}

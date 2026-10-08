@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omniselect-benchmark"
+version = "0.2.0"
+description = "Budgeted data selection adjudicated on clean validation data, with a cross-modal benchmark"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Zekai Qian" }]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "scikit-learn>=1.3",
+    "pandas>=2.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+# Libraries of the vision, text and tabular tracks and of the smoke run. Torch is installed
+# separately (CPU or MPS wheel, or the audited CUDA 12.8 stack in environment/).
+smoke = [
+    "transformers>=4.44",
+    "datasets>=2.18",
+    "accelerate>=0.30",
+    "huggingface_hub>=0.23",
+    "tabpfn>=8.1",  # create_default_for_version("v2") is used by tracks/tabular
+]
+train = [
+    "torch>=2.1",
+    "torchvision>=0.16",
+    "omniselect-benchmark[smoke]",
+]
+arms = [
+    "xgboost>=2.0",
+    "chronos-forecasting>=2.0",
+]
+eval = [
+    "lm-eval>=0.4.3",
+]
+dev = [
+    "pytest>=7.4",
+    "ruff>=0.5",
+]
+all = [
+    "omniselect-benchmark[train,arms,eval,dev]",
+]
+
+[tool.setuptools.packages.find]
+include = ["omniselect*", "benchmark*", "tracks*", "run_omniselect*", "tools*"]
+exclude = ["omniselect.tests*"]
+
+[tool.pytest.ini_options]
+testpaths = ["omniselect/tests"]
+addopts = "-q"
+markers = ["slow: end-to-end checks that train learners for more than a few seconds"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+extend-exclude = ["results_and_logs", "data/processed", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+
+[tool.ruff.lint.per-file-ignores]
+"omniselect/tests/fixtures/*" = ["E501", "E702"]

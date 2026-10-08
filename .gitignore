@@ -1,0 +1,57 @@
+# Downloaded datasets and feature caches (python data/fetch_data.py, docs/dataset_provenance.md).
+# data/tep, data/cifar_n and data/daisy/*.dat.gz are tracked. READMEs are tracked everywhere.
+data/raw/
+data/processed/*
+!data/processed/README.md
+data/cifar10_np/*
+!data/cifar10_np/README.md
+data/imagenet100/*
+!data/imagenet100/README.md
+data/cifar10/
+data/daisy/*.dat
+*.arrow
+*.parquet
+
+# Local run records, queue logs and summaries. Only the README is tracked.
+results_and_logs/*
+!results_and_logs/README.md
+outputs/
+logs/
+
+# Model weights and checkpoints
+*.pt
+!data/cifar_n/*.pt
+*.bin
+*.safetensors
+*.ckpt
+
+# Python build products and caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Operating system and editors
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Working directory of results/paper/rebuild.sh
+results/paper/work/
+
+# Local data builds, prediction caches and upload metadata
+data/text100k/
+data/uci_adult/
+.cache/
+*.baiduyun.uploading.cfg

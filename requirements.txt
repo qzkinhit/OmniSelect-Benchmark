@@ -1,0 +1,6 @@
+# The package with the libraries of the tracks and the CPU test tools (pyproject.toml).
+# Torch is not pinned here. Install it next to this file:
+#   CPU or Apple MPS:   python -m pip install torch torchvision
+#   CUDA 12.8:          python -m pip install -c environment/constraints-cu128.txt \
+#                         --extra-index-url https://download.pytorch.org/whl/cu128 torch torchvision
+-e .[smoke,dev]

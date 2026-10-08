@@ -1,0 +1,28 @@
+# Package versions of the GPU runs behind the paper (Linux x86_64, Python 3.12, NVIDIA driver with
+# CUDA 12.8). Every run record stores the versions it ran with in config.json (environment.packages).
+#
+#   python -m pip install -e ".[train,arms,dev]" -c environment/constraints-cu128.txt \
+#       --extra-index-url https://download.pytorch.org/whl/cu128
+#
+# A loose torch>=2.1 can resolve to a wheel built for a newer CUDA runtime, which then fails to
+# initialize CUDA on a 12.8 driver and falls back to the CPU. The cu128 index and the pins below
+# avoid that.
+torch==2.11.0
+torchvision==0.26.0
+accelerate==1.14.0
+chronos-forecasting==2.3.1
+data-selection==1.0.3
+datasets==5.0.0
+huggingface_hub==1.23.0
+lm-eval==0.4.12
+matplotlib==3.10.5
+numpy==2.3.2
+pandas==3.0.3
+peft==0.20.0
+PyYAML==6.0.2
+scikit-learn==1.9.0
+scipy==1.18.0
+tabpfn==8.1.0
+tokenizers==0.22.2
+transformers==5.13.1
+xgboost==3.3.0

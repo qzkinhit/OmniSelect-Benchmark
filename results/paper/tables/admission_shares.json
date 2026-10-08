@@ -1,0 +1,103 @@
+{
+ "C-100": {
+  "flip": {
+   "Auth-only": 0.012507817385866168,
+   "Coverage": 0.565978736710444,
+   "Herding": 0.5078173858661663,
+   "Infl-only": 0.10756722951844903,
+   "coop (best on V_con)": 0.07004377736085053
+  },
+  "dup": {
+   "Auth-only": 0.08442776735459662,
+   "Coverage": 0.2045028142589118,
+   "Herding": 0.46404002501563474,
+   "Infl-only": 0.17636022514071295,
+   "coop (best on V_con)": 0.08505315822388992
+  }
+ },
+ "C-100N": {
+  "flip": {
+   "Auth-only": 0.18666923593111337,
+   "Coverage": 0.4810138622891254,
+   "Herding": 0.5029186403666909,
+   "Infl-only": 0.2965330427941644,
+   "coop (best on V_con)": 0.35470060640033757
+  }
+ },
+ "TEP21": {
+  "flip": {
+   "Auth-only": 0.03627267041901188,
+   "Coverage": 0.2432770481550969,
+   "Herding": 0.30268918073796125,
+   "Infl-only": 0.16948092557848657,
+   "coop (best on V_con)": 0.16197623514696688
+  },
+  "corrupt": {
+   "Auth-only": 0.24390243902439024,
+   "Coverage": 0.8442776735459662,
+   "Herding": 0.5772357723577236,
+   "Infl-only": 0.11819887429643527,
+   "coop (best on V_con)": 0.0
+  },
+  "dup": {
+   "Auth-only": 0.06741573033707865,
+   "Coverage": 0.11485642946317104,
+   "Herding": 0.0599250936329588,
+   "Infl-only": 0.182896379525593,
+   "coop (best on V_con)": 0.05742821473158552
+  }
+ },
+ "Elec": {
+  "flip": {
+   "Auth-only": 0.345,
+   "Coverage": 0.48666666666666664,
+   "Herding": 0.48583333333333334,
+   "Infl-only": 0.3183333333333333,
+   "coop (best on V_con)": 0.655
+  },
+  "corrupt": {
+   "Auth-only": 0.395,
+   "Coverage": 0.9933333333333333,
+   "Herding": 0.9375,
+   "Infl-only": 0.5183333333333333,
+   "coop (best on V_con)": 0.011666666666666667
+  },
+  "dup": {
+   "Auth-only": 0.37833333333333335,
+   "Coverage": 0.12333333333333334,
+   "Herding": 0.19833333333333333,
+   "Infl-only": 0.40416666666666673,
+   "coop (best on V_con)": 0.021666666666666667
+  }
+ },
+ "ETTm1": {
+  "corrupt": {
+   "Auth-only": 0.0,
+   "Coverage": 1.0,
+   "Herding": 0.84,
+   "Infl-only": 0.0,
+   "coop (best on V_con)": 0.0
+  },
+  "flat": {
+   "Auth-only": 0.0,
+   "Coverage": 0.006666666666666667,
+   "Herding": 0.0,
+   "Infl-only": 0.3977777777777778,
+   "coop (best on V_con)": 0.0
+  },
+  "shuffle": {
+   "Auth-only": 0.0,
+   "Coverage": 0.39444444444444443,
+   "Herding": 0.5111111111111111,
+   "Infl-only": 0.2611111111111111,
+   "coop (best on V_con)": 0.0
+  },
+  "dup": {
+   "Auth-only": 0.3477777777777778,
+   "Coverage": 0.0988888888888889,
+   "Herding": 0.07777777777777778,
+   "Infl-only": 0.2966666666666667,
+   "coop (best on V_con)": 0.16555555555555557
+  }
+ }
+}
