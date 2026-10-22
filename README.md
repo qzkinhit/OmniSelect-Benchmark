@@ -167,10 +167,30 @@ returns per-unit outputs). Register it in `TRACKS` of `tracks/common/experiment.
 
 [docs/CODE_MAP.md](docs/CODE_MAP.md) gives a reading order for the code, and
 [docs/DESIGN.md](docs/DESIGN.md) explains the protocol choices.
-[docs/OmniSelect_20261020_appendix.pdf](docs/OmniSelect_20261020_appendix.pdf) is the appendix of the
-paper, with the detailed proofs, the further formal results, the protocol details, and the record of
-where each `-pub` implementation departs from its published formulation.
-[docs/BASELINE_FIDELITY_AUDIT.md](docs/BASELINE_FIDELITY_AUDIT.md) keeps that record next to the code.
+## Appendix of the paper
+
+[docs/OmniSelect_20261020_appendix.pdf](docs/OmniSelect_20261020_appendix.pdf) is the appendix,
+released here rather than with the submitted manuscript. It has six sections.
+
+1. *Notation and premises* restates the definitions of the paper and the four premises that its
+   error bounds rest on, so the proofs read on their own.
+2. *Detailed proofs* proves every formal result of the paper with the steps written out, namely the
+   purity and coverage bounds of a cooperative strategy, the identification limit of score-only
+   selection, the disagreement-dependent validation complexity, the paired adjudication guarantee,
+   the anytime-valid confirmation, and its finite-sample power.
+3. *Further formal results* adds four statements the paper does not carry, namely the
+   NP-completeness of the record-level selection step, a bound on what contaminated validation data
+   can do to the election, the conjunctive composition of mechanism-matched detectors, and why one
+   validation unit serves the whole portfolio.
+4. *Method and protocol details* holds the features of the learned cleanliness score, the other
+   subset objectives of the literature, the portfolio membership of the external methods, and the
+   robustness conditions of the deployment experiment.
+5. *Baseline fidelity* records, for QuaDMix and DMF, what the implementation retains and where it
+   departs from the published formulation, and it summarizes the adaptations of the other
+   baselines. [docs/BASELINE_FIDELITY_AUDIT.md](docs/BASELINE_FIDELITY_AUDIT.md) keeps the same
+   record next to the code.
+6. *Dataset provenance* lists the source and the derived version of every dataset, with the pinned
+   revisions and checksums in [docs/dataset_provenance.md](docs/dataset_provenance.md).
 
 ## Citation
 
