@@ -45,9 +45,10 @@ Paper-facing names, applicable cells and result paths are described in
 
 ## Departures from the published formulations
 
-Each external baseline is implemented from its own selection rule, with the three quality signals
-of this benchmark as its inputs. The registry ids `quadmix_pub` and `dmf_pub` name those two
-implementations in the code. The paper states the contract, and the full record is here. The appendix released with the paper, `docs/OmniSelect_20261020_appendix.pdf`, carries the
+Each external baseline is implemented from its own selection rule under the shared protocol. Its
+inputs differ by method and by data family, and each entry below names them. The registry ids
+`quadmix_pub` and `dmf_pub` name those two implementations in the code. The paper states the
+contract, and the full record is here. The appendix released with the paper, `docs/OmniSelect_20261020_appendix.pdf`, carries the
 same list.
 
 ### QuaDMix (`benchmark/Methods/QuaDMix/method.py`, registry id `quadmix_pub`)
@@ -68,7 +69,8 @@ Departures.
 - Domains are native domain labels where a track provides them and k-means clusters of the
   representation otherwise.
 - Expected repeat counts are converted into a fixed-size subset by Gumbel top-k sampling without
-  replacement, because every strategy of the benchmark returns exactly k records.
+  replacement, because the benchmark fixes the budget of every strategy, as a record count outside
+  the text track and as a per-domain token count inside it.
 - The quality input is the authenticity signal outside the text track and the reference-model loss
   inside it. The published proxy-model training and the search over sampling parameters are not
   run, and fixed default parameters are used, which is why the mechanism table of the paper marks
@@ -83,8 +85,10 @@ Departures.
 
 - The actors are authenticity, influence and redundancy, in place of the published quality, domain
   and topic actors.
-- The reward of an actor is the construction-split gain of the subset that the current weights
-  select, in place of the published aggregation of category weights and category rewards.
+- The reward of an actor is the construction-split utility of the subset that this actor alone
+  selects, in place of the published aggregation of category weights and category rewards. The
+  subset that the current fused weights select is scored as well, and that score only decides which
+  iteration is reported.
 - The actor-memory update is not run, and the actor set is fixed over the iterations.
 - The updated weights are clipped at zero and renormalized, a step the published update equation
   does not contain.
@@ -98,5 +102,6 @@ Departures.
 The two sections above cover the methods that fuse several signals. For every other baseline the fidelity
 tier and the adaptation are in the table of this page, and the registered implementation is the
 single source of truth. Density replaces the published locality-sensitive density estimator by a
-k-nearest-neighbor estimator. GraNd uses a last-layer gradient-norm proxy. EL2N, GraNd and CCS are
-evaluated only where supervised class probabilities exist.
+k-nearest-neighbor estimator. GraNd uses a last-layer gradient-norm proxy. Their published scores need supervised class probabilities, so EL2N, GraNd
+and CCS report separately evaluated adaptations on forecasting and text, which are not members of
+the adjudicated portfolio of those runs.
