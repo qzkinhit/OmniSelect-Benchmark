@@ -21,8 +21,8 @@ an original protocol only when that full protocol is executed. Otherwise the tra
 | GraNd (NeurIPS 2021) | Data Diet | `benchmark/Methods/GraNd/` | Expected gradient contribution ranking | Last-layer gradient-norm proxy | disclosed proxy |
 | CCS (ICLR 2023) | Coverage-centric coreset selection | `benchmark/Methods/CCS/` | Budget allocation across score strata | Task classifier supplies the score | local implementation |
 | Density (ICML 2024) | Ask-LLM density sampler | `benchmark/Methods/Density/` | Inverse-density sampling | k-nearest-neighbor estimator replaces the LSH-KDE estimator | local implementation |
-| QuaDMix-pub (arXiv 2025) | Quality and domain-mixture sampler | `benchmark/Methods/QuaDMix/` | Domain-conditioned sigmoid quality sampler | Fixed budget, no proxy-model parameter search | published-core transfer |
-| DMF-pub (ACL 2025) | Multi-actor weighting | `benchmark/Methods/DMF/` | Centered additive actor-weight update | Actors are the three quality signals | published-core transfer |
+| QuaDMix (arXiv 2025) | Quality and domain-mixture sampler | `benchmark/Methods/QuaDMix/` | Domain-conditioned sigmoid quality sampler | Fixed budget, no proxy-model parameter search | published-core transfer |
+| DMF (ACL 2025) | Multi-actor weighting | `benchmark/Methods/DMF/` | Centered additive actor-weight update | Actors are the three quality signals | published-core transfer |
 | OmniSelect | This repository | `omniselect/` | Validation-guided adjudication over a frozen portfolio | Task adapters expose comparable validation evidence | proposed method |
 
 The repository also implements GLISTER, GRAD-MATCH, InfoMax, LESS and a clean-tag oracle. They are
@@ -45,12 +45,12 @@ Paper-facing names, applicable cells and result paths are described in
 
 ## Departures from the published formulations
 
-The suffix `-pub` marks an implementation of the published selection core of a method, with the
-three quality signals of this benchmark as its inputs. The paper states this, and the full record
-is here. The appendix released with the paper, `docs/OmniSelect_20261020_appendix.pdf`, carries the
+Each external baseline is implemented from its own selection rule, with the three quality signals
+of this benchmark as its inputs. The registry ids `quadmix_pub` and `dmf_pub` name those two
+implementations in the code. The paper states the contract, and the full record is here. The appendix released with the paper, `docs/OmniSelect_20261020_appendix.pdf`, carries the
 same list.
 
-### QuaDMix-pub (`benchmark/Methods/QuaDMix/method.py`)
+### QuaDMix (`benchmark/Methods/QuaDMix/method.py`, registry id `quadmix_pub`)
 
 Retained. Normalized quality criteria are merged inside a domain, the merged score is turned into a
 token-weighted within-domain percentile rank, and the rank passes through a sigmoid in the rank
@@ -74,7 +74,7 @@ Departures.
   run, and fixed default parameters are used, which is why the mechanism table of the paper marks
   the method as reading no target-task validation feedback.
 
-### DMF-pub (`benchmark/Methods/DMF/method.py`)
+### DMF (`benchmark/Methods/DMF/method.py`, registry id `dmf_pub`)
 
 Retained. Actor scores are combined into one score by the published fusion form, and the weights
 are moved by the centered additive rule of the published update equation.
@@ -95,7 +95,7 @@ Departures.
 
 ### Other baselines
 
-The rows above are the two methods that fuse several signals. For every other baseline the fidelity
+The two sections above cover the methods that fuse several signals. For every other baseline the fidelity
 tier and the adaptation are in the table of this page, and the registered implementation is the
 single source of truth. Density replaces the published locality-sensitive density estimator by a
 k-nearest-neighbor estimator. GraNd uses a last-layer gradient-norm proxy. EL2N, GraNd and CCS are
