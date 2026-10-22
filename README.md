@@ -196,8 +196,8 @@ released here rather than with the submitted manuscript. It has six sections.
 
 ```bibtex
 @misc{omniselect2026,
-  title  = {{OmniSelect}: Quality-Aware Data Selection across Data Types, Driven by
-            the Downstream Model},
+  title  = {{OmniSelect}: Downstream-Driven Quality-Aware Data Selection for Various
+            Data Types},
   author = {Qian, Zekai and Ding, Xiaoou and Zhou, Muyun and Wang, Hongzhi and Wang, Chen},
   year   = {2026},
   note   = {Submitted to PVLDB}
