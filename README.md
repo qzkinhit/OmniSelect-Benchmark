@@ -196,8 +196,8 @@ released here rather than with the submitted manuscript. It has six sections.
 
 ```bibtex
 @misc{omniselect2026,
-  title  = {{OmniSelect}: Task-Driven Adjudication of Data Selection Strategies for
-            Modality-Specific Foundation Models},
+  title  = {{OmniSelect}: Quality-Aware Data Selection across Data Types, Driven by
+            the Downstream Model},
   author = {Qian, Zekai and Ding, Xiaoou and Zhou, Muyun and Wang, Hongzhi and Wang, Chen},
   year   = {2026},
   note   = {Submitted to PVLDB}
