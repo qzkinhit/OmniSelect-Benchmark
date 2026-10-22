@@ -1,10 +1,14 @@
 """DMF (Bai et al., ACL 2025): multi-actor weighting of the three channels, fused top-k.
 
-``dmf_published_update`` (dmf_pub) applies Eqs. 6 to 8: fused top-k by the actor weights, each
-weight moved by eta (R_j - mean R) and projected onto the simplex, for ``rounds`` rounds, with
-rewards from the construction split. ``dmf_dynamic`` (dmf) is the multiplicative-weight proxy of
-the historical batches. It is removed from the unified portfolio. ``text_dmf`` holds the text-lane
-console baseline.
+``dmf_published_update`` (dmf_pub) keeps the fusion form of Eq. 6 and the centered additive update
+of Eq. 8, with fused top-k by the actor weights, each weight moved by eta (R_j - mean R) and then
+clipped at zero and renormalized, for ``rounds`` rounds, and the best round under the
+construction-split score is returned. The actors are the three quality channels of this benchmark
+instead of the published quality, domain and topic actors, the reward is the construction-split
+gain of the selected subset instead of the Eq. 7 aggregation, and the actor-memory update is not
+run. ``dmf_dynamic`` (dmf) is the multiplicative-weight proxy of the historical batches. It is
+removed from the unified portfolio. ``text_dmf`` holds the text-lane console baseline.
+docs/BASELINE_FIDELITY_AUDIT.md records every departure.
 """
 from __future__ import annotations
 

@@ -162,11 +162,15 @@ returns per-unit outputs). Register it in `TRACKS` of `tracks/common/experiment.
 | [`data/`](data/README.md) | dataset descriptions, the fetcher and the text pool builder |
 | `run_omniselect/` | shell entry points, queue templates, the queue runner, CSV aggregation |
 | `tools/` | gate replay, proxy ranking, run-record audit |
-| `docs/` | design, code map, reproduction, run-record format, dataset provenance |
+| `docs/` | design, code map, reproduction, run-record format, dataset provenance, baseline fidelity, the paper appendix |
 | [`results/`](results/README.md) | the paper's run records, tables and rebuild scripts |
 
 [docs/CODE_MAP.md](docs/CODE_MAP.md) gives a reading order for the code, and
 [docs/DESIGN.md](docs/DESIGN.md) explains the protocol choices.
+[docs/OmniSelect_20261020_appendix.pdf](docs/OmniSelect_20261020_appendix.pdf) is the appendix of the
+paper, with the detailed proofs, the further formal results, the protocol details, and the record of
+where each `-pub` implementation departs from its published formulation.
+[docs/BASELINE_FIDELITY_AUDIT.md](docs/BASELINE_FIDELITY_AUDIT.md) keeps that record next to the code.
 
 ## Citation
 

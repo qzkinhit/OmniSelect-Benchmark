@@ -1,10 +1,15 @@
 """QuaDMix (arXiv 2504.16511): quality and domain-aware sampling, published-core transfer.
 
-``quadmix_expected_counts`` implements Eqs. 1 to 3 (merged normalized quality, token-weighted
-within-domain percentile rank, sigmoid expected-repeat sampler). ``quadmix_published_core``
-(quadmix_pub) takes k-means domains when native labels are missing and converts expected counts
-to a fixed-size subset by Gumbel top-k with default_rng(seed). ``quadmix`` is the withdrawn
-style proxy, kept only to replay historical portfolios.
+``quadmix_expected_counts`` follows Eqs. 1 to 3 (merged normalized quality, token-weighted
+within-domain percentile rank, sigmoid expected-repeat sampler) with two departures. The weight
+inside the rank threshold is eta / (1 + exp(-lambda * (omega - r))) + epsilon, while Eq. 3 reads
+[2 / (1 + exp(-lambda * (omega - r)))]^eta + epsilon, so at the default eta=1 the two differ by the
+factor 2 on the sigmoid part while the floor epsilon is unscaled. Tied merged scores share the rank
+of their group in Eq. 2 and receive distinct ranks here. ``quadmix_published_core`` (quadmix_pub)
+takes k-means domains when native labels are missing and converts expected counts to a fixed-size
+subset by Gumbel top-k with default_rng(seed), and it runs no proxy-model parameter search.
+``quadmix`` is the withdrawn style proxy, kept only to replay historical portfolios.
+docs/BASELINE_FIDELITY_AUDIT.md records every departure.
 """
 from __future__ import annotations
 

@@ -3,6 +3,17 @@
 All source datasets are kept separate from generated candidate pools. Controlled
 corruption is deterministic and does not modify upstream files.
 
+Source links. CIFAR-100 and CIFAR-10 are read from `uoft-cs/cifar100` and `uoft-cs/cifar10` on the
+Hugging Face Hub, CIFAR-100N from the UCSC-REAL release at `github.com/UCSC-REAL/cifar-10-100n`,
+ImageNet-100 from `clane9/imagenet-100`, the ETT streams from `github.com/zhouhaoyi/ETDataset`, the
+Tennessee Eastman files from the Braatz-group redistribution at
+`github.com/camaramm/tennessee-eastman-profBraatz`, the DaISy records from
+`homes.esat.kuleuven.be/~smc/daisy/daisydata.html`, Electricity from OpenML data id 151, and the
+text sources from `HuggingFaceFW/fineweb-edu`, `HuggingFaceTB/finemath`,
+`codeparrot/codeparrot-clean-valid`, `yerevann/coco-karpathy` and `mstz/adult`. The revisions and
+checksums below identify the exact artifact that each run read, and the derived version of each pool
+is rebuilt by the scripts named in the next section.
+
 | Task | Source | Registered version or check |
 |---|---|---|
 | CIFAR-100 | Hugging Face `uoft-cs/cifar100` | revision `aadb3af77e9048adbea6b47c21a81e47dd092ae5` |
