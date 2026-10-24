@@ -131,11 +131,18 @@ def _acc_dtype(tensor):
 def kmeans_pp_torch(X, n_clusters: int, random_state: np.random.RandomState, xx):
     """scikit-learn's greedy k-means++ (``_kmeans_plusplus`` with unit weights) on a torch matrix.
 
-    Uses the same RandomState calls in the same order: one choice for the first centre, then
+    CPU delegates initialization to scikit-learn to avoid cross-library threshold differences. Other
+    devices use the same RandomState calls in the same order: one choice for the first centre, then
     ``2 + int(log(k))`` uniforms per centre, candidates by searchsorted on the cumulative potential.
     Returns the centre indices (numpy int array).
     """
     import torch
+
+    if X.device.type == "cpu":
+        from sklearn.cluster import kmeans_plusplus
+
+        _, indices = kmeans_plusplus(X.numpy(), n_clusters, random_state=random_state)
+        return indices
 
     n = X.shape[0]
     trials = 2 + int(np.log(n_clusters))
