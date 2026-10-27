@@ -169,7 +169,7 @@ returns per-unit outputs). Register it in `TRACKS` of `tracks/common/experiment.
 [docs/DESIGN.md](docs/DESIGN.md) explains the protocol choices.
 ## Appendix of the paper
 
-[docs/OmniSelect_20261025_appendix.pdf](docs/OmniSelect_20261025_appendix.pdf) is the appendix,
+[docs/OmniSelect_20261027_appendix.pdf](docs/OmniSelect_20261027_appendix.pdf) is the appendix,
 released here rather than with the submitted manuscript. It has six sections.
 
 1. *Notation and premises* restates the definitions of the paper and the four premises that its

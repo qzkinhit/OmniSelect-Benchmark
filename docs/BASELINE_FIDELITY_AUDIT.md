@@ -48,7 +48,7 @@ Paper-facing names, applicable cells and result paths are described in
 Each external baseline is implemented from its own selection rule under the shared protocol. Its
 inputs differ by method and by data family, and each entry below names them. The registry ids
 `quadmix_pub` and `dmf_pub` name those two implementations in the code. The paper states the
-contract, and the full record is here. The appendix released with the paper, `docs/OmniSelect_20261025_appendix.pdf`, carries the
+contract, and the full record is here. The appendix released with the paper, `docs/OmniSelect_20261027_appendix.pdf`, carries the
 same list.
 
 ### QuaDMix (`benchmark/Methods/QuaDMix/method.py`, registry id `quadmix_pub`)
