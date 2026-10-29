@@ -21,11 +21,11 @@ OUTPUT = ROOT / "table_method_ranks.json"
 COLS = ["C-100", "C-100N", "C-10", "ETTh1", "ETTm1", "ETTh2", "CSTR", "Steam", "TEP21", "Elec", "Text"]
 LOWER = {"ETTh1", "ETTm1", "ETTh2", "CSTR", "Steam", "Text"}
 METHODS = [
-    ("random", "Random"), ("influence_only", "Infl-only"), ("coreset", "Coverage"),
-    ("mmdataselect", "Fixed fusion"), ("auth_only", "Auth-only"), ("herding", "Herding"),
+    ("random", "Random"), ("influence_only", "Infl-only"), ("coreset", "Coverage-only"),
+    ("mmdataselect", "Fixed multi-signal"), ("auth_only", "Auth-only"), ("herding", "Herding"),
     ("el2n", "EL2N / EL2N-adapt"), ("grand", "GraNd / GraNd-adapt"), ("ccs", "CCS / CCS-adapt"), ("density", "Density"),
-    ("quadmix_pub", "QuaDMix-pub"), ("dmf_pub", "DMF-pub"),
-    ("nocoop", "OmniSelect w/o cooperation"), ("omni", "OmniSelect"),
+    ("quadmix_pub", "QuaDMix"), ("dmf_pub", "DMF"),
+    ("nocoop", "OmniSelect w/o Coop"), ("omni", "OmniSelect"),
 ]
 TEXT_ALIAS = {"herding": "herding_text", "density": "density_text", "coreset": "coverage_text"}
 

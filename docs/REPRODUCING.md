@@ -282,7 +282,7 @@ oracle (a diagnostic row) and by the purity column of the run record.
 | Queue | Protocol | Role in the paper |
 |---|---|---|
 | `main_v2_3.txt` | `v2_2` | Main table |
-| `ablation_v2_3.txt` | `v2` | OmniSelect-NC |
+| `ablation_v2_3.txt` | `v2` | OmniSelect w/o Coop |
 | `main_adapt_v2_2.txt` | `v2_2`, standalone | EL2N, GraNd and CCS on forecasting and text |
 | `scale_up.txt` | `v2_2`, `v2`, standalone | IN-100 and Text-100k |
 | `robustness.txt` | `v2_2` | Figure 4(e)(f), with main-table seeds |

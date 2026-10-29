@@ -17,6 +17,8 @@ S=../scripts
 "$PYTHON" "$S/make_main_table.py" > /dev/null
 "$PYTHON" "$S/paper_numbers.py" > /dev/null
 "$PYTHON" "$S/adoption_numbers.py" > /dev/null
+"$PYTHON" "$S/table4_admission.py" . paper_numbers.json table4_admission.json > /dev/null
+"$PYTHON" "$S/adjudication_by_task.py" . paper_main_stats.json paper_numbers.json adjudication_by_task.json > /dev/null
 "$PYTHON" "$S/build_condition_results.py"
 "$PYTHON" "$S/paired_v23.py"
 "$PYTHON" "$S/compare_tables.py" ../tables .

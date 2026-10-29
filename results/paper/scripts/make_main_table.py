@@ -18,8 +18,8 @@ SCALE = json.load(open("scale_up_stats.json"))
 M.update(SCALE["main"]); N.update(SCALE["nocoop"])
 COLS = ["C-100", "C-100N", "C-10", "IN-100", "ETTh1", "ETTm1", "ETTh2", "CSTR", "Steam", "TEP21", "Elec", "Text", "Text-100k"]
 LOWER = {"ETTh1", "ETTm1", "ETTh2", "CSTR", "Steam", "Text", "Text-100k"}
-GROUPS = [("Signal baselines", [("random", "Random"), ("influence_only", "Infl-only"), ("coreset", "Coverage"), ("mmdataselect", "Fixed fusion"), ("auth_only", "Auth-only")]),
-          ("External baselines", [("herding", "Herding"), ("el2n", "EL2N/adapt"), ("grand", "GraNd/adapt"), ("ccs", "CCS/adapt"), ("density", "Density"), ("quadmix_pub", "QuaDMix-pub"), ("dmf_pub", "DMF-pub")])]
+GROUPS = [("Signal baselines", [("random", "Random"), ("influence_only", "Infl-only"), ("coreset", "Coverage-only"), ("mmdataselect", "Fixed multi-signal"), ("auth_only", "Auth-only")]),
+          ("External baselines", [("herding", "Herding"), ("el2n", "EL2N/adapt"), ("grand", "GraNd/adapt"), ("ccs", "CCS/adapt"), ("density", "Density"), ("quadmix_pub", "QuaDMix"), ("dmf_pub", "DMF")])]
 TEXT_ALIAS = {"herding": "herding_text", "density": "density_text", "coreset": "coverage_text"}
 def cell(T, name, col):
     if col not in T or "rows" not in T[col]: return None
@@ -69,7 +69,7 @@ for gname, members in GROUPS:
         if i == 0: name = r"\omnigroup{" + t(gname) + "}{" + name + "}"
         lines.append(name + " & " + " & ".join(show(key, c) for c in COLS) + r" \\")
     lines.append(r"\midrule")
-name = rf"\Circled{{{CIRCLE['nocoop']}}}\,\sys{{}}-NC"
+name = rf"\Circled{{{CIRCLE['nocoop']}}}\,\sys{{}} w/o Coop"
 lines.append(r"\omnigroup{" + t("Our method") + "}{" + name + "} & " + " & ".join(show("nocoop", c) for c in COLS) + r" \\")
 lines.append(rf"\Circled{{{CIRCLE['omni']}}}\,\sys{{}} {t('(ours)')} & " + " & ".join(show("omni", c) for c in COLS) + r" \\")
 open("main_table_body_zh.tex" if ZH else "main_table_body.tex", "w").write("\n".join(lines) + "\n")

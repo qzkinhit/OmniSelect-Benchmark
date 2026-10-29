@@ -440,7 +440,7 @@
   },
   {
    "method": "nocoop",
-   "display_name": "OmniSelect w/o cooperation",
+   "display_name": "OmniSelect w/o Coop",
    "circle_rank": 2,
    "mean_task_rank": 1.9090909090909092,
    "ranking_tasks": [
@@ -575,7 +575,7 @@
   },
   {
    "method": "quadmix_pub",
-   "display_name": "QuaDMix-pub",
+   "display_name": "QuaDMix",
    "circle_rank": 5,
    "mean_task_rank": 7.0,
    "ranking_tasks": [
@@ -710,7 +710,7 @@
   },
   {
    "method": "dmf_pub",
-   "display_name": "DMF-pub",
+   "display_name": "DMF",
    "circle_rank": 8,
    "mean_task_rank": 8.0,
    "ranking_tasks": [
@@ -755,7 +755,7 @@
   },
   {
    "method": "mmdataselect",
-   "display_name": "Fixed fusion",
+   "display_name": "Fixed multi-signal",
    "circle_rank": 9,
    "mean_task_rank": 8.181818181818182,
    "ranking_tasks": [
@@ -845,7 +845,7 @@
   },
   {
    "method": "coreset",
-   "display_name": "Coverage",
+   "display_name": "Coverage-only",
    "circle_rank": 11,
    "mean_task_rank": 9.0,
    "ranking_tasks": [

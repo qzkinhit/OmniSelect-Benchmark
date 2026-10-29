@@ -9,7 +9,7 @@ TABLES = (
     "paper_seeds.json", "table_method_ranks.json", "scale_up_stats.json", "main_table_body.tex",
     "paper_numbers.json", "adoption_numbers.json", "robust_cells_view.json", "robustness_summary.json",
     "validation_noise_plot_data.json", "abl_v23_summary.json", "validation_size.json",
-    "paired_diagnostics.json",
+    "paired_diagnostics.json", "table4_admission.json", "adjudication_by_task.json",
 )
 
 

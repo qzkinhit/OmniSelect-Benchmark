@@ -1,0 +1,161 @@
+{
+ "tasks": {
+  "C-100": {
+   "W": 10,
+   "T": 2,
+   "below": 7,
+   "m": 32,
+   "adoption": "some",
+   "kinds": [
+    "Fu"
+   ],
+   "gain_ref": 21.37468566638725,
+   "gain_elected": 22.380553227158416,
+   "gain_best": 22.506286672254827
+  },
+  "C-100N": {
+   "W": 12,
+   "T": 0,
+   "below": 6,
+   "m": 32,
+   "adoption": "all",
+   "kinds": [
+    "Co",
+    "Cs"
+   ],
+   "gain_ref": 16.836215666327558,
+   "gain_elected": 24.821973550356027,
+   "gain_best": 24.821973550356027
+  },
+  "C-10": {
+   "W": 9,
+   "T": 3,
+   "below": 7,
+   "m": 22,
+   "adoption": "none",
+   "kinds": [
+    "Ex"
+   ],
+   "gain_ref": 2.488747683346587,
+   "gain_elected": 2.488747683346587,
+   "gain_best": 2.6059987140209566
+  },
+  "ETTh1": {
+   "W": 12,
+   "T": 0,
+   "below": 3,
+   "m": 29,
+   "adoption": "all",
+   "kinds": [
+    "Fu",
+    "Co"
+   ],
+   "gain_ref": 9.896884999672993,
+   "gain_elected": 13.183767002355165,
+   "gain_best": 13.800739275407071
+  },
+  "ETTm1": {
+   "W": 12,
+   "T": 0,
+   "below": 3,
+   "m": 29,
+   "adoption": "all",
+   "kinds": [
+    "Co",
+    "Fu"
+   ],
+   "gain_ref": 18.03251577416416,
+   "gain_elected": 19.684666281540142,
+   "gain_best": 19.684666281540142
+  },
+  "ETTh2": {
+   "W": 12,
+   "T": 0,
+   "below": 8,
+   "m": 29,
+   "adoption": "all",
+   "kinds": [
+    "Fu",
+    "Cs"
+   ],
+   "gain_ref": 5.239172171713985,
+   "gain_elected": 12.023123310454796,
+   "gain_best": 12.749279729734273
+  },
+  "CSTR": {
+   "W": 12,
+   "T": 0,
+   "below": 8,
+   "m": 29,
+   "adoption": "none",
+   "kinds": [
+    "Co"
+   ],
+   "gain_ref": 7.098545971427236,
+   "gain_elected": 7.098545971427236,
+   "gain_best": 8.043209625609837
+  },
+  "Steam": {
+   "W": 12,
+   "T": 0,
+   "below": 8,
+   "m": 29,
+   "adoption": "all",
+   "kinds": [
+    "Fu"
+   ],
+   "gain_ref": 23.789755710205622,
+   "gain_elected": 27.683642690213553,
+   "gain_best": 27.851663807124247
+  },
+  "TEP21": {
+   "W": 11,
+   "T": 1,
+   "below": 2,
+   "m": 33,
+   "adoption": "some",
+   "kinds": [
+    "Li",
+    "Co",
+    "Fu"
+   ],
+   "gain_ref": 30.48305191473598,
+   "gain_elected": 32.90320728394066,
+   "gain_best": 33.40668769611957
+  },
+  "Elec": {
+   "W": 12,
+   "T": 0,
+   "below": 7,
+   "m": 34,
+   "adoption": "none",
+   "kinds": [
+    "Li"
+   ],
+   "gain_ref": 1.559857487053314,
+   "gain_elected": 1.559857487053314,
+   "gain_best": 2.3014253946510492
+  },
+  "Text": {
+   "W": 7,
+   "T": 2,
+   "below": 10,
+   "m": 20,
+   "adoption": "none",
+   "kinds": [
+    "Ex"
+   ],
+   "gain_ref": 0.37904686683131467,
+   "gain_elected": 0.37904686683131467,
+   "gain_best": 0.37904686683131467
+  }
+ },
+ "mean": {
+  "gain_ref": 12.470770901078726,
+  "gain_elected": 14.927921032243383,
+  "gain_best": 15.286452510331758
+ },
+ "W": 121,
+ "T": 8,
+ "below": 69
+}

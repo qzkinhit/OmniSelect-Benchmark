@@ -51,14 +51,14 @@ bash run_omniselect/run_cell.sh process tep21 0 v2_2
 | 队列 | 协议 | 论文中的内容 | `results/paper/records/` 中的记录包 |
 |---|---|---|---|
 | `main_v2_3.txt` | `v2_2` | 表 3 主实验 | `main_v2_3.tar.gz` |
-| `ablation_v2_3.txt` | `v2` | OmniSelect-NC 各行 | `main_v2_3.tar.gz` |
+| `ablation_v2_3.txt` | `v2` | OmniSelect w/o Coop 各行 | `main_v2_3.tar.gz` |
 | `main_adapt_v2_2.txt` | `v2_2`，独立方法 | 预测与文本上的 EL2N、GraNd 和 CCS | `main_adapt_v2_3.tar.gz` |
 | `scale_up.txt` | `v2_2`、`v2`，独立方法 | 表 3 的 IN-100 与 Text-100k 两列 | `scale_up.tar.gz` |
 | `robustness.txt` | `v2_2` | 图 4(e)(f) | `robustness_v2_3f.tar.gz` |
 | `signal_drop.txt` | `v2_2` | 图 4(d) 信号移除 | `ablation_v2_3.tar.gz` |
 | `validation_size.txt` | `v2_2` | 图 4(g) 验证规模 | `validation_size_v2_3.tar.gz` |
 
-每个稳健性条件及信号移除比较都使用对应任务报告的运行。40% 注入点与无验证噪声点复用主表记录。`paired_units.tar.gz` 保存图 3 使用的 69 个排序划分记录。
+每个稳健性条件及信号移除比较都使用对应任务报告的运行。40% 注入点与无验证噪声点复用主表记录。`paired_units.tar.gz` 保存图 3 使用的 69 个排序划分记录，`text_selections_v2_3.tar.gz` 补充表 4 所统计的 Text 主实验运行的选择结果。
 
 ```bash
 python data/fetch_data.py
@@ -72,7 +72,7 @@ IN-100 使用 256 px 图像数组和 224 px 裁剪。Text-100k 使用每域 20,0
 cd results/paper && bash rebuild.sh
 ```
 
-`rebuild.sh` 重算 13 列主表、11 个基准任务的综合统计、两个规模扩展任务、图 3，以及图 4 的信号移除、稳健性、验证噪声和验证规模结果，并将 16 个输出及合并数据中的绘图字段与 `results/paper/tables/` 比较。[results/README.md](results/README.md) 列出记录与输出。
+`rebuild.sh` 重算 13 列主表、11 个基准任务的综合统计、两个规模扩展任务、图 3、表 4、附录的逐任务选举表，以及图 4 的信号移除、稳健性、验证噪声和验证规模结果，并将 18 个输出及合并数据中的绘图字段与 `results/paper/tables/` 比较。[results/README.md](results/README.md) 列出记录与输出。
 
 `omniselect/tests/test_torch_select.py` 中的 torch k-means 测试使用论文 GPU 运行所用的 torch 2.11。[docs/REPRODUCING.md](docs/REPRODUCING.md) 列出协议字段与稳健性选项。
 

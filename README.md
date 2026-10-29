@@ -75,7 +75,7 @@ multi-seed runs of each task are listed in `results/paper/seeds_reported.json`.
 | Queue | Protocol | Paper content | Record archive in `results/paper/records/` |
 |---|---|---|---|
 | `main_v2_3.txt` | `v2_2` | Table 3, main runs | `main_v2_3.tar.gz` |
-| `ablation_v2_3.txt` | `v2` | OmniSelect-NC rows | `main_v2_3.tar.gz` |
+| `ablation_v2_3.txt` | `v2` | OmniSelect w/o Coop rows | `main_v2_3.tar.gz` |
 | `main_adapt_v2_2.txt` | `v2_2`, standalone | EL2N, GraNd and CCS on forecasting and text | `main_adapt_v2_3.tar.gz` |
 | `scale_up.txt` | `v2_2`, `v2`, standalone | IN-100 and Text-100k columns of Table 3 | `scale_up.tar.gz` |
 | `robustness.txt` | `v2_2` | Figure 4(e)(f) | `robustness_v2_3f.tar.gz` |
@@ -84,7 +84,8 @@ multi-seed runs of each task are listed in `results/paper/seeds_reported.json`.
 
 Every robustness condition and signal-removal comparison uses the reported runs of its task.
 The 40% injection and clean-validation points reuse the main-table records. The compact
-`paired_units.tar.gz` provides the 69 ranking-split cells used in Figure 3.
+`paired_units.tar.gz` provides the 69 ranking-split cells used in Figure 3, and
+`text_selections_v2_3.tar.gz` adds the selections of the Text main runs that Table 4 counts.
 
 ```bash
 python data/fetch_data.py
@@ -101,8 +102,9 @@ cd results/paper && bash rebuild.sh
 ```
 
 `rebuild.sh` recomputes the 13-column main table, the statistics over the eleven benchmark tasks,
-the two scale-up tasks, Figure 3, and the signal-removal, robustness, validation-noise and
-validation-size results of Figure 4. It compares 16 outputs and the plotted fields of the combined
+the two scale-up tasks, Figure 3, Table 4, the per-task election table of the appendix, and the
+signal-removal, robustness, validation-noise and validation-size results of Figure 4. It compares
+18 outputs and the plotted fields of the combined
 export with `results/paper/tables/`. [results/README.md](results/README.md) lists the records and outputs.
 
 The torch-based k-means test in `omniselect/tests/test_torch_select.py` uses torch 2.11, the version
@@ -170,7 +172,7 @@ returns per-unit outputs). Register it in `TRACKS` of `tracks/common/experiment.
 ## Appendix of the paper
 
 [docs/OmniSelect_20261027_appendix.pdf](docs/OmniSelect_20261027_appendix.pdf) is the appendix,
-released here rather than with the submitted manuscript. It has six sections.
+released here rather than with the submitted manuscript. It has seven sections.
 
 1. *Notation and premises* restates the definitions of the paper and the four premises that its
    error bounds rest on, so the proofs read on their own.
@@ -185,11 +187,14 @@ released here rather than with the submitted manuscript. It has six sections.
 4. *Method and protocol details* holds the features of the learned cleanliness score, the other
    subset objectives of the literature, the portfolio membership of the external methods, and the
    robustness conditions of the deployment experiment.
-5. *Baseline fidelity* records, for QuaDMix and DMF, what the implementation retains and where it
+5. *Further experimental results* breaks the paired verdicts and the election of the paper down by
+   task, names the external baseline that forms the Best baseline row of Table 4 on each task, and
+   reports how often a cooperative candidate holds the ceiling of the frozen portfolio.
+6. *Baseline fidelity* records, for QuaDMix and DMF, what the implementation retains and where it
    departs from the published formulation, and it summarizes the adaptations of the other
    baselines. [docs/BASELINE_FIDELITY_AUDIT.md](docs/BASELINE_FIDELITY_AUDIT.md) keeps the same
    record next to the code.
-6. *Dataset provenance* lists the source and the derived version of every dataset, with the pinned
+7. *Dataset provenance* lists the source and the derived version of every dataset, with the pinned
    revisions and checksums in [docs/dataset_provenance.md](docs/dataset_provenance.md).
 
 ## Citation
