@@ -17,7 +17,7 @@
  },
  "C-10": {
   "seeds": 3,
-  "coop_herding_mean": 0.8433666666666667
+  "coop_herding_mean": 0.8369333333333333
  },
  "ETTh1": {
   "seeds": 3,
@@ -55,16 +55,16 @@
  },
  "Elec": {
   "seeds": 3,
-  "fusion_hindsight_best_mean": 0.8414931858195275,
-  "coop_herding_mean": 0.8432830935742829,
-  "auc_cleanliness": 0.8496555555555556,
-  "auc_authenticity": 0.6519027777777778
+  "fusion_hindsight_best_mean": 0.8329058622792109,
+  "coop_herding_mean": 0.8370934812640022,
+  "auc_cleanliness": 0.8541329475308642,
+  "auc_authenticity": 0.651283024691358
  },
  "Text": {
   "seeds": 3,
-  "fusion_hindsight_best_mean": -11.206352136875031,
-  "coop_herding_mean": -11.440035154002262,
-  "auc_cleanliness": 0.8862097655555555,
+  "fusion_hindsight_best_mean": -11.190914561622675,
+  "coop_herding_mean": -11.433594187413943,
+  "auc_cleanliness": 0.8835143222222223,
   "auc_authenticity": 0.7035380233333334
  },
  "C-10-CLIP": {
