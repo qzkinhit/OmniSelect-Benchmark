@@ -2,7 +2,8 @@
 (the same portfolio without cooperative strategies, same seeds). Best mean per column is bold, second distinct
 mean is italic. Competition ranks 1, 2, 3 use dark, medium and light blue; exact ties share a rank and color.
 Ranking uses unrounded, direction-aware means of all 14 methods including NC; reference summaries are excluded.
-Tasks without records print the pending marker. Output: main_table_body.tex, and with
+A dagger marks OmniSelect where its paired t 95% interval against the strongest external baseline
+of the task lies above zero. Tasks without records print the pending marker. Output: main_table_body.tex, and with
 --zh the Chinese mirror main_table_body_zh.tex (same cells, translated group and row labels)."""
 import json, sys
 from pathlib import Path
@@ -59,6 +60,9 @@ def show(k, c):
     mean = f"{r['mean']:.3f}"
     if tag == "best": mean = r"\textbf{" + mean + "}"
     elif tag == "second": mean = r"\textit{" + mean + "}"
+    se = M.get(c, {}).get("strongest_external")
+    if k == "omni" and se and M[c].get("verdicts", {}).get(se, {}).get("verdict") == "W":
+        mean += r"$^{\dagger}$"   # paired t 95% interval above zero against the strongest external baseline
     color = RANK_COLORS.get(competition_rank.get((k, c)))
     prefix = r"\cellcolor{" + color + "}" if color else ""
     return prefix + r"\omnicell{" + mean + "}{" + f"{r['sd']:.3f}" + "}"
