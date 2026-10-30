@@ -1,6 +1,6 @@
 """Controlled corruption of the training pool and of the validation labels, per data family.
 
-The canonical mechanisms reproduce the 2026-07 runners bit for bit: vision (label flip, duplicate
+The canonical mechanisms cover vision (label flip, duplicate
 marker, hard marker, with duplicated embeddings), forecasting windows (Gaussian corruption, flat,
 shuffle, near-duplicate), process and tabular rows (label flip, feature corruption,
 near-duplicate). The unseen mechanisms (``mechanism_set=unseen``) corrupt the same records

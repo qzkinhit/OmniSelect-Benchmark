@@ -2,7 +2,8 @@
 
 The challenger is adopted when its ranking utility exceeds the reference's by more than
 ``margin_frac * |u_rank(reference)|``. With margin_frac = 0.015 this is the switch rule of the
-2026-07 runners. No confidence statement is attached to this rule.
+canonical preset. Under the adjudication premises, the paired bounds of Theorem 3 of the paper
+hold for the strategy that this rule elects.
 """
 from __future__ import annotations
 

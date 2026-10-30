@@ -1,10 +1,10 @@
-"""Frozen copy of the canonical controller (fusion/adaptive.py of the package layout at commit cd7a6c7).
+"""Frozen copy of the canonical controller, the reference of the equivalence test.
 
 Used only by test_controller_legacy_equivalence.py to check that
 omniselect.core.adjudication.controller.adjudicate reproduces it. Imports are rewritten to
 omniselect paths, and the logic is unchanged.
 
-The earlier controller builds fusion candidates from the supplied channels (authenticity,
+The reference controller builds fusion candidates from the supplied channels (authenticity,
 influence, redundancy), adds the executed reference strategies passed as ``extra_strategies``,
 scores every candidate through the caller's validation callback and switches from the best
 reference to a challenger only when the challenger exceeds it by the switch margin (1.5% by

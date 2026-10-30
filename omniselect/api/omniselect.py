@@ -4,7 +4,7 @@
 features, the budget, executed reference strategies and the utility callbacks per split.
 ``OmniSelect`` holds one OmniSelectConfig and a fusion grid and forwards to
 omniselect.core.adjudication.controller.adjudicate. ``select`` is the one-call path without a
-learner (the earlier ``select_pool``).
+learner.
 """
 from __future__ import annotations
 

@@ -8,7 +8,7 @@ factor 2 on the sigmoid part while the floor epsilon is unscaled. Tied merged sc
 of their group in Eq. 2 and receive distinct ranks here. ``quadmix_published_core`` (quadmix_pub)
 takes k-means domains when native labels are missing and converts expected counts to a fixed-size
 subset by Gumbel top-k with default_rng(seed), and it runs no proxy-model parameter search.
-``quadmix`` is the withdrawn style proxy, kept only to replay historical portfolios.
+``quadmix`` is the withdrawn style proxy, kept only for regression replays.
 docs/BASELINE_FIDELITY_AUDIT.md records every departure.
 """
 from __future__ import annotations
@@ -165,5 +165,5 @@ def quadmix_pub_strategy(ctx: SelectionContext, k: int) -> list[int]:
 @register("quadmix", method_dir="QuaDMix", family="external", fidelity="proxy (withdrawn)",
           requires=("auth",), display="QuaDMix-style proxy (withdrawn)")
 def quadmix_strategy(ctx: SelectionContext, k: int) -> list[int]:
-    """Withdrawn style proxy. Only historical portfolio modes include it."""
+    """Withdrawn style proxy. Only the replay portfolio modes include it."""
     return quadmix(ctx.auth, ctx.features, k, seed=ctx.seed)

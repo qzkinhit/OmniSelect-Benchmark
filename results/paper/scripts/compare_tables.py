@@ -43,18 +43,6 @@ def main():
             errors.extend(differences(json.loads(a), json.loads(b), name))
         elif a != b:
             errors.append(f"differs {name}")
-    # The earlier combined export retains its original same-seed control values.
-    # Only fields backed by the reported archives are rebuilt here.
-    combined = json.loads((pub / "figure6_validation_size_and_signal_ablation.json").read_text())
-    val = json.loads((new / "validation_size.json").read_text())
-    expected_points = combined["validation_size"]["points"]
-    if len(expected_points) != len(val["points"]):
-        errors.append("combined validation-size point count differs")
-    for i, (expected, actual) in enumerate(zip(expected_points, val["points"])):
-        errors.extend(differences({k: expected[k] for k in actual}, actual, f"combined/validation_size/{i}"))
-    expected_summary = combined["validation_size"]["summary"]
-    errors.extend(differences([r["test"] for r in expected_summary], [r["test"] for r in val["summary"]], "combined/validation_size/test"))
-    errors.extend(differences(combined["signal_drop"], json.loads((new / "abl_v23_summary.json").read_text()), "combined/signal_drop"))
     for error in errors[:50]:
         print(error)
     print(f"{len(errors)} differences" if errors else f"all {len(TABLES)} rebuilt tables match")

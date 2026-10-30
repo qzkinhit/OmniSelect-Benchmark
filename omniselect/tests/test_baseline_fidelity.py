@@ -9,7 +9,7 @@ certify the reproduction is RIGHT, not just runnable.
 - Density (Sachdeva 2024): selected set covers the space (max-min distance smaller
   than random's).
 - EL2N vs GraNd (Paul et al. 2021): scores are computed by different rules and give
-  genuinely different rankings (regression guard against the old aliasing bug).
+  genuinely different rankings (regression guard against aliased rankings).
 - CCS (Zheng ICLR 2023): keeps a stratified difficulty profile, not only the hardest.
 - DMF dynamic (Yang 2025): multiplicative-weights reweighting concentrates weight on
   the channel that the validation reward favours.

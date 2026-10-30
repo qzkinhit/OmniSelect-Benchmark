@@ -9,9 +9,9 @@ mkdir -p work
 cd work
 for archive in ../records/*.tar.gz; do tar xzf "$archive"; done
 S=../scripts
-"$PYTHON" "$S/build_all_seed_results.py"
-"$PYTHON" "$S/aggregate_partial.py" paper_main_stats.json paper_main_agg.json > /dev/null
-"$PYTHON" "$S/aggregate_partial.py" paper_nocoop_stats.json paper_nocoop_agg.json > /dev/null
+"$PYTHON" "$S/build_main_results.py"
+"$PYTHON" "$S/aggregate_tasks.py" paper_main_stats.json paper_main_agg.json > /dev/null
+"$PYTHON" "$S/aggregate_tasks.py" paper_nocoop_stats.json paper_nocoop_agg.json > /dev/null
 "$PYTHON" "$S/compute_table_method_ranks.py" > /dev/null
 "$PYTHON" "$S/scale_up.py"
 "$PYTHON" "$S/make_main_table.py" > /dev/null

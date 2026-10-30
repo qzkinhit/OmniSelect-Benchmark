@@ -154,5 +154,5 @@ the dataset loaders, and `benchmark/tools/` holds the DeepCore reference impleme
 `omniselect/tests/` holds the CPU test suite. `test_driver_run_record.py` runs small cells end to
 end and checks every file of the run record. `test_no_test_leakage_contract.py` checks that the
 controller never requests test outputs before the election. `test_controller_legacy_equivalence.py`
-and `test_protocol_canonical_regression.py` check that the canonical preset reproduces the earlier
+and `test_protocol_canonical_regression.py` check that the canonical preset reproduces a frozen reference
 controller.

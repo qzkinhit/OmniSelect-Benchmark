@@ -51,9 +51,8 @@ def write_json(path,obj):
     tmp.write_text(json.dumps(obj,sort_keys=True,indent=2,default=str)+'\n');os.replace(tmp,path)
 # The control cells are the reported main runs of the published record archive.
 TASKS={'vision':('main','vision/cifar100/clip_vitb32'),'process':('main','process/tep21/mlp'),
-       'cifar100n':('main','vision/cifar100n/clip_vitb32'),'electricity':('main','tabular/electricity/tabpfn'),
-       'ETTm1':('main','timeseries/ETTm1/dlinear'),'ETTh1':('main','timeseries/ETTh1/dlinear')}
-TRACK_OF={'vision':'vision','process':'process','cifar100n':'vision','electricity':'tabular','ETTm1':'timeseries','ETTh1':'timeseries'}
+       'cifar100n':('main','vision/cifar100n/clip_vitb32'),'ETTm1':('main','timeseries/ETTm1/dlinear')}
+TRACK_OF={'vision':'vision','process':'process','cifar100n':'vision','ETTm1':'timeseries'}
 def source_cell(track,seed):
     b,rel=TASKS[track]
     return SOURCE_CELL if SOURCE_CELL is not None else SOURCE_ROOT/b/rel/f'seed_{seed}'

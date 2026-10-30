@@ -58,7 +58,6 @@ ADAPT_METHODS = "random,el2n_adapt,grand_adapt,ccs_adapt"
 # for herding and k-center, full-batch Lloyd k-means for coverage, docs/REPRODUCING.md).
 NATIVE_FLAGS = " --track-set selection_device=cuda"
 
-INJECTED = [t for t in SMALL_TASKS if t[1] != "cifar100n"]
 LEARNER_SWAPS = [
     ("vision", "cifar100", ("dinov2_vits14", "resnet18_scratch")), ("process", "tep21", ("rf", "cnn1d")),
     ("timeseries", "ETTh1", ("chronos_tiny", "chronos_small")),
@@ -116,7 +115,7 @@ def build_robustness(protocol: str, seeds: list[int] | None, root: str, v23: boo
     seed get distinct cells. Per-unit files are kept for finalists only.
     """
     out = [f"# Custom robustness: protocol {protocol}; unspecified seeds use the per-task reported lists.",
-           "# corruption ratio grid 0.0 to 0.6 (the track default is 0.4)"]
+           "# corruption ratio grid, 0.0 to 0.6 in steps of 0.1 on C-100 and in steps of 0.2 on TEP21 and ETTh1"]
 
     def add(condition: str, track: str, dataset: str, learner: str, flags: str) -> None:
         extra = f" {flags} {FINALISTS}".replace("  ", " ").rstrip()
@@ -128,20 +127,25 @@ def build_robustness(protocol: str, seeds: list[int] | None, root: str, v23: boo
 
     for ratio in ("0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6"):
         for track, dataset, learner in (SMALL_TASKS[0], SMALL_TASKS[8], SMALL_TASKS[3]):
+            if dataset != "cifar100" and ratio in ("0.1", "0.3", "0.5"):
+                continue
             add(f"ratio_{ratio}", track, dataset, learner, f"--set robustness.injection_ratio={ratio}")
-    out.append("# validation-label contamination: symmetric 0.1 to 0.5, natural (CIFAR-N labels), prior shift 0.5")
+    out.append("# validation-label contamination on C-100 and TEP21 (symmetric 0.1 to 0.5, natural CIFAR-N labels, "
+               "prior shift 0.5) and on Electricity (symmetric 0.3, prior shift 0.5)")
     conditions = [(f"val_sym_{r}", f"--set robustness.val_noise_kind=symmetric --set robustness.val_noise_rate={r}")
                   for r in ("0.1", "0.2", "0.3", "0.4", "0.5")]
     conditions += [("val_natural", "--set robustness.val_noise_kind=natural"),
                    ("val_prior_shift_0.5",
                     "--set robustness.val_noise_kind=prior_shift --set robustness.val_noise_rate=0.5")]
     for name, flags in conditions:
-        for track, dataset, learner in (SMALL_TASKS[0], SMALL_TASKS[8]):
+        for track, dataset, learner in (SMALL_TASKS[0], SMALL_TASKS[8], SMALL_TASKS[9]):
             if name == "val_natural" and track != "vision":
                 continue
+            if dataset == "electricity" and name not in ("val_sym_0.3", "val_prior_shift_0.5"):
+                continue
             add(name, track, dataset, learner, flags)
-    out.append("# unseen corruption mechanisms on every task with injected corruption")
-    for track, dataset, learner in INJECTED:
+    out.append("# unseen corruption mechanisms on C-100, ETTh1, TEP21 and Electricity")
+    for track, dataset, learner in (SMALL_TASKS[0], SMALL_TASKS[3], SMALL_TASKS[8], SMALL_TASKS[9]):
         add("unseen", track, dataset, learner, "--set robustness.mechanism_set=unseen")
     out.append("# learner swaps")
     for track, dataset, learners in LEARNER_SWAPS:
@@ -191,7 +195,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--protocol", default="v2_2", help="protocol of the robustness batch")
     parser.add_argument("--robustness-seeds", default=None, help="custom robustness seeds; defaults to --seeds or reported task seeds")
     parser.add_argument("--robustness-v2-2-influence", action="store_true",
-                        help="write the robustness batch with the earlier influence reference instead of v2.3")
+                        help="write the robustness batch without the class-conditional influence flags")
     args = parser.parse_args(argv)
     args.out.mkdir(parents=True, exist_ok=True)
     for batch in args.batches:

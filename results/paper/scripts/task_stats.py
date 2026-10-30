@@ -1,5 +1,5 @@
-"""Recompute the main_nc v2 main-table statistics from the copied cell records (decision.json,
-leaderboard.json, metrics.json, timings.json). Output: r1_stats.json with provenance."""
+"""Recompute the main-table statistics of one batch from its cell records (decision.json,
+leaderboard.json, metrics.json, timings.json). Arguments: the batch directory and the output JSON path."""
 import json, glob, math, os, sys
 from collections import defaultdict
 from scipy import stats

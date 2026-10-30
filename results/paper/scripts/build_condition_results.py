@@ -14,8 +14,6 @@ REL = {"C-100": "vision/cifar100/clip_vitb32", "C-100N": "vision/cifar100n/clip_
        "ETTh1": "timeseries/ETTh1/dlinear", "ETTh2": "timeseries/ETTh2/dlinear", "CSTR": "timeseries/daisy_cstr/dlinear",
        "Steam": "timeseries/daisy_steamgen/dlinear", "C-10-CLIP": "vision/cifar10_clip/clip_vitb32", "Text": "text/five_domain/smollm2_135m"}
 BY_DS = {v.split('/')[1]: k for k, v in REL.items()}
-DISPLAYED = {"random", "influence_only", "coreset", "mmdataselect", "auth_only", "herding", "el2n", "grand", "ccs", "density", "quadmix_pub", "dmf_pub"}
-TEXT_ALIAS = {"coverage_text": "coreset", "fixed_fusion": "mmdataselect", "herding_text": "herding", "density_text": "density"}
 
 
 def read(path, name):
@@ -42,9 +40,7 @@ def cell(path, batch, cond, track, ds, learner, seed):
     return {"batch": batch, "cond": cond, "track": track, "ds": ds, "learner": learner, "seed": seed,
             "utility": met['utility'], "elected": dec['elected'], "test": by_name[dec['elected']]['u_test'],
             "rank": dec.get('u_rank_elected'), "random": rows['random']['u_test'], "random_rank": by_name['random']['u_rank'],
-            "full": rows.get('full', {}).get('u_test'),
-            "best_disp": max(v['u_test'] for k, v in rows.items() if TEXT_ALIAS.get(k, k) in DISPLAYED and v.get('u_test') is not None),
-            "n_cand": len(lb['rows']), "adopted": dec['adopted']}
+            "full": rows.get('full', {}).get('u_test'), "n_cand": len(lb['rows']), "adopted": dec['adopted']}
 
 
 def robustness():
@@ -57,9 +53,8 @@ def robustness():
             rows.append(cell(path.parent, batch, cond, track, ds, learner, seed))
     for task in ('C-100', 'TEP21', 'ETTh1'):
         track, ds, learner = REL[task].split('/')
-        original_batch = 'main' if task == 'ETTh1' else 'main'
         for seed in SELECTION['seeds'][task]:
-            rows.append(cell(ROOT / 'main' / REL[task] / f'seed_{seed}', original_batch, 'main', track, ds, learner, seed))
+            rows.append(cell(ROOT / 'main' / REL[task] / f'seed_{seed}', 'main', 'main', track, ds, learner, seed))
     rows.sort(key=lambda r: (r['cond'], r['track'], r['ds'], r['learner'], r['seed']))
     save('robust_cells_view.json', {'note': 'One row per reported robustness cell; main cells are the 40% injection and clean-validation controls.', 'rows': rows})
     cells = collections.defaultdict(list)
@@ -73,8 +68,7 @@ def robustness():
         assert len(rs) == 3 and len({r['batch'] for r in rs}) == 1, (cond, key)
         e, rd = mean([r['test'] for r in rs]), mean([r['random'] for r in rs])
         summ[cond][key] = {'n': 3, 'seeds': [r['seed'] for r in rs], 'utility': rs[0]['utility'], 'elected': e, 'random': rd,
-                           'full': mean([r['full'] for r in rs]), 'best_displayed_per_run_mean': mean([r['best_disp'] for r in rs]),
-                           'gain_pct': 100 * (e - rd) / abs(rd), 'runs_above_random': sum(r['test'] > r['random'] for r in rs),
+                           'full': mean([r['full'] for r in rs]), 'gain_pct': 100 * (e - rd) / abs(rd),
                            'elected_names': [r['elected'] for r in rs]}
         source[f'{cond}/{key}'] = rs[0]['batch']
     summ['_source'] = source
@@ -145,10 +139,7 @@ def validation_size(signal_drop):
         rs = [p for p in pts if p['val_n'] == n]
         summary.append({'val_n': n, 'seeds': [p['seed'] for p in rs],
                         **{k: agg([p[k] for p in rs]) for k in ('test', 'rank', 'random_test', 'infl_test', 'auth_test')}})
-    out = {'points': pts, 'summary': summary}
-    if 'validation_size_selection' in SELECTION:
-        out['note'] = SELECTION['validation_size_selection']
-    save('validation_size.json', out)
+    save('validation_size.json', {'points': pts, 'summary': summary})
     print('validation-size points', len(pts))
 
 

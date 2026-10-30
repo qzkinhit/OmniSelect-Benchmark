@@ -1,7 +1,7 @@
 """Learner protocol: fit(subset, stage) -> model and score(model, split) -> per-unit arrays.
 
 ``StagePlan`` maps each fit stage (con, rank, conf, member, report, screen) to a schedule and a
-seed. Canonical scoring fits use the scoring schedule and stage seeds of the 2026-07 runners. With
+seed. Under the canonical preset, scoring fits use the scoring schedule and per-stage seeds. With
 ``fidelity.scoring_equals_reported`` every stage uses the reported schedule and one seed, so
 the train-once cache can share fits. The ``screen`` stage is the short schedule of low-fidelity
 screening. ``classification_units`` builds the per-unit dict of a fitted classifier.

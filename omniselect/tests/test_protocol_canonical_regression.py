@@ -1,12 +1,9 @@
 """Canonical protocol regression on a small TEP fixture with pinned selections and election.
 
-The pinned values were produced by the 2026-07 runner scripts/run_tep_experiment.py at commit
-cd7a6c7 (POOL_N=400 VAL_N=300 TEST_N=300 MODEL=mlp PAIRED_RNG=1 SEED=0) and reproduced by the
-new driver with identical selections, test macro-F1 and a 26-entry leaderboard.
-Since score ties are broken by ascending pool index (stable sorts, docs/DESIGN.md),
-auth_only (kNN agreement counts, heavily tied) has a new hash and the election moved from dmf
-(03e90759cace) to vote_ensemble(top3). The other strategy hashes are the 2026-07 values. The hashes
-depend on numpy and scikit-learn only. The election also depends on the MLP.
+The pinned values come from a TEP cell of the canonical preset (POOL_N=400 VAL_N=300 TEST_N=300
+MODEL=mlp PAIRED_RNG=1 SEED=0), with its selections, test macro-F1 and a 26-entry leaderboard.
+Score ties are broken by ascending pool index (stable sorts, docs/DESIGN.md). The hashes depend
+on numpy and scikit-learn only. The election also depends on the MLP.
 """
 from __future__ import annotations
 

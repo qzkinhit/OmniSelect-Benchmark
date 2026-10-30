@@ -1,4 +1,4 @@
-"""adjudicate() under the canonical preset reproduces the frozen 2026-07 AdaptiveController."""
+"""adjudicate() under the canonical preset reproduces the frozen reference AdaptiveController."""
 from __future__ import annotations
 
 import hashlib

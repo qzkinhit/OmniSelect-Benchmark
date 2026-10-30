@@ -3,7 +3,7 @@
 This page explains the protocol choices of OmniSelect and the configuration field behind each one.
 Protocol `v2_2` is the protocol of the paper. Protocol `v2` is the same protocol without cooperative
 candidates, and protocol `v2_1` adds a fourth fusion signal to `v2`. Both are ablations. Protocol
-`canonical` is the earlier two-split controller and is kept for regression tests. Every constant
+`canonical` is a two-split controller kept for regression tests. Every constant
 named below is a field of `OmniSelectConfig` in `omniselect/config/config.py`, so an ablation
 changes one field with `--set key=value`.
 

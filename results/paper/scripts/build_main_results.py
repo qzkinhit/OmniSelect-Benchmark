@@ -77,7 +77,7 @@ def main():
     docs = {}
     for run, output in [("main", "paper_main_stats.json"), ("main_nc", "paper_nocoop_stats.json")]:
         raw = VIEW / f"{run}_stats.json"
-        subprocess.run([sys.executable, str(Path(__file__).resolve().parent / "analyze_r1.py"), str(VIEW / run), str(raw)], check=True, capture_output=True)
+        subprocess.run([sys.executable, str(Path(__file__).resolve().parent / "task_stats.py"), str(VIEW / run), str(raw)], check=True, capture_output=True)
         data = json.loads(raw.read_text())
         data["source_dir"] = str((VIEW / run).relative_to(ROOT))
         data["reporting_policy"] = {"seeds": {t: SEEDS[t] for t in COLS},

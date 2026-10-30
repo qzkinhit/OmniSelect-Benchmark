@@ -6,7 +6,7 @@ Source: Bai et al., Efficient Pretraining Data Selection via Multi-Actor Collabo
 
 Strategy names: `dmf_pub, dmf`. Implementation: [`method.py`](method.py).
 
-dmf_pub: six rounds of Eqs. 6 to 8 over the authenticity, influence and redundancy channels with construction-split rewards and simplex projection. dmf: the multiplicative-weight proxy of the historical batches.
+dmf_pub: six rounds of Eqs. 6 to 8 over the authenticity, influence and redundancy channels with construction-split rewards and simplex projection. dmf: a multiplicative-weight proxy of the same update.
 
 Deviations: Actor memories and the pretraining stack are not reproduced. dmf is removed from the unified portfolio. text_dmf.py holds the text console baseline.
 

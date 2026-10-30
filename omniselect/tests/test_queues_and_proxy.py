@@ -35,7 +35,7 @@ def test_paper_queues_have_unique_cells_and_the_paper_seed_layout():
 
 def test_robustness_queue_and_results_root():
     lines = [x for x in build("robustness", protocol="v2") if not x.startswith("#")]
-    assert sum("robustness/ratio_" in x for x in lines) == 7 * 3 * 3
+    assert sum("robustness/ratio_" in x for x in lines) == (7 + 4 + 4) * 3
     assert all(" --protocol v2 " in x and "store.per_unit_scope=finalists" in x for x in lines)
     assert any("--learner chronos_small" in x and "/chronos_small/" in x for x in lines)
     assert not any("--learner clip_vitb32" in x for x in lines)

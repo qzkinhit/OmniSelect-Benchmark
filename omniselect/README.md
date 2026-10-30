@@ -9,7 +9,7 @@ model. The public entry points are `OmniSelect` and `AdjudicationTask` in
 | `OmniSelectConfig.preset(protocol, **overrides)` | Resolved configuration of `canonical`, `v2`, `v2_1` or `v2_2` (the protocol of the paper). Dotted keys override single fields |
 | `OmniSelect(config, grid).adjudicate(task)` | Algorithm 1 on one pool. Returns an `Election` with every candidate, the precheck and the gate decision |
 | `adjudicate(...)` in `core/adjudication/controller.py` | The same algorithm as a function of channel scores, references and utility callbacks |
-| `AdaptiveController` | The 2026-07 controller interface, implemented by `adjudicate` under the canonical preset |
+| `AdaptiveController` | The controller interface of the canonical preset, implemented by `adjudicate` |
 | `select_pool(records, budget)` | Signal fusion and budgeted selection without a learner |
 
 | Package | Responsibility |

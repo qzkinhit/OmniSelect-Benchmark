@@ -3,8 +3,8 @@
 For each row the k most similar other rows (dot product, the diagonal set to ``self_value``)
 are found with argpartition in row chunks, so only a (chunk, n) slab is materialized.
 Authenticity is the fraction of neighbours sharing the row's observed label. Redundancy is
-1 - mean similarity to the neighbours. This is the rule of the 2026-07 vision, TEP and
-tabular runners (self_value -1.0) and of the native protocol (self_value -2.0).
+1 - mean similarity to the neighbours. This is the rule of the canonical vision, TEP and
+tabular presets (self_value -1.0) and of the native protocol (self_value -2.0).
 """
 from __future__ import annotations
 

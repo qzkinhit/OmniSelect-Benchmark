@@ -1,4 +1,5 @@
-"""Versioned R6 source repair. Original 25k and legacy 100k contracts stay closed."""
+"""Manifest of the text pool whose Adult domain renders UCI Adult records as text. The manifests
+that text_manifest.py validates stay unchanged."""
 from __future__ import annotations
 
 import hashlib

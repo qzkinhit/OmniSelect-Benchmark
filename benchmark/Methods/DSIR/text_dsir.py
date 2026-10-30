@@ -110,7 +110,7 @@ def dsir_select(
     texts, ids : the standardized ``text`` field and stable ids (parallel).
     k : number of examples to keep (already budget-resolved by the runner).
     domains : per-record domain; ``math``/``code`` rows define the target ``p`` when
-        no ``target_texts`` is given (legacy in-pool target).
+        no ``target_texts`` is given (in-pool target).
     target_texts : an explicit clean target sample (e.g. the multi-modal held-out
         reference). When given, ``p`` is fit on these records (the DSIR target of
         the benchmark) instead of in-pool domain rows.

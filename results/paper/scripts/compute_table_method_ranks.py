@@ -94,7 +94,7 @@ def main():
                         "no_cooperation": "included as one of the 14 ranked methods",
                         "oracle_and_verdict": "not methods and not ranked",
                         "inference": "descriptive label; no new significance claim"},
-        "scope_limit": "All methods use the same task set. Task adaptations and independent text runs contribute descriptive mean values, without adding paired inference against historical OmniSelect.",
+        "scope_limit": "All methods use the same task set. Task adaptations and independent text runs contribute descriptive mean values, without adding paired inference against the OmniSelect runs.",
         "not_recommended_available_case_average": {
             "mean_ranks": conditional,
             "competitors_per_task": {task: len(values[task]) for task in completed},

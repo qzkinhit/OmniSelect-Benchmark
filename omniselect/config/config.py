@@ -6,8 +6,8 @@ ranking split with a confirmation audit, the recorded headroom precheck, the uni
 an influence reference drawn from the construction split. ``v2_1`` is ``v2`` plus the alignment
 channel, the four-channel fusion grid, the alignment_only member and the solver challengers.
 ``v2_2`` is ``v2`` plus the learned cleanliness score, the cooperative candidates, the coop_herding
-member and the clean_top challenger. ``canonical`` reproduces the earlier two-split controller of
-the 2026-07 runners (two validation halves, 1.5% margin on the ranking half, successive halving on
+member and the clean_top challenger. ``canonical`` is a two-split controller kept for regression
+tests (two validation halves, 1.5% margin on the ranking half, successive halving on
 the construction half, no fit cache). Each protocol difference is one field, so an ablation changes
 one field (``--set key=value`` on the driver). docs/DESIGN.md explains the choices.
 """
@@ -134,12 +134,12 @@ class SynthesisConfig:
 
     consensus: bool = True              # vote over the top ``consensus_top`` candidates
     consensus_top: int = 3
-    consensus_diversity_lam: float = 0.0          # > 0 adds the diversity-regularized vote (historical, off)
-    consensus_complementarity_threshold: float = 0.0  # > 0 adds the overlap-gated vote (historical, off)
+    consensus_diversity_lam: float = 0.0          # > 0 adds the diversity-regularized vote (off)
+    consensus_complementarity_threshold: float = 0.0  # > 0 adds the overlap-gated vote (off)
     coordinate_ascent: bool = True
     ca_rounds: int = 2
     ca_step: float = 0.15
-    policy_search: bool = False         # historical group-relative search (negative result)
+    policy_search: bool = False         # group-relative search over the fusion grid (off)
     held_half: bool = False             # coordinate ascent fits on one half of V_con, steps checked on the other
     infomax_solver: bool = False        # v2.1: one "<cell> solver=infomax" challenger per screening finalist
 
@@ -156,7 +156,7 @@ class FixesConfig:
 
     fixed_fusion_gate: str = "sentinel"
     # ``canonical_100`` draws flipped vision labels from range(100) on every dataset, as the
-    # 2026-07 vision runner did (on CIFAR-10 most flips land on classes absent from validation
+    # canonical vision preset does (on CIFAR-10 most flips land on classes absent from validation
     # and test). ``n_classes`` draws them from the dataset's own classes.
     vision_flip_range: str = "canonical_100"
     # ``zero`` keeps the canonical Density row, whose Gumbel keys used seed 0 on every run seed

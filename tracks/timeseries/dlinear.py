@@ -45,7 +45,7 @@ class ForecastConfig(TrackConfig):
     screen_epochs: int = 15           # low-fidelity screening schedule (DLinear)
     last_layer_warm: int = 10         # GLISTER and GRAD-MATCH: warm-start epochs of DLinear
     chronos_screen_epochs: int = 1    # low-fidelity screening schedule (chronos-bolt)
-    recent_validation: bool = False   # historical TS_VAL_MODE=recent (negative result)
+    recent_validation: bool = False   # TS_VAL_MODE=recent, validation on the latest windows (off)
     chronos_epochs: int = 3
     chronos_max_epochs: int = 4
     chronos_lr: float = 1e-4

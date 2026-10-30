@@ -20,8 +20,8 @@ ranking-split arrays for Figure 3. Paths in JSON records use `<repo>`, `<data>` 
 | `main_v2_3.tar.gz` | 72 | Main and OmniSelect w/o Coop runs for the eleven benchmark tasks and auxiliary C-10-CLIP |
 | `main_adapt_v2_3.tar.gz` | 18 | EL2N, GraNd and CCS on forecasting and text |
 | `scale_up.tar.gz` | 15 | IN-100 and Text-100k, including OmniSelect w/o Coop and text adaptations |
-| `robustness_v2_3f.tar.gz` | 153 | Conditions of Figure 4(e)(f), with nine main cells reused from the main archive |
-| `ablation_v2_3.tar.gz` | 45 | Three signal removals on five tasks, Figure 4(d) displays four of them |
+| `robustness_v2_3f.tar.gz` | 117 | Conditions of Figures 3 and 4(e)(f), with nine main cells reused from the main archive |
+| `ablation_v2_3.tar.gz` | 36 | Three signal removals on the four tasks of Figure 4(d) |
 | `validation_size_v2_3.tar.gz` | 9 | CIFAR-100 at 200, 400 and 1600 validation records, the 800 point reuses the main archive |
 | `paired_units.tar.gz` | 69 | Figure 3, main and robustness ranking splits |
 | `text_selections_v2_3.tar.gz` | 3 | Selections of the six Table 4 strategies in the Text main runs, unpacked into the main tree |
@@ -40,16 +40,13 @@ retain the original metric values.
 | `scale_up_stats.json` | Multi-seed statistics for IN-100 and Text-100k |
 | `main_table_body.tex` | The 13-column body of Table 3 |
 | `paper_numbers.json`, `adoption_numbers.json` | Aggregate result, adoption and cost statistics |
-| `paired_diagnostics.json` | Figure 3, 23 groups, 1452 pairs and 2904000 resamples |
-| `robust_cells_view.json`, `robustness_summary.json` | The 162 robustness cells and their summaries |
+| `paired_diagnostics.json` | Figure 3, 23 groups, 1454 pairs and 2908000 resamples |
+| `robust_cells_view.json`, `robustness_summary.json` | The 126 robustness cells and their summaries |
 | `validation_noise_plot_data.json` | Figure 4(f), 36 validation-noise points |
 | `abl_v23_summary.json` | Multi-seed signal-removal results used in Figure 4(d) |
 | `validation_size.json` | Figure 4(g), twelve validation-size points |
-| `figure6_validation_size_and_signal_ablation.json` | Existing combined export of Figure 4(d)(g), retaining its original filename |
 | `table4_admission.json` | Table 4, the share of each kind of dirty record that a strategy selects, its column minima and row means, and the best external baseline of each task |
 | `adjudication_by_task.json` | Appendix table of paired verdicts and election on each task |
-| `diagnostics.json` | Strategy diagnostics exported from the full records |
+| `diagnostics.json` | Cleanliness AUCs, hindsight fusion means and cooperative-strategy means quoted in Sections 1 and 5 |
 
-`rebuild.sh` compares 18 rebuilt outputs. It also compares the signal-removal results and the
-plotted validation-size values in the combined export. The standalone strategy
-diagnostic export retains its existing values.
+`rebuild.sh` compares 18 rebuilt outputs.

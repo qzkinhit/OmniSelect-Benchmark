@@ -6,7 +6,7 @@ clipped at zero and renormalized, for ``rounds`` rounds, and the best round unde
 construction-split score is returned. The actors are the three quality channels of this benchmark
 instead of the published quality, domain and topic actors, the reward is the construction-split
 gain of the selected subset instead of the Eq. 7 aggregation, and the actor-memory update is not
-run. ``dmf_dynamic`` (dmf) is the multiplicative-weight proxy of the historical batches. It is
+run. ``dmf_dynamic`` (dmf) is a multiplicative-weight proxy of the same update. It is
 removed from the unified portfolio. ``text_dmf`` holds the text-lane console baseline.
 docs/BASELINE_FIDELITY_AUDIT.md records every departure.
 """

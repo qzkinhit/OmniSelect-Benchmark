@@ -10,8 +10,8 @@ Paths are relative to the repository root. The queue runner skips cells that alr
 | `ablation_v2_3.txt` | `v2` | 36 | OmniSelect-NC |
 | `main_adapt_v2_2.txt` | `v2_2`, standalone | 18 | EL2N, GraNd and CCS on forecasting and text |
 | `scale_up.txt` | `v2_2`, `v2`, standalone | 15 | IN-100 and Text-100k, including NC and text adaptations |
-| `robustness.txt` | `v2_2` | 153 | Injection ratios, validation-label conditions, unseen mechanisms and learner swaps |
-| `signal_drop.txt` | `v2_2` | 45 | Remove each signal on the five recorded tasks |
+| `robustness.txt` | `v2_2` | 117 | Injection ratios, validation-label conditions, unseen mechanisms and learner swaps |
+| `signal_drop.txt` | `v2_2` | 36 | Remove each signal on the four tasks of Figure 4(d) |
 | `validation_size.txt` | `v2_2` | 9 | CIFAR-100 with 200, 400 and 1600 validation records |
 
 The run seeds are listed in `results/paper/seeds_reported.json`.

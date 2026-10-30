@@ -59,7 +59,7 @@ def test_gradient_features_are_float32_under_bfloat16():
 
 def _reference_cpu_features(model, tok, params, texts, ctx, device, sketch, adam_state=None, betas=(0.9, 0.999),
                             eps=1e-8, keep_on_device=False, grad_batch=1, info=None):
-    """The CPU feature path of commit 56e5128 (gradients moved to the CPU, numpy Adam and numpy sketch)."""
+    """The CPU feature path (gradients on the CPU, numpy Adam and numpy sketch)."""
     out = np.zeros((len(texts), sketch.dim), dtype=np.float32)
     b1, b2 = betas
     m = v = None

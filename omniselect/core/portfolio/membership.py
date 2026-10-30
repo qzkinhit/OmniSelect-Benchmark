@@ -1,7 +1,7 @@
 """Portfolio membership tables per track, with a reason string for every exclusion.
 
-``canonical`` lists the reference strategies in the order each canonical (2026-07) runner passed
-them to the controller. ``unified`` is the table of protocol v2, shared by all tracks.
+``canonical`` lists the reference strategies in the order in which the canonical preset of
+each track passes them to the controller. ``unified`` is the table of protocol v2, shared by all tracks.
 ``unified_v21`` adds alignment_only, and ``unified_v22`` adds coop_herding (reference) and
 clean_top (challenger). The function ``membership`` returns one row per known strategy with its
 role (reference or challenger), whether it is included on the track, and why an excluded strategy
@@ -45,12 +45,9 @@ CANONICAL_REFERENCES: dict[str, tuple[str, ...]] = {
 }
 CANONICAL_CHALLENGERS: dict[str, tuple[str, ...]] = {"text": ("fixed_fusion",)}
 
-# Earlier portfolio generations behind some canonical 2026-07 records. The 2026-07-16 paired
-# batch (CIFAR-100, TEP21, Electricity, ETTh1 seeds 0 and 1) passed the QuaDMix-style proxy
-# before quadmix_pub. ETTm1 (batch 2026-07-16T1532) had the proxy and neither published transfer.
-# The proxy of that time produced duplicate ids. The registered 'quadmix' is the later
-# uniqueness-hardened version, so these modes replay the portfolio shape, not its exact output.
-HISTORICAL_REFERENCES: dict[str, dict[str, tuple[str, ...]]] = {
+# Two fixed portfolio lists for regression replays of the canonical preset. The modes replay the
+# portfolio shape, not an exact output.
+REPLAY_REFERENCES: dict[str, dict[str, tuple[str, ...]]] = {
     "canonical_20260716": {
         track: tuple(
             x for name in names for x in (("quadmix", name) if name == "quadmix_pub" else (name,))
@@ -153,19 +150,19 @@ def membership(track: str, mode: str) -> list[MembershipRow]:
     if track not in TRACKS:
         raise KeyError(f"unknown track {track!r}; expected one of {TRACKS}")
     rows: list[MembershipRow] = []
-    if mode in HISTORICAL_REFERENCES:
-        names = HISTORICAL_REFERENCES[mode].get(track)
+    if mode in REPLAY_REFERENCES:
+        names = REPLAY_REFERENCES[mode].get(track)
         if names is None:
             raise KeyError(f"membership mode {mode!r} has no table for track {track!r}")
-        return [MembershipRow(n, "reference", True, f"historical portfolio {mode}") for n in names]
+        return [MembershipRow(n, "reference", True, f"replay portfolio {mode}") for n in names]
     if mode == "canonical":
         for name in CANONICAL_REFERENCES[track]:
-            rows.append(MembershipRow(name, "reference", True, "canonical 2026-07 runner portfolio"))
+            rows.append(MembershipRow(name, "reference", True, "canonical preset portfolio"))
         for name in CANONICAL_CHALLENGERS.get(track, ()):
-            rows.append(MembershipRow(name, "challenger", True, "canonical 2026-07 runner portfolio"))
+            rows.append(MembershipRow(name, "challenger", True, "canonical preset portfolio"))
         return rows
     if mode not in ("unified", "unified_v21", "unified_v22"):
-        raise ValueError("mode must be canonical, unified, unified_v21, unified_v22 or a historical mode")
+        raise ValueError("mode must be canonical, unified, unified_v21, unified_v22 or a replay mode")
     order = UNIFIED_TEXT_ORDER if track == "text" else UNIFIED_ORDER
     if mode == "unified_v21":            # the single-signal rule of the alignment channel
         order = order[:1] + ("alignment_only",) + order[1:]

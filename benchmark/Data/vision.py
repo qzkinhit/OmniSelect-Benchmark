@@ -190,7 +190,7 @@ def load_or_encode(data_root: str, dataset: str, encoder: str, pool_n: int, val_
                    device: str) -> VisionArrays:
     """Features and labels from the cache, or from the pinned dataset and encoder (then cached).
 
-    A cache written by the 2026-07 runners holds only Xp, Xval and Xt. Its labels are then read
+    A cache in the canonical format holds only Xp, Xval and Xt. Its labels are then read
     from the pinned dataset and added to the file.
     """
     path = cache_path(data_root, dataset, encoder, pool_n, val_n, test_n, seed)

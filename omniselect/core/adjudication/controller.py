@@ -3,7 +3,7 @@
 ``adjudicate`` takes channel scores, executed reference strategies and utility callbacks per
 split, and returns an ``Election`` with every candidate, its construction and ranking utilities,
 the precheck result and the gate decision. Under the canonical configuration it reproduces the
-2026-07 ``AdaptiveController`` (kept below as a compatibility wrapper with the same interface).
+reference ``AdaptiveController`` (kept below as a compatibility wrapper with the same interface).
 The callbacks hide the learner, so the same code serves every track.
 """
 from __future__ import annotations
@@ -534,7 +534,7 @@ def _coverage(features: np.ndarray, k: int, seed: int) -> list[int]:
 
 
 class AdaptiveController:
-    """Canonical controller interface of the 2026-07 runners, implemented by ``adjudicate``.
+    """Controller interface of the canonical preset, implemented by ``adjudicate``.
 
     ``select`` returns the elected selection and sets ``chosen_``, ``leaderboard_``,
     ``sh_stats_`` and ``construction_errors_`` as before. The switch margin is

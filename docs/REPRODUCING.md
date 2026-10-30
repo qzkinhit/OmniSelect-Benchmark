@@ -64,7 +64,7 @@ field, so an ablation changes one field with `--set`. [DESIGN.md](DESIGN.md) exp
 | `gate.kind` | `margin`, 1.5% of the reference's ranking utility | `margin` on the ranking split with `k_challengers` 3 |
 | `gate.audit` | off | on. Paired gain, bootstrap interval and e-value of the top 3 challengers on the confirmation split, recorded without changing the election |
 | `precheck.enabled` | off | on. The headroom of full-data training and of the best reference over random selection on the ranking split is recorded (`precheck.decide` false) |
-| `portfolio.membership` | `canonical` (the list of each earlier runner) | `unified` (`omniselect/core/portfolio/membership.py`) |
+| `portfolio.membership` | `canonical` (a fixed list per track) | `unified` (`omniselect/core/portfolio/membership.py`) |
 | `influence.reference` | clean-tagged pool records | records of the construction split |
 | `fixes.fixed_fusion_gate` | `sentinel` (gated records get -1e9 before min-max normalization) | `finite_subset` (the selector runs on the passing records only) |
 | `fixes.vision_flip_range` | `canonical_100` (flipped vision labels drawn from 100 classes on every dataset) | `n_classes` (drawn from the dataset's own classes) |
@@ -302,12 +302,11 @@ outputs. [../run_omniselect/queues/README.md](../run_omniselect/queues/README.md
 
 ## Protocol canonical
 
-`canonical` reproduces the earlier two-split controller of the 2026-07 runners.
+`canonical` is a two-split controller kept for regression tests.
 `omniselect/tests/test_controller_legacy_equivalence.py` compares `adjudicate` under this preset
-with a frozen copy of the earlier controller, and `omniselect/tests/test_protocol_canonical_regression.py`
+with a frozen reference controller, and `omniselect/tests/test_protocol_canonical_regression.py`
 pins the selections and the election of a small TEP21 cell. The membership modes
-`canonical_20260716` and `canonical_ettm1_20260716` replay two earlier portfolio generations for
-such comparisons. The earlier code state is commit `cd7a6c7` of this repository's history.
+`canonical_20260716` and `canonical_ettm1_20260716` fix two portfolio lists for such comparisons.
 
 ## Outputs
 

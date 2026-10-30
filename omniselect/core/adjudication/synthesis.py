@@ -5,7 +5,7 @@ random reference and keeps the k records with the most votes. ``coordinate_ascen
 the best grid cell and moves one channel weight by +-0.15 while the construction utility
 improves, for at most two rounds. With a held-half ``check`` the steps are fitted on one half of
 the construction split and a step is accepted only if the utility on the other half does not
-decrease. ``policy_search`` is the historical group-relative search.
+decrease. ``policy_search`` is a group-relative search over the fusion grid, off by default.
 """
 from __future__ import annotations
 
@@ -46,7 +46,7 @@ def consensus_vote(
 def consensus_diverse(
     votes: np.ndarray, records: Sequence, features: np.ndarray, k: int, lam: float
 ) -> list[int]:
-    """Votes used as importance in BudgetSelector(lam). Historical METHOD_V2 candidate."""
+    """Votes used as importance in BudgetSelector(lam)."""
     from omniselect.core.selection.budget_select import BudgetSelector
 
     return [int(i) for i in BudgetSelector(lam=lam).select(records, votes.astype(float), k, features=features)]
@@ -56,7 +56,7 @@ def consensus_complementary(
     ranked: Sequence[Scored], consensus: list[int], threshold: float
 ) -> list[int]:
     """The vote selection when the top-3 overlap |A & B & C| / |A | B | C| is below ``threshold``,
-    otherwise the selection of the best member. Historical METHOD_V2C candidate."""
+    otherwise the selection of the best member."""
     sets = [set(int(i) for i in sel) for _, sel, _g, _r in ranked]
     inter = sets[0] & sets[1] & sets[2] if len(sets) >= 3 else set()
     union = set().union(*sets) if sets else set()
@@ -148,7 +148,7 @@ def policy_search(
     probe: Callable[[list[int]], float],
     seed: int,
 ) -> tuple[str, list[int]] | None:
-    """Group-relative evolutionary search over (weights, q, lam). Historical, off by default."""
+    """Group-relative evolutionary search over (weights, q, lam), off by default."""
     rng = np.random.default_rng(seed + 31)
     group, steps = 6, 4
     mu = np.zeros(5)

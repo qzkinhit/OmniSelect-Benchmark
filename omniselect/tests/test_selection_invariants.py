@@ -20,7 +20,7 @@ def test_kmeans_representatives_fill_empty_clusters_to_exact_budget():
         ]
     )
     # Center 1 is intentionally empty, reproducing the MiniBatchKMeans edge
-    # case that previously returned only two representatives for budget three.
+    # case in which an empty center leaves fewer representatives than the budget.
     labels = np.array([0, 0, 2, 2, 2])
     centers = np.array([[0.0, 0.0], [2.5, 2.5], [5.0, 5.0]])
     selected = exact_kmeans_representatives(
