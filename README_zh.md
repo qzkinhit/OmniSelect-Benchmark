@@ -127,9 +127,9 @@ python -m omniselect.store.replay results_and_logs/smoke
 
 ```bibtex
 @misc{omniselect2026,
-  title  = {{OmniSelect}: Task-Driven Adjudication of Data Selection Strategies for
-            Modality-Specific Foundation Models},
-  author = {Qian, Zekai and Ding, Xiaoou and Zhou, Muyun and Wang, Hongzhi and Wang, Chen},
+  title  = {{OmniSelect}: Quality-Aware Data Selection for Downstream Models over
+            Various Data Types},
+  author = {Qian, Zekai and Ding, Xiaoou and Zhou, Muyun and Cheng, Haifeng and Wang, Chen and Wang, Hongzhi},
   year   = {2026},
   note   = {Submitted to PVLDB}
 }

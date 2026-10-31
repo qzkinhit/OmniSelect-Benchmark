@@ -203,7 +203,7 @@ released here rather than with the submitted manuscript. It has seven sections.
 @misc{omniselect2026,
   title  = {{OmniSelect}: Quality-Aware Data Selection for Downstream Models over
             Various Data Types},
-  author = {Qian, Zekai and Ding, Xiaoou and Zhou, Muyun and Wang, Hongzhi and Wang, Chen},
+  author = {Qian, Zekai and Ding, Xiaoou and Zhou, Muyun and Cheng, Haifeng and Wang, Chen and Wang, Hongzhi},
   year   = {2026},
   note   = {Submitted to PVLDB}
 }
