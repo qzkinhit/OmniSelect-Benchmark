@@ -2,7 +2,7 @@
 
 Fidelity label: **local implementation**.
 
-Source: Sachdeva et al., How to Train Data-Efficient LLMs, 2024.
+Source: Sachdeva et al., How to Train Data-Efficient LLMs, ICLR 2026.
 
 Strategy names: `density (density_text on text)`. Implementation: [`method.py`](method.py).
 

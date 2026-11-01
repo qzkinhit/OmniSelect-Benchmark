@@ -20,7 +20,7 @@ an original protocol only when that full protocol is executed. Otherwise the tra
 | EL2N (NeurIPS 2021) | Data Diet | `benchmark/Methods/EL2N/` | Early-training error score | Only where supervised class probabilities exist | protocol transfer |
 | GraNd (NeurIPS 2021) | Data Diet | `benchmark/Methods/GraNd/` | Expected gradient contribution ranking | Last-layer gradient-norm proxy | disclosed proxy |
 | CCS (ICLR 2023) | Coverage-centric coreset selection | `benchmark/Methods/CCS/` | Budget allocation across score strata | Task classifier supplies the score | local implementation |
-| Density (ICML 2024) | Ask-LLM density sampler | `benchmark/Methods/Density/` | Inverse-density sampling | k-nearest-neighbor estimator replaces the LSH-KDE estimator | local implementation |
+| Density (ICLR 2026) | Ask-LLM density sampler | `benchmark/Methods/Density/` | Inverse-density sampling | k-nearest-neighbor estimator replaces the LSH-KDE estimator | local implementation |
 | QuaDMix (arXiv 2025) | Quality and domain-mixture sampler | `benchmark/Methods/QuaDMix/` | Domain-conditioned sigmoid quality sampler | Fixed budget, no proxy-model parameter search | published-core transfer |
 | DMF (ACL 2025) | Multi-actor weighting | `benchmark/Methods/DMF/` | Centered additive actor-weight update | Actors are the three quality signals | published-core transfer |
 | OmniSelect | This repository | `omniselect/` | Validation-guided adjudication over a frozen portfolio | Task adapters expose comparable validation evidence | proposed method |
